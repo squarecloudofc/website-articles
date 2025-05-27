@@ -1,0 +1,22 @@
+#### 📝 Creating the requirements.txt File
+
+To create your requirements.txt file, you need to list all your dependencies inside the file.
+Here’s how it would look with the Flask and waitress dependencies.
+
+```txt
+flask
+waitress
+```
+
+Note that by listing this way, the package manager will install the latest version of each package.
+If you want a specific version, use double equals followed by the corresponding version number.
+
+```txt
+flask==3.1.0
+waitress==3.0.2
+```
+
+If you use the pip freeze command, it will list not only your dependencies but also their dependencies.
+For example, if you have discord-py installed, pip will also list aiohttp, which is a dependency of the
+discord-py library. This results in a larger file than necessary and, if used in the global environment, it may
+include unnecessary dependencies from other projects.

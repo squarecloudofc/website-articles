@@ -1,0 +1,22 @@
+#### 📝 Creando el archivo requirements.txt
+
+Para crear tu archivo requirements.txt, debes listar todas tus dependencias dentro del archivo.
+Así es como se vería si tiene las dependencias Flask y waitress.
+
+```txt
+flask
+waitress
+```
+
+Ten en cuenta que al listarlas de esta manera, el gestor de paquetes instalará la versión más reciente del paquete.
+Si deseas una versión específica, usa dos signos de igual seguidos del número de la versión correspondiente.
+
+```txt
+flask==3.1.0
+waitress==3.0.2
+```
+
+Si usas el comando pip freeze, se listarán no solo tus dependencias, sino también las dependencias de estas.
+Por ejemplo, si tienes discord-py instalado como dependencia, pip también listará aiohttp, que es una dependencia de la
+biblioteca discord-py. Esto genera un archivo más extenso de lo necesario y, si se usa en el entorno global, puede incluir
+dependencias innecesarias de otros proyectos.
