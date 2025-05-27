@@ -1,0 +1,69 @@
+---
+title: 
+description:
+updatedAt:
+---
+
+import { pages } from "../_snippets/pages.mdx"
+
+## 🚀 Introdução
+
+- Você precisará criar uma conta na Square Cloud, o que pode ser feito através da <a href={pages.login}>pagina de login</a>. Você pode usar seu e-mail para criar sua conta.
+- Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir aquele que melhor atenda às suas necessidades <a href={pages.plans}>aqui</a>.
+
+## 💻 Preparando aplicação
+
+### 🗑️ Arquivos desnecessários
+
+Os seguintes arquivos nunca devem ser enviados junto à sua aplicação next:
+
+- `node_modules`;
+- `package-lock.json`;
+- `.next`;
+
+### 📖 Dependências
+
+É importante que mantenha todas as dependências necessárias no campo "dependencies" do `package.json`. Em um ambiente de produção, 
+todas as dependencias de desenvolvimento, as "devDependencies", não são instaladas.
+
+### ⚙️ Configurando o webserver
+
+Para configurar corretamente o webserver next, você precisa informar a porta 80 no comando de "start" do next em seu package.json.
+Confira um exemplo de package.json com os scripts corretos abaixo.
+
+```json
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 80",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.1.0",
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
+  },
+}
+```
+
+## ☁️ Enviando o projeto
+
+### Configuração
+
+Em seu arquivo `squarecloud.app/config`, precisam ser informados os campos START e SUBDOMAIN contendo respectivamente, 
+`npm run build && npm run start` e o subdomínio desejado.
+
+### 📦 Envio da aplicação
+
+Anexe o zip que contém todo o necessário e confirme a configuração citada no tópico anterior. E pronto, 
+assim você hospedou sua aplicação next.
+
