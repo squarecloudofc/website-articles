@@ -1,0 +1,14 @@
+{
+  "path": "guides/deploys/how-to-deploy-nextjs",
+  "updated_at": "2025-05-27",
+  "metadata": {
+    "pt-br": {
+      "title": "Como subir uma aplicação Next",
+      "description": "Aprenda como enviar sua aplicação Next"
+    }
+  },
+  "availableLocales": [
+    "pt-br"
+  ],
+  "id": "eAnvDXUoHxtZ"
+}

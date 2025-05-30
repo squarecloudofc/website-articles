@@ -1,0 +1,17 @@
+{
+  "path": "guides/deploys/how-to-deploy-vite",
+  "updated_at": "2025-12-31",
+  "metadata": {
+    "pt-br": {
+      "title": "Como subir uma aplicação Vite",
+      "description": "Aprenda como enviar sua aplicação Vite"
+    }
+  },
+  "availableLocales": [
+    "en",
+    "es",
+    "pt-br",
+    "zh"
+  ],
+  "id": "EXynVFQcvkkg"
+}

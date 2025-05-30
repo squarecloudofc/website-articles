@@ -1,0 +1,37 @@
+{
+  "articles": {
+    "EXynVFQcvkkg": {
+      "id": "EXynVFQcvkkg",
+      "path": "deploys/how-to-deploy-vite",
+      "metadata": {},
+      "updated_at": "2025-12-31",
+      "content": "title: \"Alojando tu sitio web Vite\" description: \"Aprende a alojar tu aplicación Vite\" updatedAt: 2025-05-27  import { pages } from \"../\\_snippets/pages.mdx\"  🚀 Introducción  Necesitarás crear una cuenta en Square Cloud, lo cual puedes hacer desde la página de inicio de sesión. Puedes usar tu correo electrónico, Discord o ambos para crear tu cuenta.  Finalmente, debes tener un plan de pago activo en tu cuenta. Puedes ver nuestros planes y adquirir el que mejor se adapte a tus necesidades aquí.  💻 Preparando la aplicación  Actualmente, existen dos formas de alojar sitios web gestionados por Vite: usando el comando vite preview o haciendo un build local y subiendo solo los archivos estáticos. Ambas formas se explican a continuación.  🗑️ Archivos innecesarios  Dependiendo del método de carga, tendrás archivos específicos para incluir. Sin embargo, en general, los siguientes archivos nunca deben subirse con tu aplicación:  node\\_modules;  package-lock.json.  Subida con build local  Este método requiere primero construir tu aplicación Vite localmente. Para ello:  Abre la terminal en la raíz de tu proyecto;  Ejecuta el comando npm run build, que ejecutará el script build definido en tu package.json, normalmente vite build;  Esto generará la carpeta dist que contiene tu sitio como archivos estáticos.  Ingresa a la carpeta dist generada y cambia el nombre del archivo HTML a vite.html;  Comprime todo el contenido de la carpeta dist, incluyendo vite.html y los demás archivos y carpetas.  La compresión debe realizarse en formato .zip.  Luego, puedes subir el archivo ZIP, configurar el nombre, el archivo principal (vite.html), marcar la opción \"Publicar en la web\" e ingresar el subdominio deseado.  Subida con build en el entorno  Este método requiere que modifiques tu package.json, moviendo todas las dependencias de desarrollo (devDependencies) a las dependencias normales (dependencies). Esto es necesario porque en el entorno de producción no se instalan dependencias de desarrollo.  Además, en tu package.json, configura el script \"preview\" como vite preview --host 0.0.0.0 --port 80 Esto hace que el servidor de Vite esté disponible en todas las interfaces de red en el puerto 80 (HTTP), lo que permite el enrutamiento hacia el puerto 443 (HTTPS).  Comprime tu aplicación incluyendo todos los archivos necesarios para su ejecución, excepto los archivos innecesarios previamente mencionados.  En el momento de la subida, marca la opción \"Publicar en la web\" y también \"Comando de inicio\", ingresando el subdominio deseado y el siguiente comando npm run build && npm run preview "
+    }
+  },
+  "snippets": [
+    {
+      "path": "guides/_snippets/node-introduction",
+      "slug": "_snippets/node-introduction",
+      "availableLanguages": [
+        "pt-br"
+      ]
+    },
+    {
+      "path": "guides/_snippets/python-introduction",
+      "slug": "_snippets/python-introduction",
+      "availableLanguages": [
+        "pt-br"
+      ]
+    },
+    {
+      "path": "guides/_snippets/requirements-txt",
+      "slug": "_snippets/requirements-txt",
+      "availableLanguages": [
+        "en",
+        "es",
+        "pt-br",
+        "zh"
+      ]
+    }
+  ]
+}

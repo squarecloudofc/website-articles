@@ -1,0 +1,14 @@
+{
+  "path": "guides/deploys/how-to-deploy-react",
+  "updated_at": "2025-12-31",
+  "metadata": {
+    "pt-br": {
+      "title": "Como subir uma aplicação React",
+      "description": "Aprenda como enviar sua aplicação React"
+    }
+  },
+  "availableLocales": [
+    "pt-br"
+  ],
+  "id": "siYjfAtAynUS"
+}
