@@ -1,5 +1,15 @@
 {
   "articles": {
+    "khZSiGFSAtdV": {
+      "id": "khZSiGFSAtdV",
+      "path": "managing-teams",
+      "metadata": {
+        "title": "Gerenciando Suas Equipes na Square Cloud",
+        "description": "Aprenda como funciona o sistema de equipes e como gerenciar suas equipes"
+      },
+      "updated_at": "2025-12-31",
+      "content": "Introdução  Antes de começar, você precisará criar uma conta no Square Cloud, o que pode ser feito através da página de cadastro. Você pode usar seu e-mail para criar uma conta.  Por fim, é necessário ter um plano pago ativo em sua conta. Você pode ver nossos planos e adquiri-los aqui.  Criando Seu Time  Para criar seu time, você deve acessar o dashboard, clicar no seu perfil e escolher a opção \"Create a Team\". Por fim, basta escolher o nome do seu time e confirmar. Assim, ele será criado e você poderá acessá-lo novamente selecionando seu perfil e escolhendo o time desejado.  Adicionando Membros ao Time  Para adicionar um novo membro ao time, siga estes passos:  Compartilhe seu código de conta apenas com pessoas de sua confiança.  Funções  Cada membro do time possui uma função que fornece permissões específicas para ações nas aplicações. A seguir, veja a lista de permissões:  Adicionando Aplicações ao Time  Para adicionar aplicações ao seu time, siga estes passos:  Se você continuar enfrentando problemas, não hesite em entrar em contato com nossa equipe de suporte. "
+    },
     "RuhBYxAxVJqj": {
       "id": "RuhBYxAxVJqj",
       "path": "deploys/how-to-deploy-flask",

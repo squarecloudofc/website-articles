@@ -37,6 +37,8 @@ async function getIndexes(project, articles) {
 
   for (const article of articles) {
     for (const l of article.availableLocales) {
+      if (!article.id) continue
+
       const index = await convertMarkdownToPlain(join(project, article.path, `${l}.mdx`))
 
       const metadata = {
