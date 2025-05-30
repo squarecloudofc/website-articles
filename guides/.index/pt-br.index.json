@@ -8,7 +8,7 @@
         "description": "Aprenda como enviar sua aplicação Flask"
       },
       "updated_at": "2025-12-31",
-      "content": "💻 Preparando sua aplicação  Abroba  📖 Dependências  Tenha certeza de listar todas as dependências necessárias de seu projeto em seu arquivo de dependências, seja ele pyproject.toml ou requirements.txt. Deve conter no arquivo o Flask e o webserver usado que, neste artigo usaremos o waitress.  📂 Arquivos necessários  Enquanto prepara seu projeto para envio, certifique-se de incluir, além do seu código, o squarecloud.app/config e o seu arquivo de dependencia previamente preparado. Você pode encontrar mais informações sobre como criar o squarecloud.app/config aqui. Caso envie através de nosso dashboard, não é necessário criar o arquivo de configuração previamente basta compactar o código e o arquivo de dependências.  ⚙️ Configurando o webserver  Para configurar seu webserver waitress, é necessário que modifique seu código para que fique semelhante ao seguinte.  ☁️ Enviando o projeto  Abroba Compacte todos os arquivos de código necessários, arquivos de dependências e de configuração. Após isso, anexe o zip na página de upload ou envie utilizando de nossa API. "
+      "content": "💻 Preparando sua aplicação  📖 Dependências  Tenha certeza de listar todas as dependências necessárias de seu projeto em seu arquivo de dependências, seja ele pyproject.toml ou requirements.txt. Deve conter no arquivo o Flask e o webserver usado que, neste artigo usaremos o waitress.  📂 Arquivos necessários  Enquanto prepara seu projeto para envio, certifique-se de incluir, além do seu código, o squarecloud.app/config e o seu arquivo de dependencia previamente preparado. Você pode encontrar mais informações sobre como criar o squarecloud.app/config aqui. Caso envie através de nosso dashboard, não é necessário criar o arquivo de configuração previamente basta compactar o código e o arquivo de dependências.  ⚙️ Configurando o webserver  Para configurar seu webserver waitress, é necessário que modifique seu código para que fique semelhante ao seguinte.  ☁️ Enviando o projeto  Compacte todos os arquivos de código necessários, arquivos de dependências e de configuração. Após isso, anexe o zip na página de upload ou envie utilizando de nossa API. "
     },
     "eAnvDXUoHxtZ": {
       "id": "eAnvDXUoHxtZ",
@@ -38,27 +38,51 @@
         "description": "Aprenda como enviar sua aplicação Vite"
       },
       "updated_at": "2025-12-31",
-      "content": "🚀 Introdução  abroba  Você precisará criar uma conta na Square Cloud, o que pode ser feito através da pagina de login. Você pode usar seu e-mail, Discord ou ambos para criar sua conta.  Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir aquele que melhor atenda às suas necessidades aqui.  💻 Preparando aplicação  Atualmente existem duas maneiras de se hospedar websites gerenciados pelo vite, uma delas é utilizar do comando de vite preview e a outra é efetuar o build e enviar apenas os arquivos estáticos. As duas formas serão abordadas a seguir.  🗑️ Arquivos desnecessários  À depender do modo de envio, você terá arquivos específicos para enviar. Contudo, de maneira geral, os seguintes arquivos nunca devem ser enviados junto à sua aplicação:  node\\_modules;  package-lock.json.  Envio com build local  Esta forma de envio requer primeiramente realizar o build de sua aplicação vite em seu ambiente local. Para realização de tal tarefa siga o passo a passo.  Abra o terminal na raiz de seu projeto;  Execute o comando npm run build que executará o script build definido no package.json, vite build;  Isto gerará a pasta dist contendo todo seu site em arquivos estáticos.  Entre na pasta dist gerada e renomeie o arquivo html para vite.html;  Compacte todo o conteúdo da pasta dist, sendo o arquivo vite.html e demais arquivos e pastas que tem junto a ele.  Lembrando que a compactação deve ser feita compactando como .zip.  Após feito estes passos, você pode anexar o zip e apenas configurar nome, arquivo principal(vite.html) e marcar a opção \"Publicar na Web\" e informe o subdomínio que deseja usar.  Envio com build no ambiente  Esta forma de envio requer primeiramente que modifique seu arquivo package.json transferindo todas as dependências de desenmvolvimento, \"devdependencies\", para as dependências, \"dependencies\". Esta organização, se deve ao fato de que, por se tratar de um ambiente de produção, não são instaladas nenhuma dependência de desenvolvimento.  Ainda em seu package.json, informe o script de \"preview\" como vite preview --host 0.0.0.0 --port 80. Esta mudança faz com que o webserver vite, seja aberto em todas as interfaces de rede e porta 80(http), possibilitando seu roteamento para a 443(https). abroba  Compacte sua aplicação incluindo todos os arquivos necessários para sua execução, ou seja, não inclua os arquivos citados nos tópicos anteriores. No momento de envio, marque a opção de publicar na web e marque a opção de comando de inicialização, informando respectivamente o subdomínio desejado e os comandos npm run build && npm run preview. "
+      "content": "🚀 Introdução  Você precisará criar uma conta na Square Cloud, o que pode ser feito através da pagina de login. Você pode usar seu e-mail, Discord ou ambos para criar sua conta.  Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir aquele que melhor atenda às suas necessidades aqui.  💻 Preparando aplicação  Atualmente existem duas maneiras de se hospedar websites gerenciados pelo vite, uma delas é utilizar do comando de vite preview e a outra é efetuar o build e enviar apenas os arquivos estáticos. As duas formas serão abordadas a seguir.  🗑️ Arquivos desnecessários  À depender do modo de envio, você terá arquivos específicos para enviar. Contudo, de maneira geral, os seguintes arquivos nunca devem ser enviados junto à sua aplicação:  node\\_modules;  package-lock.json.  Envio com build local  Esta forma de envio requer primeiramente realizar o build de sua aplicação vite em seu ambiente local. Para realização de tal tarefa siga o passo a passo.  Abra o terminal na raiz de seu projeto;  Execute o comando npm run build que executará o script build definido no package.json, vite build;  Isto gerará a pasta dist contendo todo seu site em arquivos estáticos.  Entre na pasta dist gerada e renomeie o arquivo html para vite.html;  Compacte todo o conteúdo da pasta dist, sendo o arquivo vite.html e demais arquivos e pastas que tem junto a ele.  Lembrando que a compactação deve ser feita compactando como .zip.  Após feito estes passos, você pode anexar o zip e apenas configurar nome, arquivo principal(vite.html) e marcar a opção \"Publicar na Web\" e informe o subdomínio que deseja usar.  Envio com build no ambiente  Esta forma de envio requer primeiramente que modifique seu arquivo package.json transferindo todas as dependências de desenmvolvimento, \"devdependencies\", para as dependências, \"dependencies\". Esta organização, se deve ao fato de que, por se tratar de um ambiente de produção, não são instaladas nenhuma dependência de desenvolvimento.  Ainda em seu package.json, informe o script de \"preview\" como vite preview --host 0.0.0.0 --port 80. Esta mudança faz com que o webserver vite, seja aberto em todas as interfaces de rede e porta 80(http), possibilitando seu roteamento para a 443(https).  Compacte sua aplicação incluindo todos os arquivos necessários para sua execução, ou seja, não inclua os arquivos citados nos tópicos anteriores. No momento de envio, marque a opção de publicar na web e marque a opção de comando de inicialização, informando respectivamente o subdomínio desejado e os comandos npm run build && npm run preview. "
     }
   },
   "snippets": [
     {
-      "path": "guides/_snippets/node-introduction",
-      "slug": "_snippets/node-introduction",
+      "path": "_snippets/node-introduction",
       "availableLanguages": [
         "pt-br"
       ]
     },
     {
-      "path": "guides/_snippets/python-introduction",
-      "slug": "_snippets/python-introduction",
+      "path": "_snippets/python-introduction",
       "availableLanguages": [
         "pt-br"
       ]
     },
     {
-      "path": "guides/_snippets/requirements-txt",
-      "slug": "_snippets/requirements-txt",
+      "path": "_snippets/requirements-txt",
+      "availableLanguages": [
+        "en",
+        "es",
+        "pt-br",
+        "zh"
+      ]
+    },
+    {
+      "path": "_snippets/requirements-txt",
+      "availableLanguages": [
+        "en",
+        "es",
+        "pt-br",
+        "zh"
+      ]
+    },
+    {
+      "path": "_snippets/requirements-txt",
+      "availableLanguages": [
+        "en",
+        "es",
+        "pt-br",
+        "zh"
+      ]
+    },
+    {
+      "path": "_snippets/requirements-txt",
       "availableLanguages": [
         "en",
         "es",

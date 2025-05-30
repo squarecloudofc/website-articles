@@ -12,10 +12,10 @@ main()
 
 async function main() {
   projects.forEach(async (project) => {
-    const articles = await getArticles((project))
-    const articlesIndexes = await getIndexes(articles)
+    const articles = await getArticles(project)
+    const articlesIndexes = await getIndexes(project, articles)
 
-    const snippets = await getSnippets((project))
+    const snippets = await getSnippets(project)
 
     const indexesPath = resolve(project, ".index")
     mkdirSync(indexesPath, { recursive: true })
@@ -31,13 +31,13 @@ async function main() {
   })
 }
 
-async function getIndexes(articles) {
+async function getIndexes(project, articles) {
   const indexes = {}
   locales.forEach(l => indexes[l] = {})
 
   for (const article of articles) {
     for (const l of article.availableLocales) {
-      const index = await convertMarkdownToPlain(join(article.path, `${l}.mdx`))
+      const index = await convertMarkdownToPlain(join(project, article.path, `${l}.mdx`))
 
       const metadata = {
         ...(article.metadata?.[l] ?? {}),
@@ -48,7 +48,7 @@ async function getIndexes(articles) {
 
       indexes[l][article.id] = {
         id: article.id,
-        path: article.path.split("/").slice(1).join("/"),
+        path: article.path,
         metadata,
         updated_at: article.updated_at,
         content: index.replaceAll("\n", " ")

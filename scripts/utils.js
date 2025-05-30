@@ -24,8 +24,8 @@ export async function getArticles(cwd) {
 
     const availableLocales = files.filter(v => localesExt.includes(v))
     articles.push({
-      path,
       ...metadata,
+      path: path.split("/").slice(1).join("/"),
       availableLocales: availableLocales.map(l => l.slice(0, -4)),
     })
   })
@@ -45,8 +45,7 @@ export async function getSnippets(cwd) {
     const availableLanguages = files.map(f => f.replace(".mdx", ""))
 
     snippets.push({
-      path,
-      slug: dirname(snippet),
+      path: path.split("/").slice(1).join("/"),
       availableLanguages
     })
   })
