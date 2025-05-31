@@ -1,22 +1,23 @@
 {
-    "metadata": {
-        "pt-br": {
-            "title": "",
-            "description": ""
-        },
-        "en": {
-            "title": "Solving INVALID_DEPENDENCY",
-            "description": "Learn how to resolve the Solving INVALID_DEPENDENCY issue in your application."
-        },
-        "es": {
-            "title": "",
-            "description": ""
-        },
-        "zh": {
-            "title": "",
-            "description": ""
-        }
+  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "id": "BXIKsiTzqDSh",
+  "updated_at": "2025-05-30",
+  "metadata": {
+    "pt-br": {
+      "title": "Resolvendo INVALID_DEPENDENCY",
+      "description": "Aprenda como resolver o problema INVALID_DEPENDENCY em seu aplicativo."
     },
-    "updated_at": "2025-05-30",
-    "id": ""
+    "en": {
+      "title": "Solving INVALID_DEPENDENCY",
+      "description": "Learn how to resolve the Solving INVALID_DEPENDENCY issue in your application."
+    },
+    "es": {
+      "title": "Resolviendo INVALID_DEPENDENCY",
+      "description": "Aprende cómo resolver el problema INVALID_DEPENDENCY en tu aplicación."
+    },
+    "zh": {
+      "title": "解决 INVALID_DEPENDENCY",
+      "description": "了解如何解决应用程序中的 INVALID_DEPENDENCY 问题。"
+    }
+  }
 }

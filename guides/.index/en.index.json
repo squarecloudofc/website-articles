@@ -6,6 +6,86 @@
       "metadata": {},
       "updated_at": "2025-12-31",
       "content": "import { pages } from \"../\\_snippets/pages.mdx\"  🚀 Introduction  You will need to create an account on Square Cloud, which can be done through the login page. You can use your email, Discord, or both to create your account.  Finally, you need to have an active paid plan on your account. You can view our plans and purchase the one that best suits your needs here.  💻 Preparing the Application  Currently, there are two ways to host websites managed by Vite: using the vite preview command or performing a local build and uploading only the static files. Both methods will be explained below.  🗑️ Unnecessary Files  Depending on the upload method, you'll have specific files to include. However, in general, the following files should never be uploaded with your application:  node\\_modules;  package-lock.json.  Upload with Local Build  This method requires first building your Vite application locally. To do this:  Open the terminal in your project root;  Run the command npm run build, which will execute the build script defined in your package.json (usually vite build);  This will generate the dist folder containing your entire site as static files.  Go into the generated dist folder and rename the HTML file to vite.html;  Compress all contents of the dist folder, including vite.html and all other files and folders.  The compression should be done in .zip format.  After completing these steps, you can upload the ZIP file, set the name, define the main file (vite.html), check the \"Publish on Web\" option, and specify the desired subdomain.  Upload with Build in the Environment  This method requires you to first modify your package.json, moving all development dependencies (devDependencies) to regular dependencies (dependencies). This is because, in production environments, development dependencies are not installed.  In your package.json, also set the \"preview\" script as vite preview --host 0.0.0.0 --port 80. This ensures that the Vite web server is accessible on all network interfaces using port 80 (HTTP), allowing routing to port 443 (HTTPS).  Compress your application, including all necessary files for execution, except the files previously mentioned as unnecessary.  During upload, select \"Publish on Web\" and enable the \"Startup Command\" option, entering the desired subdomain and the following command npm run build && npm run preview "
+    },
+    "ycAMJkhidJBd": {
+      "id": "ycAMJkhidJBd",
+      "path": "troubleshooting/apps/module-not-found",
+      "metadata": {
+        "title": "Solving MODULE_NOT_FOUND",
+        "description": "Learn how to resolve the MODULE_NOT_FOUND issue in your application."
+      },
+      "updated_at": "2025-05-30",
+      "content": "When does it occur?  This error occurs when your application tries to use a library that is not installed in the environment.  Why does it occur?  This can happen when you try to use a library that is not installed by default in the environment. For example, the discord.js library is not installed by default in the JavaScript environment.  How to fix  To fix this, you need to add the missing library to your project's dependency files. These files list the libraries that will be installed in the environment. In the case of Python, this file is called requirements.txt, and for JavaScript, it is called package.json.  Here is an example of the content of these files after adding the missing libraries:  Reboot Your Application  After adding the necessary libraries to your project's dependency files, you should reboot your application. This allows your environment to recognize and install the newly added libraries.  If you continue to experience any issues, please don't hesitate to contact our support team. "
+    },
+    "JRmKSJYAPonx": {
+      "id": "JRmKSJYAPonx",
+      "path": "troubleshooting/apps/token",
+      "metadata": {
+        "title": "Solving TOKEN_INVALID",
+        "description": "Learn how to resolve the TOKEN_INVALID code error and ensure smooth communication with the Discord API."
+      },
+      "updated_at": "2025-05-30",
+      "content": "When does it occur?  The authentication token for your Discord bot was not found or appears to be invalid. This might happen if the token is regenerated, revoked, or the bot's access to the server is restricted.  Why does it occur?  You will encounter this error when your application attempts to authenticate with the Discord API using an invalid or outdated bot token.  How to fix  Ensure that the token provided when creating the Discord.js client is accurate and up-to-date. If you suspect the token might be invalid, regenerate it on the Discord Developer Portal.  Regenerate the Token  If you have confirmed that the current token is invalid or compromised, generate a new one on the Discord Developer Portal.  Update the Token in Your Code  If you are using a .env file to store the token, make sure to update the file with the new token.  Generally, the token is stored in .env or config,json files. If you are using a different method to store the token, update the code accordingly.  Keep the library up to date  Ensure you are using the latest version of your library. Developers regularly update the library to fix bugs and address compatibility issues.  Reboot Your Application  After implementing the changes, restart your application to apply the updates. This ensures that the new token and any code modifications take effect.  If you continue to experience any issues, please don't hesitate to contact our support team. "
+    },
+    "HnApBohkKdCD": {
+      "id": "HnApBohkKdCD",
+      "path": "troubleshooting/resources/cpu",
+      "metadata": {
+        "title": "Solving LACK_OF_CPU",
+        "description": "Learn how to resolve the LACK_OF_CPU issue in your application."
+      },
+      "updated_at": "2025-05-30",
+      "content": "When does it occur?  This issue occurs when your application is using more CPU than is available.  Why does it occur?  This issue occurs when your application is using more CPU than is available. This can happen when your application is under heavy load, or when your application is not optimized to use less CPU.  How to fix  The CPU allocated to your application is determined by your current plan. To address this, consider upgrading to a higher plan on the plans page. Alternatively, optimize your application to reduce CPU usage.  Resubmitting your application  After upgrading your plan, it's important to remove your application and resubmit it to reflect the updated CPU allocation.  If you continue to experience any issues, please don't hesitate to contact our support team. "
+    },
+    "NMzlAcsArwjF": {
+      "id": "NMzlAcsArwjF",
+      "path": "troubleshooting/resources/ram",
+      "metadata": {
+        "title": "Solving LACK_OF_RAM",
+        "description": "Learn how to resolve the LACK_OF_RAM issue in your application."
+      },
+      "updated_at": "2025-05-30",
+      "content": "When does it occur?  This issue occurs when your application is using more RAM than is available.  Why does it occur?  This issue occurs when your application is using more RAM than is available. This can happen when your application is using more RAM than is available on your current plan.  How to fix  Navigate to the file manager and locate the squarecloud.app/config file.  Open the file and locate the MEMORY field.  Increase the value of the MEMORY field. The value is in megabytes (MB).  We recommend increasing the value by 50% of the current value. For example, if the current value is 512, increase it to 768.  If you are already using the maximum available RAM based on your current plan, consider upgrading to a higher plan by visiting the plans page.  If you continue to experience any issues, please don't hesitate to contact our support team. "
+    },
+    "BXIKsiTzqDSh": {
+      "id": "BXIKsiTzqDSh",
+      "path": "troubleshooting/apps/dependencies/invalid-file",
+      "metadata": {
+        "title": "Solving INVALID_DEPENDENCY",
+        "description": "Learn how to resolve the Solving INVALID_DEPENDENCY issue in your application."
+      },
+      "updated_at": "2025-05-30",
+      "content": "When does it occur?  This issue occurs when your dependency file could not be located in the root of your application.  Why does it occur?  This issue occurs when your dependency file could not be located in the root of your application. This can happen when your dependency file does not exist or its nominated with an extra .txt.  How to fix  For Node.js (package.json)  Navigate to the root directory of your project: Ensure that you are in the main directory of your application.  Check for the presence of package.json: Verify whether the package.json file exists in the root directory. If it is not present, create one using the following command:  This command initializes a default package.json file.  Ensure correct naming: Confirm that the file is named exactly as package.json and does not have any additional extensions (e.g., package.json.txt). If there are any discrepancies, rename the file accordingly.  For Python (requirements.txt)  Navigate to the root directory of your project: Make sure you are in the main directory of your application.  Check for the presence of requirements.txt: Confirm whether the requirements.txt file exists in the root directory. If it is missing, create one.  Ensure correct naming: Verify that the file is named exactly as requirements.txt without any additional extensions (e.g., requirements.txt.txt). If the name is incorrect, rename the file accordingly.  Add dependencies to the file: Open the requirements.txt file and add the necessary dependencies for your Python project. For example:  Additional Tips:  Double-check file extensions: Ensure that the file extensions are correct (e.g., .json for Node.js, .txt for Python). Incorrect extensions might lead to the INVALID\\_DEPENDENCY error.  Review documentation and guides: Consult the documentation for your specific programming language (Node.js/Python).  If you continue to experience any issues, please don't hesitate to contact our support team. "
+    },
+    "TURSSLUVhXJQ": {
+      "id": "TURSSLUVhXJQ",
+      "path": "troubleshooting/apps/lavalink/connection",
+      "metadata": {
+        "title": "Solving Lavalink Closed Abnormally issue",
+        "description": "Due to recent Lavalink updates you may come across the following error: Lavalink Closed Abnormally. This article will help you solve this issue."
+      },
+      "updated_at": "2025-05-30",
+      "content": "title: \"Solving Lavalink Closed Abnormally issue\" description: \"Due to recent Lavalink updates you may come across the following error: Lavalink Closed Abnormally. This article will help you solve this issue.\"  When does it occur?  When you are trying to connect your Lavalink server to your app hosted on Square Cloud, you may come across the following error:  Why does it occur?  You will receive this error if you are using a Lavalink version that is not compatible with the library you are using. For example, if you are using the Lavalink version 4.0.0, you will receive this error if you are using the Lavalink client version 3, as the Lavalink version 4 is entirely REST.  How to fix  To fix this error, you will need to update your Lavalink client to the latest version. Or use a Lavalink version that is compatible with your Lavalink client.  Bonus Tips:  Remember to open your Lavalink server in port 80.  Connect in your Lavalink server using port 443 and option secure: true.  Congratulations! You have successfully solved the Lavalink Closed Abnormally issue. Now you can connect your Lavalink to your app hosted on Square Cloud.  If you continue to experience any issues, please don't hesitate to contact our support team. "
+    },
+    "dHIgwyjxOfxd": {
+      "id": "dHIgwyjxOfxd",
+      "path": "troubleshooting/resources/network/requests",
+      "metadata": {
+        "title": "Solving ABUSE_REQUESTS",
+        "description": "Learn how to address the ABUSE_REQUESTS error, caused by excessive requests to Discord and/or Amino APIs, and ensure your application runs smoothly."
+      },
+      "updated_at": "2025-05-30",
+      "content": "When does it occur?  The ABUSE\\_REQUESTS error occurs when your application is shut down due to a high volume of requests made to the Discord and/or Amino APIs. This may result from inefficient coding practices, lack of caching mechanisms, or surpassing the allocated request limits.  Why does it occur?  This error typically arises when your application exceeds the permissible limits for making requests to the Discord and/or Amino APIs. It could be a consequence of a rapid increase in user activity or inefficient coding that generates an excessive number of API calls.  How to fix  Addressing the ABUSE\\_REQUESTS error involves monitoring and optimizing the sections of your code responsible for API requests, implementing effective caching mechanisms, and, if necessary, requesting an increase in your API request limit through the official support channels.  Monitor and Optimize Your Code  Identify Problematic Code: Use logging tools or profiling to pinpoint sections of your code that generate a large number of API requests.  Optimize API Calls: Review and optimize the code responsible for API calls. Minimize unnecessary requests and ensure that each call is essential for your application's functionality.  Implement Caching Mechanisms  Use Local Caching: Store frequently requested data locally to avoid unnecessary API calls. This reduces the load on the servers and improves response times.  Set Expiry Times: Implement caching with expiration times to ensure that your application fetches fresh data when necessary while minimizing the number of API requests.  Request an Increase in Request Limit  If your application genuinely requires a higher API request limit, consider reaching out to the Discord and/or Amino support channels to request an increase. Provide justifications for the increased limit and any measures you've taken to optimize your code.  Keep Your Application Updated  Ensure your application is using the latest version of any libraries or SDKs interacting with the APIs. Regularly check for updates, as developers often release new versions to address performance issues and improve efficiency.  Test and Restart Your Application  After making the necessary changes, thoroughly test your application to ensure that the modifications effectively reduce the number of API requests. Additionally, restart your application to apply the updates and monitor its performance.  If you continue to experience any issues, please don't hesitate to contact our support team. "
+    },
+    "WZKgzoWHvOBK": {
+      "id": "WZKgzoWHvOBK",
+      "path": "troubleshooting/apps/dependencies/better-sqlite3/binding-file",
+      "metadata": {
+        "title": "Solving 'Could not locate the bindings file'",
+        "description": "Learn how to resolve the 'Could not locate the bindings file' issue in your application."
+      },
+      "updated_at": "2025-05-30",
+      "content": "When does it occur?  This issue happens when the better-sqlite3 library or a library that depends on it, like quick.db, is not updated.  Why does it occur?  This error occurs because the better-sqlite3 library has not been updated to the latest version. In better-sqlite3 11.x.x and earlier, the library was not support Node.js LTS v22.x.x.  How to fix  To fix this issue, you need to update the better-sqlite3 library to the latest version. Remember to update libraries that depend on better-sqlite3, like quick.db.  Check the latest versions of the libraries:  npm better-sqlite3  npm quick.db  Update the better-sqlite3 in your package.json  After checking the latest version of the library, you can update it in your package.json. For example, if the current version is 11.10.0, you can use the following:  Removing files for a clean installation  After updating your package.json, you should remove the files and folders: node\\_modules, package-lock.json, and the .npm folder.  Reboot Your Application  In conclusion, simply restart your application by clicking on the blue button. If you have followed all the steps correctly, your application should no longer encounter this error.  If you continue to experience any issues, please don't hesitate to contact our support team. "
     }
   },
   "snippets": [

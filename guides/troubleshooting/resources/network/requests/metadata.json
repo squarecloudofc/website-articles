@@ -1,22 +1,23 @@
 {
-    "metadata": {
-        "pt-br": {
-            "title": "Resolvendo ABUSE_REQUESTS",
-            "description": "Aprenda como resolver o erro ABUSE_REQUESTS, causado por solicitações excessivas às APIs do Discord e/ou Amino, e garanta que sua aplicação funcione corretamente."
-        },
-        "en": {
-            "title": "Solving ABUSE_REQUESTS",
-            "description": "Learn how to address the ABUSE_REQUESTS error, caused by excessive requests to Discord and/or Amino APIs, and ensure your application runs smoothly."
-        },
-        "es": {
-            "title": "Solucionando ABUSE_REQUESTS",
-            "description": "Aprende cómo solucionar el error ABUSE_REQUESTS, causado por solicitudes excesivas a las APIs de Discord y/o Amino, y asegura que tu aplicación funcione sin problemas."
-        },
-        "zh": {
-            "title": "解决ABUSE_REQUESTS错误",
-            "description": "了解如何解决由于对Discord和/或Amino API发送过多请求而导致的ABUSE_REQUESTS错误，确保您的应用程序顺利运行。"
-        }
+  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "id": "dHIgwyjxOfxd",
+  "updated_at": "2025-05-30",
+  "metadata": {
+    "pt-br": {
+      "title": "Resolvendo ABUSE_REQUESTS",
+      "description": "Aprenda como resolver o erro ABUSE_REQUESTS, causado por solicitações excessivas às APIs do Discord e/ou Amino, e garanta que sua aplicação funcione corretamente."
     },
-    "updated_at": "2025-05-30",
-    "id": ""
+    "en": {
+      "title": "Solving ABUSE_REQUESTS",
+      "description": "Learn how to address the ABUSE_REQUESTS error, caused by excessive requests to Discord and/or Amino APIs, and ensure your application runs smoothly."
+    },
+    "es": {
+      "title": "Solucionando ABUSE_REQUESTS",
+      "description": "Aprende cómo solucionar el error ABUSE_REQUESTS, causado por solicitudes excesivas a las APIs de Discord y/o Amino, y asegura que tu aplicación funcione sin problemas."
+    },
+    "zh": {
+      "title": "解决ABUSE_REQUESTS错误",
+      "description": "了解如何解决由于对Discord和/或Amino API发送过多请求而导致的ABUSE_REQUESTS错误，确保您的应用程序顺利运行。"
+    }
+  }
 }

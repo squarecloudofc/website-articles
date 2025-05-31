@@ -1,22 +1,23 @@
 {
-    "metadata": {
-        "pt-br": {
-            "title": "",
-            "description": ""
-        },
-        "en": {
-            "title": "Solving Lavalink Closed Abnormally issue",
-            "description": "Due to recent Lavalink updates you may come across the following error: Lavalink Closed Abnormally. This article will help you solve this issue."
-        },
-        "es": {
-            "title": "",
-            "description": ""
-        },
-        "zh": {
-            "title": "",
-            "description": ""
-        }
+  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "id": "TURSSLUVhXJQ",
+  "updated_at": "2025-05-30",
+  "metadata": {
+    "pt-br": {
+      "title": "Resolvendo o problema Lavalink Fechado Anormalmente",
+      "description": "Devido a atualizações recentes do Lavalink, você pode se deparar com o seguinte erro: Lavalink Fechado Anormalmente. Este artigo vai te ajudar a resolver esse problema."
     },
-    "updated_at": "2025-05-30",
-    "id": ""
+    "en": {
+      "title": "Solving Lavalink Closed Abnormally issue",
+      "description": "Due to recent Lavalink updates you may come across the following error: Lavalink Closed Abnormally. This article will help you solve this issue."
+    },
+    "es": {
+      "title": "Resolviendo el problema de Lavalink Cerrado Anormalmente",
+      "description": "Debido a actualizaciones recientes de Lavalink, es posible que te encuentres con el siguiente error: Lavalink Cerrado Anormalmente. Este artículo te ayudará a resolver este problema."
+    },
+    "zh": {
+      "title": "解决 Lavalink 异常关闭问题",
+      "description": "由于最近的 Lavalink 更新，你可能会遇到以下错误：Lavalink 异常关闭。本文将帮助你解决这个问题。"
+    }
+  }
 }

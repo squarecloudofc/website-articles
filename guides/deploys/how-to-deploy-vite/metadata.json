@@ -1,17 +1,11 @@
 {
-  "path": "guides/deploys/how-to-deploy-vite",
+  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "id": "EXynVFQcvkkg",
   "updated_at": "2025-12-31",
   "metadata": {
     "pt-br": {
       "title": "Como subir uma aplicação Vite",
       "description": "Aprenda como enviar sua aplicação Vite"
     }
-  },
-  "availableLocales": [
-    "en",
-    "es",
-    "pt-br",
-    "zh"
-  ],
-  "id": "EXynVFQcvkkg"
+  }
 }
