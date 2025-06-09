@@ -5,12 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate": "npm run generate:indexes && npm run generate:missing_ids",
+    "generate:indexes": "node scripts/generate-indexes.js",
+    "generate:missing_ids": "node scripts/generate-missing-ids.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.11.0",
+  "license": "AGPL-3.0",
   "dependencies": {
     "globby": "^14.1.0",
     "nanoid": "^5.1.5",
