@@ -1,23 +1,31 @@
 {
-  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
   "id": "WZKgzoWHvOBK",
-  "updated_at": "2025-05-30",
+  "author": {
+    "name": "Square Cloud"
+  },
   "metadata": {
     "pt-br": {
       "title": "Resolvendo 'Não foi possível localizar o arquivo de vínculos'",
-      "description": "Aprenda como resolver o problema 'Não foi possível localizar o arquivo de vínculos' em seu aplicativo."
+      "description": "Aprenda como resolver o problema 'Não foi possível localizar o arquivo de vínculos' em seu aplicativo.",
+      "slug": "resolvendo-nao-foi-possivel-localizar-o-arquivo-de-vinculos"
     },
     "en": {
       "title": "Solving 'Could not locate the bindings file'",
-      "description": "Learn how to resolve the 'Could not locate the bindings file' issue in your application."
+      "description": "Learn how to resolve the 'Could not locate the bindings file' issue in your application.",
+      "slug": "solving-could-not-locate-the-bindings-file"
     },
     "es": {
       "title": "Resolviendo 'No se pudo localizar el archivo de enlaces'",
-      "description": "Aprende cómo resolver el problema 'No se pudo localizar el archivo de enlaces' en tu aplicación."
+      "description": "Aprende cómo resolver el problema 'No se pudo localizar el archivo de enlaces' en tu aplicación.",
+      "slug": "resolviendo-no-se-pudo-localizar-el-archivo-de-enlaces"
     },
     "zh": {
       "title": "解决“无法找到绑定文件”",
-      "description": "了解如何解决应用程序中的“无法找到绑定文件”问题。"
+      "description": "了解如何解决应用程序中的“无法找到绑定文件”问题。",
+      "slug": "6kej5yaz4occ5peg5rov5om5yiw57ur5a6a5pah5lu24ocd"
     }
-  }
+  },
+  "created_at": "2025-05-30T20:03:16.000Z",
+  "updated_at": "2025-05-31T02:31:10.000Z"
 }

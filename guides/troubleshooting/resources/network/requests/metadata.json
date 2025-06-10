@@ -1,23 +1,31 @@
 {
-  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
   "id": "dHIgwyjxOfxd",
-  "updated_at": "2025-05-30",
+  "author": {
+    "name": "Square Cloud"
+  },
   "metadata": {
     "pt-br": {
       "title": "Resolvendo ABUSE_REQUESTS",
-      "description": "Aprenda como resolver o erro ABUSE_REQUESTS, causado por solicitações excessivas às APIs do Discord e/ou Amino, e garanta que sua aplicação funcione corretamente."
+      "description": "Aprenda como resolver o erro ABUSE_REQUESTS, causado por solicitações excessivas às APIs do Discord e/ou Amino, e garanta que sua aplicação funcione corretamente.",
+      "slug": "resolvendo-abuserequests"
     },
     "en": {
       "title": "Solving ABUSE_REQUESTS",
-      "description": "Learn how to address the ABUSE_REQUESTS error, caused by excessive requests to Discord and/or Amino APIs, and ensure your application runs smoothly."
+      "description": "Learn how to address the ABUSE_REQUESTS error, caused by excessive requests to Discord and/or Amino APIs, and ensure your application runs smoothly.",
+      "slug": "solving-abuserequests"
     },
     "es": {
       "title": "Solucionando ABUSE_REQUESTS",
-      "description": "Aprende cómo solucionar el error ABUSE_REQUESTS, causado por solicitudes excesivas a las APIs de Discord y/o Amino, y asegura que tu aplicación funcione sin problemas."
+      "description": "Aprende cómo solucionar el error ABUSE_REQUESTS, causado por solicitudes excesivas a las APIs de Discord y/o Amino, y asegura que tu aplicación funcione sin problemas.",
+      "slug": "solucionando-abuserequests"
     },
     "zh": {
       "title": "解决ABUSE_REQUESTS错误",
-      "description": "了解如何解决由于对Discord和/或Amino API发送过多请求而导致的ABUSE_REQUESTS错误，确保您的应用程序顺利运行。"
+      "description": "了解如何解决由于对Discord和/或Amino API发送过多请求而导致的ABUSE_REQUESTS错误，确保您的应用程序顺利运行。",
+      "slug": "abuserequests"
     }
-  }
+  },
+  "created_at": "2025-05-30T20:03:16.000Z",
+  "updated_at": "2025-05-30T20:03:16.000Z"
 }

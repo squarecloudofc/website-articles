@@ -1,23 +1,31 @@
 {
-  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
   "id": "JRmKSJYAPonx",
-  "updated_at": "2025-05-30",
+  "author": {
+    "name": "Square Cloud"
+  },
   "metadata": {
     "pt-br": {
       "title": "Resolvendo TOKEN_INVALID",
-      "description": "Aprenda como resolver o erro de código TOKEN_INVALID e garantir uma comunicação eficiente com a API do Discord."
+      "description": "Aprenda como resolver o erro de código TOKEN_INVALID e garantir uma comunicação eficiente com a API do Discord.",
+      "slug": "resolvendo-tokeninvalid"
     },
     "en": {
       "title": "Solving TOKEN_INVALID",
-      "description": "Learn how to resolve the TOKEN_INVALID code error and ensure smooth communication with the Discord API."
+      "description": "Learn how to resolve the TOKEN_INVALID code error and ensure smooth communication with the Discord API.",
+      "slug": "solving-tokeninvalid"
     },
     "es": {
       "title": "Solucionando TOKEN_INVALID",
-      "description": "Aprende cómo resolver el error de código TOKEN_INVALID y asegurar una comunicación fluida con la API de Discord."
+      "description": "Aprende cómo resolver el error de código TOKEN_INVALID y asegurar una comunicación fluida con la API de Discord.",
+      "slug": "solucionando-tokeninvalid"
     },
     "zh": {
       "title": "解决TOKEN_INVALID错误",
-      "description": "了解如何解决TOKEN_INVALID代码错误，并确保与Discord API的顺畅通信。"
+      "description": "了解如何解决TOKEN_INVALID代码错误，并确保与Discord API的顺畅通信。",
+      "slug": "tokeninvalid"
     }
-  }
+  },
+  "created_at": "2025-05-30T20:03:16.000Z",
+  "updated_at": "2025-05-30T20:03:16.000Z"
 }

@@ -7,7 +7,7 @@
   "scripts": {
     "generate": "npm run generate:indexes && npm run generate:missing_ids",
     "generate:indexes": "node scripts/generate-indexes.js",
-    "generate:missing_ids": "node scripts/generate-missing-ids.js"
+    "generate:metadata": "node scripts/generate-metadata.js"
   },
   "keywords": [],
   "license": "AGPL-3.0",
@@ -16,6 +16,7 @@
     "nanoid": "^5.1.5",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
+    "slug": "^11.0.0",
     "strip-markdown": "^6.0.0",
     "unified": "^11.0.5"
   }

@@ -1,23 +1,31 @@
 {
-  "$schema": "https://gist.githubusercontent.com/richaardev/a5fec5b851f33166757e3827b03ddded/raw/e942bbdf03b0128c0b6b189e299843cc57734588/schema.json",
+  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
   "id": "BXIKsiTzqDSh",
-  "updated_at": "2025-05-30",
+  "author": {
+    "name": "Square Cloud"
+  },
   "metadata": {
     "pt-br": {
       "title": "Resolvendo INVALID_DEPENDENCY",
-      "description": "Aprenda como resolver o problema INVALID_DEPENDENCY em seu aplicativo."
+      "description": "Aprenda como resolver o problema INVALID_DEPENDENCY em seu aplicativo.",
+      "slug": "resolvendo-invaliddependency"
     },
     "en": {
       "title": "Solving INVALID_DEPENDENCY",
-      "description": "Learn how to resolve the Solving INVALID_DEPENDENCY issue in your application."
+      "description": "Learn how to resolve the Solving INVALID_DEPENDENCY issue in your application.",
+      "slug": "solving-invaliddependency"
     },
     "es": {
       "title": "Resolviendo INVALID_DEPENDENCY",
-      "description": "Aprende cómo resolver el problema INVALID_DEPENDENCY en tu aplicación."
+      "description": "Aprende cómo resolver el problema INVALID_DEPENDENCY en tu aplicación.",
+      "slug": "resolviendo-invaliddependency"
     },
     "zh": {
       "title": "解决 INVALID_DEPENDENCY",
-      "description": "了解如何解决应用程序中的 INVALID_DEPENDENCY 问题。"
+      "description": "了解如何解决应用程序中的 INVALID_DEPENDENCY 问题。",
+      "slug": "invaliddependency"
     }
-  }
+  },
+  "created_at": "2025-05-30T20:03:16.000Z",
+  "updated_at": "2025-05-30T20:03:16.000Z"
 }

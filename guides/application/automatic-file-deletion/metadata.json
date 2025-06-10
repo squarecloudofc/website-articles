@@ -1,22 +1,31 @@
 {
-    "metadata": {
-        "pt-br": {
-            "title": "",
-            "description": ""
-        },
-        "en": {
-            "title": "Automatic Deletion of Files When Deploying an Application to Square Cloud",
-            "description": "Learn about the files that are automatically deleted when deploying an application to Square Cloud."
-        },
-        "es": {
-            "title": "",
-            "description": ""
-        },
-        "zh": {
-            "title": "",
-            "description": ""
-        }
+  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
+  "id": "UWMXxDJsEBZK",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "pt-br": {
+      "title": "",
+      "description": "",
+      "slug": ""
     },
-    "updated_at": "2025-05-30",
-    "id": ""
+    "en": {
+      "title": "Automatic Deletion of Files When Deploying an Application to Square Cloud",
+      "description": "Learn about the files that are automatically deleted when deploying an application to Square Cloud.",
+      "slug": "automatic-deletion-of-files-when-deploying-an-application-to-square-cloud"
+    },
+    "es": {
+      "title": "",
+      "description": "",
+      "slug": ""
+    },
+    "zh": {
+      "title": "",
+      "description": "",
+      "slug": ""
+    }
+  },
+  "created_at": "2025-05-30T20:46:20.000Z",
+  "updated_at": "2025-05-30T20:46:20.000Z"
 }
