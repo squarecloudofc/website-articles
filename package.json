@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "generate": "npm run generate:indexes && npm run generate:missing_ids",
+    "generate": "npm run generate:indexes && npm run generate:metadata",
     "generate:indexes": "node scripts/generate-indexes.js",
     "generate:metadata": "node scripts/generate-metadata.js"
   },
