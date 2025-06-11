@@ -1,4 +1,3 @@
-import { customAlphabet } from "nanoid"
 import { execSync } from "node:child_process"
 
 export const projects = ["guides", "docs", "blog"]
@@ -8,8 +7,14 @@ export * from "./articles.js"
 export * from "./snippets.js"
 
 export function generatePostID() {
-  return customAlphabet("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", 12)()
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let id = "";
+  for (let i = 0; i < 12; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return id;
 }
+
 export function generateSlug(title) {
   return title
     .normalize("NFD")
