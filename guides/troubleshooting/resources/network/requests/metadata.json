@@ -23,7 +23,7 @@
     "zh": {
       "title": "解决ABUSE_REQUESTS错误",
       "description": "了解如何解决由于对Discord和/或Amino API发送过多请求而导致的ABUSE_REQUESTS错误，确保您的应用程序顺利运行。",
-      "slug": "abuserequests"
+      "slug": "解决abuserequests错误"
     }
   },
   "created_at": "2025-05-30T20:03:16.000Z",

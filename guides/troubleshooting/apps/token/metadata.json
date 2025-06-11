@@ -23,7 +23,7 @@
     "zh": {
       "title": "解决TOKEN_INVALID错误",
       "description": "了解如何解决TOKEN_INVALID代码错误，并确保与Discord API的顺畅通信。",
-      "slug": "tokeninvalid"
+      "slug": "解决tokeninvalid错误"
     }
   },
   "created_at": "2025-05-30T20:03:16.000Z",
