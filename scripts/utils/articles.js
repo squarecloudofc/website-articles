@@ -1,10 +1,6 @@
 import { globby } from "globby";
 import { dirname, join } from "path"
 import { readdirSync, readFileSync } from "fs"
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import strip from "strip-markdown";
-import remarkStringify from "remark-stringify";
 import { locales } from "./index.js";
 import { parseMdxSnippets } from "./remark.js";
 
@@ -27,7 +23,7 @@ export async function getArticles(cwd) {
     const availableLocales = files.filter(v => localesExt.includes(v))
     articles.push({
       ...metadata,
-      path: path.split("/").slice(1).join("/"),
+      path: path.split(/[/\\]/).slice(1).join("/"),
       availableLocales: availableLocales.map(l => l.slice(0, -4)),
     })
   })
@@ -45,8 +41,6 @@ export async function getArticlesIndex(project, articles) {
       const rawContent = readFileSync(join(project, article.path, `${locale}.mdx`))
       const content = await parseMdxSnippets(project, rawContent)
 
-      const plainContent = await convertMarkdownToPlain(rawContent);
-
       indexes[locale][article.id] = {
         id: article.id,
         path: article.path,
@@ -56,20 +50,9 @@ export async function getArticlesIndex(project, articles) {
         created_at: article.created_at,
         updated_at: article.updated_at,
         content: content.toString(),
-        search_content: String(plainContent).replace(/\n/g, " "),
       };
     }
   }
 
   return indexes;
-}
-
-async function convertMarkdownToPlain(content) {
-  const file = await unified()
-    .use(remarkParse)
-    .use(strip)
-    .use(remarkStringify)
-    .process(content);
-
-  return file.value;
 }
