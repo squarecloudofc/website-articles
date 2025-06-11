@@ -52,7 +52,7 @@ export async function getArticlesIndex(project, articles) {
         path: article.path,
         author: article.author,
         attributes: article.attributes,
-        metadata: article.metadata,
+        metadata: article.metadata[locale],
         created_at: article.created_at,
         updated_at: article.updated_at,
         content: content.toString(),
