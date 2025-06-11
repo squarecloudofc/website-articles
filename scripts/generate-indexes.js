@@ -1,6 +1,6 @@
-import { mkdirSync, writeFileSync } from "fs";
-import { join, resolve } from "path";
 import { getArticles, getArticlesIndex, getSnippets, getSnippetsIndex, locales, projects } from "./utils/index.js";
+import { mkdirSync, writeFileSync } from "node:fs";
+import { join, resolve } from "node:path";
 
 (async function main() {
   for (const project of projects) {
