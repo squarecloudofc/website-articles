@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "generate": "npm run generate:indexes && npm run generate:metadata",
+    "generate": "npm run generate:metadata && npm run generate:indexes",
     "generate:indexes": "node scripts/generate-indexes.js",
     "generate:metadata": "node scripts/generate-metadata.js",
     "dev:prettier": "prettier --write ."
