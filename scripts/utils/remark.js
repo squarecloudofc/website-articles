@@ -1,10 +1,10 @@
-import { unified } from "unified";
-import remarkParse from "remark-parse";
 import remarkStringify from "remark-stringify";
-import remarkMdx from "remark-mdx";
+import { readFile } from "node:fs/promises";
 import { visit } from "unist-util-visit";
-import fs from "fs/promises";
-import path from "path";
+import remarkParse from "remark-parse";
+import remarkMdx from "remark-mdx";
+import { unified } from "unified";
+import { join } from "node:path";
 
 export function remarkInlineSnippets(options) {
   const { rootDir } = options;
@@ -23,10 +23,10 @@ export function remarkInlineSnippets(options) {
     );
 
     for (const { parent, index, src } of replacements) {
-      const snippetPath = path.join(rootDir, src, "pt-br.mdx");
+      const snippetPath = join(rootDir, src, "pt-br.mdx");
       let snippetContent;
       try {
-        snippetContent = await fs.readFile(snippetPath, "utf8");
+        snippetContent = await readFile(snippetPath, "utf8");
       } catch (err) {
         console.log(err)
         file.message(`Não consegui ler o snippet em ${snippetPath}: ${err.message}`);
