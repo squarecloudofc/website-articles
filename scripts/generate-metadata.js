@@ -1,7 +1,6 @@
 import { join } from "path";
 import { writeFileSync } from "fs";
-import { generatePostID, getArticles, getFolderFirstUpdate, getFolderLastestUpdate, projects } from "./utils.js";
-import createSlug from "slug";
+import { generatePostID, generateSlug, getArticles, getFolderFirstUpdate, getFolderLastestUpdate, projects } from "./utils/index.js";
 
 (async function main() {
   for (const project of projects) {
@@ -15,7 +14,7 @@ import createSlug from "slug";
         !article.id || article.id.length !== 12 ? generatePostID() : article.id;
 
       const metadata = Object.entries(article.metadata).reduce((acc, [lang, content]) => {
-        const slug = content.title ? createSlug(content.title) : "";
+        const slug = content.title ? generateSlug(content.title) : "";
         acc[lang] = { ...content, slug };
         return acc;
       }, {})
