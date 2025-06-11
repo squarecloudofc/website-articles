@@ -1,0 +1,31 @@
+{
+  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
+  "id": "l1VUb75hK2lb",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "pt-br": {
+      "title": "Promisse Apps reduz deploy para 10s e escala +1.000 bots com Square Cloud Enterprise",
+      "description": "Descubra como a Promisse Apps superou limitações críticas de escalabilidade e reduziu seu tempo de deploy para apenas 10 segundos com a Square Cloud Enterprise. Este estudo de caso mostra como a empresa otimizou sua infraestrutura para operar mais de 1.000 bots simultaneamente, com alta estabilidade, baixa latência e suporte técnico de excelência. Uma leitura essencial para quem busca performance, confiabilidade e crescimento sustentável em ambientes de missão crítica.",
+      "slug": "promisse-apps-reduz-deploy-para-10s-e-escala-1000-bots-com-square-cloud-enterprise"
+    },
+    "en": {
+      "title": "Promisse Apps reduces deploy to 10s and scales +1,000 bots with Square Cloud Enterprise",
+      "description": "Discover how Promisse Apps overcame critical scalability limitations and reduced its deploy time to just 10 seconds with Square Cloud Enterprise. This case study shows how the company optimized its infrastructure to operate over 1,000 bots simultaneously, with high stability, low latency, and excellent technical support. A must-read for those seeking performance, reliability, and sustainable growth in mission-critical environments.",
+      "slug": "promisse-apps-reduces-deploy-to-10s-and-scales-1000-bots-with-square-cloud-enterprise"
+    },
+    "es": {
+      "title": "Promisse Apps reduce el despliegue a 10s y escala +1,000 bots con Square Cloud Enterprise",
+      "description": "Descubre cómo Promisse Apps superó limitaciones críticas de escalabilidad y redujo su tiempo de despliegue a solo 10 segundos con Square Cloud Enterprise. Este estudio de caso muestra cómo la empresa optimizó su infraestructura para operar más de 1,000 bots simultáneamente, con alta estabilidad, baja latencia y excelente soporte técnico. Una lectura obligada para quienes buscan rendimiento, fiabilidad y crecimiento sostenible en entornos críticos.",
+      "slug": "promisse-apps-reduce-el-despliegue-a-10s-y-escala-1000-bots-con-square-cloud-enterprise"
+    },
+    "zh": {
+      "title": "Promisse Apps 将部署时间缩短至 10 秒，并通过 Square Cloud Enterprise 扩展至 +1,000 个机器人",
+      "description": "了解 Promisse Apps 如何克服关键的可扩展性限制，并通过 Square Cloud Enterprise 将其部署时间缩短至仅 10 秒。本案例研究展示了该公司如何优化其基础设施，以同时操作超过 1,000 个机器人，具有高稳定性、低延迟和出色的技术支持。对于寻求在关键任务环境中实现性能、可靠性和可持续增长的企业来说，这是必读之作。",
+      "slug": "promisse-apps-将部署时间缩短至-10-秒并通过-square-cloud-enterprise-扩展至-1000-个机器人"
+    }
+  },
+  "created_at": "",
+  "updated_at": ""
+}

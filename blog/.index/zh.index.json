@@ -1,4 +1,20 @@
 {
-  "articles": {},
+  "articles": {
+    "l1VUb75hK2lb": {
+      "id": "l1VUb75hK2lb",
+      "path": "customers/joao-pedro",
+      "author": {
+        "name": "Square Cloud"
+      },
+      "metadata": {
+        "title": "Promisse Apps 将部署时间缩短至 10 秒，并通过 Square Cloud Enterprise 扩展至 +1,000 个机器人",
+        "description": "了解 Promisse Apps 如何克服关键的可扩展性限制，并通过 Square Cloud Enterprise 将其部署时间缩短至仅 10 秒。本案例研究展示了该公司如何优化其基础设施，以同时操作超过 1,000 个机器人，具有高稳定性、低延迟和出色的技术支持。对于寻求在关键任务环境中实现性能、可靠性和可持续增长的企业来说，这是必读之作。",
+        "slug": "promisse-apps-将部署时间缩短至-10-秒并通过-square-cloud-enterprise-扩展至-1000-个机器人"
+      },
+      "created_at": "",
+      "updated_at": "",
+      "content": "### **Promisse Apps 如何通过 Square Cloud Enterprise 将部署时间缩短至 10 秒并扩展到超过 1,000 个机器人**\n\nPromisse Apps 为超过 1,000 个活跃客户提供先进的自动化解决方案。为了大规模运营，公司需要一个能够消除连接瓶颈并实现近乎即时更新的基础设施，以确保为客户提供稳定性和高性能。\n\n<Alert intent=\"info\" title=\"在使用 Square Cloud Enterprise 之前，Promisse Apps 的基础设施面临着严重的可扩展性和稳定性限制。\" />\n\n#### 可扩展性挑战比 Promisse Apps 想象的要大\n\nPromisse Apps 的增长受限于一个技术障碍：其先前基础设施中每个 IP 地址的连接数限制。这一限制阻碍了日益增多的机器人的同时运行，导致不稳定并延迟了开发周期。团队无法以业务所需的快速扩张速度进行扩展。频繁部署的需求使情况变得更糟，这些部署在其以前的提供商上需要数小时才能完成。这不仅延迟了新功能的交付，还影响了期望快速可靠响应的最终用户体验。\n\n#### Square Cloud 的动态基础设施解决方案\n\n通过迁移到 **Square Cloud Enterprise**，Promisse Apps 获得了一个拥有数千个**动态分布式 IP** 的高性能架构。这一变化消除了连接瓶颈，为前所未有的增长提供了必要的基础。强大的基础设施现在不仅支持机器人，还支持公司的所有项目，包括公司网站，将运营集中在一个可靠和优化的环境中。\n\n他们还将部署时间大幅缩短，现在超过 1,000 个应用程序同时部署仅需 **10 秒**。这意味着团队可以在不影响稳定性或性能的情况下，在创纪录的时间内发布更新和新功能。得益于 Square Cloud 的基础设施速度，配备企业级 NVMe SSD 和高容量网络（10Gbit），应用程序之间内部请求的平均延迟降至 **30 毫秒**以下。\n\n“我们机器人可扩展性的主要障碍是 IP 限制。通过 Square Cloud Enterprise，我们克服了这一障碍，并获得了一个能够跟上我们增长步伐的稳定基础设施。成本效益和专属支持起到了决定性作用。”\n\n> — **João Pedro**，Promisse Apps 首席执行官\n\n#### 理解业务的重要性\n\n对于 Square Cloud 来说，理解 Promisse Apps 的具体需求至关重要。支持团队与该公司密切合作，以确定关键点并开发满足其可扩展性和性能需求的定制解决方案。Square Cloud 不仅提供了强大的基础设施，还成为了战略合作伙伴，帮助 Promisse Apps 克服技术挑战，专注于真正重要的事情：为客户提供创新的解决方案。对 Square Cloud 的信任带来了具体成果，直接影响了运营和客户体验。\n\n- **10 秒** 可同时部署超过 1,000 个应用程序。\n- 应用程序之间内部请求的平均延迟 **\\< 30 毫秒**。\n- **速度提升 3 倍**：公司网站响应时间减少最多 3 秒。\n- **+1,000 个机器人** 以高稳定性同时运行。\n\n#### 无限增长\n\nPromisse Apps 不仅克服了可扩展性挑战，还为指数级增长做好了准备。借助 Square Cloud Enterprise，该公司现在拥有一个不仅支持当前运营，而且为未来做好准备的基础设施，使团队能够专注于创新和新解决方案的开发。\n\n准备好象 Promisse Apps 一样扩展您的业务了吗？\nSquare Cloud Enterprise 提供您所需的强大而灵活的基础设施，助您无障碍成长。凭借专属支持和定制解决方案，我们随时帮助您达到新的成功高度。\n[**与专家交谈**](https://squarecloud.app/enterprise) 并了解我们如何通过 Square Cloud Enterprise 改变您的运营。\n"
+    }
+  },
   "snippets": {}
 }
