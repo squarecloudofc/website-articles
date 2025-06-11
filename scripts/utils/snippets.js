@@ -15,7 +15,7 @@ export async function getSnippets(cwd) {
     const availableLocales = files.map(f => f.replace(".mdx", ""))
 
     snippets.push({
-      path: path.split("/").slice(1).join("/"),
+      path: path.split(/[/\\]/).slice(1).join("/"),
       availableLocales
     })
   })
