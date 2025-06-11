@@ -1,6 +1,6 @@
-import { join } from "path";
-import { writeFileSync } from "fs";
 import { generatePostID, generateSlug, getArticles, getFolderFirstUpdate, getFolderLastestUpdate, projects } from "./utils/index.js";
+import { writeFileSync } from "node:fs";
+import { join } from "node:path";
 
 (async function main() {
   for (const project of projects) {
