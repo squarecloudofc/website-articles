@@ -54,7 +54,10 @@ export function getFolderFirstUpdate(folder) {
     if (!files)
       throw new Error("Nenhum arquivo encontrado.");
 
-    const date = execSync(`git log --reverse --format=%aI -- ${files} | head -n 1`, { encoding: "utf8" }).trim();
+    const dates = execSync(`git log --reverse --format=%aI -- ${files}`, { encoding: "utf8" })
+      .split("\n")
+      .filter(Boolean);
+    const date = dates[0] || "";
     return new Date(date);
   } catch (error) {
     return null;
