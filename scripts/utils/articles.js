@@ -1,8 +1,8 @@
-import { globby } from "globby";
-import { dirname, join } from "path"
-import { readdirSync, readFileSync } from "fs"
-import { locales } from "./index.js";
+import { readdirSync, readFileSync } from "node:fs"
 import { parseMdxSnippets } from "./remark.js";
+import { dirname, join } from "node:path"
+import { locales } from "./index.js";
+import { globby } from "globby";
 
 export async function getArticles(cwd) {
   const paths = await globby(["**/*.json"], { cwd })
