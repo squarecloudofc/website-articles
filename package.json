@@ -14,6 +14,7 @@
   "dependencies": {
     "globby": "^14.1.0",
     "nanoid": "^5.1.5",
+    "remark-mdx": "^3.1.0",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "slug": "^11.0.0",

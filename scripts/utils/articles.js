@@ -6,6 +6,7 @@ import remarkParse from "remark-parse";
 import strip from "strip-markdown";
 import remarkStringify from "remark-stringify";
 import { locales } from "./index.js";
+import { parseMdxSnippets } from "./remark.js";
 
 export async function getArticles(cwd) {
   const paths = await globby(["**/*.json"], { cwd })
@@ -41,8 +42,10 @@ export async function getArticlesIndex(project, articles) {
     if (!article.id) continue;
 
     for (const locale of article.availableLocales) {
-      const content = readFileSync(join(project, article.path, `${locale}.mdx`))
-      const plainContent = await convertMarkdownToPlain(content);
+      const rawContent = readFileSync(join(project, article.path, `${locale}.mdx`))
+      const content = await parseMdxSnippets(project, rawContent)
+
+      const plainContent = await convertMarkdownToPlain(rawContent);
 
       indexes[locale][article.id] = {
         id: article.id,
