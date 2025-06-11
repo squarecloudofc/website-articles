@@ -1,10 +1,10 @@
-import { execSync } from "node:child_process"
+import { execSync } from "node:child_process";
 
-export const projects = ["guides", "docs", "blog"]
-export const locales = ["en", "pt-br", "es", "zh"]
+export const projects = ["guides", "docs", "blog"];
+export const locales = ["en", "pt-br", "es", "zh"];
 
-export * from "./articles.js"
-export * from "./snippets.js"
+export * from "./articles.js";
+export * from "./snippets.js";
 
 export function generatePostID() {
   const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -30,15 +30,14 @@ export function getFolderMdxs(folder) {
   return execSync(`git ls-files ${folder} ":!${folder}/metadata.json"`, { encoding: "utf8" })
     .split("\n")
     .filter(Boolean)
-    .map(f => `"${f}"`)
+    .map((f) => `"${f}"`)
     .join(" ");
 }
 
 export function getFolderLastestUpdate(folder) {
   try {
-    const files = getFolderMdxs(folder)
-    if (!files)
-      throw new Error("Nenhum arquivo encontrado.");
+    const files = getFolderMdxs(folder);
+    if (!files) throw new Error("Nenhum arquivo encontrado.");
 
     const date = execSync(`git log -1 --format=%aI -- ${files}`, { encoding: "utf8" }).trim();
     return new Date(date);
@@ -47,12 +46,10 @@ export function getFolderLastestUpdate(folder) {
   }
 }
 
-
 export function getFolderFirstUpdate(folder) {
   try {
-    const files = getFolderMdxs(folder)
-    if (!files)
-      throw new Error("Nenhum arquivo encontrado.");
+    const files = getFolderMdxs(folder);
+    if (!files) throw new Error("Nenhum arquivo encontrado.");
 
     const dates = execSync(`git log --reverse --format=%aI -- ${files}`, { encoding: "utf8" })
       .split("\n")

@@ -11,11 +11,12 @@ export function remarkInlineSnippets(options) {
   return async (tree, file) => {
     const replacements = [];
 
-    visit(tree,
-      node => node.type === "mdxJsxFlowElement" && node.name === "Snippet",
+    visit(
+      tree,
+      (node) => node.type === "mdxJsxFlowElement" && node.name === "Snippet",
       (node, index, parent) => {
         if (!parent || typeof index !== "number") return;
-        const attrSrc = node.attributes.find(a => a.name === "src");
+        const attrSrc = node.attributes.find((a) => a.name === "src");
         if (attrSrc && typeof attrSrc.value === "string") {
           replacements.push({ parent, index, src: attrSrc.value });
         }
@@ -28,15 +29,12 @@ export function remarkInlineSnippets(options) {
       try {
         snippetContent = await readFile(snippetPath, "utf8");
       } catch (err) {
-        console.log(err)
+        console.log(err);
         file.message(`Não consegui ler o snippet em ${snippetPath}: ${err.message}`);
         continue;
       }
 
-      const snippetAst = unified()
-        .use(remarkParse)
-        .use(remarkMdx)
-        .parse(snippetContent);
+      const snippetAst = unified().use(remarkParse).use(remarkMdx).parse(snippetContent);
 
       parent.children.splice(index, 1, ...snippetAst.children);
     }
@@ -48,7 +46,7 @@ export async function parseMdxSnippets(project, content) {
     .use(remarkParse)
     .use(remarkMdx)
     .use(remarkInlineSnippets, {
-      rootDir: project
+      rootDir: project,
     })
     .use(remarkStringify, {
       bullet: "-",

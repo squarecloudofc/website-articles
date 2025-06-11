@@ -8,7 +8,7 @@ import { join, resolve } from "node:path";
     const articlesIndexes = await getArticlesIndex(project, articles);
 
     const snippets = await getSnippets(project);
-    const snippetsIndexes = await getSnippetsIndex(project, snippets)
+    const snippetsIndexes = await getSnippetsIndex(project, snippets);
 
     const indexesPath = resolve(project, ".index");
     mkdirSync(indexesPath, { recursive: true });
@@ -19,11 +19,7 @@ import { join, resolve } from "node:path";
         snippets: snippetsIndexes[locale],
       };
 
-      writeFileSync(
-        join(indexesPath, `${locale}.index.json`),
-        JSON.stringify(content, null, 2)
-      );
+      writeFileSync(join(indexesPath, `${locale}.index.json`), JSON.stringify(content, null, 2));
     }
   }
 })();
-

@@ -26,4 +26,5 @@ The goal of this project is to share knowledge, tips, and practical examples for
 Important: Please ensure your contributions follow the project's style and guidelines. Articles should be well-structured, informative, and relevant to Square Cloud users.
 
 ---
+
 Feel free to suggest topics or send questions!
