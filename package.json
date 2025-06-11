@@ -7,7 +7,8 @@
   "scripts": {
     "generate": "npm run generate:indexes && npm run generate:metadata",
     "generate:indexes": "node scripts/generate-indexes.js",
-    "generate:metadata": "node scripts/generate-metadata.js"
+    "generate:metadata": "node scripts/generate-metadata.js",
+    "dev:prettier": "prettier --write ."
   },
   "keywords": [],
   "license": "AGPL-3.0",
@@ -17,5 +18,8 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "unified": "^11.0.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
   }
 }
