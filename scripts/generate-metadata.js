@@ -61,8 +61,6 @@ function generateDocsMetadata(article) {
   const createdAt = getFolderFirstUpdate(join("docs", article.$info.path))
   const updatedAt = getFolderLastestUpdate(join("docs", article.$info.path))
 
-  console.log(createdAt, article.created_at, new Date())
-  console.log(createdAt ?? article.created_at ?? new Date())
   return {
     $schema: "https://cdn.squarecloud.app/articles/schema.json",
     type: "docs",
