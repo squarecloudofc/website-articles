@@ -7,7 +7,7 @@ import { unified } from "unified";
 import { join } from "node:path";
 
 export function remarkInlineSnippets(options) {
-  const { rootDir } = options;
+  const { rootDir, lang } = options;
   return async (tree, file) => {
     const replacements = [];
 
@@ -16,20 +16,19 @@ export function remarkInlineSnippets(options) {
       (node) => node.type === "mdxJsxFlowElement" && node.name === "Snippet",
       (node, index, parent) => {
         if (!parent || typeof index !== "number") return;
-        const attrSrc = node.attributes.find((a) => a.name === "src");
+        const attrSrc = node.attributes.find((a) => a.name === "src" || a.name === "file");
         if (attrSrc && typeof attrSrc.value === "string") {
-          replacements.push({ parent, index, src: attrSrc.value });
+          replacements.push({ parent, index, src: attrSrc.value.replace(".mdx", "") });
         }
       }
     );
 
     for (const { parent, index, src } of replacements) {
-      const snippetPath = join(rootDir, src, "pt-br.mdx");
+      const snippetPath = join(rootDir, src, `${lang}.mdx`);
       let snippetContent;
       try {
         snippetContent = await readFile(snippetPath, "utf8");
       } catch (err) {
-        console.log(err);
         file.message(`Não consegui ler o snippet em ${snippetPath}: ${err.message}`);
         continue;
       }
@@ -41,12 +40,13 @@ export function remarkInlineSnippets(options) {
   };
 }
 
-export async function parseMdxSnippets(project, content) {
+export async function parseMdxSnippets(project, lang, content) {
   const file = await unified()
     .use(remarkParse)
     .use(remarkMdx)
     .use(remarkInlineSnippets, {
-      rootDir: project,
+      rootDir: join(project, "_snippets"),
+      lang,
     })
     .use(remarkStringify, {
       bullet: "-",

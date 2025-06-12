@@ -7,9 +7,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "",
-        "description": "",
-        "slug": ""
+        "title": "Automatic Deletion of Files When Deploying an Application to Square Cloud",
+        "description": "Learn about the files that are automatically deleted when deploying an application to Square Cloud.",
+        "slug": "automatic-deletion-of-files-when-deploying-an-application-to-square-cloud"
       },
       "created_at": "2025-05-30T20:46:20.000Z",
       "updated_at": "2025-05-30T20:46:20.000Z",
@@ -22,9 +22,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "",
-        "description": "",
-        "slug": ""
+        "title": "How to use Auto Restart in Square Cloud",
+        "description": "Learn how to use Auto Restart in Square Cloud to automatically restart your application in case it crashes.",
+        "slug": "how-to-use-auto-restart-in-square-cloud"
       },
       "created_at": "2025-05-30T21:17:05.000Z",
       "updated_at": "2025-05-30T21:17:05.000Z",
@@ -37,9 +37,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "",
-        "description": "",
-        "slug": ""
+        "title": "How to debug your Application",
+        "description": "Learn how to debug your application using discord.py and discord.js.",
+        "slug": "how-to-debug-your-application"
       },
       "created_at": "2025-05-30T20:46:20.000Z",
       "updated_at": "2025-05-30T20:46:20.000Z",
@@ -58,7 +58,7 @@
       },
       "created_at": "2025-05-30T00:14:55.000Z",
       "updated_at": "2025-05-30T16:46:52.000Z",
-      "content": "## 🚀 Introdução\n\n- Antes de começar, certifique-se de ter o Python instalado no seu sistema. Caso ainda não tenha, você pode baixá-lo no [site oficial do Python](https://www.python.org/).\n- Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito através da [página de login](https://squarecloud.app/login). Você pode usar seu e-mail para criar sua conta.\n- Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir aquele que melhor atenda às suas necessidades [aqui](https://squarecloud.app/plans).\n\n## 💻 Preparando sua aplicação\n\n### 📖 Dependências\n\n#### 📝 Criando o arquivo requirements.txt\n\nPara criar seu arquivo requirements.txt, você precisa listar todas as suas dependências no corpo do arquivo.\nVeja como ficaria ele possuindo as dependências Flask e waitress.\n\nflask\nwaitress\n\nNote que apenas listando assim, o gerenciador de pacotes instalará a versão mais recente do pacote.\nCaso queira uma versão específica, passe dois sinais de igual e o numero da versão correspondente.\n\nflask==3.1.0\nwaitress==3.0.2\n\nSe você utilizar do comando `pip freeze`, serão listados além da suas dependências, as dependências delas.\nExemplificando, se você possui o `discord-py` instalado como dependência, o pip listará o `aiohttp` que é uma dependência da\nbiblioteca discord-py. Isso gera um arquivo mais extenso desnecessáriamente e se utilizado no ambiente global, pode haver\ndependências desnecessárias vindas de outros projetos.\n\n<Snippet src=\"_snippets/requirements-txt\" />\n\n### 📂 Arquivos necessários\n\nEnquanto prepara seu projeto para envio, certifique-se de incluir, além do seu código, o `squarecloud.app/config` e o seu arquivo de dependencia previamente preparado.\nVocê pode encontrar mais informações sobre como criar o `squarecloud.app/config` [aqui](https://docs.squarecloud.app/getting-started/config-file). Caso envie através de nosso dashboard, não é necessário criar\no arquivo de configuração previamente basta compactar o código e o arquivo de dependências.\n\n### ⚙️ Configurando o webserver\n\nPara configurar seu webserver waitress, é necessário que modifique seu código para que fique semelhante ao seguinte.\n\n```python\nfrom flask import Flask\n# Import serve function from Waitress\nfrom waitress import serve\n\n# Instância da aplicação flask\napp = Flask(__name__)\n\n# Suas rotas...\n\n# Serve a aplicação com host 0.0.0.0 (todas interfaces) e porta 80\nserve(app, host='0.0.0.0', port=80)\n```\n\n## ☁️ Enviando o projeto\n\nCompacte todos os arquivos de código necessários, arquivos de dependências e de configuração. Após isso, anexe o zip na [página de upload](https://squarecloud.app/dashboard/upload)\nou envie utilizando de nossa API.\n"
+      "content": "## 🚀 Introdução\n\n- Antes de começar, certifique-se de ter o Python instalado no seu sistema. Caso ainda não tenha, você pode baixá-lo no [site oficial do Python](https://www.python.org/).\n- Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito através da [página de login](https://squarecloud.app/login). Você pode usar seu e-mail para criar sua conta.\n- Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir aquele que melhor atenda às suas necessidades [aqui](https://squarecloud.app/plans).\n\n## 💻 Preparando sua aplicação\n\n### 📖 Dependências\n\n#### 📝 Criando o arquivo requirements.txt\n\nPara criar seu arquivo requirements.txt, você precisa listar todas as suas dependências no corpo do arquivo.\nVeja como ficaria ele possuindo as dependências Flask e waitress.\n\nflask\nwaitress\n\nNote que apenas listando assim, o gerenciador de pacotes instalará a versão mais recente do pacote.\nCaso queira uma versão específica, passe dois sinais de igual e o numero da versão correspondente.\n\nflask==3.1.0\nwaitress==3.0.2\n\nSe você utilizar do comando `pip freeze`, serão listados além da suas dependências, as dependências delas.\nExemplificando, se você possui o `discord-py` instalado como dependência, o pip listará o `aiohttp` que é uma dependência da\nbiblioteca discord-py. Isso gera um arquivo mais extenso desnecessáriamente e se utilizado no ambiente global, pode haver\ndependências desnecessárias vindas de outros projetos.\n\n<Snippet file=\"requirements-txt\" />\n\n### 📂 Arquivos necessários\n\nEnquanto prepara seu projeto para envio, certifique-se de incluir, além do seu código, o `squarecloud.app/config` e o seu arquivo de dependencia previamente preparado.\nVocê pode encontrar mais informações sobre como criar o `squarecloud.app/config` [aqui](https://docs.squarecloud.app/getting-started/config-file). Caso envie através de nosso dashboard, não é necessário criar\no arquivo de configuração previamente basta compactar o código e o arquivo de dependências.\n\n### ⚙️ Configurando o webserver\n\nPara configurar seu webserver waitress, é necessário que modifique seu código para que fique semelhante ao seguinte.\n\n```python\nfrom flask import Flask\n# Import serve function from Waitress\nfrom waitress import serve\n\n# Instância da aplicação flask\napp = Flask(__name__)\n\n# Suas rotas...\n\n# Serve a aplicação com host 0.0.0.0 (todas interfaces) e porta 80\nserve(app, host='0.0.0.0', port=80)\n```\n\n## ☁️ Enviando o projeto\n\nCompacte todos os arquivos de código necessários, arquivos de dependências e de configuração. Após isso, anexe o zip na [página de upload](https://squarecloud.app/dashboard/upload)\nou envie utilizando de nossa API.\n"
     },
     "eAnvDXUoHxtZ": {
       "id": "eAnvDXUoHxtZ",
@@ -112,9 +112,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "Resolvendo MODULE_NOT_FOUND",
-        "description": "Aprenda como resolver o problema MODULE_NOT_FOUND em seu aplicativo.",
-        "slug": "resolvendo-modulenotfound"
+        "title": "Solving MODULE_NOT_FOUND",
+        "description": "Learn how to resolve the MODULE_NOT_FOUND issue in your application.",
+        "slug": "solving-modulenotfound"
       },
       "created_at": "2025-05-30T20:03:16.000Z",
       "updated_at": "2025-05-30T20:03:16.000Z",
@@ -127,9 +127,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "Resolvendo TOKEN_INVALID",
-        "description": "Aprenda como resolver o erro de código TOKEN_INVALID e garantir uma comunicação eficiente com a API do Discord.",
-        "slug": "resolvendo-tokeninvalid"
+        "title": "Solving TOKEN_INVALID",
+        "description": "Learn how to resolve the TOKEN_INVALID code error and ensure smooth communication with the Discord API.",
+        "slug": "solving-tokeninvalid"
       },
       "created_at": "2025-05-30T20:03:16.000Z",
       "updated_at": "2025-05-30T20:03:16.000Z",
@@ -142,9 +142,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "Resolvendo LACK_OF_CPU",
-        "description": "Aprenda como resolver o problema de LACK_OF_CPU na sua aplicação.",
-        "slug": "resolvendo-lackofcpu"
+        "title": "Solving LACK_OF_CPU",
+        "description": "Learn how to resolve the LACK_OF_CPU issue in your application.",
+        "slug": "solving-lackofcpu"
       },
       "created_at": "2025-05-30T20:03:16.000Z",
       "updated_at": "2025-05-30T20:03:16.000Z",
@@ -157,9 +157,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "Resolvendo LACK_OF_RAM",
-        "description": "Aprenda como resolver o problema de LACK_OF_RAM na sua aplicação.",
-        "slug": "resolvendo-lackofram"
+        "title": "Solving LACK_OF_RAM",
+        "description": "Learn how to resolve the LACK_OF_RAM issue in your application.",
+        "slug": "solving-lackofram"
       },
       "created_at": "2025-05-30T20:03:16.000Z",
       "updated_at": "2025-05-30T20:03:16.000Z",
@@ -172,9 +172,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "Resolvendo INVALID_DEPENDENCY",
-        "description": "Aprenda como resolver o problema INVALID_DEPENDENCY em seu aplicativo.",
-        "slug": "resolvendo-invaliddependency"
+        "title": "Solving INVALID_DEPENDENCY",
+        "description": "Learn how to resolve the Solving INVALID_DEPENDENCY issue in your application.",
+        "slug": "solving-invaliddependency"
       },
       "created_at": "2025-05-30T20:03:16.000Z",
       "updated_at": "2025-05-30T20:03:16.000Z",
@@ -187,9 +187,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "Resolvendo o problema Lavalink Fechado Anormalmente",
-        "description": "Devido a atualizações recentes do Lavalink, você pode se deparar com o seguinte erro: Lavalink Fechado Anormalmente. Este artigo vai te ajudar a resolver esse problema.",
-        "slug": "resolvendo-o-problema-lavalink-fechado-anormalmente"
+        "title": "Solving Lavalink Closed Abnormally issue",
+        "description": "Due to recent Lavalink updates you may come across the following error: Lavalink Closed Abnormally. This article will help you solve this issue.",
+        "slug": "solving-lavalink-closed-abnormally-issue"
       },
       "created_at": "2025-05-30T20:03:16.000Z",
       "updated_at": "2025-05-30T20:03:16.000Z",
@@ -202,9 +202,9 @@
         "name": "Square Cloud"
       },
       "metadata": {
-        "title": "Resolvendo ABUSE_REQUESTS",
-        "description": "Aprenda como resolver o erro ABUSE_REQUESTS, causado por solicitações excessivas às APIs do Discord e/ou Amino, e garanta que sua aplicação funcione corretamente.",
-        "slug": "resolvendo-abuserequests"
+        "title": "Solving ABUSE_REQUESTS",
+        "description": "Learn how to address the ABUSE_REQUESTS error, caused by excessive requests to Discord and/or Amino APIs, and ensure your application runs smoothly.",
+        "slug": "solving-abuserequests"
       },
       "created_at": "2025-05-30T20:03:16.000Z",
       "updated_at": "2025-05-30T20:03:16.000Z",

@@ -23,7 +23,6 @@ export async function getArticles(cwd) {
       if (!locales.includes(k)) delete metadata.metadata[k]
     })
 
-    // if (cwd === "docs") console.log(metadata, article)
     const availableLocales = files.filter(v => localesExt.includes(v))
     articles.push({
       ...metadata,
@@ -53,8 +52,9 @@ export async function getArticlesIndex(project, articles) {
 
     for (const articleLocale of locales) {
       const contentLocale = pickLocale(articleLocale, available)
-      const metadataLocale = pickLocale(articleLocale, availableMetadata);
-      if (!contentLocale || !metadataLocale) continue
+      if (!contentLocale) continue
+
+      if (!availableMetadata.includes(contentLocale)) continue;
 
       if ((project === "docs" && !article.$info.path)
         || (project === "guides" && !article.id))
@@ -63,12 +63,15 @@ export async function getArticlesIndex(project, articles) {
 
 
       const rawContent = readFileSync(join(project, article.$info.path, `${contentLocale}.mdx`));
-      const content = await parseMdxSnippets(project, rawContent);
+      const content = await parseMdxSnippets(project, contentLocale, rawContent);
+
+      const metadataObj = article.metadata[contentLocale];
+      if (!metadataObj?.slug) continue;
 
       switch (project) {
         case "docs":
           indexes[articleLocale][article.$info.path] = {
-            metadata: article.metadata[metadataLocale],
+            metadata: metadataObj,
             created_at: article.created_at,
             updated_at: article.updated_at,
             content: content.toString(),
@@ -80,7 +83,7 @@ export async function getArticlesIndex(project, articles) {
             path: article.$info.path,
             author: article.author,
             attributes: article.attributes,
-            metadata: article.metadata[metadataLocale],
+            metadata: metadataObj,
             created_at: article.created_at,
             updated_at: article.updated_at,
             content: content.toString(),
