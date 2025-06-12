@@ -1,0 +1,12 @@
+{
+  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
+  "type": "docs",
+  "metadata": {
+    "pt-br": {
+      "title": "😁 Welcome to the Square Platform",
+      "description": "Square Cloud is a platform that provides hassle-free, user-friendly enterprise hosting services. Get started in minutes. ✨"
+    }
+  },
+  "created_at": "2025-06-12T17:41:34.503Z",
+  "updated_at": "2025-06-12T17:41:34.503Z"
+}

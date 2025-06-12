@@ -1,6 +1,6 @@
 import { execSync } from "node:child_process";
 
-export const projects = ["guides", "docs", "blog"];
+export const projects = ["guides", "docs"];
 export const locales = ["en", "pt-br", "es", "zh"];
 
 export * from "./articles.js";
@@ -54,7 +54,9 @@ export function getFolderFirstUpdate(folder) {
     const dates = execSync(`git log --reverse --format=%aI -- ${files}`, { encoding: "utf8" })
       .split("\n")
       .filter(Boolean);
-    const date = dates[0] || "";
+
+    const date = dates[0] || null;
+    if (!date) return null
     return new Date(date);
   } catch (error) {
     return null;
