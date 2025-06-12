@@ -40,32 +40,47 @@ export async function getArticles(cwd) {
 export async function getArticlesIndex(project, articles) {
   const indexes = Object.fromEntries(locales.map((locale) => [locale, {}]));
 
-  // console.log(project, articles)
+  const pickLocale = (target, available) => {
+    if (available.includes(target)) {
+      return target;
+    }
+    return locales.find((loc) => available.includes(loc));
+  };
+
   for (const article of articles) {
-    for (const locale of article.$info.availableLocales) {
-      const rawContent = readFileSync(join(project, article.$info.path, `${locale}.mdx`));
+    const available = article.$info.availableLocales
+    const availableMetadata = Object.keys(article.metadata);
+
+    for (const articleLocale of locales) {
+      const contentLocale = pickLocale(articleLocale, available)
+      const metadataLocale = pickLocale(articleLocale, availableMetadata);
+      if (!contentLocale || !metadataLocale) continue
+
+      if ((project === "docs" && !article.$info.path)
+        || (project === "guides" && !article.id))
+        continue;
+
+
+
+      const rawContent = readFileSync(join(project, article.$info.path, `${contentLocale}.mdx`));
       const content = await parseMdxSnippets(project, rawContent);
 
       switch (project) {
         case "docs":
-          if (!article.$info.path) continue
-
-          indexes[locale][article.$info.path] = {
-            metadata: article.metadata[locale],
+          indexes[articleLocale][article.$info.path] = {
+            metadata: article.metadata[metadataLocale],
             created_at: article.created_at,
             updated_at: article.updated_at,
             content: content.toString(),
           };
           break
         case "guides":
-          if (!article.id) continue
-
-          indexes[locale][article.id] = {
+          indexes[articleLocale][article.id] = {
             id: article.id,
             path: article.$info.path,
             author: article.author,
             attributes: article.attributes,
-            metadata: article.metadata[locale],
+            metadata: article.metadata[metadataLocale],
             created_at: article.created_at,
             updated_at: article.updated_at,
             content: content.toString(),
@@ -74,8 +89,6 @@ export async function getArticlesIndex(project, articles) {
       }
     }
   }
-
-  if (project === "docs") console.log(articles)
 
   return indexes;
 }
