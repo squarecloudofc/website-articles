@@ -61,12 +61,12 @@ export async function getArticlesIndex(project, articles) {
         continue;
 
 
-
       const rawContent = readFileSync(join(project, article.$info.path, `${contentLocale}.mdx`));
       const content = await parseMdxSnippets(project, contentLocale, rawContent);
 
       const metadataObj = article.metadata[contentLocale];
-      if (!metadataObj?.slug) continue;
+
+      if (project === "guides" && !metadataObj?.slug) continue;
 
       switch (project) {
         case "docs":
