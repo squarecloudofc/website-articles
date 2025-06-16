@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Get Application Logs",
+      "description": "Collect the latest logs from your application. It has a rate limit of 1 request every 5 seconds.",
+      "sidebarTitle": "/v2/apps/:appId/logs"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

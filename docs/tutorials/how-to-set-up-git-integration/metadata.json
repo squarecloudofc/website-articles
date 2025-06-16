@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "How to set up Git integration in your application",
+      "description": "Learn how to configure Git integration on Square Cloud",
+      "sidebarTitle": "GitHub integration"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

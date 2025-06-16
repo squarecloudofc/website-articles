@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Managing Files",
+      "description": "In this section, you will find information and examples on how to manipulate the files associated with your application. Learn how to list, read, create, and delete files using the Square Cloud JavaScript SDK."
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

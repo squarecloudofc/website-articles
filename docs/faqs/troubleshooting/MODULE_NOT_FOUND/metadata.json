@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Solving MODULE_NOT_FOUND",
+      "description": "Learn how to resolve the MODULE_NOT_FOUND issue in your application.",
+      "sidebarTitle": "Solving MODULE_NOT_FOUND"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

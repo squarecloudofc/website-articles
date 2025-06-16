@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "List Deployments",
+      "description": "Get the last 10 deployments of an application from the last 24 hours.",
+      "sidebarTitle": "[...]/deployments"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

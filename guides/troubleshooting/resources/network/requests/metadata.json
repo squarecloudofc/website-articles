@@ -1,5 +1,5 @@
 {
-  "$schema": "https://cdn.squarecloud.app/articles/schema.json",
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
   "id": "dHIgwyjxOfxd",
   "author": {
     "name": "Square Cloud"

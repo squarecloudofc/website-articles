@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Blob Account Stats",
+      "description": "This documentation provides a comprehensive overview of the GET /v1/stats endpoint of the SquareCloud Blob API.",
+      "sidebarTitle": "Account Stats"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

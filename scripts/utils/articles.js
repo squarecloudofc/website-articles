@@ -15,7 +15,7 @@ export async function getArticles(cwd) {
 
     let metadata = {};
     try {
-      metadata = JSON.parse(readFileSync(join(cwd, article)));
+      metadata = JSON.parse(readFileSync(join(cwd, article)).toString());
       delete metadata["$schema"];
     } catch (_) { }
 

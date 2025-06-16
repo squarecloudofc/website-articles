@@ -47,7 +47,7 @@ function generateGuidesMetadata(article) {
   }, {})
 
   return {
-    $schema: "https://cdn.squarecloud.app/articles/schema.json",
+    $schema: "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
     id: articleId,
     author: { name: article.author?.name ?? "Square Cloud" },
     metadata: metadata,
@@ -62,7 +62,7 @@ function generateDocsMetadata(article) {
   const updatedAt = getFolderLastestUpdate(join("docs", article.$info.path))
 
   return {
-    $schema: "https://cdn.squarecloud.app/articles/schema.json",
+    $schema: "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
     type: "docs",
     metadata: article.metadata,
     created_at: createdAt ?? article.created_at ?? new Date(),

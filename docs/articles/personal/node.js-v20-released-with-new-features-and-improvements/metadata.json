@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Node.js 20 Now an LTS Release",
+      "description": "As of October 24, 2023, Node.js 20 has been officially designated as the Long-Term Support (LTS) version, accompanied by a host of exciting new features and enhancements."
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

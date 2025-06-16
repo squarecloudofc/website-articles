@@ -1,0 +1,151 @@
+
+## 🚀 Introduction
+
+- Before you begin, make sure you have Node.js and npm installed on your system. If you don't have them yet, you can download them from the [official Node.js website](https://nodejs.org/).
+- Next, you will need to create an account on Square Cloud, which can be done through the [login page](https://squarecloud.app/login). You can use either your email or Discord, or both, to create an account.
+- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
+
+## ⚙️ Creating the squarecloud config file
+
+<Card
+  title="Learn about: how to make the configuration file for Square Cloud."
+  icon="link"
+  href="https://docs.squarecloud.app/getting-started/config-file"
+>
+  The squarecloud.app file is a configuration file that will be used to
+  configure your application; it will be used to define the name, description,
+  version, main file, among other things.
+</Card>
+
+## ▶️ Start Application
+
+<Tabs>
+  <Tab title="Javascript">
+    - If the `START` field is not defined in the configuration file, Square Cloud will by default run `node` with optimization options and specific parameters. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
+  </Tab>
+  <Tab title="Typescript">
+    - If the `START` field is not defined in the configuration file, Square Cloud will by default run `npx tsx MAIN` to compile and execute the main TypeScript file specified by `MAIN` field. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
+  </Tab>
+</Tabs>
+
+- If the `node_modules` folder does not exist, Square Cloud will run `npm install --no-package-lock --no-audit --no-fund` to install dependencies and clean the `.npm` folder.
+
+## 🖥️ Preparing Your Node.js Project
+
+### 📁 Essential Configuration Files
+
+When preparing your Node.js project for deployment on Square Cloud, ensure that you include your configuration file (`squarecloud.app/.config`) and the essential files of your application in a zip file.
+
+<Warning>The configuration (`squarecloud.app/.config`) file must be located in the root of the zip file. Otherwise, Square Cloud will not be able to find it during deployment.</Warning>
+
+#### 🗑️ Files to Exclude Before Uploading
+
+- `node_modules`: This folder is not required to be sent as it will be created during the installation process in the production environment.
+- `package-lock.json`: This file is not necessary because the production environment will install dependencies based on `package.json`.
+
+### 🤔 Why Exclude These Files?
+
+There are several reasons to exclude `node_modules` and `package-lock.json` before uploading your project:
+
+1. **Installation Consistency:** Not sending the `node_modules` folder ensures that dependencies are installed by the production environment, resulting in a consistent build free from local system discrepancies.
+
+2. **Updated Installations:** The production environment will install the latest compatible versions of the dependencies listed in `package.json`, providing a clean start for your application.
+
+3. **Reduced Upload Size:** Leaving out these files decreases the size of your upload file, which speeds up the upload process and makes deployment more efficient.
+
+By doing this, you can ensure that your Node.js application is optimally prepared and secure for deployment to Square Cloud.
+
+### 📄 Required Files
+
+Three files are required to host your Node project:
+
+- [squarecloud.app/.config](/getting-started/config-file)
+- mainFile.js/.ts (Example of main file)
+- [package.json](./how-to-create-your-package-json.mdx) (Dependency file)
+
+<Note>
+  Square Cloud natively supports `TypeScript`, running your project through
+  ts-node, but it is recommended to always compile to `JavaScript` since we are
+  a production platform.
+</Note>
+
+## 💡 Troubleshooting
+
+<AccordionGroup>
+  <Accordion
+    title="The main file is invalid or corrupted"
+    icon="file"
+    iconType="solid"
+  >
+    This error occurs when the file defined as "main" for your application in
+    the configuration file does not exist, is written incorrectly, or the path
+    is incorrect. If your main file is inside a folder, for example, you should
+    enter `folder/file.js`.
+  </Accordion>
+  <Accordion title="Bad Memory" icon="memory" iconType="solid">
+    The minimum amount of RAM required to host a bot is 256MB, and for a
+    website/API, it's 512MB. However, depending on the size and complexity of
+    your application, it may be advisable to allocate a larger amount of RAM to
+    avoid the
+    [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM)
+    error.
+  </Accordion>
+</AccordionGroup>
+
+## 📤 Uploading Project to Square Cloud
+
+After preparing your project files, you can now upload them to Square Cloud and host your project.
+
+<Tabs>
+  <Tab title="Dashboard Upload">
+    Access the [Square Cloud
+    Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
+    files.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI Upload">
+    <Steps>
+      <Step title="First Step">
+        First, you need to have the CLI installed in your environment. If you
+        don't have it yet, run the following command in your terminal:
+        ```
+        npm install -g @squarecloud/cli
+        ```
+        If you already have it, we recommend updating it. To do this, run the following command in your terminal:
+        <Tabs>
+          <Tab title="Windows">
+            ```bash
+            squarecloud update
+            ```
+          </Tab>
+          <Tab title="Linux, macOS, and WSL">
+            ```bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            ```
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Second Step">
+        Now, to authenticate and use other CLI commands, you will find your
+        authorization key [here](https://squarecloud.app/account) by clicking on
+        "Request API Key". After obtaining your authorization key, run the
+        following command: 
+        ```bash 
+        squarecloud login
+        ```
+      </Step>
+      <Step title="Third Step">
+        Finally, to deploy your application to Square Cloud using the CLI, you
+        need to execute the following command, passing the path of your zip
+        file: 
+        ```bash 
+        squarecloud upload zip
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).

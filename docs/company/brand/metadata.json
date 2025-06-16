@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Brand",
+      "description": "Discover the origins, symbolism, and intrinsic connection of our logo at Square Cloud, a flexible cloud infrastructure designed from the ground up for adaptability.",
+      "sidebarIcon": "copyright"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

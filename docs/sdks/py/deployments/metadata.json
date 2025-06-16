@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Deployments",
+      "description": "This guide provides examples on how to integrate and manage application deployments using this SDK. You will learn how to create GitHub integrations, retrieve current integration details, and view the latest deployments using both the client and application objects."
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

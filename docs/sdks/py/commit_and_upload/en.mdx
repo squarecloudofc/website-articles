@@ -1,0 +1,65 @@
+
+You can make commits and uploads using Client or Application. You
+just need a `squarecloud.File` object and pass the path where your
+zip file is.
+
+## Making a commit
+
+<Tabs>
+    <Tab title="Using Client">
+    ```python
+    import squarecloud as square
+
+    client = square.Client('API_KEY')
+
+    async def example():
+        file = square.File('path/to/you/file.zip')
+        await client.commit(file=file, app_id='application_id')
+    ```
+    </Tab>
+
+    <Tab title="Using Application">
+    ```python
+    import squarecloud as square
+
+    client = square.Client('API_KEY')
+
+    async def example():
+        app = await client.app(app_id='application_id')
+        file = square.File('path/to/you/file.zip')
+        await app.commit(file=file)
+    ```
+    </Tab>
+</Tabs>
+
+## Making a upload
+
+To upload an application, you can use only  the [Client].
+
+<Tabs>
+    <Tab title="Using Client">
+    ```python
+    import squarecloud as square
+
+    client = square.Client(...)
+
+    async def example():
+        file = square.File('path/to/you/file.zip')
+        await client.upload_app(file=file)
+    ```
+    </Tab>
+</Tabs>
+
+**Remember that to upload an application you need a zip that contains (at least) the following files:**:
+
+- Main file: responsible for starting your application
+- Dependencies file: contains information about which dependencies are necessary
+- Configuration file (squarecloud.app): a configuration file specifying the
+name,
+description, main file name, version, etc. To learn more about the
+configuration file, take a look at this [guide](https://docs.squarecloud.app/getting-started/config-file).
+
+<Tip>
+    For your convenience, a class has been added to create this configuration file:
+    `squarecloud.utils.ConfigFile`.
+</Tip>

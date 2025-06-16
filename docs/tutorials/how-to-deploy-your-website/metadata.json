@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Hosting Your Website/API on Square Cloud",
+      "description": "Learn how to host your website or API on Square Cloud using the squarecloud.app configuration file.",
+      "sidebarTitle": "Websites and APIs"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

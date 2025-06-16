@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Managing Applications",
+      "description": "In this section, you will learn how to manage your application using the available library. You can interact with your application in various ways, such as obtaining information about the application status, accessing logs, starting, stopping, and restarting the application, as well as managing files associated with it."
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

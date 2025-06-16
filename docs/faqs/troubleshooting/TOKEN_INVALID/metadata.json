@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Solving TOKEN_INVALID",
+      "description": "Learn how to resolve the TOKEN_INVALID code error and ensure smooth communication with the Discord API.",
+      "sidebarTitle": "Solving TOKEN_INVALID"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}

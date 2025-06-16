@@ -1,0 +1,225 @@
+
+## Introduction
+
+- This guide assumes you have an approved bot on [top.gg](https://top.gg/) and are using either Node.js or Python for your project.
+- Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/pricing).
+
+## Setting Up the Environment
+<Tabs>
+  <Tab title="Node.js">
+1. Before you begin, make sure you have Node.js and npm installed on your system. If you don't have them yet, you can download them from the [official Node.js website](https://nodejs.org/).
+2. Start a new Node.js project with the following command:
+
+```bash Terminal
+npm init -y
+```
+
+This command creates a package.json file in the current directory.
+
+2. Install the necessary libraries:
+
+```bash Terminal
+npm install @top-gg/sdk express
+```
+  </Tab>
+    <Tab title="Python">
+1. Ensure you have Python and Pip (a package manager for Python) installed on your system. If not, you can download them from the [official Python website](https://www.python.org/) and the [official Pip website](https://pypi.org/).
+2. Install the `flask` and `waitress` libraries using pip:
+
+```bash
+pip install flask
+pip install waitress
+```
+  </Tab>
+</Tabs>
+## Setting Up the Project
+
+**1. Get your webhook authentication:**
+
+  - Go to your Top.gg profile [here](https://top.gg/user/me).
+  - Click "edit" on the bot you want to receive notifications for votes.
+  - Under "GENERAL", choose the "webhook" option.
+  - Set the webhook authentication in "Authorization". In this example, we used "myappsquare".
+
+**2. Implement the webhook listener:**
+
+The following sections provide code examples for both Javascript and Python:
+
+<Tabs>
+  <Tab title="Node.js">
+    We will use the example provided by the top.gg documentation [here](https://docs.top.gg/docs/Libraries/javascript), with some modifications.
+
+```javascript index.js
+// Import libraries
+const Topgg = require("@top-gg/sdk");
+const express = require("express");
+
+// Create Express app and Top.gg webhook instances
+const app = express();
+const webhook = new Topgg.Webhook("YOUR_AUTHORIZATION");
+
+// Define route for '/topgg' endpoint (POST requests)
+app.post("/topgg", webhook.listener((vote) => {
+  // Log vote received message with user ID
+  console.log(`Vote received successfully! User ID: ${vote.user}`);
+}));
+
+// Start server on port 80 (default HTTP)
+app.listen(80);
+```
+  </Tab>
+  <Tab title="Python">
+    For Python, you can use the following code:
+
+```python app.py
+# Import the necessary libraries
+import logging
+import json
+from waitress import serve
+from flask import Flask, request, abort
+
+# Create an instance of the Flask app
+app = Flask(__name__)
+
+# Define your authorization token
+AUTH_TOKEN = 'YOUR_AUTHORIZATION'
+
+# Define a route for the '/topgg' endpoint that accepts POST requests
+@app.route("/topgg", methods=["POST"])
+def hook():
+    # Check the authorization header
+    auth = request.headers.get('Authorization')
+    if auth != AUTH_TOKEN:
+        logging.error('Access denied')
+        abort(401)  # Unauthorized
+
+    # Convert the request data from bytes to a JSON dictionary
+    data = json.loads(request.data)
+    # Print the ID of the user who voted
+    print(f'Vote received successfully! User ID: {data["user"]}')
+    # Return a response with the string "Data received" and status 200 to indicate that the request was processed successfully
+    return "Data received"
+
+# Check if this script is being run directly and not imported as a module
+if __name__ == "__main__":
+    # Set the log message format to exclude the log level
+    logging.basicConfig(format='%(message)s', level=logging.INFO)
+    # Serve our Flask app on port 80 and listen on all network interfaces
+    serve(app, host="0.0.0.0", port=80)
+```
+  </Tab>
+</Tabs>
+
+## Creating the squarecloud config file
+
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
+</Card>
+
+## Uploading Your Application to Square Cloud
+
+After following all the steps, put your application files into a `.zip` file, including the configuration file.
+
+If your application is a Node.js project, take a look at our article on [Node.js]("https://docs.squarecloud.app/articles/getting-started-with-nodejs").
+
+If your application is a Python project, take a look at our article on [Python]("https://docs.squarecloud.app/articles/getting-started-with-python").
+
+<Tabs>
+  <Tab title="Dashboard Upload">
+    Access the [Square Cloud
+    Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
+    files.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI Upload">
+    <Steps>
+      <Step title="First Step">
+        First, you need to have the CLI installed in your environment. If you
+        don't have it yet, run the following command in your terminal:
+        ```
+        npm install -g @squarecloud/cli
+        ```
+        If you already have it, we recommend updating it. To do this, run the following command in your terminal:
+        <Tabs>
+          <Tab title="Windows">
+            ```bash
+            squarecloud update
+            ```
+          </Tab>
+          <Tab title="Linux, macOS, and WSL">
+            ```bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            ```
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Second Step">
+        Now, to authenticate and use other CLI commands, you will find your
+        authorization key [here](https://squarecloud.app/account) by clicking on
+        "Request API Key". After obtaining your authorization key, run the
+        following command: 
+        ```bash
+        squarecloud login 
+        ```
+      </Step>
+      <Step title="Third Step">
+        Finally, to deploy your application to Square Cloud using the CLI, you need to execute the following command, passing the path of your zip file:
+        ```bash
+        squarecloud upload zip
+        ``` 
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Custom Domain" icon="globe" iconType="solid">
+    If you want to use a custom domain for your application hosted on Square Cloud, note that by default, the URL will be something like `https://mysite.squareweb.app/`. The subdomain is determined by the SUBDOMAIN field in the configuration file. However, if you prefer to use a custom domain, such as `mysite.com`, you'll need to purchase the `Standard` plan or a higher plan. We detail each step to set up your custom domain in our article: [How to Set Up Your Custom Domain](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="Minimum RAM Requirements" icon="memory" iconType="solid">
+    The minimum amount of RAM required to host a website or API is 512MB. However, depending on the size and complexity of your project, it may be advisable to use a larger amount of RAM to avoid the [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) error.
+  </Accordion>
+
+  <Accordion title="Temporary Access Denied" icon="ban" iconType="solid">
+    If you receive the message "Your access has been temporarily denied." when trying to access the site, please wait for some time. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+  
+  <Accordion title="Website took too long to respond..." icon="clock" iconType="solid">
+     If you receive the message "Website took too long to respond..." make sure you have correctly set port 80 on your application. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Starting Tests
+
+If you have done everything correctly, try accessing your site using the subdomain defined in the configuration file. If you defined it as "mysite", to access it will be `https://mysite.squareweb.app/`. After you access and only "Cannot GET /" or "Method Not Allowed" appears, everything is okay.
+
+Now, you need to go back to the previous page where the authorization was defined. In the Webhook URL field, you should put the URL of your site with the route that will receive the votes.
+
+- For the JavaScript code we created with `app.post("/topgg", webhook.listener((vote) => {...})`, the route that will receive the votes is "/topgg". So, if your website is "https://mysite.squareweb.app", you should put "https://mysite.squareweb.app/topgg" as the Webhook URL.
+
+- For the Python code we created with `@app.route("/topgg", methods=["POST"])`, the route that will receive the votes is also "/topgg". So, the Webhook URL would be the same "https://mysite.squareweb.app/topgg".
+
+<Frame>
+      <img src="/images/articles/topgg/example-url.png" style={{ borderRadius: "0.2rem" }} />
+</Frame>
+
+Finally, click on the "Send Test" button. After that, check the terminal. If everything went well, the message you defined in `console.log` or `print` should appear in the terminal.
+<Frame>
+      <img src="/images/articles/topgg/example-send.png" style={{ borderRadius: "0.2rem" }} />
+</Frame>
+
+And with that, if everything has been configured correctly, your webhook will be ready to send notifications when your bot receives a vote on top.gg.
+
+If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).

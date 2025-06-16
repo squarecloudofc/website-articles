@@ -1,0 +1,62 @@
+{
+  "title": "Documentation",
+  "description": "Our Documentation",
+  "contents": [
+    {
+      "group": "Get Started",
+      "pages": [
+        "getting-started/overview",
+        "getting-started/quick-start",
+        "getting-started/config-file"
+      ]
+    },
+    {
+      "group": "Services",
+      "pages": [
+        "services/bots",
+        "services/sites",
+        "services/blob"
+      ]
+    },
+    {
+      "group": "Languages",
+      "pages": [
+        {
+          "group": "JavaScript",
+          "pages": [
+            "articles/getting-started-with-nodejs",
+            "articles/how-to-create-your-package-json"
+          ]
+        },
+        {
+          "group": "Python",
+          "pages": [
+            "articles/getting-started-with-python",
+            "articles/how-to-create-your-requirements"
+          ]
+        },
+        "articles/getting-started-with-java",
+        "articles/getting-started-with-rust",
+        "articles/getting-started-with-elixir",
+        "articles/getting-started-with-php",
+        "articles/getting-started-with-go",
+        "articles/getting-started-with-csharp"
+      ]
+    },
+    {
+      "group": "Platform",
+      "pages": [
+        "platform/overview",
+        "platform/limitations-and-restrictions"
+      ]
+    },
+    {
+      "group": "Company",
+      "pages": [
+        "company/brand",
+        "company/legal",
+        "company/support"
+      ]
+    }
+  ]
+}

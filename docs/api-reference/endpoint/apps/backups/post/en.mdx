@@ -1,0 +1,37 @@
+
+<Warning>Each application (app ID) can only perform 12 backups every 24 hours.</Warning>
+<ParamField header="Authorization" type="string" placeholder="API KEY" required>
+  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
+</ParamField>
+<ParamField path="app_id" type="string" placeholder="Application ID" required>
+  The ID of the application. You can find this in the URL of your application's dashboard.
+</ParamField>
+
+### Response
+
+<ResponseField name="status" type="string">
+  Indicates whether the call was successful. `success` if successful, `error` if not.
+</ResponseField>
+<ResponseField name="response" type="object">
+
+The contents of the response.
+<Expandable title="Toggle object">
+<ResponseField name="url" type="string">
+  The URL to download the backup of your application.
+</ResponseField>
+<ResponseField name="key" type="string">
+  The key to download the backup of your application.
+</ResponseField>
+</Expandable>
+</ResponseField>
+<ResponseExample>
+```json
+{
+    "status": "success",
+    "response": {
+        "url": "https://backups.squarecloud.app/23457145698959364_a23d130fcc9ddaf2d288ae9599a4292c32.zip?AWSAccessKeyId=i06Xdad2dRD74Pm8Xly&Expires=1753081182&Signature=riWPedawcsouRAPGU5n3kGHnWoOuw%3D",
+        "key": "AWSAccessKeyId=i06Xdad2dRD74Pm8Xly&Expires=1753081182&Signature=riWPedawcsouRAPGU5n3kGHnWoOuw%3D"
+    }
+}
+```
+</ResponseExample>

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "type": "docs",
+  "metadata": {
+    "en": {
+      "title": "Configuring MongoDB Atlas Whitelist",
+      "description": "Due to how Square works in a way that has a dynamic IP, by an exclusive technology, it is impossible to provide you with an IP, since every restart in the application, you receive a unique IP.",
+      "sidebarTitle": "Whitelisting Square in MongoDB"
+    }
+  },
+  "created_at": "2025-06-13T23:12:55.932Z",
+  "updated_at": "2025-06-13T23:12:55.932Z"
+}
