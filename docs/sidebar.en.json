@@ -1,6 +1,7 @@
 {
   "title": "Documentation",
   "description": "Our Documentation",
+  "main_article": "getting-started/overview",
   "contents": [
     {
       "group": "Get Started",

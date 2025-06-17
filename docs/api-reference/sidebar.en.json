@@ -1,6 +1,7 @@
 {
   "title": "API Reference",
   "description": "Reference for the API",
+  "main_article": "api-reference/authentication",
   "contents": [
     {
       "group": "API Reference",
