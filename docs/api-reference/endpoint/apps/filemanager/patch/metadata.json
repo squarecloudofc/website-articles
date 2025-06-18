@@ -4,9 +4,9 @@
   "attributes": {
     "type": "endpoint",
     "endpoint": {
-      "baseURL": "https://api.squarecloud.app/v2",
+      "baseURL": "https://api.squarecloud.app",
       "method": "PATCH",
-      "path": "/apps/{app_id}/files"
+      "path": "/v2/apps/{app_id}/files"
     }
   },
   "metadata": {
@@ -16,6 +16,6 @@
       "sidebarTitle": "/v2/apps/:appId/files"
     }
   },
-  "created_at": "2025-06-18T18:07:11.274Z",
-  "updated_at": "2025-06-18T18:07:11.274Z"
+  "created_at": "2025-06-18T18:30:14.959Z",
+  "updated_at": "2025-06-18T18:30:14.959Z"
 }
