@@ -1,0 +1,22 @@
+{
+  "title": "CLI Reference",
+  "description": "Our Command Line Application",
+  "icon": "terminal-window",
+  "main_article": "cli-reference/installation",
+  "contents": [
+    {
+      "group": "CLI Reference",
+      "pages": [
+        {
+          "href": "cli-reference/installation"
+        },
+        {
+          "href": "cli-reference/authentication"
+        },
+        {
+          "href": "cli-reference/commands"
+        }
+      ]
+    }
+  ]
+}

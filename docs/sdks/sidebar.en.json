@@ -1,0 +1,70 @@
+{
+  "title": "SDKs",
+  "description": "Our SDKs",
+  "icon": "brackets-curly",
+  "main_article": "sdks/introduction",
+  "contents": [
+    {
+      "group": "SDKs",
+      "pages": [
+        {
+          "href": "sdks/introduction"
+        }
+      ]
+    },
+    {
+      "group": "JavaScript SDK",
+      "pages": [
+        {
+          "href": "sdks/js/client"
+        },
+        {
+          "href": "sdks/js/commit_and_upload"
+        },
+        {
+          "href": "sdks/js/managing_application"
+        },
+        {
+          "href": "sdks/js/managing_files"
+        }
+      ]
+    },
+    {
+      "group": "Python SDK",
+      "pages": [
+        {
+          "href": "sdks/py/installation"
+        },
+        {
+          "href": "sdks/py/client"
+        },
+        {
+          "href": "sdks/py/commit_and_upload"
+        },
+        {
+          "href": "sdks/py/managing_application"
+        },
+        {
+          "href": "sdks/py/managing_files"
+        },
+        {
+          "href": "sdks/py/deployments"
+        },
+        {
+          "group": "Advanced Guide",
+          "pages": [
+            {
+              "href": "sdks/py/advanced/app_cache"
+            },
+            {
+              "href": "sdks/py/advanced/listeners"
+            },
+            {
+              "href": "sdks/py/advanced/using_pydantic"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

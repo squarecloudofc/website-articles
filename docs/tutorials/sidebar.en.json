@@ -1,0 +1,96 @@
+{
+  "title": "Tutorials",
+  "description": "Our tutorials",
+  "icon": "article",
+  "main_article": "tutorials/introduction",
+  "contents": [
+    {
+      "group": "Introduction",
+      "pages": [
+        {
+          "href": "tutorials/introduction"
+        }
+      ]
+    },
+    {
+      "group": "Tutorials",
+      "pages": [
+        {
+          "href": "tutorials/managing-teams"
+        },
+        {
+          "href": "tutorials/how-to-set-up-your-domain"
+        },
+        {
+          "href": "tutorials/how-to-create-your-lavalink-server"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-website"
+        },
+        {
+          "href": "tutorials/how-to-set-up-git-integration"
+        },
+        {
+          "href": "tutorials/timezone-change-guide"
+        },
+        {
+          "href": "tutorials/topgg-webhook-config"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-selenium-application"
+        }
+      ]
+    },
+    {
+      "group": "APIs",
+      "pages": [
+        {
+          "href": "tutorials/how-to-deploy-your-flask-application"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-django-application"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-nestjs-application"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-express-application"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-fastify-application"
+        }
+      ]
+    },
+    {
+      "group": "Website",
+      "pages": [
+        {
+          "href": "tutorials/how-to-deploy-your-vue-website"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-vite-website"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-react-website"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-next-website"
+        }
+      ]
+    },
+    {
+      "group": "Bots",
+      "pages": [
+        {
+          "href": "tutorials/how-to-deploy-your-discord-bot"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-whatsapp-bot"
+        },
+        {
+          "href": "tutorials/how-to-deploy-your-telegram-bot"
+        }
+      ]
+    }
+  ]
+}

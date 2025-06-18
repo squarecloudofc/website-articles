@@ -1,88 +1,167 @@
 {
   "title": "API Reference",
   "description": "Reference for the API",
+  "icon": "code",
   "main_article": "api-reference/authentication",
   "contents": [
     {
       "group": "API Reference",
       "pages": [
-        "api-reference/authentication",
-        "api-reference/limitations-and-restrictions"
+        {
+          "href": "api-reference/authentication"
+        },
+        {
+          "href": "api-reference/limitations-and-restrictions"
+        }
       ]
     },
     {
       "group": "API Endpoints",
       "pages": [
-        "api-reference/endpoint/users/me",
-        "api-reference/endpoint/apps/upload",
-        "api-reference/endpoint/apps/status-all",
-        "api-reference/endpoint/service/status",
+        {
+          "href": "api-reference/endpoint/users/me"
+        },
+        {
+          "href": "api-reference/endpoint/apps/upload"
+        },
+        {
+          "href": "api-reference/endpoint/apps/status-all"
+        },
+        {
+          "href": "api-reference/endpoint/service/status"
+        },
         {
           "group": "Application",
           "pages": [
-            "api-reference/endpoint/apps/info",
-            "api-reference/endpoint/apps/status",
-            "api-reference/endpoint/apps/logs",
-            "api-reference/endpoint/apps/start",
-            "api-reference/endpoint/apps/restart",
-            "api-reference/endpoint/apps/stop",
-            "api-reference/endpoint/apps/commit",
-            "api-reference/endpoint/apps/backups/get",
-            "api-reference/endpoint/apps/backups/post",
-            "api-reference/endpoint/apps/delete"
+            {
+              "href": "api-reference/endpoint/apps/info"
+            },
+            {
+              "href": "api-reference/endpoint/apps/status"
+            },
+            {
+              "href": "api-reference/endpoint/apps/logs"
+            },
+            {
+              "href": "api-reference/endpoint/apps/start"
+            },
+            {
+              "href": "api-reference/endpoint/apps/restart"
+            },
+            {
+              "href": "api-reference/endpoint/apps/stop"
+            },
+            {
+              "href": "api-reference/endpoint/apps/commit"
+            },
+            {
+              "href": "api-reference/endpoint/apps/backups/get"
+            },
+            {
+              "href": "api-reference/endpoint/apps/backups/post"
+            },
+            {
+              "href": "api-reference/endpoint/apps/delete"
+            }
           ]
         },
         {
           "group": "Application - File Manager",
           "pages": [
-            "api-reference/endpoint/apps/filemanager/content",
-            "api-reference/endpoint/apps/filemanager/list",
-            "api-reference/endpoint/apps/filemanager/put",
-            "api-reference/endpoint/apps/filemanager/patch",
-            "api-reference/endpoint/apps/filemanager/delete"
+            {
+              "href": "api-reference/endpoint/apps/filemanager/content"
+            },
+            {
+              "href": "api-reference/endpoint/apps/filemanager/list"
+            },
+            {
+              "href": "api-reference/endpoint/apps/filemanager/put"
+            },
+            {
+              "href": "api-reference/endpoint/apps/filemanager/patch"
+            },
+            {
+              "href": "api-reference/endpoint/apps/filemanager/delete"
+            }
           ]
         },
         {
           "group": "Application - Deploy",
           "pages": [
-            "api-reference/endpoint/apps/deploy/list",
-            "api-reference/endpoint/apps/deploy/info",
-            "api-reference/endpoint/apps/deploy/webhooks"
+            {
+              "href": "api-reference/endpoint/apps/deploy/list"
+            },
+            {
+              "href": "api-reference/endpoint/apps/deploy/info"
+            },
+            {
+              "href": "api-reference/endpoint/apps/deploy/webhooks"
+            }
           ]
         },
         {
           "group": "Application - Network",
           "pages": [
-            "api-reference/endpoint/apps/network/dns",
-            "api-reference/endpoint/apps/network/analytics",
-            "api-reference/endpoint/apps/network/custom",
-            "api-reference/endpoint/apps/network/purge_cache"
+            {
+              "href": "api-reference/endpoint/apps/network/dns"
+            },
+            {
+              "href": "api-reference/endpoint/apps/network/analytics"
+            },
+            {
+              "href": "api-reference/endpoint/apps/network/custom"
+            },
+            {
+              "href": "api-reference/endpoint/apps/network/purge_cache"
+            }
           ]
         },
         {
           "group": "Workspace",
           "pages": [
-            "api-reference/endpoint/workspace/create",
-            "api-reference/endpoint/workspace/delete",
-            "api-reference/endpoint/workspace/get",
-            "api-reference/endpoint/workspace/leave",
-            "api-reference/endpoint/workspace/list"
+            {
+              "href": "api-reference/endpoint/workspace/create"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/delete"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/get"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/leave"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/list"
+            }
           ]
         },
         {
           "group": "Workspace - Members",
           "pages": [
-            "api-reference/endpoint/workspace/members/code",
-            "api-reference/endpoint/workspace/members/invite",
-            "api-reference/endpoint/workspace/members/kick",
-            "api-reference/endpoint/workspace/members/perms"
+            {
+              "href": "api-reference/endpoint/workspace/members/code"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/members/invite"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/members/kick"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/members/perms"
+            }
           ]
         },
         {
           "group": "Workspace - Application",
           "pages": [
-            "api-reference/endpoint/workspace/apps/add",
-            "api-reference/endpoint/workspace/apps/remove"
+            {
+              "href": "api-reference/endpoint/workspace/apps/add"
+            },
+            {
+              "href": "api-reference/endpoint/workspace/apps/remove"
+            }
           ]
         }
       ]

@@ -1,0 +1,57 @@
+{
+  "title": "FAQs",
+  "description": "Our FAQs",
+  "icon": "question",
+  "main_article": "faqs/using-autorestart-in-your-squarecloud-application",
+  "contents": [
+    {
+      "group": "FAQs",
+      "pages": [
+        {
+          "href": "faqs/using-autorestart-in-your-squarecloud-application"
+        },
+        {
+          "href": "faqs/debugging-an-application"
+        },
+        {
+          "href": "faqs/automatic-deletion-files-when-deploying-an-application-to-squarecloud"
+        }
+      ]
+    },
+    {
+      "group": "Troubleshooting",
+      "pages": [
+        {
+          "href": "faqs/troubleshooting/access-website"
+        },
+        {
+          "href": "faqs/troubleshooting/lavalink-closed-abnormally"
+        },
+        {
+          "href": "faqs/troubleshooting/whitelist-mongodb"
+        },
+        {
+          "href": "faqs/troubleshooting/LACK_OF_CPU"
+        },
+        {
+          "href": "faqs/troubleshooting/LACK_OF_RAM"
+        },
+        {
+          "href": "faqs/troubleshooting/TOKEN_INVALID"
+        },
+        {
+          "href": "faqs/troubleshooting/ABUSE_REQUESTS"
+        },
+        {
+          "href": "faqs/troubleshooting/MODULE_NOT_FOUND"
+        },
+        {
+          "href": "faqs/troubleshooting/INVALID_DEPENDENCY"
+        },
+        {
+          "href": "faqs/troubleshooting/BETTER_SQLITE3_ERROR"
+        }
+      ]
+    }
+  ]
+}

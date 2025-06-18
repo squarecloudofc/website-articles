@@ -181,7 +181,7 @@
       "metadata": {
         "title": "Legal",
         "description": "Square Cloud Legal Information, EULA, and Privacy Policy",
-        "sidebarIcon": "file-contract"
+        "sidebarIcon": "scales"
       },
       "created_at": "2025-06-16T18:44:35.000Z",
       "updated_at": "2025-06-16T18:44:35.000Z",
@@ -231,7 +231,7 @@
         "title": "How to create your squarecloud.app config file",
         "description": "Learn how to create your Square Cloud configuration file",
         "sidebarTitle": "Config file",
-        "sidebarIcon": "gear-complex-code"
+        "sidebarIcon": "gear-six"
       },
       "created_at": "2025-06-16T18:44:35.000Z",
       "updated_at": "2025-06-16T18:44:35.000Z",
@@ -253,7 +253,7 @@
         "title": "Quickstart",
         "description": "Go from zero to hero in minutes with Square Cloud. This guide will help you get started with Square Cloud and understand the power of our platform.",
         "sidebarTitle": "Quickstart",
-        "sidebarIcon": "square-terminal"
+        "sidebarIcon": "terminal-window"
       },
       "created_at": "2025-06-16T18:44:35.000Z",
       "updated_at": "2025-06-16T18:44:35.000Z",
@@ -263,7 +263,7 @@
       "metadata": {
         "title": "Limits and Restrictions",
         "description": "Discover the constraints and boundaries of the Square Cloud Platform.",
-        "sidebarIcon": "shield-dog"
+        "sidebarIcon": "warning"
       },
       "created_at": "2025-06-16T18:44:35.000Z",
       "updated_at": "2025-06-16T18:44:35.000Z",
@@ -1496,22 +1496,35 @@
       "content": {
         "title": "Documentation",
         "description": "Our Documentation",
+        "icon": "notebook",
         "main_article": "getting-started/overview",
         "contents": [
           {
             "group": "Get Started",
             "pages": [
-              "getting-started/overview",
-              "getting-started/quick-start",
-              "getting-started/config-file"
+              {
+                "href": "getting-started/overview"
+              },
+              {
+                "href": "getting-started/quick-start"
+              },
+              {
+                "href": "getting-started/config-file"
+              }
             ]
           },
           {
             "group": "Services",
             "pages": [
-              "services/bots",
-              "services/sites",
-              "services/blob"
+              {
+                "href": "services/bots"
+              },
+              {
+                "href": "services/sites"
+              },
+              {
+                "href": "services/blob"
+              }
             ]
           },
           {
@@ -1520,38 +1533,68 @@
               {
                 "group": "JavaScript",
                 "pages": [
-                  "articles/getting-started-with-nodejs",
-                  "articles/how-to-create-your-package-json"
+                  {
+                    "href": "articles/getting-started-with-nodejs"
+                  },
+                  {
+                    "href": "articles/how-to-create-your-package-json"
+                  }
                 ]
               },
               {
                 "group": "Python",
                 "pages": [
-                  "articles/getting-started-with-python",
-                  "articles/how-to-create-your-requirements"
+                  {
+                    "href": "articles/getting-started-with-python"
+                  },
+                  {
+                    "href": "articles/how-to-create-your-requirements"
+                  }
                 ]
               },
-              "articles/getting-started-with-java",
-              "articles/getting-started-with-rust",
-              "articles/getting-started-with-elixir",
-              "articles/getting-started-with-php",
-              "articles/getting-started-with-go",
-              "articles/getting-started-with-csharp"
+              {
+                "href": "articles/getting-started-with-java"
+              },
+              {
+                "href": "articles/getting-started-with-rust"
+              },
+              {
+                "href": "articles/getting-started-with-elixir"
+              },
+              {
+                "href": "articles/getting-started-with-php"
+              },
+              {
+                "href": "articles/getting-started-with-go"
+              },
+              {
+                "href": "articles/getting-started-with-csharp"
+              }
             ]
           },
           {
             "group": "Platform",
             "pages": [
-              "platform/overview",
-              "platform/limitations-and-restrictions"
+              {
+                "href": "platform/overview"
+              },
+              {
+                "href": "platform/limitations-and-restrictions"
+              }
             ]
           },
           {
             "group": "Company",
             "pages": [
-              "company/brand",
-              "company/legal",
-              "company/support"
+              {
+                "href": "company/brand"
+              },
+              {
+                "href": "company/legal"
+              },
+              {
+                "href": "company/support"
+              }
             ]
           }
         ]
@@ -1561,89 +1604,421 @@
       "content": {
         "title": "API Reference",
         "description": "Reference for the API",
+        "icon": "code",
         "main_article": "api-reference/authentication",
         "contents": [
           {
             "group": "API Reference",
             "pages": [
-              "api-reference/authentication",
-              "api-reference/limitations-and-restrictions"
+              {
+                "href": "api-reference/authentication"
+              },
+              {
+                "href": "api-reference/limitations-and-restrictions"
+              }
             ]
           },
           {
             "group": "API Endpoints",
             "pages": [
-              "api-reference/endpoint/users/me",
-              "api-reference/endpoint/apps/upload",
-              "api-reference/endpoint/apps/status-all",
-              "api-reference/endpoint/service/status",
+              {
+                "href": "api-reference/endpoint/users/me"
+              },
+              {
+                "href": "api-reference/endpoint/apps/upload"
+              },
+              {
+                "href": "api-reference/endpoint/apps/status-all"
+              },
+              {
+                "href": "api-reference/endpoint/service/status"
+              },
               {
                 "group": "Application",
                 "pages": [
-                  "api-reference/endpoint/apps/info",
-                  "api-reference/endpoint/apps/status",
-                  "api-reference/endpoint/apps/logs",
-                  "api-reference/endpoint/apps/start",
-                  "api-reference/endpoint/apps/restart",
-                  "api-reference/endpoint/apps/stop",
-                  "api-reference/endpoint/apps/commit",
-                  "api-reference/endpoint/apps/backups/get",
-                  "api-reference/endpoint/apps/backups/post",
-                  "api-reference/endpoint/apps/delete"
+                  {
+                    "href": "api-reference/endpoint/apps/info"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/status"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/logs"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/start"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/restart"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/stop"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/commit"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/backups/get"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/backups/post"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/delete"
+                  }
                 ]
               },
               {
                 "group": "Application - File Manager",
                 "pages": [
-                  "api-reference/endpoint/apps/filemanager/content",
-                  "api-reference/endpoint/apps/filemanager/list",
-                  "api-reference/endpoint/apps/filemanager/put",
-                  "api-reference/endpoint/apps/filemanager/patch",
-                  "api-reference/endpoint/apps/filemanager/delete"
+                  {
+                    "href": "api-reference/endpoint/apps/filemanager/content"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/filemanager/list"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/filemanager/put"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/filemanager/patch"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/filemanager/delete"
+                  }
                 ]
               },
               {
                 "group": "Application - Deploy",
                 "pages": [
-                  "api-reference/endpoint/apps/deploy/list",
-                  "api-reference/endpoint/apps/deploy/info",
-                  "api-reference/endpoint/apps/deploy/webhooks"
+                  {
+                    "href": "api-reference/endpoint/apps/deploy/list"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/deploy/info"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/deploy/webhooks"
+                  }
                 ]
               },
               {
                 "group": "Application - Network",
                 "pages": [
-                  "api-reference/endpoint/apps/network/dns",
-                  "api-reference/endpoint/apps/network/analytics",
-                  "api-reference/endpoint/apps/network/custom",
-                  "api-reference/endpoint/apps/network/purge_cache"
+                  {
+                    "href": "api-reference/endpoint/apps/network/dns"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/network/analytics"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/network/custom"
+                  },
+                  {
+                    "href": "api-reference/endpoint/apps/network/purge_cache"
+                  }
                 ]
               },
               {
                 "group": "Workspace",
                 "pages": [
-                  "api-reference/endpoint/workspace/create",
-                  "api-reference/endpoint/workspace/delete",
-                  "api-reference/endpoint/workspace/get",
-                  "api-reference/endpoint/workspace/leave",
-                  "api-reference/endpoint/workspace/list"
+                  {
+                    "href": "api-reference/endpoint/workspace/create"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/delete"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/get"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/leave"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/list"
+                  }
                 ]
               },
               {
                 "group": "Workspace - Members",
                 "pages": [
-                  "api-reference/endpoint/workspace/members/code",
-                  "api-reference/endpoint/workspace/members/invite",
-                  "api-reference/endpoint/workspace/members/kick",
-                  "api-reference/endpoint/workspace/members/perms"
+                  {
+                    "href": "api-reference/endpoint/workspace/members/code"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/members/invite"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/members/kick"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/members/perms"
+                  }
                 ]
               },
               {
                 "group": "Workspace - Application",
                 "pages": [
-                  "api-reference/endpoint/workspace/apps/add",
-                  "api-reference/endpoint/workspace/apps/remove"
+                  {
+                    "href": "api-reference/endpoint/workspace/apps/add"
+                  },
+                  {
+                    "href": "api-reference/endpoint/workspace/apps/remove"
+                  }
                 ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cli-reference": {
+      "content": {
+        "title": "CLI Reference",
+        "description": "Our Command Line Application",
+        "icon": "notebook",
+        "main_article": "cli-reference/installation",
+        "contents": [
+          {
+            "group": "CLI Reference",
+            "pages": [
+              {
+                "href": "cli-reference/installation"
+              },
+              {
+                "href": "cli-reference/authentication"
+              },
+              {
+                "href": "cli-reference/commands"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "faqs": {
+      "content": {
+        "title": "FAQs",
+        "description": "Our FAQs",
+        "icon": "question",
+        "main_article": "faqs/using-autorestart-in-your-squarecloud-application",
+        "contents": [
+          {
+            "group": "FAQs",
+            "pages": [
+              {
+                "href": "faqs/using-autorestart-in-your-squarecloud-application"
+              },
+              {
+                "href": "faqs/debugging-an-application"
+              },
+              {
+                "href": "faqs/automatic-deletion-files-when-deploying-an-application-to-squarecloud"
+              }
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              {
+                "href": "faqs/troubleshooting/access-website"
+              },
+              {
+                "href": "faqs/troubleshooting/lavalink-closed-abnormally"
+              },
+              {
+                "href": "faqs/troubleshooting/whitelist-mongodb"
+              },
+              {
+                "href": "faqs/troubleshooting/LACK_OF_CPU"
+              },
+              {
+                "href": "faqs/troubleshooting/LACK_OF_RAM"
+              },
+              {
+                "href": "faqs/troubleshooting/TOKEN_INVALID"
+              },
+              {
+                "href": "faqs/troubleshooting/ABUSE_REQUESTS"
+              },
+              {
+                "href": "faqs/troubleshooting/MODULE_NOT_FOUND"
+              },
+              {
+                "href": "faqs/troubleshooting/INVALID_DEPENDENCY"
+              },
+              {
+                "href": "faqs/troubleshooting/BETTER_SQLITE3_ERROR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "sdks": {
+      "content": {
+        "title": "SDKs",
+        "description": "Our SDKs",
+        "icon": "brackets-curly",
+        "main_article": "sdks/introduction",
+        "contents": [
+          {
+            "group": "SDKs",
+            "pages": [
+              {
+                "href": "sdks/introduction"
+              }
+            ]
+          },
+          {
+            "group": "JavaScript SDK",
+            "pages": [
+              {
+                "href": "sdks/js/client"
+              },
+              {
+                "href": "sdks/js/commit_and_upload"
+              },
+              {
+                "href": "sdks/js/managing_application"
+              },
+              {
+                "href": "sdks/js/managing_files"
+              }
+            ]
+          },
+          {
+            "group": "Python SDK",
+            "pages": [
+              {
+                "href": "sdks/py/installation"
+              },
+              {
+                "href": "sdks/py/client"
+              },
+              {
+                "href": "sdks/py/commit_and_upload"
+              },
+              {
+                "href": "sdks/py/managing_application"
+              },
+              {
+                "href": "sdks/py/managing_files"
+              },
+              {
+                "href": "sdks/py/deployments"
+              },
+              {
+                "group": "Advanced Guide",
+                "pages": [
+                  {
+                    "href": "sdks/py/advanced/app_cache"
+                  },
+                  {
+                    "href": "sdks/py/advanced/listeners"
+                  },
+                  {
+                    "href": "sdks/py/advanced/using_pydantic"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "tutorials": {
+      "content": {
+        "title": "Tutorials",
+        "description": "Our tutorials",
+        "icon": "article",
+        "main_article": "tutorials/introduction",
+        "contents": [
+          {
+            "group": "Introduction",
+            "pages": [
+              {
+                "href": "tutorials/introduction"
+              }
+            ]
+          },
+          {
+            "group": "Tutorials",
+            "pages": [
+              {
+                "href": "tutorials/managing-teams"
+              },
+              {
+                "href": "tutorials/how-to-set-up-your-domain"
+              },
+              {
+                "href": "tutorials/how-to-create-your-lavalink-server"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-website"
+              },
+              {
+                "href": "tutorials/how-to-set-up-git-integration"
+              },
+              {
+                "href": "tutorials/timezone-change-guide"
+              },
+              {
+                "href": "tutorials/topgg-webhook-config"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-selenium-application"
+              }
+            ]
+          },
+          {
+            "group": "APIs",
+            "pages": [
+              {
+                "href": "tutorials/how-to-deploy-your-flask-application"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-django-application"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-nestjs-application"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-express-application"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-fastify-application"
+              }
+            ]
+          },
+          {
+            "group": "Website",
+            "pages": [
+              {
+                "href": "tutorials/how-to-deploy-your-vue-website"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-vite-website"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-react-website"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-next-website"
+              }
+            ]
+          },
+          {
+            "group": "Bots",
+            "pages": [
+              {
+                "href": "tutorials/how-to-deploy-your-discord-bot"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-whatsapp-bot"
+              },
+              {
+                "href": "tutorials/how-to-deploy-your-telegram-bot"
               }
             ]
           }
