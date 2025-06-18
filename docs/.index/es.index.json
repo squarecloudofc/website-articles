@@ -627,16 +627,6 @@
       "updated_at": "2025-06-16T18:44:35.000Z",
       "content": "## When does it occur?\n\nThis issue occurs when your dependency file could not be located in the root of your application.\n\n## Why does it occur?\n\nThis issue occurs when your dependency file could not be located in the root of your application. This can happen when your dependency file does not exist or its nominated with an extra `.txt`.\n\n## How to fix\n\n### For Node.js (package.json)\n\n1. **Navigate to the root directory of your project:**\n   Ensure that you are in the main directory of your application.\n\n2. **Check for the presence of `package.json`:**\n   Verify whether the `package.json` file exists in the root directory. If it is not present, create one using the following command:\n   ```bash\n   npm init -y\n   ```\n   This command initializes a default `package.json` file.\n\n3. **Ensure correct naming:**\n   Confirm that the file is named exactly as `package.json` and does not have any additional extensions (e.g., `package.json.txt`). If there are any discrepancies, rename the file accordingly.\n\n### For Python (requirements.txt)\n\n1. **Navigate to the root directory of your project:**\n   Make sure you are in the main directory of your application.\n\n2. **Check for the presence of `requirements.txt`:**\n   Confirm whether the `requirements.txt` file exists in the root directory. If it is missing, create one.\n\n3. **Ensure correct naming:**\n   Verify that the file is named exactly as `requirements.txt` without any additional extensions (e.g., `requirements.txt.txt`). If the name is incorrect, rename the file accordingly.\n\n4. **Add dependencies to the file:**\n   Open the `requirements.txt` file and add the necessary dependencies for your Python project. For example:\n\n```plaintext requirements.txt\ndiscord.py\n```\n\n### Additional Tips:\n\n- **Double-check file extensions:**\n  Ensure that the file extensions are correct (e.g., `.json` for Node.js, `.txt` for Python). Incorrect extensions might lead to the `INVALID_DEPENDENCY` error.\n\n- **Review documentation and guides:**\n  Consult the documentation for your specific programming language ([Node.js](/articles/getting-started-with-nodejs)/[Python](/articles/getting-started-with-python)).\n\nIf you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).\n"
     },
-    "faqs/troubleshooting/LACK_OF_RAM": {
-      "metadata": {
-        "title": "Solving LACK_OF_RAM",
-        "description": "Learn how to resolve the LACK_OF_RAM issue in your application.",
-        "sidebarTitle": "Solving LACK_OF_RAM"
-      },
-      "created_at": "2025-06-16T18:44:35.000Z",
-      "updated_at": "2025-06-16T18:44:35.000Z",
-      "content": "## When does it occur?\n\nThis issue occurs when your application is using more RAM than is available.\n\n```bash\n[SQUARE-SHIELD] LACK_OF_RAM\n```\n\n## Why does it occur?\n\nThis issue occurs when your application is using more RAM than is available. This can happen when your application is using more RAM than is available on your current plan.\n\n## How to fix\n\nNavigate to the file manager and locate the `squarecloud.app/config` file.\n\n1. Open the file and locate the `MEMORY` field.\n2. Increase the value of the `MEMORY` field. The value is in megabytes (MB).\n3. We recommend increasing the value by 50% of the current value. For example, if the current value is `512`, increase it to `768`.\n\nIf you are already using the maximum available RAM based on your current plan, consider upgrading to a higher plan by visiting the [plans page](https://squarecloud.app/plans).\n\nIf you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).\n"
-    },
     "faqs/troubleshooting/LACK_OF_CPU": {
       "metadata": {
         "title": "Solving LACK_OF_CPU",
@@ -646,6 +636,16 @@
       "created_at": "2025-06-16T18:44:35.000Z",
       "updated_at": "2025-06-16T18:44:35.000Z",
       "content": "## When does it occur?\n\nThis issue occurs when your application is using more CPU than is available.\n\n```bash\n[SQUARE-SHIELD] LACK_OF_CPU\n```\n\n## Why does it occur?\n\nThis issue occurs when your application is using more CPU than is available. This can happen when your application is under heavy load, or when your application is not optimized to use less CPU.\n\n## How to fix\n\nThe CPU allocated to your application is determined by your current plan. To address this, consider upgrading to a higher plan on the [plans page](https://squarecloud.app/plans). Alternatively, optimize your application to reduce CPU usage.\n\n### Resubmitting your application\n\nAfter upgrading your plan, it's important to remove your application and resubmit it to reflect the updated CPU allocation.\n\nIf you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).\n"
+    },
+    "faqs/troubleshooting/LACK_OF_RAM": {
+      "metadata": {
+        "title": "Solving LACK_OF_RAM",
+        "description": "Learn how to resolve the LACK_OF_RAM issue in your application.",
+        "sidebarTitle": "Solving LACK_OF_RAM"
+      },
+      "created_at": "2025-06-16T18:44:35.000Z",
+      "updated_at": "2025-06-16T18:44:35.000Z",
+      "content": "## When does it occur?\n\nThis issue occurs when your application is using more RAM than is available.\n\n```bash\n[SQUARE-SHIELD] LACK_OF_RAM\n```\n\n## Why does it occur?\n\nThis issue occurs when your application is using more RAM than is available. This can happen when your application is using more RAM than is available on your current plan.\n\n## How to fix\n\nNavigate to the file manager and locate the `squarecloud.app/config` file.\n\n1. Open the file and locate the `MEMORY` field.\n2. Increase the value of the `MEMORY` field. The value is in megabytes (MB).\n3. We recommend increasing the value by 50% of the current value. For example, if the current value is `512`, increase it to `768`.\n\nIf you are already using the maximum available RAM based on your current plan, consider upgrading to a higher plan by visiting the [plans page](https://squarecloud.app/plans).\n\nIf you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).\n"
     },
     "faqs/troubleshooting/MODULE_NOT_FOUND": {
       "metadata": {
