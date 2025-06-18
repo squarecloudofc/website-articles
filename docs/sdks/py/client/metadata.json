@@ -7,6 +7,6 @@
       "description": "The central object is the Client object, instantiated with an API key. This object represents a connection to the Square Cloud service and acts as an interface to interact with various aspects of the service."
     }
   },
-  "created_at": "2025-06-13T23:12:55.932Z",
-  "updated_at": "2025-06-13T23:12:55.932Z"
+  "created_at": "2025-06-16T18:44:35.000Z",
+  "updated_at": "2025-06-16T18:44:35.000Z"
 }

@@ -64,6 +64,7 @@ function generateDocsMetadata(article) {
   return {
     $schema: "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
     type: "docs",
+    attributes: article.attributes,
     metadata: article.metadata,
     created_at: createdAt ?? article.created_at ?? new Date(),
     updated_at: updatedAt ?? article.updated_at ?? new Date(),
