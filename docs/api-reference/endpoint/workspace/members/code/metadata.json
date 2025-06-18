@@ -1,6 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
   "type": "docs",
+  "attributes": {
+    "type": "endpoint",
+    "endpoint": {
+      "baseURL": "https://api.squarecloud.app/v2",
+      "method": "GET",
+      "path": "/workspaces/members/code"
+    }
+  },
   "metadata": {
     "en": {
       "title": "Get Invite Code",
@@ -8,6 +16,6 @@
       "sidebarTitle": "/v2/workspaces/members/code"
     }
   },
-  "created_at": "2025-06-13T23:12:55.932Z",
-  "updated_at": "2025-06-13T23:12:55.932Z"
+  "created_at": "2025-06-18T18:07:11.274Z",
+  "updated_at": "2025-06-18T18:07:11.274Z"
 }

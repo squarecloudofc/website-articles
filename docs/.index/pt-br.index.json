@@ -6,8 +6,8 @@
         "description": "Learn what it takes to authenticate to the Square Cloud API.",
         "sidebarIcon": "lock"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "First you need to get an API key from the [Developer Dashboard](https://squarecloud.app/account). You can use this API key to authenticate to the Square Cloud API.\n\n```bash\n'Authorization': '<api_key>'\n```\n\n## API Usage\n\nYou can use the API key to authenticate to the Square Cloud API. You can use the API key in the `Authorization` header.\nRemembering that the use of the API is subject to the [Terms of Service](https://squarecloud.app/legal) and the [Acceptable Use Policy](https://squarecloud.app/legal/policy).\n\n<Card title=\"Limits and Restrictions\" href=\"./limitations-and-restrictions\">\n  Learn about the limits and restrictions of the Square Cloud API.\n</Card>\n"
     },
     "api-reference/limitations-and-restrictions": {
@@ -16,8 +16,8 @@
         "description": "There are some limitations and restrictions on the use of the Square Cloud API.",
         "sidebarIcon": "shield"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "Due to regulations, local laws, security and privacy issues, certain countries may be blocked from accessing our services and APIs. We are constantly working to expand our services to more countries, but we cannot guarantee that we will be able to provide services in your country.\n\n## Blocked Countries by Sanctions or Regulatory Restrictions\n\nThe following countries are currently blocked from accessing our services and APIs due to sanctions and regulatory restrictions:\n\n| Country      | Code   | Reason                              |\n| :----------- | :----  | :---------------------------------  |\n| Afghanistan  | AF     | Regulatory restrictions             |\n| Belarus      | BY     | Regulatory restrictions             |\n| Cuba         | CU     | Regulatory restrictions             |\n| China        | CN     | Regulatory restrictions             |\n| Iran         | IR     | Regulatory restrictions             |\n| North Korea  | KP     | Regulatory restrictions             |\n| Russia       | RU     | Regulatory restrictions             |\n| Syria        | SY     | Regulatory restrictions             |\n| Antartica    | AN     | Regulatory restrictions             |\n| All TOR IP's | T1     | Regulatory restrictions             |\n\n## Captcha Countries\n\nThe following countries are required to solve a captcha before accessing our services and APIs:\n\n| Country      | Code   | Reason                              |\n| :----------- | :----  | :---------------------------------  |\n| Bangladesh   | BD     | Security reasons                    |\n| India        | IN     | Security reasons                    |\n| Iraq         | IQ     | Security reasons                    |\n| Philippines  | PH     | Security reasons                    |\n| Ukraine      | UA     | Security reasons                    |\n| Venezuela    | VE     | Security reasons                    |\n| Vietnam      | VN     | Security reasons                    |\n| Indonesia    | ID     | Security reasons                    |\n| Malaysia     | MY     | Security reasons                    |\n\n## API Limits\n\n<Warning>Illegal or abusive use of our API may result in your account being blocked.</Warning>\n<Warning>If you are rate limited, you will receive a `429 Too Many Requests` response. If you receive this response, you should wait **30 minutes before making another request**. </Warning>\n<Warning>Applications hosted **outside of Square Cloud** have a **maximum** rate limit of **300 requests per minute**.</Warning>\n\nThe API is subject to rate limits (subject to change). The current rate limits are:\n\n| Account Plan          | Rate Limit (60s)     | Max daily requests   |\n| :-------------------- | :------------------: | :------------------: |\n| HOBBY                 | 60 requests          | 86,400 requests      |\n| STANDARD              | 100 requests         | 144,000 requests     |\n| ADVANCED              | 150 requests         | 216,000 requests     |\n| PRO                   | 300 requests         | 432,000 requests     |\n| ENTERPRISE-24         | 600 requests         | 864,000 requests     |\n| ENTERPRISE-32         | 800 requests         | 1,152,000 requests   |\n| ENTERPRISE-48         | 1,200 requests       | 1,728,000 requests   |\n| ENTERPRISE-64         | 1,600 requests       | 2,304,000 requests   |\n| ENTERPRISE-96         | 2,400 requests       | 3,456,000 requests   |\n| ENTERPRISE-128        | 3,200 requests       | 4,608,000 requests   |\n| ENTERPRISE-160        | 4,000 requests       | 5,760,000 requests   |\n| ENTERPRISE-192        | 4,800 requests       | 6,912,000 requests   |\n| ENTERPRISE-224        | 5,600 requests       | 8,064,000 requests   |\n| ENTERPRISE-256        | 6,400 requests       | 9,216,000 requests   |\n| ENTERPRISE-288        | 7,200 requests       | 10,368,000 requests  |\n| ENTERPRISE-320        | 8,000 requests       | 11,520,000 requests  |\n| ENTERPRISE-384        | 9,600 requests       | 13,824,000 requests  |\n| ENTERPRISE-448        | 11,200 requests      | 16,128,000 requests  |\n| ENTERPRISE-512        | 12,800 requests      | 18,432,000 requests  |\n| ENTERPRISE-640        | 16,000 requests      | 23,040,000 requests  |\n| ENTERPRISE-768        | 19,200 requests      | 27,648,000 requests  |\n| ENTERPRISE-1024       | 25,600 requests      | 36,864,000 requests  |\n\nIt is important to note that these API usage limits are set to ensure that the Square Cloud platform can be used equitably by all users and to protect the integrity of the systems. If you need more requests per minute or other broader limitations, it may be possible to upgrade to a higher tier plan that offers these additional features.\n"
     },
     "articles/getting-started-with-csharp": {
@@ -793,8 +793,16 @@
         "description": "Send a change to your application. It has a rate limit of 1 request every 3 seconds.",
         "sidebarTitle": "/v2/apps/:appId/commit"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/commit"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField body=\"file\" type=\"file\" placeholder=\"commit.zip\" required>\n  Use FormData or NodeJS Buffer (single file or compress \\[zip])\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"message\" type=\"string\">\n  A message indicating the status of the commit.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/delete": {
@@ -803,8 +811,16 @@
         "description": "Remove your application from Square Cloud. (yellow category)",
         "sidebarTitle": "/v2/apps/:appId"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "DELETE",
+          "path": "/apps/{app_id}"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/info": {
@@ -813,8 +829,16 @@
         "description": "Retrieve technical information about your application.",
         "sidebarTitle": "/v2/apps/:appId"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"code\" type=\"string\">\n  The status code of the response.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"name\" type=\"string\">\n      The application's name.\n    </ResponseField>\n\n    <ResponseField name=\"id\" type=\"string\">\n      The application's ID.\n    </ResponseField>\n\n    <ResponseField name=\"owner\" type=\"string\">\n      The ID of the application owner.\n    </ResponseField>\n\n    <ResponseField name=\"cluster\" type=\"string\">\n      The application's cluster.\n    </ResponseField>\n\n    <ResponseField name=\"ram\" type=\"number\">\n      The application's RAM usage in MB.\n    </ResponseField>\n\n    <ResponseField name=\"language\" type=\"string\">\n      The application's programming language.\n    </ResponseField>\n\n    <ResponseField name=\"domain\" type=\"string\">\n      The application's domain (null if not applicable).\n    </ResponseField>\n\n    <ResponseField name=\"custom\" type=\"string\">\n      Custom information about the application (null if not applicable).\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json Response\n  {\n    \"status\": \"success\",\n    \"response\": {\n      \"name\": \"Best bot forever\",\n      \"id\": \"64d0c750212742ca8704fb458c9771af\",\n      \"owner\": \"3133971456989594464\",\n      \"cluster\": \"fl-micron-1\",\n      \"ram\": 1024,\n      \"language\": \"rust\",\n      \"domain\": null,\n      \"custom\": null\n    }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/logs": {
@@ -823,8 +847,16 @@
         "description": "Collect the latest logs from your application. It has a rate limit of 1 request every 5 seconds.",
         "sidebarTitle": "/v2/apps/:appId/logs"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/logs"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"logs\" type=\"string\">\n      The latest logs from the application.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": {\n          \"logs\": \"Working!\"\n      }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/restart": {
@@ -833,8 +865,16 @@
         "description": "Initiate your application.",
         "sidebarTitle": "/v2/apps/:appId/restart"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/restart"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/start": {
@@ -843,8 +883,16 @@
         "description": "Initiate your application.",
         "sidebarTitle": "/v2/apps/:appId/start"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/start"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/status": {
@@ -853,8 +901,16 @@
         "description": "Collect status information about your application.",
         "sidebarTitle": "/v2/apps/:appId/status"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/status"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"code\" type=\"string\">\n  The status code of the response.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"cpu\" type=\"string\">\n      The CPU usage of the application.\n    </ResponseField>\n\n    <ResponseField name=\"ram\" type=\"string\">\n      The RAM usage of the application.\n    </ResponseField>\n\n    <ResponseField name=\"status\" type=\"string\">\n      The status of the application.\n    </ResponseField>\n\n    <ResponseField name=\"running\" type=\"boolean\">\n      Indicates whether the application is currently running.\n    </ResponseField>\n\n    <ResponseField name=\"storage\" type=\"string\">\n      The storage used by the application.\n    </ResponseField>\n\n    <ResponseField name=\"network\" type=\"object\">\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"total\" type=\"string\">\n          The total network usage of the application.\n        </ResponseField>\n\n        <ResponseField name=\"now\" type=\"string\">\n          The current network usage of the application.\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n\n    <ResponseField name=\"uptime\" type=\"number\">\n      The uptime of the application in milliseconds.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": {\n          \"cpu\": \"0.01%\",\n          \"ram\": \"31.79\",\n          \"status\": \"running\",\n          \"running\": true,\n          \"storage\": \"2.72MB\",\n          \"network\": {\n              \"total\": \"602 KB ↑ 134 KB ↓\",\n              \"now\": \"14 KB ↑ 3.3 KB ↓\"\n          },\n          \"uptime\": 1662927833666\n      }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/status-all": {
@@ -863,8 +919,16 @@
         "description": "Collect status information about all your applications in real time. It has a rate limit of 15 request every 60 seconds.",
         "sidebarTitle": "/v2/apps/status"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/status"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"id\" type=\"string\">\n      The application ID.\n    </ResponseField>\n\n    <ResponseField name=\"cpu\" type=\"string\">\n      The CPU usage of the application.\n    </ResponseField>\n\n    <ResponseField name=\"ram\" type=\"string\">\n      The RAM usage of the application.\n    </ResponseField>\n\n    <ResponseField name=\"running\" type=\"boolean\">\n      Indicates whether the application is currently running.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\",\n    \"response\": [\n      {\n        \"id\": \"5bbd020126ee4692aga43e0ca0a75454\",\n        \"cpu\": \"0.00%\",\n        \"ram\": \"55.88MB\",\n        \"running\": true\n      },\n      {\n        \"id\": \"e1b286ba30f14a87baed4b4ad3b53c47\",\n        \"cpu\": \"0.01%\",\n        \"ram\": \"68.44MB\",\n        \"running\": true\n      }\n    ]\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/stop": {
@@ -873,8 +937,16 @@
         "description": "Initiate your application.",
         "sidebarTitle": "/v2/apps/:appId/stop"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/stop"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/upload": {
@@ -883,8 +955,16 @@
         "description": "Send an application to Square Cloud. It has a rate limit of 1 request every 3 seconds.",
         "sidebarTitle": "/v2/apps"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"file\" type=\"file\" placeholder=\"application.zip\" required>\n  The application to upload. Must be a ZIP file.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"code\" type=\"string\">\n  The status code of the response.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"id\" type=\"string\">\n      The ID of the uploaded application.\n    </ResponseField>\n\n    <ResponseField name=\"name\" type=\"string\">\n      The name of the uploaded application.\n    </ResponseField>\n\n    <ResponseField name=\"description\" type=\"string\">\n      The description of the uploaded application.\n    </ResponseField>\n\n    <ResponseField name=\"domain\" type=\"string\">\n      The subdomain of the uploaded application (null if not applicable).\n    </ResponseField>\n\n    <ResponseField name=\"ram\" type=\"number\">\n      The RAM usage of the uploaded application in MB.\n    </ResponseField>\n\n    <ResponseField name=\"cpu\" type=\"number\">\n      The CPU usage of the uploaded application.\n    </ResponseField>\n\n    <ResponseField name=\"language\" type=\"object\">\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"name\" type=\"string\">\n          The programming language of the uploaded application.\n        </ResponseField>\n\n        <ResponseField name=\"version\" type=\"string\">\n          The recommended version of the programming language.\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"code\": \"SUCCESS\",\n      \"response\": {\n          \"id\": \"945f574e6cc14ea6818f91d7d56de101\",\n          \"name\": \"Estrelinha Legal\",\n          \"description\": \"Nossa, fui enviada na velocidade da luz! ✨\",\n          \"domain\": null,\n          \"ram\": 1024,\n          \"cpu\": 6,\n          \"language\": {\n              \"name\": \"JavaScript\",\n              \"version\": \"recommended\"\n          }\n      }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/service/status": {
@@ -893,8 +973,16 @@
         "description": "Check the real-time status of Square Cloud services",
         "sidebarTitle": "/v2/service/status"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/service/status"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<Info>\n  This route has a 5-minute cache and does not reflect the real-time status of\n  status.squarecloud.app.\n</Info>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  The current status of Square Cloud, with `online` indicating the service is online, `degraded` indicating issues, and `unknown` indicating unavailable.\n</ResponseField>\n\n<ResponseField name=\"message\" type=\"string\">\n  Message about the current status of Square Cloud services.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"online\",\n      \"message\": \"All services are online.\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/users/me": {
@@ -903,8 +991,16 @@
         "description": "Get information about your account.",
         "sidebarTitle": "/v2/users/me"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/users/me"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"user\" type=\"object\">\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"id\" type=\"string\">\n          The user's ID.\n        </ResponseField>\n\n        <ResponseField name=\"name\" type=\"string\">\n          The user's name.\n        </ResponseField>\n\n        <ResponseField name=\"email\" type=\"string\">\n          The user's email.\n        </ResponseField>\n\n        <ResponseField name=\"plan\" type=\"object\">\n          <Expandable title=\"Toggle object\">\n            <ResponseField name=\"name\" type=\"string\">\n              The user's plan name.\n            </ResponseField>\n\n            <ResponseField name=\"duration\" type=\"number\">\n              The user's plan duration in milliseconds.\n            </ResponseField>\n          </Expandable>\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n\n    <ResponseField name=\"applications\" type=\"array\">\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"name\" type=\"string\">\n          The application's name.\n        </ResponseField>\n\n        <ResponseField name=\"id\" type=\"string\">\n          The application's ID.\n        </ResponseField>\n\n        <ResponseField name=\"desc\" type=\"string\">\n          The application's description.\n        </ResponseField>\n\n        <ResponseField name=\"ram\" type=\"number\">\n          The application's RAM usage.\n        </ResponseField>\n\n        <ResponseField name=\"lang\" type=\"string\">\n          The application's language.\n        </ResponseField>\n\n        <ResponseField name=\"domain\" type=\"string\">\n          The application's domain.\n        </ResponseField>\n\n        <ResponseField name=\"custom\" type=\"string\">\n          The application's custom domain.\n        </ResponseField>\n\n        <ResponseField name=\"cluster\" type=\"string\">\n          The application's cluster.\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json Response\n  {\n    \"status\": \"success\",\n    \"response\": {\n      \"user\": {\n        \"id\": \"313397145698959364\",\n        \"name\": \"joaootavios\",\n        \"email\": \"joao@squarecloud.app\",\n        \"plan\": {\n          \"name\": \"standard\",\n          \"memory\": {\n            \"limit\": 2048,\n            \"available\": 1536,\n            \"used\": 256\n          },\n          \"duration\": 1732072955446\n        }\n      },\n      \"applications\": [\n        {\n          \"name\": \"Square Example APP\",\n          \"id\": \"446b0b4118634a1c99e73bac9a54e475\",\n          \"desc\": \"This is a example of description\",\n          \"ram\": 512,\n          \"lang\": \"javascript\",\n          \"domain\": \"square-example-app.squareweb.app\",\n          \"custom\": \"mydomain.com\",\n          \"cluster\": \"fl-micron-1\"\n        }\n      ]\n    }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/create": {
@@ -913,8 +1009,16 @@
         "description": "Create a new workspace into your Square Cloud account.",
         "sidebarTitle": "/v2/workspaces"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/workspaces"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"name\" type=\"string\" placeholder=\"Workspace name\">\n  A string representing the name of the workspace. (without extension)<br />Must adhere to the a to z, A to Z, 0 to 9, and \\_ pattern. (3 to 32 characters)\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"id\" type=\"string\">\n      The ID of the Workspace.\n    </ResponseField>\n\n    <ResponseField name=\"owner\" type=\"string\">\n      The Workspace owner id.\n    </ResponseField>\n\n    <ResponseField name=\"name\" type=\"string\">\n      The name of the Workspace.\n    </ResponseField>\n\n    <ResponseField name=\"createdAt\" type=\"string\">\n      The creation timestamp in UTC-0.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n\n  {\n      \"status\": \"success\", \n      \"response\": {\n          \"id\": \"dcedcd13d7e272a7b32a70f6a1d180f23c12d759\", \n          \"owner\": \"5354d9742d889d49b20134ba0be09ccc0033be68\", \n          \"name\": \"Test\", \n          \"createdAt\": \"2025-06-04T20:44:55.934Z\"\n      }\n  }\n\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/delete": {
@@ -923,8 +1027,16 @@
         "description": "Delete the workspace.",
         "sidebarTitle": "/v2/workspaces"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "DELETE",
+          "path": "/workspaces"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"workspaceId\" type=\"string\" placeholder=\"Workspace Id\">\n  The ID of the workspace.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/get": {
@@ -933,8 +1045,16 @@
         "description": "Get workspace info.",
         "sidebarTitle": "/v2/workspaces/:Id"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/workspaces/{workspaceId}"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"id\" type=\"string\">\n      The ID of the Workspace.\n    </ResponseField>\n\n    <ResponseField name=\"owner\" type=\"string\">\n      The Workspace owner id.\n    </ResponseField>\n\n    <ResponseField name=\"name\" type=\"string\">\n      The name of the Workspace.\n    </ResponseField>\n\n    <ResponseField name=\"members\" type=\"object\">\n      The workspace member list.\n\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"id\" type=\"string\">\n          The user's ID.\n        </ResponseField>\n\n        <ResponseField name=\"name\" type=\"string\">\n          The user's name.\n        </ResponseField>\n\n        <ResponseField name=\"group\" type=\"string\">\n          The member permissions on the workspace applications.\n        </ResponseField>\n\n        <ResponseField name=\"joinedAt\" type=\"string\">\n          The join timestamp in UTC-0.\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n\n    <ResponseField name=\"applications\" type=\"object\">\n      The workspace applications list.\n\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"id\" type=\"string\">\n          The ID of the uploaded application.\n        </ResponseField>\n\n        <ResponseField name=\"name\" type=\"string\">\n          The name of the uploaded application.\n        </ResponseField>\n\n        <ResponseField name=\"ram\" type=\"number\">\n          The RAM usage of the uploaded application in MB.\n        </ResponseField>\n\n        <ResponseField name=\"language\" type=\"object\">\n          The programming language of the uploaded application.\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n\n    <ResponseField name=\"createdAt\" type=\"string\">\n      The creation timestamp in UTC-0.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\",\n    \"response\": {\n      \"id\": \"dcedcd13d7e272a7b32a70f6a1d180f23c12d759\",\n      \"name\": \"Test\", \n      \"owner\": \"5354d9742d889d49b20134ba0be09ccc0033be68\",\n      \"members\": [\n        {\n          \"name\": \"Example\",\n          \"id\": \"5354d9742d889d49b20134ba0be09ccc0033be68\",\n          \"group\": \"owner\",\n          \"joinedAt\": \"2025-06-04T20:44:55.934Z\"\n        }\n      ],\n      \"applications\": [],\n      \"createdAt\": \"2025-06-04T20:44:55.934Z\"\n    }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/leave": {
@@ -943,8 +1063,16 @@
         "description": "Leave from workspace.",
         "sidebarTitle": "/v2/workspaces/leave"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "DELETE",
+          "path": "/workspaces/leave"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"workspaceId\" type=\"string\" placeholder=\"Workspace Id\">\n  The ID of the workspace.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/list": {
@@ -953,8 +1081,16 @@
         "description": "Get workspace info.",
         "sidebarTitle": "/v2/workspaces"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/workspaces"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"id\" type=\"string\">\n      The ID of the Workspace.\n    </ResponseField>\n\n    <ResponseField name=\"owner\" type=\"string\">\n      The Workspace owner id.\n    </ResponseField>\n\n    <ResponseField name=\"name\" type=\"string\">\n      The name of the Workspace.\n    </ResponseField>\n\n    <ResponseField name=\"members\" type=\"object\">\n      The workspace member list.\n\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"id\" type=\"string\">\n          The user's ID.\n        </ResponseField>\n\n        <ResponseField name=\"name\" type=\"string\">\n          The user's name.\n        </ResponseField>\n\n        <ResponseField name=\"group\" type=\"string\">\n          The member permissions on the workspace applications.\n        </ResponseField>\n\n        <ResponseField name=\"joinedAt\" type=\"string\">\n          The join timestamp in UTC-0.\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n\n    <ResponseField name=\"applications\" type=\"object\">\n      The workspace applications list.\n\n      <Expandable title=\"Toggle object\">\n        <ResponseField name=\"id\" type=\"string\">\n          The ID of the uploaded application.\n        </ResponseField>\n\n        <ResponseField name=\"name\" type=\"string\">\n          The name of the uploaded application.\n        </ResponseField>\n\n        <ResponseField name=\"ram\" type=\"number\">\n          The RAM usage of the uploaded application in MB.\n        </ResponseField>\n\n        <ResponseField name=\"language\" type=\"object\">\n          The programming language of the uploaded application.\n        </ResponseField>\n      </Expandable>\n    </ResponseField>\n\n    <ResponseField name=\"createdAt\" type=\"string\">\n      The creation timestamp in UTC-0.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": [\n          {\n              \"id\": \"dcedcd13d7e272a7b32a70f6a1d180f23c12d759\", \n              \"name\": \"Test\", \n              \"owner\": \"5354d9742d889d49b20134ba0be09ccc0033be68\",\n              \"members\": [\n              {\n                  \"name\": \"Example\",\n                  \"id\": \"5354d9742d889d49b20134ba0be09ccc0033be68\",\n                  \"group\": \"owner\",\n                  \"joinedAt\": \"2025-06-04T20:44:55.934Z\"\n              }\n              ],\n              \"applications\": [], \n              \"createdAt\": \"2025-06-04T20:44:55.934Z\"\n          }\n      ]\n  }\n  ```\n</ResponseExample>\n"
     },
     "sdks/py/advanced/app_cache": {
@@ -990,8 +1126,16 @@
         "description": "This route allows you to retrieve a list of backups (snapshots) for a specific application.",
         "sidebarTitle": "/v2/apps/:appId/backups"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/backups"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"name\" type=\"string\">\n      The ID of the application from which you fetched the backups.\n    </ResponseField>\n\n    <ResponseField name=\"size\" type=\"number\">\n      Size of the backup in bytes.\n    </ResponseField>\n\n    <ResponseField name=\"modified\" type=\"string\">\n      Date of the last modification of the backup.\n    </ResponseField>\n\n    <ResponseField name=\"key\" type=\"string\">\n      AWS access key for the backup.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\",\n    \"response\": [\n      {\n        \"name\": \"1d2cdc0d6ebd435c91315c6329d12eab\",\n        \"size\": 12900705,\n        \"modified\": \"2024-06-27T06:23:42.326Z\",\n        \"key\": \"AWSAccessKeyId=access key\"\n      },\n      {\n        \"name\": \"1d2cdc0d6ebd435c91315c6329d12eab\",\n        \"size\": 12900705,\n        \"modified\": \"2024-06-26T07:05:40.000Z\",\n        \"key\": \"AWSAccessKeyId=access key\"\n      },\n      {\n        \"name\": \"1d2cdc0d6ebd435c91315c6329d12eab\",\n        \"size\": 12900705,\n        \"modified\": \"2024-06-25T05:15:51.533Z\",\n        \"key\": \"AWSAccessKeyId=access key\"\n      },\n    ]\n  }\n  ```\n</ResponseExample>\n\n<Note>The format of the URL to download the desired backup is: https://backups.squarecloud.app/{accountID}\\_{name}.zip?{key}</Note>\n"
     },
     "api-reference/endpoint/apps/backups/post": {
@@ -1000,8 +1144,16 @@
         "description": "Perform a backup of your application. It has a rate limit of 1 request every 60 seconds.",
         "sidebarTitle": "/v2/apps/:appId/backups"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/backups"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<Warning>Each application (app ID) can only perform 12 backups every 24 hours.</Warning>\n\n<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"url\" type=\"string\">\n      The URL to download the backup of your application.\n    </ResponseField>\n\n    <ResponseField name=\"key\" type=\"string\">\n      The key to download the backup of your application.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": {\n          \"url\": \"https://backups.squarecloud.app/23457145698959364_a23d130fcc9ddaf2d288ae9599a4292c32.zip?AWSAccessKeyId=i06Xdad2dRD74Pm8Xly&Expires=1753081182&Signature=riWPedawcsouRAPGU5n3kGHnWoOuw%3D\",\n          \"key\": \"AWSAccessKeyId=i06Xdad2dRD74Pm8Xly&Expires=1753081182&Signature=riWPedawcsouRAPGU5n3kGHnWoOuw%3D\"\n      }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/deploy/info": {
@@ -1010,8 +1162,16 @@
         "description": "Get the current deployment information for an application.",
         "sidebarTitle": "[...]/deployments/current"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/deployments/current"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"webhook\" type=\"string\">\n      The webhook URL for the application.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": { \n          \"webhook\": \"https://api.squarecloud.app/v2/git/webhook/69ce71f11974f2cc21d47cd0a8bcbafdaacbc3c9924b23ca40e0e2032705f6391eb89b40983338e0f2415e9331d602ccc\"\n      }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/deploy/list": {
@@ -1020,8 +1180,16 @@
         "description": "Get the last 10 deployments of an application from the last 24 hours.",
         "sidebarTitle": "[...]/deployments"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/deployments"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"array\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"id\" type=\"string\">\n      The ID of the deploy.\n    </ResponseField>\n\n    <ResponseField name=\"state\" type=\"string\">\n      The state of the deploy. Can be `pending`, `clone`, `success`, or `error`.\n    </ResponseField>\n\n    <ResponseField name=\"date\" type=\"string\">\n      The date the deploy was created.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": [\n          [\n  \t\t    {\n  \t\t\t    \"id\": \"git-393caedd68f5e5b771f6a027\",\n  \t\t\t    \"state\": \"pending\",\n  \t\t\t    \"date\": \"2023-10-16T20:27:20.513Z\"\n  \t\t    },\n  \t\t    {\n  \t\t\t    \"id\": \"git-393caedd68f5e5b771f6a027\",\n  \t\t\t    \"state\": \"clone\",\n  \t\t\t    \"date\": \"2023-10-16T20:27:20.536Z\"\n  \t\t    },\n  \t\t    {\n  \t\t\t    \"id\": \"git-393caedd68f5e5b771f6a027\",\n  \t\t\t    \"state\": \"success\",\n  \t\t\t    \"date\": \"2023-10-16T20:27:21.422Z\"\n  \t\t    }\n  \t    ]\n      ],\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/deploy/webhooks": {
@@ -1030,8 +1198,16 @@
         "description": "Integrate Square Cloud with GitHub webhooks.",
         "sidebarTitle": "[...]/deploy/webhook"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/deploy/webhook"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField body=\"access_token\" type=\"string\" placeholder=\"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\" required>\n  The access token for your GitHub repository. You can find this in your [GitHub Tokens Classic](https://github.com/settings/tokens/new)\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"message\" type=\"string\">\n  A message indicating the status of the commit.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"webhook\" type=\"string\">\n      The URL of the webhook.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": { \n          \"webhook\": \"https://api.squarecloud.app/v2/git/webhook/<webhook-code>\"\n      },\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/filemanager/content": {
@@ -1040,8 +1216,16 @@
         "description": "Read a file from your application.",
         "sidebarTitle": "[...]/files/content"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/files/content"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField query=\"path\" type=\"string\" placeholder=\"Example: src/index.js\" required>\n  The path to the file you want to read. This is relative to the root of your application.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  The contents of the file.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"type\" type=\"string\">\n      The type of the data. It is \"Buffer\" for binary data.\n    </ResponseField>\n\n    <ResponseField name=\"data\" type=\"array\">\n      The data of the file represented as an array of numbers. These numbers represent the bytes of the file.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": {\n          \"type\": \"Buffer\",\n          \"data\": [\n              112,\n              111,\n              120,\n              97,\n              44,\n              32,\n              116,\n              97,\n              32,\n              113,\n              117,\n              101,\n              114,\n              101,\n              110,\n              100,\n              111,\n              32,\n              99,\n              111,\n              112,\n              105,\n              97,\n              114,\n              32,\n              97,\n              116,\n              195,\n              169,\n              32,\n              111,\n              32,\n              98,\n              117,\n              102,\n              102,\n              101,\n              114,\n              63\n          ]\n      }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/filemanager/delete": {
@@ -1050,8 +1234,16 @@
         "description": "Delete a file from your application.",
         "sidebarTitle": "/v2/apps/:appId/files"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "DELETE",
+          "path": "/apps/{app_id}/files"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField body=\"path\" type=\"string\" placeholder=\"Path to file\" required>\n  The path of the file to delete.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/filemanager/list": {
@@ -1060,8 +1252,16 @@
         "description": "List the files of your application.",
         "sidebarTitle": "/v2/apps/:appId/files"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/files"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField query=\"path\" type=\"string\" placeholder=\"Path to list\" required>\n  The path of the directory whose files you want to list. Default is the root directory.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"array\">\n  The list of files and directories in the specified path.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"type\" type=\"string\">\n      The type of the entry. Can be `file` or `directory`.\n    </ResponseField>\n\n    <ResponseField name=\"name\" type=\"string\">\n      The name of the file or directory.\n    </ResponseField>\n\n    <ResponseField name=\"size\" type=\"number\">\n      The size of the file in bytes. For directories, it is 0.\n    </ResponseField>\n\n    <ResponseField name=\"lastModified\" type=\"number\">\n      The last modified timestamp of the file or directory in milliseconds since the epoch.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\",\n      \"response\": [\n          {\n              \"type\": \"file\",\n              \"name\": \".env\",\n              \"size\": 86,\n              \"lastModified\": 1676168978000\n          },\n          {\n              \"type\": \"file\",\n              \"name\": \".gitignore\",\n              \"size\": 8,\n              \"lastModified\": 1675125328000\n          },\n          {\n              \"type\": \"file\",\n              \"name\": \"index.js\",\n              \"size\": 614,\n              \"lastModified\": 1676168350000\n          },\n          {\n              \"type\": \"file\",\n              \"name\": \"squarecloud.app\",\n              \"size\": 65,\n              \"lastModified\": 1676169188000\n          },\n          {\n              \"type\": \"directory\",\n              \"name\": \"src\",\n              \"lastModified\": 1676155738000\n          }\n      ]\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/filemanager/patch": {
@@ -1070,8 +1270,16 @@
         "description": "Move a file in your application.",
         "sidebarTitle": "/v2/apps/:appId/files"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "PATCH",
+          "path": "/apps/{app_id}/files"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField body=\"path\" type=\"string\" placeholder=\"Path to file\" required>\n  The path of the file to move.\n</ParamField>\n\n<ParamField body=\"to\" type=\"string\" placeholder=\"Path to file\" required>\n  The path to move the file to.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/filemanager/put": {
@@ -1080,8 +1288,16 @@
         "description": "Create files in your application.",
         "sidebarTitle": "/v2/apps/:appId/files"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "PUT",
+          "path": "/apps/{app_id}/files"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField body=\"path\" type=\"string\" required>\n  The path where the file should be created. Example: /test.txt\n</ParamField>\n\n<ParamField body=\"content\" type=\"string\" required>\n  The content of the file to be created.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/network/analytics": {
@@ -1090,8 +1306,16 @@
         "description": "Get analytics for a website hosted on Square Cloud. There is a rate limit of 1 uncached request every 10 seconds.",
         "sidebarTitle": "[...]/network/analytics"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/network/analytics"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField query=\"range\" type=\"string\" placeholder=\"Time range\">\n  Time range for the analytics data. It can be `daily` or `weekly`. Default is `daily`.\n</ParamField>\n\n### Response\n\n<Info>\n  This route can send a response in a compressed format, optimizing data transmission.\n</Info>\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"object\">\n  Check the Response Example in right side to see the full response.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\",\n    \"response\": {\n      \"visits\": [\n        {\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"countries\": [\n        {\n          \"type\": \"BR\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"devices\": [\n        {\n          \"type\": \"desktop\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"os\": [\n        {\n          \"type\": \"Windows\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"browsers\": [\n        {\n          \"type\": \"Chrome\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"protocols\": [\n        {\n          \"type\": \"https\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"methods\": [\n        {\n          \"type\": \"GET\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"paths\": [\n        {\n          \"type\": \"/\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"referers\": [\n        {\n          \"type\": \"https://google.com\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ],\n      \"providers\": [\n        {\n          \"type\": \"Cloudflare\",\n          \"visits\": 1,\n          \"requests\": 4,\n          \"bytes\": 9677,\n          \"date\": \"2025-05-31T18:45:00Z\"\n        }\n      ]\n    }\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/network/custom": {
@@ -1100,8 +1324,16 @@
         "description": "Integrate your website with a custom domain. It has a rate limit of 1 request every 60 seconds.",
         "sidebarTitle": "[...]/network/custom"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/network/custom"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "**Is necessary to have at least the [Standard plan](https://squarecloud.app/plans) to use this route.**\n\n<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField body=\"custom\" type=\"string\" placeholder=\"example.com\" required>\n  The custom domain you want to use.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/network/dns": {
@@ -1110,8 +1342,16 @@
         "description": "Get the DNS records for your custom domain.",
         "sidebarTitle": "[...]/network/dns"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/apps/{app_id}/network/dns"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "**Is necessary to have at least the [Standard plan](https://squarecloud.app/plans) to use this route.**\n\n<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"response\" type=\"array\">\n  The contents of the response.\n\n  <Expandable title=\"Toggle object\">\n    <ResponseField name=\"type\" type=\"string\">\n      The type of the DNS record.\n    </ResponseField>\n\n    <ResponseField name=\"name\" type=\"string\">\n      The name of the DNS record.\n    </ResponseField>\n\n    <ResponseField name=\"value\" type=\"string\">\n      The value of the DNS record.\n    </ResponseField>\n\n    <ResponseField name=\"status\" type=\"string\">\n      The status of the DNS record. It can be `pending_validation`, `pending` or `active`.\n    </ResponseField>\n  </Expandable>\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\",\n    \"response\": [\n      {\n        \"type\": \"txt\",\n        \"name\": \"_acme-challenge.joaootavios.dev\",\n        \"value\": \"hmo-jMx_KCWQU5CWG6xmrkI4AOZOJXlQtjEtc7zI1PA\",\n        \"status\": \"pending_validation\"\n      },\n      {\n        \"type\": \"cname\",\n        \"name\": \"joaootavios.dev\",\n        \"value\": \"custom.squarecloud.app\",\n        \"status\": \"pending\"\n      }\n    ]\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/apps/network/purge_cache": {
@@ -1120,8 +1360,16 @@
         "description": "Purge Cache of the certain paths in the network. It has a rate limit of 1 request every 60 seconds.",
         "sidebarTitle": "[...]/network/purge_cache"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/apps/{app_id}/network/purge_cache"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField path=\"app_id\" type=\"string\" placeholder=\"Application ID\" required>\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n<ParamField body=\"paths\" type=\"array\" placeholder={[\"https://yoursubdomain.squareweb.app/\", \"https://yoursubdomain.squareweb.app/style.css\"]} required>\n  The paths you want to purge the cache.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n      \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/apps/add": {
@@ -1130,8 +1378,16 @@
         "description": "Add an application into the workspace.",
         "sidebarTitle": "/v2/workspaces/applications"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/workspaces/applications"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"workspaceId\" type=\"string\" placeholder=\"Workspace Id\">\n  The ID of the workspace.\n</ParamField>\n\n<ParamField body=\"appId\" type=\"string\" placeholder=\"Application ID\">\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/apps/remove": {
@@ -1140,8 +1396,16 @@
         "description": "Removes an application from the workspace.",
         "sidebarTitle": "/v2/workspaces/applications"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "DELETE",
+          "path": "/workspaces/applications"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"workspaceId\" type=\"string\" placeholder=\"Workspace Id\">\n  The ID of the workspace.\n</ParamField>\n\n<ParamField body=\"appId\" type=\"string\" placeholder=\"Application ID\">\n  The ID of the application. You can find this in the URL of your application's dashboard.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/members/code": {
@@ -1150,8 +1414,16 @@
         "description": "Get your invite code to add you into an workspace.",
         "sidebarTitle": "/v2/workspaces/members/code"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "GET",
+          "path": "/workspaces/members/code"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseField name=\"code\" type=\"string\">\n  Your team invite code.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\", \n    \"code\": \"9c1a499e623d2410226f1ecdc7e6daaec2fc6704\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/members/invite": {
@@ -1160,8 +1432,16 @@
         "description": "Invites someone to an workspace.",
         "sidebarTitle": "/v2/workspaces/members"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "POST",
+          "path": "/workspaces/members"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"workspaceId\" type=\"string\" placeholder=\"Workspace Id\">\n  The ID of the workspace.\n</ParamField>\n\n<ParamField body=\"code\" type=\"string\" placeholder=\"Invite code\">\n  A string with the member invite code.\n</ParamField>\n\n<ParamField body=\"group\" type=\"string\" placeholder=\"Permission name\">\n  The member permissions on the workspace applications\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/members/kick": {
@@ -1170,8 +1450,16 @@
         "description": "Removes a workspace member from the workspace.",
         "sidebarTitle": "/v2/workspaces/members"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "DELETE",
+          "path": "/workspaces/members"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"workspaceId\" type=\"string\" placeholder=\"Workspace Id\">\n  The ID of the workspace.\n</ParamField>\n\n<ParamField body=\"memberId\" type=\"string\" placeholder=\"Member ID\">\n  The member ID.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     },
     "api-reference/endpoint/workspace/members/perms": {
@@ -1180,8 +1468,16 @@
         "description": "Changes workspace member permissions.",
         "sidebarTitle": "/v2/workspaces/members"
       },
-      "created_at": "2025-06-13T23:12:55.932Z",
-      "updated_at": "2025-06-13T23:12:55.932Z",
+      "attributes": {
+        "type": "endpoint",
+        "endpoint": {
+          "baseURL": "https://api.squarecloud.app/v2",
+          "method": "PATCH",
+          "path": "/workspaces/members"
+        }
+      },
+      "created_at": "2025-06-18T18:07:11.274Z",
+      "updated_at": "2025-06-18T18:07:11.274Z",
       "content": "<ParamField header=\"Authorization\" type=\"string\" placeholder=\"API KEY\" required>\n  The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).\n</ParamField>\n\n<ParamField body=\"workspaceId\" type=\"string\" placeholder=\"Workspace Id\">\n  The ID of the workspace.\n</ParamField>\n\n<ParamField body=\"memberId\" type=\"string\" placeholder=\"Member ID\">\n  The member ID.\n</ParamField>\n\n<ParamField body=\"group\" type=\"string\" placeholder=\"Permission name\">\n  The member permissions on the workspace applications.\n</ParamField>\n\n### Response\n\n<ResponseField name=\"status\" type=\"string\">\n  Indicates whether the call was successful. `success` if successful, `error` if not.\n</ResponseField>\n\n<ResponseExample>\n  ```json\n  {\n    \"status\": \"success\"\n  }\n  ```\n</ResponseExample>\n"
     }
   },
@@ -1247,99 +1543,6 @@
               "company/brand",
               "company/legal",
               "company/support"
-            ]
-          }
-        ]
-      }
-    },
-    "api-reference": {
-      "content": {
-        "title": "API Reference",
-        "description": "Reference for the API",
-        "main_article": "api-reference/authentication",
-        "contents": [
-          {
-            "group": "API Reference",
-            "pages": [
-              "api-reference/authentication",
-              "api-reference/limitations-and-restrictions"
-            ]
-          },
-          {
-            "group": "API Endpoints",
-            "pages": [
-              "api-reference/endpoint/users/me",
-              "api-reference/endpoint/apps/upload",
-              "api-reference/endpoint/apps/status-all",
-              "api-reference/endpoint/service/status",
-              {
-                "group": "Application",
-                "pages": [
-                  "api-reference/endpoint/apps/info",
-                  "api-reference/endpoint/apps/status",
-                  "api-reference/endpoint/apps/logs",
-                  "api-reference/endpoint/apps/start",
-                  "api-reference/endpoint/apps/restart",
-                  "api-reference/endpoint/apps/stop",
-                  "api-reference/endpoint/apps/commit",
-                  "api-reference/endpoint/apps/backups/get",
-                  "api-reference/endpoint/apps/backups/post",
-                  "api-reference/endpoint/apps/delete"
-                ]
-              },
-              {
-                "group": "Application - File Manager",
-                "pages": [
-                  "api-reference/endpoint/apps/filemanager/content",
-                  "api-reference/endpoint/apps/filemanager/list",
-                  "api-reference/endpoint/apps/filemanager/put",
-                  "api-reference/endpoint/apps/filemanager/patch",
-                  "api-reference/endpoint/apps/filemanager/delete"
-                ]
-              },
-              {
-                "group": "Application - Deploy",
-                "pages": [
-                  "api-reference/endpoint/apps/deploy/list",
-                  "api-reference/endpoint/apps/deploy/info",
-                  "api-reference/endpoint/apps/deploy/webhooks"
-                ]
-              },
-              {
-                "group": "Application - Network",
-                "pages": [
-                  "api-reference/endpoint/apps/network/dns",
-                  "api-reference/endpoint/apps/network/analytics",
-                  "api-reference/endpoint/apps/network/custom",
-                  "api-reference/endpoint/apps/network/purge_cache"
-                ]
-              },
-              {
-                "group": "Workspace",
-                "pages": [
-                  "api-reference/endpoint/workspace/create",
-                  "api-reference/endpoint/workspace/delete",
-                  "api-reference/endpoint/workspace/get",
-                  "api-reference/endpoint/workspace/leave",
-                  "api-reference/endpoint/workspace/list"
-                ]
-              },
-              {
-                "group": "Workspace - Members",
-                "pages": [
-                  "api-reference/endpoint/workspace/members/code",
-                  "api-reference/endpoint/workspace/members/invite",
-                  "api-reference/endpoint/workspace/members/kick",
-                  "api-reference/endpoint/workspace/members/perms"
-                ]
-              },
-              {
-                "group": "Workspace - Application",
-                "pages": [
-                  "api-reference/endpoint/workspace/apps/add",
-                  "api-reference/endpoint/workspace/apps/remove"
-                ]
-              }
             ]
           }
         ]

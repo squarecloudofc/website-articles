@@ -72,6 +72,7 @@ export async function getArticlesIndex(project, articles) {
         case "docs":
           indexes[articleLocale][article.$info.path] = {
             metadata: metadataObj,
+            attributes: article.attributes,
             created_at: article.created_at,
             updated_at: article.updated_at,
             content: content.toString(),
