@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "vLqdFFMM0Bd0",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "Solving Lavalink Closed Abnormally issue",
+      "description": "Due to recent Lavalink updates you may come across the following error: Lavalink Closed Abnormally. This article will help you solve this issue.",
+      "slug": "solving-lavalink-closed-abnormally-issue"
+    }
+  },
+  "created_at": "2025-06-25T20:06:44.000Z",
+  "updated_at": "2025-06-25T20:06:44.000Z"
+}

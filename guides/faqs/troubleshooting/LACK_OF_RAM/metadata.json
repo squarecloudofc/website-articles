@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "Ro9RTISVKTvt",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "Solving LACK_OF_RAM",
+      "description": "Learn how to resolve the LACK_OF_RAM issue in your application.",
+      "slug": "solving-lackofram"
+    }
+  },
+  "created_at": "2025-06-25T20:06:44.000Z",
+  "updated_at": "2025-06-25T20:06:44.000Z"
+}

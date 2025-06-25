@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "40YYvpqHgNUA",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "How to use Auto Restart in Square Cloud",
+      "description": "Learn how to use Auto Restart in Square Cloud to automatically restart your application in case it crashes.",
+      "slug": "how-to-use-auto-restart-in-square-cloud"
+    }
+  },
+  "created_at": "2025-06-25T20:06:44.000Z",
+  "updated_at": "2025-06-25T20:06:44.000Z"
+}

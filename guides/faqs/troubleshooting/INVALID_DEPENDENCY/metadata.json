@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "ngei0Mc6m4kH",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "Solving INVALID_DEPENDENCY",
+      "description": "Learn how to resolve the Solving INVALID_DEPENDENCY issue in your application.",
+      "slug": "solving-invaliddependency"
+    }
+  },
+  "created_at": "2025-06-25T20:06:44.000Z",
+  "updated_at": "2025-06-25T20:06:44.000Z"
+}
