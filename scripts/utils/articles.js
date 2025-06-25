@@ -52,7 +52,7 @@ export async function getArticlesIndex(project, articles) {
 
     for (const articleLocale of locales) {
       const contentLocale = pickLocale(articleLocale, available)
-      if (!contentLocale) continue
+      if ((project === "guides" && contentLocale !== articleLocale) || !contentLocale) continue
 
       if (!availableMetadata.includes(contentLocale)) continue;
 

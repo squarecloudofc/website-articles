@@ -1776,7 +1776,7 @@
       "content": {
         "title": "CLI Reference",
         "description": "Our Command Line Application",
-        "icon": "notebook",
+        "icon": "terminal-window",
         "main_article": "cli-reference/installation",
         "contents": [
           {
