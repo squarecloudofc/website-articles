@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "4imtR0fS09d7",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "How to Change Timezone",
+      "description": "Learn how to change the timezone to suit your application's needs.",
+      "slug": "how-to-change-timezone"
+    }
+  },
+  "created_at": "2025-06-25T19:43:25.159Z",
+  "updated_at": "2025-06-25T19:43:25.159Z"
+}

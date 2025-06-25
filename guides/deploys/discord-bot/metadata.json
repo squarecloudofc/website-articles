@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "6bxI5kS3rBKK",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "Hosting a Discord Bot on Square Cloud",
+      "description": "This article guides you through creating and hosting a Discord bot on Square Cloud.",
+      "slug": "hosting-a-discord-bot-on-square-cloud"
+    }
+  },
+  "created_at": "2025-06-25T19:43:25.159Z",
+  "updated_at": "2025-06-25T19:43:25.159Z"
+}

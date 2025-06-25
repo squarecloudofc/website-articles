@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "YDjmh3kfN3Aq",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "Hosting a Selenium on Square Cloud",
+      "description": "This article guides you to automate web navigation using Selenium and Chromium on Square Cloud.",
+      "slug": "hosting-a-selenium-on-square-cloud"
+    }
+  },
+  "created_at": "2025-06-25T19:43:25.159Z",
+  "updated_at": "2025-06-25T19:43:25.159Z"
+}

@@ -1,21 +1,5 @@
 {
-  "articles": {
-    "EXynVFQcvkkg": {
-      "id": "EXynVFQcvkkg",
-      "path": "deploys/how-to-deploy-vite",
-      "author": {
-        "name": "Square Cloud"
-      },
-      "metadata": {
-        "title": "如何部署 Vite 应用程序",
-        "description": "学习如何部署你的 Vite 应用程序",
-        "slug": "如何部署-vite-应用程序"
-      },
-      "created_at": "2025-05-30T00:14:55.000Z",
-      "updated_at": "2025-05-30T16:46:52.000Z",
-      "content": "## 🚀 介绍\n\n- 您需要在 Square Cloud 上创建一个账户，可以通过 [登录页面](https://squarecloud.app/signin) 完成。您可以使用电子邮件、Discord 或两者一起创建账户。\n- 最后，您的账户需要拥有一个有效的付费套餐。您可以在 [这里](https://squarecloud.app/pricing) 查看并选择适合您的套餐。\n\n## 💻 准备应用程序\n\n目前，有两种方式可以托管由 Vite 管理的网站：使用 `vite preview` 命令，或者在本地构建并仅上传静态文件。下面将详细介绍这两种方法。\n\n### 🗑️ 不必要的文件\n\n根据上传方式不同，您需要上传特定的文件。但通常，以下文件绝不应该包含在您的应用中：\n\n- `node_modules`;\n- `package-lock.json`。\n\n### 本地构建上传\n\n此方法需要您先在本地构建 Vite 应用。操作步骤如下：\n\n- 在项目根目录中打开终端；\n- 执行 `npm run build` 命令，它会运行 `package.json` 中的 `build` 脚本，通常是 `vite build`；\n\n这会生成一个包含网站所有静态文件的 `dist` 文件夹。\n\n- 进入 `dist` 文件夹，将 HTML 文件重命名为 `vite.html`；\n- 将 `dist` 文件夹中的所有内容（包括 `vite.html` 及其他文件和文件夹）压缩为 `.zip` 格式。\n\n完成后，您可以上传该 ZIP 文件，设置名称、主文件（vite.html），勾选“发布到Web”，并填写您想使用的子域名。\n\n### 在环境中构建上传\n\n此方法需要您修改 `package.json` 文件，将所有开发依赖（`devDependencies`）移到正式依赖（`dependencies`）中。这是因为生产环境不会安装开发依赖。\n\n然后，将 \"preview\" 脚本设置为 `vite preview --host 0.0.0.0 --port 80` 该命令确保 Vite 服务器在所有网络接口上通过 80 端口（HTTP）运行，从而可以映射到 443 端口（HTTPS）。\n\n将您的应用压缩，包括所有必要的运行文件（不要包含上面提到的不必要文件）。\n\n上传时，勾选“发布到Web”和“启动命令”，填写子域名，并输入以下命令 `npm run build && npm run preview`.\n"
-    }
-  },
+  "articles": {},
   "snippets": {
     "_snippets/requirements-txt": {
       "path": "_snippets/requirements-txt",

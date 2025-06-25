@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "X5iJN6tDkAUI",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "Configure Top.gg Webhook on Square Cloud",
+      "description": "A detailed guide to setting up the Top.gg webhook on Square Cloud.",
+      "slug": "configure-topgg-webhook-on-square-cloud"
+    }
+  },
+  "created_at": "2025-06-25T19:43:25.159Z",
+  "updated_at": "2025-06-25T19:43:25.159Z"
+}

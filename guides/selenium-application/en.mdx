@@ -1,0 +1,114 @@
+
+## Creating a New Selenium Script
+
+- Before you start, make sure you have **Python** and **pip** installed on your system. If you don't have them yet, you can download them from the [official Python website](https://www.python.org/) and the [official Pip website](https://pypi.org/).
+- Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
+
+With Python and pip installed, you can create a new Selenium script. First, install Selenium using pip:
+
+```bash
+pip install selenium
+```
+
+Next, create a new Python file (for example, `main.py`) and add the following code to create a basic Selenium script:
+
+```python
+import time
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+
+# Define options for Chromium
+options = Options()
+options.add_argument("--headless")  # Run in the background. This means that the browser runs without opening a browser window.
+options.add_argument("--no-sandbox")  # Required when you are running as root. This allows Selenium to start in a user-unsupported environment.
+options.add_argument("--disable-dev-shm-usage")  # This overcomes limitations when dealing with elements on large pages.
+
+# Initialize the driver
+service = Service('/usr/bin/chromedriver') # On Square Cloud, the path to the Chromium driver is '/usr/bin/chromedriver'
+driver = webdriver.Chrome(service=service, options=options)
+
+# Set the window size to larger dimensions
+driver.set_window_size(1920, 1080)  # Adjust these values as needed
+
+# Open the web page
+driver.get('https://www.google.com')
+
+# Loop to take a print of the page every 1 minute
+while True:
+    driver.save_screenshot('page.png')
+    print("Page print saved.")
+    time.sleep(60)  # Pause for 60 seconds
+```
+
+## Managing Dependencies with the requirements.txt file
+
+The `requirements.txt` file is a file that lists all the external libraries needed for your project. You should list all the libraries that your project will use, excluding native libraries like `random` and `datetime`. This file should be included when submitting your application to Square Cloud.
+
+```txt requirements.txt
+selenium
+```
+
+## Chromium path
+
+In the example provided above, it's not necessary to explicitly define the Chromium path because the Selenium WebDriver can automatically find the browser if it's installed in a standard system location. The ChromeDriver, specified with `Service('/usr/bin/chromedriver')`, knows where to look for the Chromium/Chrome executable.
+
+In Square Cloud, Chromium is installed in `/usr/bin/chromium`, which is standard. Therefore, the Selenium WebDriver can automatically locate it through the specified ChromeDriver. Thus, there's no need to explicitly specify the Chromium path in the code, unless there are specific reasons to do so, such as custom installations or different environment configurations.
+
+## Creating the squarecloud config file
+
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
+</Card>
+
+## Uploading Project to Square Cloud
+
+After preparing your project files, you can now upload them to Square Cloud and host your project.
+
+<Tabs>
+  <Tab title="Dashboard Upload">
+    Access the [Square Cloud
+    Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
+    files.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI Upload">
+    <Steps>
+      <Step title="First Step">
+        First, you need to have the CLI installed in your environment. If you
+        don't have it yet, run the following command in your terminal: ```npm install -g @squarecloud/cli``` If you already have it, we
+        recommend updating it. To do this, run the following command in your
+        terminal: 
+        ```bash 
+        squarecloud update
+        ```
+      </Step>
+      <Step title="Second Step">
+        Now, to authenticate and use other CLI commands, you will find your
+        authorization key [here](https://squarecloud.app/account) by clicking on
+        "Request API Key". After obtaining your authorization key, run the
+        following command: 
+        ```bash 
+        squarecloud login
+        ```
+      </Step>
+      <Step title="Third Step">
+        Finally, to deploy your application to Square Cloud using the CLI, you
+        need to execute the following command, passing the path of your zip
+        file: 
+        ```bash 
+        squarecloud upload zip
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Additional Resources
+
+For more information about Selenium and its tools, visit the [official Selenium documentation](https://www.selenium.dev/pt-br/documentation/webdriver/getting_started/). There, you'll find detailed guides, tutorials, and API documentation to help you make the most out of Selenium.
+
+If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).

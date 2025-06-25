@@ -1,0 +1,77 @@
+
+## Introduction
+
+- Before you start, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+- Finally, you need to have a paid plan active on your account. You can view our plans and purchase one [here](https://squarecloud.app/pricing).
+
+## Creating Your Team
+
+To create your team, you should go to the [dashboard](https://squarecloud.app/dashboard), click on your profile and choose the "Create a Team" option. Finally, just choose the name of your team and confirm. Thus, it will be created and you can access it by selecting your profile again and choosing the desired team.
+<Frame>
+    <img src="/images/articles/teams/create-team.png" style={{ borderRadius: "0.2rem" }} />
+</Frame>
+
+
+## Adding Team Members
+To add a new member to the team, follow these steps:
+
+<Steps>
+  <Step title="First Step" icon="check">
+    Ask the user you want to add to access the [config](https://squarecloud.app/account) page and trigger the `request team code` button. They should then send you the generated account code. Remember that this code can only be used once and expires after **5 minutes**.
+  </Step>
+  <Step title="Second Step" icon="star">
+    Access the [dashboard](https://squarecloud.app/dashboard), navigate to your profile, and select the team where you want to add the user. Then, go to the "Members" tab, click on the "Invite a member" button, and enter the user's account code you wish to invite.
+<Frame>
+    <img src="/images/articles/teams/add-member.gif" style={{ borderRadius: "0.2rem" }} />
+</Frame>
+  </Step>
+</Steps>
+
+<Warning>Only share your account code with trusted individuals.</Warning>
+
+### Roles
+Each member in the team has a certain role that provides specific permissions to be performed on the applications. Below you can see a list of permissions:
+
+<AccordionGroup>
+  <Accordion title="View" icon="eye">
+  Can view panels, metrics, logs and system alerts to monitor the overall integrity and performance.
+  </Accordion>
+
+  <Accordion title="Manager" icon="user-tie">
+    In addition to viewing permissions, you can control the lifecycle of applications by starting, stopping, and restarting services.
+  </Accordion>
+
+  <Accordion title="Maintain" icon="wrench">
+    Beyond manager permissions, you can upload, download, and edit files and application settings.
+  </Accordion>
+
+  <Accordion title="Admin" icon="user-shield">
+    Has full access, including viewing metrics, managing applications, editing files, accessing confidential data, and performing system backups and restores.
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+ Only the Admin role can view files such as `.env` `.env.production` and configuration file (`squarecloud.app/.config`)
+</Note>
+
+## Adding Applications to the Team
+To add applications to your team, follow these steps:
+
+<Steps>
+  <Step title="First Step" icon="check">
+    Access the team to which you want to add a new application.
+    <Frame>
+      <img src="/images/articles/teams/team.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Step>
+  <Step title="Second Step" icon="star">
+    Click on "Add new" and select the application you want to add to the chosen team.
+    <Frame>
+      <img src="/images/articles/teams/add-app.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Step>
+</Steps>
+
+<Warning>Only the team owner can add applications.</Warning>
+
+If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).

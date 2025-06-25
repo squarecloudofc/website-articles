@@ -1,0 +1,167 @@
+
+## Introduction
+
+- Before you begin, make sure you have Node.js and npm installed on your system. If you don't have them yet, you can download them from the [official Node.js website](https://nodejs.org/).
+- Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
+
+### Creating a Vite Project
+
+To create a new Vite project, run the following command:
+
+```bash
+npm create vite@latest my-vite-app
+```
+
+In the above command, `my-vite-app` is the name of your new project. Replace it with any desired name for your project. By default, this command sets up a Vite project with JavaScript.
+
+### Choosing a Specific Template
+
+Vite allows choosing different templates for your project. When creating a new project, you can specify the desired template using the `--template` option. Here are some examples:
+
+Select a template by: `react`, `vue` & `lit`.
+```bash
+# npm 7+, extra double-dash is needed:
+npm create vite@latest my-vite-app -- --template [template]
+```
+
+Choose the template that best suits your needs and adjust the project name as needed.
+
+### Understanding the Difference Between JavaScript and TypeScript
+
+When you choose JavaScript, Vite configures the project with default JavaScript settings. On the other hand, when choosing TypeScript, Vite configures the project with TypeScript settings, including generating a `tsconfig.json` file.
+
+## Configuring Port 80
+
+Port 80 is the default port for HTTP traffic. To host a Vite app on Square Cloud, configure the use of port 80. In Vite, you can set the `--port 80` parameter in the startup script to ensure your app runs correctly on this port.
+
+## Configuring Host 0.0.0.0
+
+The `--host 0.0.0.0` option is used to bind the Vite server to all available network interfaces. This makes your application accessible not only on `localhost`, but also on external devices within the same network, such as other computers or mobile devices. By default, Vite binds to `localhost`, which restricts access to the machine where it's running. Setting the host to `0.0.0.0` allows the server to listen for incoming requests from any IP address.
+
+## Creating the squarecloud config file
+
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
+</Card>
+
+## Configuring the START Field
+
+In the Square Cloud configuration file, the `START` field is essential to customize the startup command. If you want to build and start your Vite app on Square Cloud, configure the `START` field as follows:
+
+```app squarecloud.app
+START=npm run build && npm run preview
+```
+
+This command will execute the "build" and "preview" scripts defined in your `package.json`:
+
+```json package.json
+{
+  "name": "my-vite-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 80"
+  },
+  "devDependencies": {
+    "vite": "^5.1.4"
+  }
+}
+
+```
+## Purchasing a Plan Before Uploading Your Project
+
+Before you can upload your project to Square Cloud, it's important to understand that you need to purchase a plan. The type of plan you choose will depend on the resources required by your application. You can view our plans [here](https://squarecloud.app/plans).
+
+<Note>**Are you wondering how much RAM and CPU your plan needs to host a Vite website?** Don't worry, we're here to help. Vite is a modern front-end build tool that provides a faster and leaner development experience for modern web projects. It's designed to provide out-of-the-box support for ES modules, enabling instant server start-up and hot module replacement. Our **[Standard](https://squarecloud.app/pay/standard)** plan offers **4GB** of RAM and **4vCPU**, which should be sufficient for most Vite websites. However, if you're working on a larger project or need more stability, we recommend considering our Pro plan. With additional resources, you can ensure smooth performance even under high demand. To purchase, simply click [here](https://squarecloud.app/pay/pro).</Note>
+
+## Uploading Project to Square Cloud
+
+After preparing your project files, you can now upload them to Square Cloud and host your project.
+
+<Tabs>
+  <Tab title="Dashboard Upload">
+    Access the [Square Cloud
+    Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
+    files.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI Upload">
+    <Steps>
+      <Step title="First Step">
+        First, you need to have the CLI installed in your environment. If you
+        don't have it yet, run the following command in your terminal:
+        ```
+        npm install -g @squarecloud/cli
+        ```
+        If you already have it, we recommend updating it. To do this, run the following command in your terminal:
+        <Tabs>
+          <Tab title="Windows">
+            ```bash
+            squarecloud update
+            ```
+          </Tab>
+          <Tab title="Linux, macOS, and WSL">
+            ```bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            ```
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Second Step">
+        Now, to authenticate and use other CLI commands, you will find your
+        authorization key [here](https://squarecloud.app/account) by clicking on
+        "Request API Key". After obtaining your authorization key, run the
+        following command: 
+        ```bash 
+        squarecloud login
+        ```
+      </Step>
+      <Step title="Third Step">
+        Finally, to deploy your application to Square Cloud using the CLI, you
+        need to execute the following command, passing the path of your zip
+        file: 
+        ```bash 
+        squarecloud upload zip
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Custom Domain" icon="globe" iconType="solid">
+    If you want to use a custom domain for your app hosted on Square Cloud, note that by default, the URL will be something like `https://mysite.squareweb.app/`. The subdomain is determined by the SUBDOMAIN field in the configuration file. However, if you prefer using a custom domain, such as `mysite.com`, you'll need to purchase the `Standard` plan or a higher plan. We detail each step to set up your custom domain in our article: [How to set up your custom domain](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="Minimum RAM Requirements" icon="memory" iconType="solid">
+      The minimum amount of RAM required to host a website or API is 512MB, however, when building your site directly on Square, it's advisable to use a higher amount, or you may encounter the [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) error.
+  </Accordion>
+
+  <Accordion title="Temporarily Denied Access" icon="ban" iconType="solid">
+    If you receive the message "Your access has been temporarily denied." when trying to access the site, wait for some time. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+  
+  <Accordion title="Website took too long to respond..." icon="clock" iconType="solid">
+     If you receive the message "Website took too long to respond..." make sure you have correctly set port 80 on your website. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Additional Resources
+
+For more information about Vite and its tools, visit the [official Vite documentation](https://vitejs.dev/guide/). There, you'll find detailed guides, tutorials, and API documentation to help you make the most of Vite.
+
+If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).

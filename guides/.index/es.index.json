@@ -1,36 +1,5 @@
 {
-  "articles": {
-    "EXynVFQcvkkg": {
-      "id": "EXynVFQcvkkg",
-      "path": "deploys/how-to-deploy-vite",
-      "author": {
-        "name": "Square Cloud"
-      },
-      "metadata": {
-        "title": "Cómo subir una aplicación Vite",
-        "description": "Aprende cómo subir tu aplicación Vite",
-        "slug": "como-subir-una-aplicacion-vite"
-      },
-      "created_at": "2025-05-30T00:14:55.000Z",
-      "updated_at": "2025-05-30T16:46:52.000Z",
-      "content": "import { pages } from \"../_snippets/pages.mdx\"\n\n## 🚀 Introducción\n\n- Necesitarás crear una cuenta en Square Cloud, lo cual puedes hacer desde la [página de inicio de sesión](https://squarecloud.app/signin). Puedes usar tu correo electrónico, Discord o ambos para crear tu cuenta.\n- Finalmente, debes tener un plan de pago activo en tu cuenta. Puedes ver nuestros planes y adquirir el que mejor se adapte a tus necesidades [aquí](https://squarecloud.app/pricing).\n\n## 💻 Preparando la aplicación\n\nActualmente, existen dos formas de alojar sitios web gestionados por Vite: usando el comando `vite preview` o haciendo un build local y subiendo solo los archivos estáticos. Ambas formas se explican a continuación.\n\n### 🗑️ Archivos innecesarios\n\nDependiendo del método de carga, tendrás archivos específicos para incluir. Sin embargo, en general, los siguientes archivos nunca deben subirse con tu aplicación:\n\n- `node_modules`;\n- `package-lock.json`.\n\n### Subida con build local\n\nEste método requiere primero construir tu aplicación Vite localmente. Para ello:\n\n- Abre la terminal en la raíz de tu proyecto;\n- Ejecuta el comando `npm run build`, que ejecutará el script `build` definido en tu `package.json`, normalmente `vite build`;\n\nEsto generará la carpeta `dist` que contiene tu sitio como archivos estáticos.\n\n- Ingresa a la carpeta `dist` generada y cambia el nombre del archivo HTML a `vite.html`;\n- Comprime todo el contenido de la carpeta `dist`, incluyendo `vite.html` y los demás archivos y carpetas.\n\nLa compresión debe realizarse en formato `.zip`.\n\nLuego, puedes subir el archivo ZIP, configurar el nombre, el archivo principal (`vite.html`), marcar la opción \"Publicar en la web\" e ingresar el subdominio deseado.\n\n### Subida con build en el entorno\n\nEste método requiere que modifiques tu `package.json`, moviendo todas las dependencias de desarrollo (`devDependencies`) a las dependencias normales (`dependencies`). Esto es necesario porque en el entorno de producción no se instalan dependencias de desarrollo.\n\nAdemás, en tu `package.json`, configura el script \"preview\" como `vite preview --host 0.0.0.0 --port 80`\nEsto hace que el servidor de Vite esté disponible en todas las interfaces de red en el puerto 80 (HTTP), lo que permite el enrutamiento hacia el puerto 443 (HTTPS).\n\nComprime tu aplicación incluyendo todos los archivos necesarios para su ejecución, excepto los archivos innecesarios previamente mencionados.\n\nEn el momento de la subida, marca la opción \"Publicar en la web\" y también \"Comando de inicio\", ingresando el subdominio deseado y el siguiente comando `npm run build && npm run preview`\n"
-    },
-    "WZKgzoWHvOBK": {
-      "id": "WZKgzoWHvOBK",
-      "path": "troubleshooting/apps/dependencies/better-sqlite3/binding-file",
-      "author": {
-        "name": "Square Cloud"
-      },
-      "metadata": {
-        "title": "Resolviendo 'No se pudo localizar el archivo de enlaces'",
-        "description": "Aprende cómo resolver el problema 'No se pudo localizar el archivo de enlaces' en tu aplicación.",
-        "slug": "resolviendo-no-se-pudo-localizar-el-archivo-de-enlaces"
-      },
-      "created_at": "2025-05-30T20:03:16.000Z",
-      "updated_at": "2025-05-31T02:31:10.000Z",
-      "content": "## ¿Cuándo ocurre?\n\nEste problema ocurre cuando la biblioteca `better-sqlite3` o una biblioteca que depende de ella, como `quick.db`, no está actualizada.\n\n```bash\nError: Could not locate the bindings file. Tried:\n → /application/node_modules/better-sqlite3/build/better_sqlite3.node\n [...]\n```\n\n## ¿Por qué ocurre?\n\nEste error ocurre porque la biblioteca `better-sqlite3` no se ha actualizado a la última versión. En `better-sqlite3` **11.x.x y anteriores**, la biblioteca **no era compatible con Node.js LTS v22**.x.x.\n\n## Cómo solucionarlo\n\nPara solucionar este problema, necesitas actualizar la biblioteca `better-sqlite3` a la última versión. Recuerda actualizar también las bibliotecas que dependen de `better-sqlite3`, como `quick.db`.\n\n### Verificar las últimas versiones de las bibliotecas:\n\n- [npm better-sqlite3](https://www.npmjs.com/package/better-sqlite3)\n- [npm quick.db](https://www.npmjs.com/package/quick.db)\n\n### Actualizar `better-sqlite3` en tu `package.json`\n\nDespués de verificar la última versión de la biblioteca, puedes actualizarla en tu `package.json`. Por ejemplo, si la versión actual es 11.10.0, puedes usar lo siguiente:\n\n```json Actualizar manualmente en tu package.json\n\"better-sqlite3\": \"^11.10.0\",\n\"quick.db\": \"^9.1.7\" // o cualquier otra biblioteca que dependa de better-sqlite3\n```\n\n```bash Actualizar usando el terminal\nnpm install better-sqlite3@latest\n```\n\n### Eliminar archivos para una instalación limpia\n\nDespués de actualizar tu `package.json`, debes eliminar los archivos y carpetas: `node_modules`, `package-lock.json` y la carpeta `.npm`.\n\n### Reiniciar tu aplicación\n\nPor último, simplemente reinicia tu aplicación haciendo clic en el botón azul. Si has seguido todos los pasos correctamente, tu aplicación ya no debería encontrar este error.\n\nSi continúas experimentando problemas, no dudes en [ponerte en contacto con nuestro equipo de soporte](https://squarecloud.app/sac).\n"
-    }
-  },
+  "articles": {},
   "snippets": {
     "_snippets/requirements-txt": {
       "path": "_snippets/requirements-txt",

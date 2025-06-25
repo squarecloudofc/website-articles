@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/squarecloudofc/website-articles/refs/heads/main/metadata-schema.json",
+  "id": "HXeR7IXfcx96",
+  "author": {
+    "name": "Square Cloud"
+  },
+  "metadata": {
+    "en": {
+      "title": "Hosting a Whatsapp Bot on Square Cloud",
+      "description": "This article guides you through creating and hosting a Whatsapp bot on Square Cloud.",
+      "slug": "hosting-a-whatsapp-bot-on-square-cloud"
+    }
+  },
+  "created_at": "2025-06-25T19:43:25.159Z",
+  "updated_at": "2025-06-25T19:43:25.159Z"
+}
