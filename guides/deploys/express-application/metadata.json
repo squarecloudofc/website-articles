@@ -4,11 +4,32 @@
   "author": {
     "name": "Square Cloud"
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "nodejs"
+    ]
+  },
   "metadata": {
+    "pt-br": {
+      "title": "Hospedando uma Aplicação Express no Square Cloud",
+      "description": "Este artigo orienta você na criação e hospedagem de uma aplicação Express no Square Cloud",
+      "slug": "hospedando-uma-aplicacao-express-no-square-cloud"
+    },
     "en": {
       "title": "Hosting an Express Application on Square Cloud",
       "description": "This article guides you on creating and hosting an Express app on Square Cloud",
       "slug": "hosting-an-express-application-on-square-cloud"
+    },
+    "es": {
+      "title": "Alojando una Aplicación Express en Square Cloud",
+      "description": "Este artículo te guía en la creación y alojamiento de una aplicación Express en Square Cloud",
+      "slug": "alojando-una-aplicacion-express-en-square-cloud"
+    },
+    "zh": {
+      "title": "在 Square Cloud 上托管 Express 应用",
+      "description": "本文指导您在 Square Cloud 上创建并托管一个 Express 应用",
+      "slug": "在-square-cloud-上-托管-express-应用"
     }
   },
   "created_at": "2025-06-25T19:58:28.000Z",
