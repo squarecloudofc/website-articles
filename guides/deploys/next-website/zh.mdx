@@ -1,0 +1,151 @@
+## 介绍
+
+- 在开始之前，请确保你的系统已安装 Node.js 和 npm。如未安装，可从 [Node.js 官方网站](https://nodejs.org/) 下载。
+- 然后，需在 Square Cloud 创建账户，可通过 [注册页面](https://squarecloud.app/signup) 完成，使用邮箱即可注册。
+- 最后，账户需有一项付费计划。可在此查看并购买合适的计划：[点击查看](https://squarecloud.app/plans)。
+
+### 创建 Next.js 项目
+
+运行以下命令创建新项目：
+
+\`\`\`bash
+npx create-next-app@latest my-app
+\`\`\`
+
+其中 \`my-app\` 为项目名，可替换为任意名称。\`npx\` 是随 \`npm\` 提供的工具，用于执行本地或远程 npm 包。
+
+\`create-next-app\` 为 npm 上的包，用于初始化 Next.js 项目：创建目录、安装依赖并配置基础文件。
+
+\`@latest\` 指定使用最新版本，确保获取最新功能。
+
+## 配置 80 端口
+
+80 端口是 HTTP 默认端口。要在 Square Cloud 托管 Next.js 网站，必须使用 80 端口。在 Next.js 中，可在启动脚本添加 \`-p 80\` 参数。
+
+## 创建 squarecloud 配置文件
+
+<Card title="了解：如何创建 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+\`squarecloud.app\` 配置文件用于定义应用名称、描述、版本、主文件等信息。
+</Card>
+
+## 配置 START 字段
+
+在 Square Cloud 配置文件中，\`START\` 字段用于自定义启动命令。如需在 Square Cloud 上构建并启动网站，配置如下：
+
+\`\`\`app squarecloud.app
+START=npm run build && npm run start
+\`\`\`
+
+该命令会执行 \`package.json\` 中的 “build” 和 “start” 脚本：
+
+\`\`\`json package.json
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 80",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
+  }
+}
+\`\`\`
+
+## 购买计划后再上传项目
+
+在上传项目前，需要先购买计划，具体取决于应用资源需求。查看计划：[点击此处](https://squarecloud.app/plans)。
+
+<Note>**不确定托管 Next.js 需要多少 RAM 和 CPU？** 我们的 **[Standard 计划](https://squarecloud.app/pay/standard)** 提供 **4 GB** RAM 和 **4 vCPU**，足以支持大多数 Next.js 网站。若项目更大或需更高稳定性，可考虑 Pro 计划。购买请点击 [这里](https://squarecloud.app/pay/pro)。</Note>
+
+## 上传项目到 Square Cloud
+
+准备好文件后，可将其上传至 Square Cloud 并托管。
+
+<Tabs>
+  <Tab title="Dashboard Upload">
+    访问 [Square Cloud 控制台](https://squarecloud.app/dashboard/upload) 上传文件。
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI Upload">
+    <Steps>
+      <Step title="第一步">
+        安装 CLI：
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        若已安装，建议更新：
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux、macOS 与 WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="第二步">
+        在 [此处](https://squarecloud.app/account) 点击 “Request API Key” 获取授权密钥后，运行：
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="第三步">
+        通过 CLI 部署，指定 zip 路径：
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## 故障排除
+
+<AccordionGroup>
+  <Accordion title="自定义域名" icon="globe" iconType="solid">
+    默认 URL 为 \`https://mysite.squareweb.app/\`，子域名由配置文件中的 SUBDOMAIN 决定。若需使用自定义域名（如 \`mysite.com.br\`），须购买 Standard 计划或更高。详见：[如何设置域名](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain)。
+  </Accordion>
+
+  <Accordion title="最低 RAM 要求" icon="memory" iconType="solid">
+    托管网站的最低 RAM 为 512 MB。但在 Square 上直接构建时，建议更高 RAM，以免出现 [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
+  </Accordion>
+
+  <Accordion title="访问被暂时拒绝" icon="ban" iconType="solid">
+    若出现 “Your access has been temporarily denied.”，请稍后再试。如仍无法访问，请联系 https://squarecloud.app/dashboard/support。
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="网站响应过慢…" icon="clock" iconType="solid">
+    若出现 “Website took too long to respond...”，请确认已正确设置 80 端口。如问题持续，联系 https://squarecloud.app/dashboard/support。
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## 其他资源
+
+更多 Next.js 相关信息，请查看 [官方文档](https://nextjs.org/docs)。
+
+如仍遇到问题，请[联系我们的支持团队](/company/support)。

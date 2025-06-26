@@ -1,0 +1,151 @@
+## Introducción
+
+- Antes de comenzar, asegúrate de que tienes Node.js y npm instalados en tu sistema. Si aún no los tienes, puedes descargarlos desde el [sitio oficial de Node.js](https://nodejs.org/).
+- A continuación, deberás crear una cuenta en Square Cloud, lo cual puede hacerse a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear la cuenta.
+- Finalmente, necesitas tener un plan de pago activo en tu cuenta. Puedes ver nuestros planes y adquirir uno según tus necesidades [aquí](https://squarecloud.app/plans).
+
+### Creando un Proyecto Next.js
+
+Para crear un nuevo proyecto Next.js, ejecuta el siguiente comando:
+
+\`\`\`bash
+npx create-next-app@latest my-app
+\`\`\`
+
+En este comando, \`my-app\` es el nombre de tu nuevo proyecto. Puedes reemplazar \`my-app\` con cualquier nombre que desees para tu proyecto. El comando \`npx\` es una herramienta que viene con \`npm\`, el gestor de paquetes de Node.js. Se utiliza para ejecutar paquetes de Node.js instalados localmente en tu proyecto o disponibles de forma remota en el registro npm.
+
+\`create-next-app\` es un paquete disponible en el registro npm que configura un nuevo proyecto Next.js por ti. Se encarga de toda la configuración inicial, como crear el directorio del proyecto, instalar las dependencias necesarias y configurar archivos básicos.
+
+\`@latest\` es una etiqueta que especifica que deseas usar la versión más reciente del paquete \`create-next-app\`. Esto garantiza que siempre estés usando la versión más actualizada y, en consecuencia, tengas acceso a las últimas funcionalidades.
+
+## Configurando el Puerto 80
+
+El puerto 80 es el puerto predeterminado para el tráfico HTTP. Para alojar un sitio Next.js en Square Cloud, es crucial configurar el uso del puerto 80. En Next.js, puedes establecer el parámetro \`-p 80\` en el script de inicio para garantizar que tu sitio se ejecute correctamente en este puerto.
+
+## Creando el archivo de configuración squarecloud
+
+<Card title="Aprende sobre: cómo crear el archivo de configuración para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+El archivo \`squarecloud.app\` es un archivo de configuración que se utilizará para configurar tu aplicación; se usará para definir el nombre, descripción, versión, archivo principal, entre otras cosas.
+</Card>
+
+## Configurando el Campo START
+
+En el archivo de configuración de Square Cloud, el campo \`START\` es esencial para personalizar el comando de inicio. Si deseas compilar e iniciar tu sitio en Square Cloud, configura el campo \`START\` de la siguiente manera:
+
+\`\`\`app squarecloud.app
+START=npm run build && npm run start
+\`\`\`
+
+Este comando ejecutará los scripts "build" y "start" definidos en tu \`package.json\`:
+
+\`\`\`json package.json
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -p 80",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0"
+  }
+}
+\`\`\`
+
+## Adquiriendo un Plan Antes de Subir Tu Proyecto
+
+Antes de poder subir tu proyecto a Square Cloud, es importante entender que necesitas adquirir un plan. El tipo de plan que elijas dependerá de los recursos requeridos por tu aplicación. Puedes ver nuestros planes [aquí](https://squarecloud.app/plans).
+
+<Note>**¿Te preguntas cuánta RAM y CPU necesita tu plan para alojar un sitio Next.js?** No te preocupes, estamos aquí para ayudar. Next.js es un framework de React conocido por sus capacidades de renderizado del lado del servidor y generación de sitios estáticos. Está diseñado para proporcionar una experiencia de desarrollador óptima a través de características como cero-configuración, soporte automático de TypeScript, enrutamiento basado en el sistema de archivos y soporte integrado de CSS. Nuestro **[plan Standard](https://squarecloud.app/pay/standard)** ofrece **4 GB** de RAM y **4 vCPU**, lo cual debería ser suficiente para la mayoría de los sitios Next.js. Sin embargo, si estás trabajando en un proyecto más grande o necesitas más estabilidad, recomendamos considerar nuestro plan Pro. Con recursos adicionales, puedes garantizar un rendimiento fluido incluso bajo alta demanda. Para adquirirlo, simplemente haz clic [aquí](https://squarecloud.app/pay/pro). </Note>
+
+## Subiendo el Proyecto a Square Cloud
+
+Después de preparar tus archivos de proyecto, ahora puedes subirlos a Square Cloud y alojar tu proyecto.
+
+<Tabs>
+  <Tab title="Carga vía Dashboard">
+    Accede al [Dashboard de Square Cloud](https://squarecloud.app/dashboard/upload) y carga tus archivos de proyecto.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Carga vía CLI">
+    <Steps>
+      <Step title="Primer Paso">
+        Primero, necesitas tener el CLI instalado en tu entorno. Si aún no lo tienes, ejecuta el siguiente comando en tu terminal:
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        Si ya lo tienes, recomendamos actualizarlo. Para ello, ejecuta el siguiente comando en tu terminal:
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS y WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo Paso">
+        Ahora, para autenticar y usar otros comandos del CLI, encontrarás tu clave de autorización [aquí](https://squarecloud.app/account) haciendo clic en "Request API Key". Tras obtener tu clave de autorización, ejecuta el siguiente comando:
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Tercer Paso">
+        Finalmente, para desplegar tu aplicación en Square Cloud usando el CLI, debes ejecutar el siguiente comando, pasando la ruta de tu archivo zip:
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Solución de Problemas
+
+<AccordionGroup>
+  <Accordion title="Dominio Personalizado" icon="globe" iconType="solid">
+    Si deseas usar un dominio personalizado para tu sitio alojado en Square Cloud, ten en cuenta que, por defecto, la URL será algo como \`https://mysite.squareweb.app/\`. El subdominio se determina por el campo SUBDOMAIN en el archivo de configuración. Sin embargo, si prefieres usar un dominio personalizado, como \`mysite.com.br\`, necesitarás adquirir el plan Standard o superior. Detallamos cada paso para configurar tu dominio personalizado en nuestro artículo: [Cómo configurar tu dominio](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="Requisito Mínimo de RAM" icon="memory" iconType="solid">
+    La cantidad mínima de RAM requerida para alojar un sitio es de 512 MB; sin embargo, al construir tu sitio directamente en Square, es aconsejable usar una cantidad mayor, o podrías encontrar el error [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+  </Accordion>
+
+  <Accordion title="Acceso Temporalmente Denegado" icon="ban" iconType="solid">
+    Si recibes el mensaje "Your access has been temporarily denied." al intentar acceder al sitio, espera un tiempo. Si el problema persiste, no dudes en contactarnos en https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="El sitio tardó demasiado en responder..." icon="clock" iconType="solid">
+     Si recibes el mensaje "Website took too long to respond..." asegúrate de haber configurado correctamente el puerto 80 en tu sitio. Si el problema persiste, no dudes en contactarnos en https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Recursos Adicionales
+
+Para más información sobre Next.js y sus herramientas, visita la [documentación oficial de Next.js](https://nextjs.org/docs). Allí encontrarás guías detalladas, tutoriales y documentación de la API para ayudarte a aprovechar al máximo Next.js.
+
+Si continúas experimentando problemas, no dudes en [contactar a nuestro equipo de soporte](/company/support).
