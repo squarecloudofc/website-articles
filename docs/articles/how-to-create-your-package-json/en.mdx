@@ -18,9 +18,9 @@ Create a file named `package.json` and write the `JSON structure yourself`. Whil
 
 Every package.json needs these key landmarks:
 
-* `name:` Your project"s unique identifier, like "my-project".
-* `version:` Your project"s current stage, typically starting with "1.0.0".
-* `description:` A concise overview of what your project does.
+- `name:` Your project"s unique identifier, like "my-project".
+- `version:` Your project"s current stage, typically starting with "1.0.0".
+- `description:` A concise overview of what your project does.
 
 ## Step 3: Dependencies
 
@@ -30,29 +30,29 @@ List all the external packages your project relies on under the dependencies pro
 
 **Remember:**
 
-* Exact versions (using `==`):  Pin your project to specific versions for predictable behavior.
-* Ranges (using `^` or `~`): Allow for minor or patch updates without manual intervention.
+- Exact versions (using `==`):  Pin your project to specific versions for predictable behavior.
+- Ranges (using `^` or `~`): Allow for minor or patch updates without manual intervention.
 
 ## Step 4: Additional Features
 
 Your package.json can be a treasure trove of other helpful features:
 
-* `scripts:` Define custom commands to automate tasks like testing or deployment.
-* `keywords:` Improve discoverability by specifying relevant keywords.
-* `author:` Share your project"s creator(s).
+- `scripts:` Define custom commands to automate tasks like testing or deployment.
+- `keywords:` Improve discoverability by specifying relevant keywords.
+- `author:` Share your project"s creator(s).
 
 ## Step 5: Share and Use
 
 Your package.json is a vital part of sharing your project. Include it in your version control system and use it to:
 
-* Install dependencies for newcomers with `npm install <package>`.
-* Deploy your project to Square Cloud.
+- Install dependencies for newcomers with `npm install <package>`.
+- Deploy your project to Square Cloud.
 
 ## Bonus Tips:
 
-* Use tools like `npm audit` to identify and address potential vulnerabilities in your dependencies.
-* Group related dependencies into sub-packages for better organization.
-* Keep your package.json concise and well-documented for future reference.
-* When setting up your package.json, you may also encounter the `devDependencies` property. This is used to list packages that are only needed during development, such as testing libraries or build tools. These dependencies are not included when the project is deployed to production environments, like Square Cloud. This helps to keep the production environment clean and free of unnecessary packages that are not needed for the app to run.
+- Use tools like `npm audit` to identify and address potential vulnerabilities in your dependencies.
+- Group related dependencies into sub-packages for better organization.
+- Keep your package.json concise and well-documented for future reference.
+- When setting up your package.json, you may also encounter the `devDependencies` property. This is used to list packages that are only needed during development, such as testing libraries or build tools. These dependencies are not included when the project is deployed to production environments, like Square Cloud. This helps to keep the production environment clean and free of unnecessary packages that are not needed for the app to run.
 
 By following these steps and tips, you"ll craft a package.json that steers your Node.js project towards smooth sailing and success. Remember, a well-managed dependency landscape is a happy developer"s landscape!

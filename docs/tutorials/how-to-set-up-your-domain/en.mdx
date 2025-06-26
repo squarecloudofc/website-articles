@@ -2,17 +2,17 @@
 
 \-- To configure your domain, you need to have the Standard plan or higher. You can purchase it on various domain registration platforms like:
 
-* [Registro.br](https://registro.br/)
-* [Square Space](https://squarespace.com/) \*previously: Google Domains
-* [GoDaddy](https://www.godaddy.com/)
-* [Namecheap](https://www.namecheap.com/)
+- [Registro.br](https://registro.br/)
+- [Square Space](https://squarespace.com/) \*previously: Google Domains
+- [GoDaddy](https://www.godaddy.com/)
+- [Namecheap](https://www.namecheap.com/)
 
 Choose a platform that suits your needs and purchase your domain.
 
 ## Configuring DNS on Cloudflare
 
-* Access the website where you purchased your domain, such as [Hostinger](https://www.hostinger.com.br/) or [Registro.br](https://registro.br/).
-* Next, go to [Cloudflare](https://cloudflare.com/), navigate to "Websites" and click on "Add a site".
+- Access the website where you purchased your domain, such as [Hostinger](https://www.hostinger.com.br/) or [Registro.br](https://registro.br/).
+- Next, go to [Cloudflare](https://cloudflare.com/), navigate to "Websites" and click on "Add a site".
 
 <Frame>
   <img src="/images/articles/cloudflare/add-site.png" style={{ borderRadius: '0.2rem' }} />
@@ -22,14 +22,14 @@ After entering your domain, copy the provided nameservers and paste them on the 
 
 ## Configuring your domain on Square Cloud
 
-* Choose the site you want to configure the domain for in the [dashboard](https://squarecloud.app/dashboard), then go to the **Settings** option and enter your domain in place of "example.com."
+- Choose the site you want to configure the domain for in the [dashboard](https://squarecloud.app/dashboard), then go to the **Settings** option and enter your domain in place of "example.com."
 
 <Frame>
   <img src="/images/articles/cloudflare/domain-setup.png" style={{ borderRadius: '0.2rem' }} />
 </Frame>
 
-* Now that the domain is configured on Square Cloud, go back to Cloudflare, select your domain, and choose the DNS option.
-* Finally, point your domain to "cname.squareweb.app" with the type "CNAME", replacing "name" with your domain, and another with the type TXT with the value that will appear in "DNS Configuration" after clicking "save".
+- Now that the domain is configured on Square Cloud, go back to Cloudflare, select your domain, and choose the DNS option.
+- Finally, point your domain to "cname.squareweb.app" with the type "CNAME", replacing "name" with your domain, and another with the type TXT with the value that will appear in "DNS Configuration" after clicking "save".
 
 <Frame>
   <img src="/images/articles/cloudflare/record-dns.png" style={{ borderRadius: '0.2rem' }} />
@@ -39,8 +39,8 @@ After entering your domain, copy the provided nameservers and paste them on the 
 
 ### www redirect to your domain
 
-* To redirect www to your domain, create a new record with the name "www" and the type "A", pointing to 192.0.2.1 (cloudflare internal IP).
-* Go to the "Page Rules" option on Cloudflare and create a new rule with the following settings:
+- To redirect www to your domain, create a new record with the name "www" and the type "A", pointing to 192.0.2.1 (cloudflare internal IP).
+- Go to the "Page Rules" option on Cloudflare and create a new rule with the following settings:
 
 <Frame>
   <img src="/images/articles/cloudflare/page-rule-www.png" style={{ borderRadius: '0.2rem' }} />
@@ -48,10 +48,10 @@ After entering your domain, copy the provided nameservers and paste them on the 
 
 ### Troubleshooting
 
-* If you receive the Unauthorized DNS error, try clearing your browser cache and accessing the site again in 5 minutes. If the issue persists, [contact our team](/company/support).
+- If you receive the Unauthorized DNS error, try clearing your browser cache and accessing the site again in 5 minutes. If the issue persists, [contact our team](/company/support).
 
 <Frame>
   <img src="/images/articles/cloudflare/unauthorized-dns.png" style={{ borderRadius: '0.2rem' }} />
 </Frame>
 
-* If you receive the Cloudflare 1015 error, it means your domain is not configured correctly. Check your domain configuration and ensure it is correctly pointed to Square Cloud. If the issue persists, [contact our team](/company/support).
+- If you receive the Cloudflare 1015 error, it means your domain is not configured correctly. Check your domain configuration and ensure it is correctly pointed to Square Cloud. If the issue persists, [contact our team](/company/support).

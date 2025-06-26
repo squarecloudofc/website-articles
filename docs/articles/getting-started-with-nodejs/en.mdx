@@ -1,8 +1,8 @@
 ## 🚀 Introduction
 
-* Before you begin, make sure you have Node.js and npm installed on your system. If you don't have them yet, you can download them from the [official Node.js website](https://nodejs.org/).
-* Next, you will need to create an account on Square Cloud, which can be done through the [login page](https://squarecloud.app/login). You can use either your email or Discord, or both, to create an account.
-* Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
+- Before you begin, make sure you have Node.js and npm installed on your system. If you don't have them yet, you can download them from the [official Node.js website](https://nodejs.org/).
+- Next, you will need to create an account on Square Cloud, which can be done through the [login page](https://squarecloud.app/login). You can use either your email or Discord, or both, to create an account.
+- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
 
 ## ⚙️ Creating the squarecloud config file
 
@@ -16,15 +16,15 @@
 
 <Tabs>
   <Tab title="Javascript">
-    * If the `START` field is not defined in the configuration file, Square Cloud will by default run `node` with optimization options and specific parameters. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
+    - If the `START` field is not defined in the configuration file, Square Cloud will by default run `node` with optimization options and specific parameters. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
   </Tab>
 
   <Tab title="Typescript">
-    * If the `START` field is not defined in the configuration file, Square Cloud will by default run `npx tsx MAIN` to compile and execute the main TypeScript file specified by `MAIN` field. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
+    - If the `START` field is not defined in the configuration file, Square Cloud will by default run `npx tsx MAIN` to compile and execute the main TypeScript file specified by `MAIN` field. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
   </Tab>
 </Tabs>
 
-* If the `node_modules` folder does not exist, Square Cloud will run `npm install --no-package-lock --no-audit --no-fund` to install dependencies and clean the `.npm` folder.
+- If the `node_modules` folder does not exist, Square Cloud will run `npm install --no-package-lock --no-audit --no-fund` to install dependencies and clean the `.npm` folder.
 
 ## 🖥️ Preparing Your Node.js Project
 
@@ -36,8 +36,8 @@ When preparing your Node.js project for deployment on Square Cloud, ensure that 
 
 #### 🗑️ Files to Exclude Before Uploading
 
-* `node_modules`: This folder is not required to be sent as it will be created during the installation process in the production environment.
-* `package-lock.json`: This file is not necessary because the production environment will install dependencies based on `package.json`.
+- `node_modules`: This folder is not required to be sent as it will be created during the installation process in the production environment.
+- `package-lock.json`: This file is not necessary because the production environment will install dependencies based on `package.json`.
 
 ### 🤔 Why Exclude These Files?
 
@@ -55,9 +55,9 @@ By doing this, you can ensure that your Node.js application is optimally prepare
 
 Three files are required to host your Node project:
 
-* [squarecloud.app/.config](/getting-started/config-file)
-* mainFile.js/.ts (Example of main file)
-* [package.json](./how-to-create-your-package-json.mdx) (Dependency file)
+- [squarecloud.app/.config](/getting-started/config-file)
+- mainFile.js/.ts (Example of main file)
+- [package.json](./how-to-create-your-package-json.mdx) (Dependency file)
 
 <Note>
   Square Cloud natively supports `TypeScript`, running your project through

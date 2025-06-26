@@ -29,25 +29,25 @@ async def main():
 
 As seen above, by using the app.capture decorator on a function, this function will be called every time a request is made to the endpoint specified in the decorator. The accepted endpoints are `APP_STATUS`, `LOGS`, or `BACKUP`. This function should take two parameters:
 
-* `before`(represents the state after the request)
-* `after`(represents the state before the request)
+- `before`(represents the state after the request)
+- `after`(represents the state before the request)
 
 The data type returned by `before` and `after` depends on which endpoint the listener is "listening" to. If it is the **APP\_STATUS** route, it will receive a `StatusData`, **LOGS** will receive a `LogsData`, and **BACKUP** will receive a `BackupData`.
 
 As you may have noticed in the example above, the first time the comparison between the logs occurs, `after != before` returns True. This happens precisely because after is equal to `LogsData(logs='')`, as there is still nothing stored in the cache internally.
 
 <Accordion title="Additional information about this decorator">
-  * If you use discord.py or some fork (you probably use), you should
+  - If you use discord.py or some fork (you probably use), you should
     know that what differentiates events is the name
     of the functions that the decorator wraps, but here it differs. To know
     which
     API route the decorator needs to "listen" to, we use the `endpopint` parameter, it
     receives an `Endpoint` class, so the name of the function that the decorator
     wraps is up to you.
-  * The function that the decorator wraps can actually be anything that is
+  - The function that the decorator wraps can actually be anything that is
     a callable. This includes regular functions, coroutines, and even
     classes (`__init__` will be called).
-  * If the endpoint is not an \[Endpoint.app\_status()], \[Endpoint.logs()], or \[Endpoint.backup()],
+  - If the endpoint is not an \[Endpoint.app\_status()], \[Endpoint.logs()], or \[Endpoint.backup()],
     only a `response` parameter (of type `squarecloud.http.Response`) will
     be returned.
 </Accordion>

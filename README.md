@@ -13,9 +13,9 @@ The goal of this project is to share knowledge, tips, and practical examples for
 
 ## Structure
 
-* `docs/`: Contains the main documentation articles.
-* `blog/`: Contains blog posts and updates.
-* `guides/`: Contains step-by-step guides and tutorials.
+- `docs/`: Contains the main documentation articles.
+- `blog/`: Contains blog posts and updates.
+- `guides/`: Contains step-by-step guides and tutorials.
 
 ## How to Contribute
 

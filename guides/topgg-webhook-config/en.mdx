@@ -1,8 +1,8 @@
 ## Introduction
 
-* This guide assumes you have an approved bot on [top.gg](https://top.gg/) and are using either Node.js or Python for your project.
-* Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
-* Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/pricing).
+- This guide assumes you have an approved bot on [top.gg](https://top.gg/) and are using either Node.js or Python for your project.
+- Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/pricing).
 
 ## Setting Up the Environment
 
@@ -39,10 +39,10 @@
 
 **1. Get your webhook authentication:**
 
-* Go to your Top.gg profile [here](https://top.gg/user/me).
-* Click "edit" on the bot you want to receive notifications for votes.
-* Under "GENERAL", choose the "webhook" option.
-* Set the webhook authentication in "Authorization". In this example, we used "myappsquare".
+- Go to your Top.gg profile [here](https://top.gg/user/me).
+- Click "edit" on the bot you want to receive notifications for votes.
+- Under "GENERAL", choose the "webhook" option.
+- Set the webhook authentication in "Authorization". In this example, we used "myappsquare".
 
 **2. Implement the webhook listener:**
 
@@ -222,9 +222,9 @@ If you have done everything correctly, try accessing your site using the subdoma
 
 Now, you need to go back to the previous page where the authorization was defined. In the Webhook URL field, you should put the URL of your site with the route that will receive the votes.
 
-* For the JavaScript code we created with `app.post("/topgg", webhook.listener((vote) => {...})`, the route that will receive the votes is "/topgg". So, if your website is "https://mysite.squareweb.app", you should put "https://mysite.squareweb.app/topgg" as the Webhook URL.
+- For the JavaScript code we created with `app.post("/topgg", webhook.listener((vote) => {...})`, the route that will receive the votes is "/topgg". So, if your website is "https://mysite.squareweb.app", you should put "https://mysite.squareweb.app/topgg" as the Webhook URL.
 
-* For the Python code we created with `@app.route("/topgg", methods=["POST"])`, the route that will receive the votes is also "/topgg". So, the Webhook URL would be the same "https://mysite.squareweb.app/topgg".
+- For the Python code we created with `@app.route("/topgg", methods=["POST"])`, the route that will receive the votes is also "/topgg". So, the Webhook URL would be the same "https://mysite.squareweb.app/topgg".
 
 <Frame>
   <img src="/images/articles/topgg/example-url.png" style={{ borderRadius: "0.2rem" }} />
