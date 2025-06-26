@@ -1,0 +1,168 @@
+## Criando um novo projeto Flask
+
+- Antes de começar, verifique se Python e pip estão instalados no seu sistema. Caso não tenha, faça o download no [site oficial do Python](https://www.python.org/) e no [site oficial do Pip](https://pypi.org/).
+- Em seguida, crie uma conta na Square Cloud pela [página de cadastro](https://squarecloud.app/signup). Use seu e-mail para criar a conta.
+- Por fim, é necessário ter um plano pago ativo. Você pode ver e adquirir um plano de acordo com suas necessidades [aqui](https://squarecloud.app/plans).
+
+Com Python e pip instalados, crie um novo projeto Flask. Primeiro, instale Flask e Waitress com pip:
+
+\`\`\`bash
+pip install flask
+pip install waitress
+\`\`\`
+
+Depois, crie um arquivo Python (por exemplo, \`app.py\`) e adicione o código a seguir para criar uma aplicação Flask básica:
+
+\`\`\`python
+
+# Importar a classe Flask do módulo flask
+
+from flask import Flask
+
+# Criar uma instância da classe Flask
+
+app = Flask(__name__)
+
+# Definir uma rota para a URL raiz (/) que retorna 'Hello, World!'
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+# Verificar se este script está sendo executado diretamente (e não importado)
+
+if __name__ == '__main__':
+    # Executar a aplicação Flask no host 0.0.0.0 (todas as interfaces) e porta 80
+    app.run(host='0.0.0.0', port=80)
+\`\`\`
+
+## Configurando o ambiente de produção com Waitress
+
+\`\`\`python
+from flask import Flask
+
+# Criar a instância da aplicação Flask
+
+app = Flask(__name__)
+
+# Definir uma rota para a URL raiz (/) que retorna 'Hello, World!'
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+# Se este script for executado diretamente
+
+if __name__ == '__main__':
+    from waitress import serve  # Importar a função serve do Waitress
+
+    # Servir a aplicação Flask usando Waitress no host 0.0.0.0 e porta 80
+    serve(app, host='0.0.0.0', port=80)
+    
+    # Imprimir mensagem indicando início bem-sucedido
+    print("Servidor iniciado com sucesso na porta 80.")
+\`\`\`
+
+No código acima, criamos uma rota básica que retorna “Hello, World!” quando acessada. A aplicação é configurada para rodar na porta 80, padrão para tráfego HTTP.
+
+## Gerenciando dependências com o arquivo requirements.txt
+
+O arquivo \`requirements.txt\` lista todas as bibliotecas externas necessárias ao seu projeto. Inclua nele as bibliotecas usadas, exceto as nativas como \`random\` e \`datetime\`. Esse arquivo deve acompanhar o envio da aplicação para a Square Cloud.
+
+\`\`\`txt requirements.txt
+flask
+\`\`\`
+
+## Criando o arquivo de configuração squarecloud
+
+<Card title="Saiba como criar o arquivo de configuração para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+O arquivo \`squarecloud.app\` será usado para definir nome, descrição, versão, arquivo principal, entre outras informações.
+</Card>
+
+## Configurando o campo START
+
+No arquivo de configuração, o campo __START__ é opcional e só é necessário se você usar um script personalizado para iniciar o site ou API. No exemplo, ele não é necessário.
+
+## Adquirindo um plano antes de enviar o projeto
+
+Para subir seu projeto, é preciso comprar um plano compatível com os recursos exigidos. Veja os planos disponíveis [aqui](https://squarecloud.app/plans).
+
+<Note>__Em dúvida sobre quanta RAM e CPU precisa para hospedar uma aplicação Flask?__ Flask é conhecido pela eficiência, especialmente para projetos pequenos ou de aprendizado. Nosso plano __[Standard](https://squarecloud.app/pay/standard)__ oferece __4 GB de RAM__ e __4 vCPU__, suficientes para a maioria dos aplicativos Flask. Para projetos maiores ou maior estabilidade, considere o plano Pro [aqui](https://squarecloud.app/pay/pro).</Note>
+
+## Fazendo upload do projeto para a Square Cloud
+
+<Tabs>
+  <Tab title="Upload pelo Dashboard">
+    Acesse o [Dashboard da Square Cloud](https://squarecloud.app/dashboard/upload) e envie os arquivos do seu projeto.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Upload via CLI">
+    <Steps>
+      <Step title="Primeiro passo">
+        Instale a CLI globalmente:
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        Já possui? Atualize:
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS e WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo passo">
+        Obtenha sua chave de autorização em [account](https://squarecloud.app/account) (“Request API Key”) e autentique-se:
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Terceiro passo">
+        Faça o deploy passando o caminho do seu .zip:
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Solução de problemas
+
+<AccordionGroup>
+  <Accordion title="Domínio personalizado" icon="globe" iconType="solid">
+   Por padrão, a URL será \`https://mysite.squareweb.app/\`. Para usar \`mysite.com\`, compre pelo menos o plano Standard. Siga [este tutorial](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="RAM mínima" icon="memory" iconType="solid">
+    O mínimo para hospedar é 512 MB. Dependendo do tamanho do app Flask, pode ser necessário mais para evitar o erro [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+  </Accordion>
+
+  <Accordion title="Acesso temporariamente negado" icon="ban" iconType="solid">
+    Se aparecer “Your access has been temporarily denied.” aguarde. Persistindo, contate https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Site demorou a responder" icon="clock" iconType="solid">
+     Verifique se a porta 80 está correta. Persistindo, contate https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Recursos adicionais
+
+Para saber mais sobre Flask, visite a [documentação oficial](https://flask.palletsprojects.com/en/3.0.x/).
+
+Se precisar de ajuda, [entre em contato com o suporte](/company/support).

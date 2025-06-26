@@ -1,0 +1,160 @@
+## 创建新的 Flask 项目
+
+- 在开始之前，请确保系统已安装 Python 和 pip。如未安装，可在 [Python 官网](https://www.python.org/) 和 [Pip 官网](https://pypi.org/) 下载。
+- 接着，通过 [注册页面](https://squarecloud.app/signup) 在 Square Cloud 创建账号，可使用电子邮件注册。
+- 最后，确保帐户拥有有效的付费套餐。可在 [此处](https://squarecloud.app/plans) 查看并购买适合需求的套餐。
+
+安装完成后，可创建新的 Flask 项目。首先使用 pip 安装 Flask 和 Waitress：
+
+\`\`\`bash
+pip install flask
+pip install waitress
+\`\`\`
+
+然后创建 Python 文件（如 \`app.py\`），并添加以下代码以构建基本 Flask 应用：
+
+\`\`\`python
+# 从 flask 模块导入 Flask 类
+from flask import Flask
+
+# 创建 Flask 实例
+app = Flask(__name__)
+
+# 定义根路径 (/) 的路由，返回 'Hello, World!'
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+# 判断脚本是否被直接执行
+if __name__ == '__main__':
+    # 在 0.0.0.0 主机、80 端口运行
+    app.run(host='0.0.0.0', port=80)
+\`\`\`
+
+## 使用 Waitress 配置生产环境
+
+\`\`\`python
+from flask import Flask
+
+# 创建 Flask 应用实例
+app = Flask(__name__)
+
+# 定义根路径 (/) 的路由
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+# 若脚本被直接执行
+if __name__ == '__main__':
+    from waitress import serve  # 引入 Waitress 的 serve
+    
+    # 使用 Waitress 在 0.0.0.0 主机、80 端口提供服务
+    serve(app, host='0.0.0.0', port=80)
+    
+    # 打印成功启动信息
+    print("服务器已成功在端口 80 启动。")
+\`\`\`
+
+以上代码创建了访问返回 “Hello, World!” 的基本路由。应用配置为监听 80 端口，此为 HTTP 默认端口。
+
+## 使用 requirements.txt 管理依赖
+
+\`requirements.txt\` 列出项目所需的所有外部库。列出项目使用的库，但不包括如 \`random\`、\`datetime\` 等内置库。提交到 Square Cloud 时需包含此文件。
+
+\`\`\`txt requirements.txt
+flask
+\`\`\`
+
+## 创建 squarecloud 配置文件
+
+<Card title="了解如何创建 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+\`squarecloud.app\` 文件用于配置应用的名称、描述、版本、主文件等信息。
+</Card>
+
+## 配置 START 字段
+
+**START** 字段可选，仅在使用自定义启动脚本时需要。本示例无需设置。
+
+## 上传项目前需购买套餐
+
+在上传项目之前，需要购买合适套餐，满足应用所需资源。套餐信息见 [此处](https://squarecloud.app/plans)。
+
+<Note>**不确定托管 Flask 应用需要多少 RAM 与 CPU？** Flask 高效轻量，适合小型项目。**[Standard](https://squarecloud.app/pay/standard)** 套餐提供 **4 GB RAM** 与 **4 vCPU**，足以满足多数需求。若项目较大或需更高稳定性，可考虑 Pro 套餐 [此处](https://squarecloud.app/pay/pro)。</Note>
+
+## 将项目上传到 Square Cloud
+
+<Tabs>
+  <Tab title="仪表板上传">
+    访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload) 并上传项目文件。
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI 上传">
+    <Steps>
+      <Step title="第一步">
+        全局安装 CLI：
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        或更新：
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux、macOS 与 WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="第二步">
+        在 [account](https://squarecloud.app/account) 获取 API Key，并登录：
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="第三步">
+        指定 zip 路径部署：
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## 故障排除
+
+<AccordionGroup>
+  <Accordion title="自定义域名" icon="globe" iconType="solid">
+   默认 URL 为 \`https://mysite.squareweb.app/\`。若要使用 \`mysite.com\`，需购买至少 Standard 套餐。请参考 [自定义域名教程](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain)。
+  </Accordion>
+
+  <Accordion title="最低 RAM 要求" icon="memory" iconType="solid">
+    最低 RAM 为 512 MB。取决于 Flask 应用规模，可能需要更多以避免 [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
+  </Accordion>
+
+  <Accordion title="访问暂时被拒绝" icon="ban" iconType="solid">
+    若出现 “Your access has been temporarily denied.”，请稍等。如持续出现，请联系 https://squarecloud.app/dashboard/support。
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="网站响应超时" icon="clock" iconType="solid">
+     请确认已正确设置 80 端口。如问题仍未解决，请联系 https://squarecloud.app/dashboard/support。
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## 其他资源
+
+更多 Flask 资料请参考 [官方文档](https://flask.palletsprojects.com/en/3.0.x/)。
+
+如需帮助，请 [联系客服](/company/support)。
