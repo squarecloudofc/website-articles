@@ -4,11 +4,32 @@
   "author": {
     "name": "Square Cloud"
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "website"
+    ]
+  },
   "metadata": {
     "en": {
       "title": "Hosting Your Website/API on Square Cloud",
       "description": "Learn how to host your website or API on Square Cloud using the squarecloud.app configuration file.",
       "slug": "hosting-your-websiteapi-on-square-cloud"
+    },
+    "pt-br": {
+      "title": "Hospedando Seu Site/API no Square Cloud",
+      "description": "Aprenda como hospedar seu site ou API no Square Cloud usando o arquivo de configuração squarecloud.app.",
+      "slug": "hospedando-seu-siteapi-no-square-cloud"
+    },
+    "es": {
+      "title": "Alojando Tu Sitio Web/API en Square Cloud",
+      "description": "Aprende cómo alojar tu sitio web o API en Square Cloud usando el archivo de configuración squarecloud.app.",
+      "slug": "alojando-tu-sitio-webapi-en-square-cloud"
+    },
+    "zh": {
+      "title": "在 Square Cloud 上托管您的网站/API",
+      "description": "了解如何使用 squarecloud.app 配置文件在 Square Cloud 上托管您的网站或 API。",
+      "slug": "在-square-cloud-上-托管您的网站api"
     }
   },
   "created_at": "2025-06-25T19:58:28.000Z",
