@@ -1,0 +1,196 @@
+## 介绍
+
+- 在开始之前，请确保您的系统已安装 Node.js 和 npm。如果还未安装，可从 [Node.js 官方网站](https://nodejs.org/) 下载。
+- 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
+- 最后，您的帐户需要有一个有效的付费计划。您可以在此处查看我们的计划并根据需要购买 [点击这里](https://squarecloud.app/plans)。
+
+### 创建 React 项目
+
+要创建一个新的 React 项目，请运行以下命令：
+
+\`\`\`bash
+npx create-react-app my-react-app
+\`\`\`
+
+上述命令中，\`my-react-app\` 是您新项目的名称。您可以将 \`my-react-app\` 替换为任何想要的名称。
+
+\`create-react-app\` 是 npm 注册表中提供的一个包，用于为您设置新的 React 项目。它会处理所有初始设置，例如创建项目目录、安装必要依赖并配置基本文件。
+
+## 使用 Serve 配置生产环境
+
+在创建并配置好 React 项目后，就该为生产环境做准备了。为此，我们将使用名为 \`serve\` 的库。该库是一个静态服务器，可以在项目构建完成后为其提供服务。
+
+### 安装 Serve 库
+
+要安装 \`serve\` 库，请在终端中进入项目目录并运行以下命令：
+
+\`\`\`bash
+npm install serve@14.2.3
+\`\`\`
+
+此命令安装版本为 \`14.2.3\` 的 \`serve\` 库。如果想安装最新版本，可省略 \`@14.2.3\`。
+
+### 配置启动脚本
+
+安装 \`serve\` 库后，需要配置项目的启动脚本以使用 \`serve\`。为此，打开项目的 \`package.json\` 文件，并添加一个名为 \`start:prod\` 的新脚本：
+
+\`\`\`json
+"scripts": {
+  "start": "react-scripts start",
+  "start:prod": "serve -s build -l 80",
+  ...
+}
+\`\`\`
+
+在 \`start:prod\` 脚本中，\`serve -s build -l 80\` 包含以下含义：
+
+- \`serve\`：启动 \`serve\` 服务器的命令。
+- \`-s build\`：\`-s\` 选项以单页应用模式提供 \`build\` 目录。这意味着所有未找到的请求都会重定向到 \`index.html\`。\`build\` 目录在运行 \`npm run build\` 时创建。
+- \`-l 80\`：\`-l\` 后跟 \`80\` 表示 \`serve\` 在 80 端口监听。80 端口是 HTTP 流量的默认端口。
+
+现在，当您想以生产模式启动项目时，可以运行 \`npm run start:prod\`。此命令会先构建 React 项目，然后使用 \`serve\` 在 80 端口提供已构建的文件。
+
+## 创建 squarecloud.app 配置文件
+
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+squarecloud.app 文件是一个配置文件，用于配置应用；它定义了名称、描述、版本、主文件等信息。
+</Card>
+
+## 配置 START 字段
+
+在 Square Cloud 配置文件中，\`START\` 字段用于自定义启动命令。要在 Square Cloud 上构建并启动应用，请按以下方式配置 \`START\` 字段：
+
+\`\`\`app squarecloud.app
+START=npm run build && npm run start:prod
+\`\`\`
+
+此命令将执行 \`package.json\` 中定义的 “build” 和 “start:prod” 脚本：
+
+\`\`\`json package.json
+{
+  "name": "my-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "serve": "^14.2.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:prod": "serve -s build -l 80",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+\`\`\`
+
+## 购买计划以上传项目
+
+在将项目上传到 Square Cloud 之前，需先购买计划。所选计划取决于应用所需资源。您可以在此查看我们的计划。
+
+<Note>**想知道 React 网站需要多少 RAM 和 CPU？** 别担心，我们来帮您。React 是一个以速度和灵活性著称的 JavaScript 框架。它允许开发者构建大型 Web 应用，并能高效响应数据变化进行更新和渲染。它也相对容易上手，适合初学者。我们的 **[Standard](https://squarecloud.app/pay/standard)** 计划提供 **4GB** RAM 和 **4vCPU**，足以满足大多数 React 网站需求。但如若项目更大或需更高稳定性，建议考虑 Pro 计划。更多资源可确保在高并发下保持流畅表现。购买请点击 [此处](https://squarecloud.app/pay/pro)。</Note>
+
+## 上传项目到 Square Cloud
+
+准备好项目文件后，即可将其上传到 Square Cloud 并托管项目。
+
+<Tabs>
+  <Tab title="仪表板上传">
+    访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload) 并上传项目文件。
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI 上传">
+    <Steps>
+      <Step title="第一步">
+        首先，需要在您的环境中安装 CLI。如果尚未安装，请运行：
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        如果已安装，建议更新，运行：
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS 和 WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="第二步">
+        接下来，要进行身份验证并使用其他 CLI 命令，请在 [此处](https://squarecloud.app/account) 单击“Request API Key”获取授权密钥。获取后，运行：
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="第三步">
+        最后，要使用 CLI 将应用部署到 Square Cloud，请运行：
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## 故障排除
+
+<AccordionGroup>
+  <Accordion title="自定义域名" icon="globe" iconType="solid">
+    如果希望为托管在 Square Cloud 上的应用使用自定义域名，默认情况下 URL 类似 \`https://mysite.squareweb.app/\`。子域名由配置文件中的 SUBDOMAIN 字段确定。但若要使用自定义域名如 \`mysite.com.br\`，需购买 **Standard** 计划或更高计划。详情请参阅我们的文章：[如何设置自定义域名](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain)。
+  </Accordion>
+
+  <Accordion title="最低 RAM 要求" icon="memory" iconType="solid">
+    托管网站的最低 RAM 要求为 512MB，但若直接在 Square 上构建，建议使用更高 RAM，否则可能遇到 [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
+  </Accordion>
+
+  <Accordion title="临时访问被拒" icon="ban" iconType="solid">
+    若尝试访问网站时收到“Your access has been temporarily denied.”消息，请稍候再试。如问题持续，请联系 https://squarecloud.app/dashboard/support。
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="网站响应超时..." icon="clock" iconType="solid">
+    若收到“Website took too long to respond...”消息，请确保已正确配置网站的 80 端口。如问题持续，请联系 https://squarecloud.app/dashboard/support。
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## 其他资源
+
+有关 React 及其工具的更多信息，请访问 [React 官方文档](https://reactjs.org/docs)。在那里，您会找到详细指南、教程和 API 文档，以帮助您充分利用 React。
+
+如果您仍遇到任何问题，请随时 [联系支持团队](/company/support)。

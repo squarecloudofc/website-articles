@@ -4,11 +4,33 @@
   "author": {
     "name": "Square Cloud"
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "website",
+      "react"
+    ]
+  },
   "metadata": {
     "en": {
       "title": "Hosting a React Application on Square Cloud",
       "description": "This article guides you on creating and hosting a React website on Square Cloud.",
       "slug": "hosting-a-react-application-on-square-cloud"
+    },
+    "pt-br": {
+      "title": "Hospedando uma Aplicação React no Square Cloud",
+      "description": "Este artigo orienta você na criação e hospedagem de um site React no Square Cloud.",
+      "slug": "hospedando-uma-aplicacao-react-no-square-cloud"
+    },
+    "es": {
+      "title": "Alojando una Aplicación React en Square Cloud",
+      "description": "Este artículo te guía en la creación y alojamiento de un sitio web React en Square Cloud.",
+      "slug": "alojando-una-aplicacion-react-en-square-cloud"
+    },
+    "zh": {
+      "title": "在 Square Cloud 上托管 React 应用",
+      "description": "本文指导您在 Square Cloud 上创建并托管一个 React 网站。",
+      "slug": "在-square-cloud-上-托管-react-应用"
     }
   },
   "created_at": "2025-06-25T19:58:28.000Z",

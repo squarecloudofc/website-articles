@@ -1,0 +1,197 @@
+## Introdução
+
+- Antes de começar, certifique-se de que você tem o Node.js e o npm instalados no seu sistema. Caso ainda não tenha, você pode baixá-los no [site oficial do Node.js](https://nodejs.org/).
+- Em seguida, será necessário criar uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
+- Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir um conforme sua necessidade [aqui](https://squarecloud.app/plans).
+
+### Criando um Projeto React
+
+Para criar um novo projeto React, execute o seguinte comando:
+
+\`\`\`bash
+npx create-react-app my-react-app
+\`\`\`
+
+No comando acima, \`my-react-app\` é o nome do seu novo projeto. Você pode substituí-lo por qualquer nome desejado.
+
+\`create-react-app\` é um pacote disponível no registro npm que configura um novo projeto React para você. Ele cuida de toda a configuração inicial, como criar o diretório do projeto, instalar dependências necessárias e configurar arquivos básicos.
+
+## Configurando o Ambiente de Produção com Serve
+
+Depois de ter criado e configurado seu projeto React, é hora de prepará-lo para produção. Para isso, utilizaremos uma biblioteca chamada \`serve\`. Essa biblioteca é um servidor estático que pode servir seu projeto React após ele ser compilado.
+
+### Instalando a Biblioteca Serve
+
+Para instalar a biblioteca \`serve\`, navegue até o diretório do seu projeto no terminal e execute o seguinte comando:
+
+\`\`\`bash
+npm install serve@14.2.3
+\`\`\`
+
+Esse comando instala a versão \`14.2.3\` da biblioteca \`serve\`. Se quiser instalar a versão mais recente, pode omitir o \`@14.2.3\`.
+
+### Configurando o Script de Inicialização
+
+Após instalar a biblioteca \`serve\`, você precisa configurar o script de inicialização do seu projeto para usar o \`serve\`. Para isso, abra o arquivo \`package.json\` do seu projeto e adicione um novo script chamado \`start:prod\`:
+
+\`\`\`json
+"scripts": {
+  "start": "react-scripts start",
+  "start:prod": "serve -s build -l 80",
+  ...
+}
+\`\`\`
+
+No script \`start:prod\`, o comando \`serve -s build -l 80\` faz o seguinte:
+
+- \`serve\`: inicia o servidor \`serve\`.
+- \`-s build\`: a opção \`-s\` serve o diretório \`build\` em modo single-page application. Isso significa que todas as requisições não encontradas serão redirecionadas para \`index.html\`. O diretório \`build\` é criado ao executar \`npm run build\`.
+- \`-l 80\`: a opção \`-l\` seguida de \`80\` instrui o \`serve\` a escutar na porta 80. A porta 80 é a padrão para tráfego HTTP.
+
+Agora, quando quiser iniciar seu projeto em modo produção, execute o comando \`npm run start:prod\`. Esse comando primeiro compila seu projeto React e depois serve os arquivos compilados usando o \`serve\` na porta 80.
+
+## Criando o arquivo de configuração da Square Cloud
+
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+O arquivo squarecloud.app é um arquivo de configuração que será usado para configurar sua aplicação; ele define nome, descrição, versão, arquivo principal, entre outras coisas.
+</Card>
+
+## Configurando o Campo START
+
+No arquivo de configuração da Square Cloud, o campo \`START\` é essencial para personalizar o comando de inicialização. Para compilar e iniciar sua aplicação na Square Cloud, configure o campo \`START\` da seguinte forma:
+
+\`\`\`app squarecloud.app
+START=npm run build && npm run start:prod
+\`\`\`
+
+Esse comando executará os scripts "build" e "start:prod" definidos no seu \`package.json\`:
+
+\`\`\`json package.json
+{
+  "name": "my-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "serve": "^14.2.3",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start:prod": "serve -s build -l 80",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+\`\`\`
+
+## Adquirindo um Plano Antes de Enviar Seu Projeto
+
+Antes de poder enviar seu projeto para a Square Cloud, é importante entender que você precisa adquirir um plano. O tipo de plano escolhido dependerá dos recursos necessários para sua aplicação. Você pode ver nossos planos aqui.
+
+<Note>**Está se perguntando quanta RAM e CPU seu plano precisa para hospedar um site em React?** Não se preocupe, estamos aqui para ajudar. O React é um framework JavaScript conhecido por sua velocidade e flexibilidade. Ele permite construir grandes aplicações web que se atualizam de forma eficiente com mudanças de dados. Também é relativamente fácil de aprender, sendo acessível para iniciantes. Nosso plano **[Standard](https://squarecloud.app/pay/standard)** oferece **4GB** de RAM e **4vCPU**, o que é suficiente para a maioria dos sites em React. Contudo, se estiver trabalhando em um projeto maior ou precisar de mais estabilidade, recomendamos considerar o plano Pro. Com recursos adicionais, você garante desempenho fluido mesmo com alta demanda. Para adquirir, basta clicar [aqui](https://squarecloud.app/pay/pro).</Note>
+
+## Enviando Projeto para a Square Cloud
+
+Depois de preparar os arquivos do seu projeto, você pode enviá-los para a Square Cloud e hospedar seu projeto.
+
+<Tabs>
+  <Tab title="Dashboard Upload">
+    Acesse o [Square Cloud
+    Dashboard](https://squarecloud.app/dashboard/upload) e envie os arquivos do seu projeto.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI Upload">
+    <Steps>
+      <Step title="Primeiro Passo">
+        Primeiro, é necessário ter a CLI instalada no seu ambiente. Caso ainda não tenha, execute:
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        Se já tiver, recomendamos atualizar. Para isso:
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS e WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo Passo">
+        Agora, para autenticar e usar os demais comandos da CLI, acesse sua [chave de autorização](https://squarecloud.app/account) clicando em "Request API Key". Após obtê-la, execute:
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Terceiro Passo">
+        Por fim, para fazer o deploy da sua aplicação na Square Cloud usando a CLI, execute:
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Solução de Problemas
+
+<AccordionGroup>
+  <Accordion title="Domínio Personalizado" icon="globe" iconType="solid">
+    Se deseja usar um domínio personalizado na sua aplicação hospedada na Square Cloud, por padrão a URL será algo como \`https://mysite.squareweb.app/\`. O subdomínio é definido pelo campo SUBDOMAIN no arquivo de configuração. No entanto, para usar um domínio personalizado como \`mysite.com.br\`, você precisará adquirir o plano **Standard** ou superior. Detalhamos cada etapa neste artigo: [Como configurar seu domínio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="Requisito Mínimo de RAM" icon="memory" iconType="solid">
+    A quantidade mínima de RAM necessária para hospedar um site é 512MB, mas ao compilar seu site diretamente na Square, é aconselhável usar mais RAM, ou você poderá enfrentar o erro [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+  </Accordion>
+
+  <Accordion title="Acesso Temporariamente Negado" icon="ban" iconType="solid">
+    Se receber a mensagem "Your access has been temporarily denied." ao tentar acessar o site, aguarde algum tempo. Se o problema persistir, entre em contato em https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="O site demorou muito para responder..." icon="clock" iconType="solid">
+    Se receber a mensagem "Website took too long to respond..." verifique se a porta 80 foi corretamente configurada no seu site. Se o problema persistir, entre em contato em https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Recursos Adicionais
+
+Para mais informações sobre o React e suas ferramentas, visite a [documentação oficial do React](https://reactjs.org/docs). Lá você encontrará guias detalhados, tutoriais e documentação da API para aproveitar ao máximo o React.
+
+Se continuar enfrentando problemas, não hesite em [entrar em contato com nosso suporte](/company/support).
