@@ -1,0 +1,158 @@
+## Introdução
+
+- Antes de começar a codificar é necessário configurar seu bot no WhatsApp corretamente. Primeiro, você precisa ter o WhatsApp baixado em seu telefone. Se ainda não o tiver, você pode visitar o [site oficial do WhatsApp](https://www.whatsapp.com/coronavirus/get-started?lang=en). Após instalar e configurar o WhatsApp, você pode começar a programar seu bot.
+- Em seguida, será necessário criar uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar uma conta.
+- Por fim, você precisa ter um plano pago ativo em sua conta. Você pode ver nossos planos e adquirir um de acordo com suas necessidades [aqui](https://squarecloud.app/plans).
+
+<AccordionGroup>
+  <Accordion title="Caminho remoto para a versão Web do WhatsApp" icon="file" iconType="solid">
+    Se o seu código requer acesso ao caminho remoto da versão Web do WhatsApp, siga este procedimento.
+    Você pode acessar [wa-version](https://github.com/wppconnect-team/wa-version/tree/main/html), escolher a versão desejada (a mais recente é sempre recomendada) e clicar em "Raw". Após a página abrir, basta copiar o URL, que será utilizado mais tarde. URL de exemplo:
+    "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html"
+    <Frame>
+      <img src="/images/articles/whatsapp/remote-path.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+# Iniciando o Projeto
+
+1. Certifique-se de ter o Node.js instalado em seu sistema. Se não tiver, você pode baixá-lo do [site oficial do Node.js](https://nodejs.org/).
+2. Inicialize um novo projeto Node.js usando `npm init`. Isso criará um novo arquivo `package.json` para o seu projeto:
+
+\`\`\`bash
+npm init -y
+\`\`\`
+
+3. Instale as bibliotecas whatsapp-web.js e qrcode via npm:
+
+\`\`\`bash
+npm install whatsapp-web.js qrcode
+\`\`\`
+
+4. Crie um novo arquivo JavaScript (por exemplo, `index.js`) e adicione o seguinte código para criar um bot básico do WhatsApp:
+
+\`\`\`javascript index.js
+// Importando os módulos necessários
+const { Client } = require("whatsapp-web.js");
+const qrcode = require("qrcode");
+
+// Criando uma nova instância do client
+const client = new Client({
+  puppeteer: {
+    // Executa o Chrome em modo headless (sem interface gráfica).
+    headless: true,
+    args: [
+      // Desativa os recursos de sandbox do Chrome. Isso é necessário ao executar
+      // o Puppeteer em certos ambientes, como contêineres Docker.
+      "--no-sandbox",
+      // Flag adicional de sandbox para desativar o setuid sandbox.
+      "--disable-setuid-sandbox",
+    ],
+  },
+  // Configurando a opção webVersionCache
+  webVersionCache: {
+    // Define o tipo como "remote", o que significa que a versão Web do WhatsApp será obtida de um URL remoto
+    type: "remote",
+    // Definindo o caminho remoto para a versão Web do WhatsApp
+    remotePath: "URL PATH HERE",
+  },
+});
+
+// Este evento é disparado quando o whatsapp-web.js gera um novo QR code
+client.on("qr", async (qr) => {
+  // Aqui estamos usando a biblioteca qrcode para gerar um QR Code e salvá-lo como um arquivo
+  try {
+    await qrcode.toFile("./qrcode.png", qr);
+    console.log("QR Code salvo como qrcode.png");
+  } catch (err) {
+    console.error(err);
+  }
+});
+
+// Este evento é disparado quando o client está pronto
+client.on("ready", () => {
+  // Este log será exibido no console quando o client estiver pronto, ou seja, após o QR Code ter sido escaneado com sucesso e a sessão do WhatsApp Web ter sido iniciada
+  console.log("Client está pronto!");
+});
+
+// Este evento é disparado quando uma mensagem é criada
+client.on("message_create", (msg) => {
+  // Aqui estamos registrando o corpo da mensagem no console
+  console.log(msg.body);
+  // Se a mensagem for "!ping"
+  if (msg.body == "!ping") {
+    // Responde com "pong"
+    msg.reply("pong");
+  }
+});
+
+// Inicializando o client
+client.initialize();
+\`\`\`
+
+## Criando o arquivo de configuração do squarecloud
+
+<Card title="Saiba mais: como fazer o arquivo de configuração para o Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+O arquivo squarecloud.app é um arquivo de configuração que será usado para configurar sua aplicação; será usado para definir o nome, descrição, versão, arquivo principal, entre outras coisas.
+</Card>
+
+## Configurando o Campo START
+
+<Warning>Apenas use este campo se tiver certeza do que está fazendo.</Warning>
+
+No arquivo de configuração do Square Cloud, o **START** é opcional e só é necessário se você estiver usando um script personalizado para iniciar o bot. No exemplo fornecido, o **START** não é necessário.
+
+## Enviando o Projeto para o Square Cloud
+
+Depois de preparar seus arquivos de projeto, você pode enviá-los para o Square Cloud e hospedar seu projeto.
+
+<Tabs>
+  <Tab title="Envio pelo Painel">
+    Acesse o [Painel do Square Cloud](https://squarecloud.app/dashboard/upload) e envie seus arquivos de projeto.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Envio via CLI">
+    <Steps>
+      <Step title="Primeiro Passo">
+        Primeiro, você precisa ter a CLI instalada em seu ambiente. Se ainda não tiver, execute o seguinte comando em seu terminal:
+        \`\`\`bash
+        npm install -g @squarecloud/cli
+        \`\`\`
+        Se já tiver, recomendamos atualizá-la. Para isso, execute o seguinte comando em seu terminal:
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS e WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo Passo">
+        Agora, para autenticar e usar outros comandos da CLI, você encontrará sua chave de autorização [aqui](https://squarecloud.app/account) clicando em "Request API Key". Após obter sua chave de autorização, execute o seguinte comando:
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Terceiro Passo">
+        Finalmente, para implantar sua aplicação no Square Cloud usando a CLI, você precisa executar o seguinte comando, passando o caminho de seu arquivo zip:
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Recursos Adicionais
+
+Para mais informações sobre criação de bots com whatsapp-web.js, visite a [documentação oficial do whatsapp-web.js](https://wwebjs.dev/). Lá, você encontrará guias detalhados, tutoriais e documentação da API para ajudá-lo a aproveitar ao máximo essas bibliotecas.
+
+Se você continuar enfrentando problemas, não hesite em [entrar em contato com nossa equipe de suporte](/company/support).
