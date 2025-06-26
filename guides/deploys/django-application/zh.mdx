@@ -1,0 +1,62 @@
+## 创建新的 Django 项目
+
+- 在开始之前，请确保您的系统已安装 Python 和 pip。如果尚未安装，可以从 [Python 官网](https://www.python.org/) 和 [Pip 官网](https://pypi.org/) 下载。
+- 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 实现。您可以使用电子邮件创建帐户。
+- 最后，您的帐户需要启用有效的付费计划。您可以在[此处](https://squarecloud.app/plans)查看我们的计划并根据需求购买。
+
+安装好 Python 和 pip 后，您可以创建一个新的 Django 项目。首先，使用 pip 安装 Django：
+
+\`\`\`bash
+pip install django
+\`\`\`
+
+然后，创建一个新的 Python 文件（例如 \`app.py\`），并添加以下代码以创建一个基本的 Django 应用：
+
+\`\`\`python app.py
+from django.conf import settings
+from django.http import HttpResponse
+from django.urls import path
+from django.core.wsgi import get_wsgi_application
+
+# 基本的 Django 设置
+settings.configure(
+    DEBUG=False,  # 关闭调试模式
+    SECRET_KEY='mysecretkey',  # 设置您的密钥
+    ALLOWED_HOSTS=['*'],  # 简单起见允许所有主机
+    ROOT_URLCONF=__name__,  # 将此模块设为根 URL 配置
+    MIDDLEWARE_CLASSES=(),  # 使用空元组禁用中间件
+)
+
+# 简单视图
+def index(request):
+    return HttpResponse("Hello world!")  # 返回简单的 HTTP 响应
+
+# URL 配置
+urlpatterns = [
+    path('', index),  # 将根 URL 映射到 index 视图
+]
+
+# WSGI 应用
+application = get_wsgi_application()
+
+# WSGI 服务器
+if __name__ == "__main__":
+    from wsgiref.simple_server import make_server
+    httpd = make_server('', 80, application)  # 在端口 80 提供服务
+    print("Django 服务器正在 80 端口运行...")
+    httpd.serve_forever()  # 启动服务器
+\`\`\`
+
+在上述代码中，我们创建了一个基本路由，访问时会返回“Hello, World!”。该应用配置为在端口 80 上运行，这是 HTTP 流量的默认端口。
+
+## 使用 requirements.txt 管理依赖
+
+\`requirements.txt\` 文件列出了项目所需的所有外部库。您应列出项目使用的所有库，排除 \`random\` 和 \`datetime\` 等内置库。提交应用到 Square Cloud 时应包含此文件。
+
+\`\`\`txt requirements.txt
+django
+\`\`\`
+
+## 创建 squarecloud.app 配置文件
+
+<Card title="了解详情：如何制作 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/co

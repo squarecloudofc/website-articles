@@ -4,11 +4,32 @@
   "author": {
     "name": "Square Cloud"
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "website"
+    ]
+  },
   "metadata": {
+    "pt-BR": {
+      "title": "Hospedando uma Aplicação Django no Square Cloud",
+      "description": "Este artigo orienta você na criação e hospedagem de uma aplicação Django no Square Cloud.",
+      "slug": "hospedando-uma-aplicacao-django-no-square-cloud"
+    },
     "en": {
       "title": "Hosting a Django Application on Square Cloud",
       "description": "This article guides you on creating and hosting a Django application on Square Cloud.",
       "slug": "hosting-a-django-application-on-square-cloud"
+    },
+    "es": {
+      "title": "Alojando una Aplicación Django en Square Cloud",
+      "description": "Este artículo te guía en la creación y el alojamiento de una aplicación Django en Square Cloud.",
+      "slug": "alojando-una-aplicacion-django-en-square-cloud"
+    },
+    "zh": {
+      "title": "在 Square Cloud 上托管 Django 应用",
+      "description": "本文指导您在 Square Cloud 上创建并托管一个 Django 应用。",
+      "slug": "在-square-cloud-上-托管-django-应用"
     }
   },
   "created_at": "2025-06-25T19:58:28.000Z",
