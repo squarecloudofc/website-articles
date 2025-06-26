@@ -14,8 +14,8 @@ import { getSidebarIndexes, getSidebars } from "./utils/sidebar.js";
     const indexesPath = resolve(project, ".index");
     mkdirSync(indexesPath, { recursive: true });
 
-    const sidebars = project === "docs" ? await getSidebars(project) : null
-    const sidebarIndexes = project === "docs" ? await getSidebarIndexes(project, sidebars) : null
+    const sidebars = project === "docs" ? await getSidebars(project) : null;
+    const sidebarIndexes = project === "docs" ? await getSidebarIndexes(project, sidebars) : null;
 
     for (const locale of locales) {
       const content = {
@@ -24,7 +24,7 @@ import { getSidebarIndexes, getSidebars } from "./utils/sidebar.js";
       };
 
       if (project === "docs" && sidebars && sidebarIndexes) {
-        content.sidebars = sidebarIndexes[locale]
+        content.sidebars = sidebarIndexes[locale];
       }
 
       writeFileSync(join(indexesPath, `${locale}.index.json`), JSON.stringify(content, null, 2));

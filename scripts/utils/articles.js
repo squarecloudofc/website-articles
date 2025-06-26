@@ -5,8 +5,8 @@ import { locales } from "./index.js";
 import { globby } from "globby";
 
 export async function getArticles(cwd) {
-  const paths = await globby(["**/metadata.json"], { cwd })
-  const localesExt = locales.map(l => l + ".mdx")
+  const paths = await globby(["**/metadata.json"], { cwd });
+  const localesExt = locales.map((l) => l + ".mdx");
 
   const articles = [];
   paths.forEach((article) => {
@@ -17,13 +17,13 @@ export async function getArticles(cwd) {
     try {
       metadata = JSON.parse(readFileSync(join(cwd, article)).toString());
       delete metadata["$schema"];
-    } catch (_) { }
+    } catch (_) {}
 
     Object.keys(metadata.metadata ?? {}).forEach((k) => {
-      if (!locales.includes(k)) delete metadata.metadata[k]
-    })
+      if (!locales.includes(k)) delete metadata.metadata[k];
+    });
 
-    const availableLocales = files.filter(v => localesExt.includes(v))
+    const availableLocales = files.filter((v) => localesExt.includes(v));
     articles.push({
       ...metadata,
       $info: {
@@ -47,19 +47,16 @@ export async function getArticlesIndex(project, articles) {
   };
 
   for (const article of articles) {
-    const available = article.$info.availableLocales
+    const available = article.$info.availableLocales;
     const availableMetadata = Object.keys(article.metadata);
 
     for (const articleLocale of locales) {
-      const contentLocale = pickLocale(articleLocale, available)
-      if ((project === "guides" && contentLocale !== articleLocale) || !contentLocale) continue
+      const contentLocale = pickLocale(articleLocale, available);
+      if ((project === "guides" && contentLocale !== articleLocale) || !contentLocale) continue;
 
       if (!availableMetadata.includes(contentLocale)) continue;
 
-      if ((project === "docs" && !article.$info.path)
-        || (project === "guides" && !article.id))
-        continue;
-
+      if ((project === "docs" && !article.$info.path) || (project === "guides" && !article.id)) continue;
 
       const rawContent = readFileSync(join(project, article.$info.path, `${contentLocale}.mdx`));
       const content = await parseMdxSnippets(project, contentLocale, rawContent);
@@ -77,7 +74,7 @@ export async function getArticlesIndex(project, articles) {
             updated_at: article.updated_at,
             content: content.toString(),
           };
-          break
+          break;
         case "guides":
           indexes[articleLocale][article.id] = {
             id: article.id,
@@ -89,7 +86,7 @@ export async function getArticlesIndex(project, articles) {
             updated_at: article.updated_at,
             content: content.toString(),
           };
-          break
+          break;
       }
     }
   }

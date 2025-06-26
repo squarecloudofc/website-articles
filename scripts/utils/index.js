@@ -56,7 +56,7 @@ export function getFolderFirstUpdate(folder) {
       .filter(Boolean);
 
     const date = dates[0] || null;
-    if (!date) return null
+    if (!date) return null;
     return new Date(date);
   } catch (error) {
     return null;

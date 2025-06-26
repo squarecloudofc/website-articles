@@ -8,11 +8,11 @@ export async function getSidebars(cwd) {
 
   const sidebars = [];
   paths.forEach((sidebar) => {
-    const path = dirname(sidebar)
+    const path = dirname(sidebar);
     if (sidebars.some((s) => s.path === path)) return;
 
     const files = readdirSync(join(cwd, path));
-    const availableLocales = files.filter(f => f.endsWith(".json")).map((f) => f.split(".")[1]);
+    const availableLocales = files.filter((f) => f.endsWith(".json")).map((f) => f.split(".")[1]);
 
     sidebars.push({
       path: path,
@@ -23,22 +23,19 @@ export async function getSidebars(cwd) {
   return sidebars;
 }
 
-
 export async function getSidebarIndexes(project, sidebars) {
   const indexes = Object.fromEntries(locales.map((locale) => [locale, {}]));
 
   const pickLocale = (target, available) => {
-    if (available.includes(target))
-      return target;
-
+    if (available.includes(target)) return target;
 
     return locales.find((loc) => available.includes(loc));
   };
 
   for (const sidebar of sidebars) {
     for (const locale of locales) {
-      const contentLocale = pickLocale(locale, sidebar.availableLocales)
-      if (!contentLocale) continue
+      const contentLocale = pickLocale(locale, sidebar.availableLocales);
+      if (!contentLocale) continue;
 
       const content = JSON.parse(readFileSync(join(project, sidebar.path, `sidebar.${contentLocale}.json`)).toString());
 
@@ -50,4 +47,3 @@ export async function getSidebarIndexes(project, sidebars) {
 
   return indexes;
 }
-
