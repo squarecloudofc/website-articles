@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -14,27 +13,22 @@
 </ResponseField>
 
 <ResponseField name="response" type="object">
+  The contents of the response.
 
-The contents of the response.
-
-<Expandable title="Toggle object">
-
-<ResponseField name="webhook" type="string">
-  The webhook URL for the application.
+  <Expandable title="Toggle object">
+    <ResponseField name="webhook" type="string">
+      The webhook URL for the application.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
-
-</Expandable>
-
-</ResponseField>
-
 
 <ResponseExample>
-```json
-{
-    "status": "success",
-    "response": { 
-        "webhook": "https://api.squarecloud.app/v2/git/webhook/69ce71f11974f2cc21d47cd0a8bcbafdaacbc3c9924b23ca40e0e2032705f6391eb89b40983338e0f2415e9331d602ccc"
-    }
-}
-```
+  ```json
+  {
+      "status": "success",
+      "response": { 
+          "webhook": "https://api.squarecloud.app/v2/git/webhook/69ce71f11974f2cc21d47cd0a8bcbafdaacbc3c9924b23ca40e0e2032705f6391eb89b40983338e0f2415e9331d602ccc"
+      }
+  }
+  ```
 </ResponseExample>

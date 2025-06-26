@@ -1,8 +1,8 @@
 ## 介绍 🚀
 
-- 按照以下教程，即刻托管你的 **Lavalink** 服务器，操作非常简单！如需帮助，请通过官方支持渠道联系我们。
-- 接着，在 [注册页面](https://squarecloud.app/signup) 创建 Square Cloud 账户，可使用邮箱注册。
-- 最后，确保账户拥有有效的付费套餐。可在 [此处](https://squarecloud.app/plans) 查看并购买适合需求的套餐。
+* 按照以下教程，即刻托管你的 **Lavalink** 服务器，操作非常简单！如需帮助，请通过官方支持渠道联系我们。
+* 接着，在 [注册页面](https://squarecloud.app/signup) 创建 Square Cloud 账户，可使用邮箱注册。
+* 最后，确保账户拥有有效的付费套餐。可在 [此处](https://squarecloud.app/plans) 查看并购买适合需求的套餐。
 
 ## 选择版本
 
@@ -11,7 +11,7 @@
 ## 创建 squarecloud 配置文件
 
 <Card title="了解如何创建 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-`squarecloud.app` 文件用于配置应用名称、描述、版本、主文件等。
+  `squarecloud.app` 文件用于配置应用名称、描述、版本、主文件等。
 </Card>
 
 ## 创建 application.yml
@@ -33,42 +33,52 @@
 <Tabs>
   <Tab title="仪表板上传">
     访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload) 上传文件。
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="CLI 上传">
     <Steps>
       <Step title="第一步">
         安装 CLI：
-        \`\`\`
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         更新 CLI：
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux、macOS 与 WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="第二步">
         在 [account](https://squarecloud.app/account) 获取 API Key 并登录：
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="第三步">
         指定 zip 路径部署：
-        \`\`\`bash
+
+        ```bash
         squarecloud upload server.zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>

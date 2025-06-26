@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -16,60 +15,64 @@
 <ResponseField name="status" type="string">
   Indicates whether the call was successful. `success` if successful, `error` if not.
 </ResponseField>
-<ResponseField name="response" type="array">
 
-The list of files and directories in the specified path.
-<Expandable title="Toggle object">
-<ResponseField name="type" type="string">
-  The type of the entry. Can be `file` or `directory`.
-</ResponseField>
-<ResponseField name="name" type="string">
-  The name of the file or directory.
-</ResponseField>
-<ResponseField name="size" type="number">
-  The size of the file in bytes. For directories, it is 0.
-</ResponseField>
-<ResponseField name="lastModified" type="number">
-  The last modified timestamp of the file or directory in milliseconds since the epoch.
-</ResponseField>
-</Expandable>
+<ResponseField name="response" type="array">
+  The list of files and directories in the specified path.
+
+  <Expandable title="Toggle object">
+    <ResponseField name="type" type="string">
+      The type of the entry. Can be `file` or `directory`.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      The name of the file or directory.
+    </ResponseField>
+
+    <ResponseField name="size" type="number">
+      The size of the file in bytes. For directories, it is 0.
+    </ResponseField>
+
+    <ResponseField name="lastModified" type="number">
+      The last modified timestamp of the file or directory in milliseconds since the epoch.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-```json
-{
-    "status": "success",
-    "response": [
-        {
-            "type": "file",
-            "name": ".env",
-            "size": 86,
-            "lastModified": 1676168978000
-        },
-        {
-            "type": "file",
-            "name": ".gitignore",
-            "size": 8,
-            "lastModified": 1675125328000
-        },
-        {
-            "type": "file",
-            "name": "index.js",
-            "size": 614,
-            "lastModified": 1676168350000
-        },
-        {
-            "type": "file",
-            "name": "squarecloud.app",
-            "size": 65,
-            "lastModified": 1676169188000
-        },
-        {
-            "type": "directory",
-            "name": "src",
-            "lastModified": 1676155738000
-        }
-    ]
-}
-```
+  ```json
+  {
+      "status": "success",
+      "response": [
+          {
+              "type": "file",
+              "name": ".env",
+              "size": 86,
+              "lastModified": 1676168978000
+          },
+          {
+              "type": "file",
+              "name": ".gitignore",
+              "size": 8,
+              "lastModified": 1675125328000
+          },
+          {
+              "type": "file",
+              "name": "index.js",
+              "size": 614,
+              "lastModified": 1676168350000
+          },
+          {
+              "type": "file",
+              "name": "squarecloud.app",
+              "size": 65,
+              "lastModified": 1676169188000
+          },
+          {
+              "type": "directory",
+              "name": "src",
+              "lastModified": 1676155738000
+          }
+      ]
+  }
+  ```
 </ResponseExample>

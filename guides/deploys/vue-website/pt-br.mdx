@@ -1,44 +1,44 @@
 ## Introdução
 
-- Antes de começar, certifique-se de que você tem o Node.js e o npm instalados no seu sistema. Caso ainda não tenha, você pode baixá-los no [site oficial do Node.js](https://nodejs.org/).
-- Em seguida, será necessário criar uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
-- Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir um conforme sua necessidade [aqui](https://squarecloud.app/plans).
+* Antes de começar, certifique-se de que você tem o Node.js e o npm instalados no seu sistema. Caso ainda não tenha, você pode baixá-los no [site oficial do Node.js](https://nodejs.org/).
+* Em seguida, será necessário criar uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
+* Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir um conforme sua necessidade [aqui](https://squarecloud.app/plans).
 
 ### Criando um Projeto Vue
 
 Para criar um novo projeto Vue, execute o seguinte comando:
 
-\`\`\`bash
+```bash
 npm create vue@latest
-\`\`\`
+```
 
-Nesse comando, \`npm create vue@latest\` é usado para criar um novo projeto Vue com a versão mais recente do Vue. O comando \`npm create\` é uma ferramenta do \`npm\`, o gerenciador de pacotes do Node.js. Ele serve para inicializar um pacote npm novo ou existente.
+Nesse comando, `npm create vue@latest` é usado para criar um novo projeto Vue com a versão mais recente do Vue. O comando `npm create` é uma ferramenta do `npm`, o gerenciador de pacotes do Node.js. Ele serve para inicializar um pacote npm novo ou existente.
 
-\`vue@latest\` é um pacote disponível no registro npm que configura um novo projeto Vue para você. Ele cuida de toda a configuração inicial, como criar o diretório do projeto, instalar dependências necessárias e configurar arquivos básicos.
+`vue@latest` é um pacote disponível no registro npm que configura um novo projeto Vue para você. Ele cuida de toda a configuração inicial, como criar o diretório do projeto, instalar dependências necessárias e configurar arquivos básicos.
 
-\`@latest\` é uma tag que especifica que você deseja usar a versão mais recente do pacote \`vue\`. Isso garante que você sempre esteja usando a versão mais atualizada e tenha acesso aos recursos mais recentes.
+`@latest` é uma tag que especifica que você deseja usar a versão mais recente do pacote `vue`. Isso garante que você sempre esteja usando a versão mais atualizada e tenha acesso aos recursos mais recentes.
 
 ## Configurando a Porta 80
 
-A porta 80 é a porta padrão para tráfego HTTP. Para hospedar uma aplicação Vite na Square Cloud, configure o uso da porta 80. No Vite, você pode definir o parâmetro \`--port 80\` no script de inicialização para garantir que seu app seja executado corretamente nessa porta.
+A porta 80 é a porta padrão para tráfego HTTP. Para hospedar uma aplicação Vite na Square Cloud, configure o uso da porta 80. No Vite, você pode definir o parâmetro `--port 80` no script de inicialização para garantir que seu app seja executado corretamente nessa porta.
 
 ## Criando o arquivo de configuração squarecloud.app
 
 <Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-O arquivo squarecloud.app é um arquivo de configuração que será usado para configurar sua aplicação; ele será usado para definir o nome, descrição, versão, arquivo principal, entre outras coisas.
+  O arquivo squarecloud.app é um arquivo de configuração que será usado para configurar sua aplicação; ele será usado para definir o nome, descrição, versão, arquivo principal, entre outras coisas.
 </Card>
 
 ## Configurando o Campo START
 
-No arquivo de configuração da Square Cloud, o campo \`START\` é essencial para customizar o comando de inicialização. Para compilar e iniciar seu app Vue na Square Cloud, configure o campo \`START\` da seguinte forma:
+No arquivo de configuração da Square Cloud, o campo `START` é essencial para customizar o comando de inicialização. Para compilar e iniciar seu app Vue na Square Cloud, configure o campo `START` da seguinte forma:
 
-\`\`\`app squarecloud.app
+```app squarecloud.app
 START=npm run build && npm run serve
-\`\`\`
+```
 
-Esse comando executará os scripts “build” e “serve” definidos no seu \`package.json\`:
+Esse comando executará os scripts “build” e “serve” definidos no seu `package.json`:
 
-\`\`\`json package.json
+```json package.json
 {
   "name": "vue-project",
   "version": "0.0.0",
@@ -57,7 +57,7 @@ Esse comando executará os scripts “build” e “serve” definidos no seu \`
     "vite": "^5.2.8"
   }
 }
-\`\`\`
+```
 
 ## Adquirindo um Plano Antes de Enviar Seu Projeto
 
@@ -72,42 +72,52 @@ Após preparar os arquivos do seu projeto, você pode enviá-los para a Square C
 <Tabs>
   <Tab title="Upload via Dashboard">
     Acesse o [Dashboard da Square Cloud](https://squarecloud.app/dashboard/upload) e envie os arquivos do seu projeto.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="Upload via CLI">
     <Steps>
       <Step title="Primeiro Passo">
         Primeiro, você precisa ter a CLI instalada no seu ambiente. Caso ainda não tenha, execute:
-\`\`\`bash
-npm install -g @squarecloud/cli
-\`\`\`
+
+        ```bash
+        npm install -g @squarecloud/cli
+        ```
+
         Se já tiver, recomendamos atualizá-la executando:
+
         <Tabs>
           <Tab title="Windows">
-\`\`\`bash
-squarecloud update
-\`\`\`
+            ```bash
+            squarecloud update
+            ```
           </Tab>
+
           <Tab title="Linux, macOS e WSL">
-\`\`\`bash
-curl -fsSL https://cli.squarecloud.app/install | bash
-\`\`\`
+            ```bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Segundo Passo">
         Agora, para autenticar e usar os demais comandos da CLI, obtenha sua chave de autorização [aqui](https://squarecloud.app/account) clicando em “Request API Key”. Depois de obtê-la, execute:
-\`\`\`bash
-squarecloud login
-\`\`\`
+
+        ```bash
+        squarecloud login
+        ```
       </Step>
+
       <Step title="Terceiro Passo">
         Por fim, para fazer o deploy da sua aplicação na Square Cloud usando a CLI, execute:
-\`\`\`bash
-squarecloud upload zip
-\`\`\`
+
+        ```bash
+        squarecloud upload zip
+        ```
       </Step>
     </Steps>
   </Tab>
@@ -117,15 +127,16 @@ squarecloud upload zip
 
 <AccordionGroup>
   <Accordion title="Domínio Personalizado" icon="globe" iconType="solid">
-    Se você quiser usar um domínio personalizado para seu app hospedado na Square Cloud, observe que, por padrão, a URL será algo como \`https://mysite.squareweb.app/\`. O subdomínio é determinado pelo campo SUBDOMAIN no arquivo de configuração. No entanto, se preferir usar um domínio personalizado, como \`mysite.com\`, você precisará adquirir o plano **Standard** ou superior. Detalhamos cada etapa para configurar seu domínio personalizado em nosso artigo: [Como configurar seu domínio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+    Se você quiser usar um domínio personalizado para seu app hospedado na Square Cloud, observe que, por padrão, a URL será algo como `https://mysite.squareweb.app/`. O subdomínio é determinado pelo campo SUBDOMAIN no arquivo de configuração. No entanto, se preferir usar um domínio personalizado, como `mysite.com`, você precisará adquirir o plano **Standard** ou superior. Detalhamos cada etapa para configurar seu domínio personalizado em nosso artigo: [Como configurar seu domínio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
   </Accordion>
 
   <Accordion title="Requisitos Mínimos de RAM" icon="memory" iconType="solid">
-    A quantidade mínima de RAM necessária para hospedar um site ou API é 512MB, mas ao construir seu site diretamente na Square, é aconselhável usar uma quantidade maior, ou você poderá encontrar o erro [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+    A quantidade mínima de RAM necessária para hospedar um site ou API é 512MB, mas ao construir seu site diretamente na Square, é aconselhável usar uma quantidade maior, ou você poderá encontrar o erro [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
   </Accordion>
 
   <Accordion title="Acesso Temporariamente Negado" icon="ban" iconType="solid">
     Se você receber a mensagem “Your access has been temporarily denied.” ao tentar acessar o site, aguarde um pouco. Se o problema persistir, entre em contato em https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -133,6 +144,7 @@ squarecloud upload zip
 
   <Accordion title="O site demorou muito para responder..." icon="clock" iconType="solid">
     Se você receber a mensagem “Website took too long to respond...”, certifique-se de ter configurado corretamente a porta 80 no seu site. Se o problema persistir, entre em contato em https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>

@@ -1,22 +1,22 @@
 ## 介绍
 
-- 在开始之前，请确保您的系统已安装 Node.js 和 npm。如果尚未安装，您可以从 [Node.js 官方网站](https://nodejs.org/) 下载。
-- 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
-- 最后，您的帐户需要启用一个有效的付费计划。您可以在[此处](https://squarecloud.app/plans)查看我们的计划并根据需求购买。
+* 在开始之前，请确保您的系统已安装 Node.js 和 npm。如果尚未安装，您可以从 [Node.js 官方网站](https://nodejs.org/) 下载。
+* 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
+* 最后，您的帐户需要启用一个有效的付费计划。您可以在[此处](https://squarecloud.app/plans)查看我们的计划并根据需求购买。
 
 ### 设置 Express
 
 要使用 Express，需要先安装它。运行以下命令：
 
-\`\`\`bash
+```bash
 npm install express
-\`\`\`
+```
 
 ### 创建 Express 项目
 
 要创建一个新的 Express 项目，请创建一个文件并写入以下代码：
 
-\`\`\`javascript app.js
+```javascript app.js
 // 引入 Express 模块
 const express = require('express');
 
@@ -36,14 +36,14 @@ app.get('/', (req, res) => {
 // 让 Express 应用监听端口 80
 app.listen(port, () => {
   // 一旦服务器在端口 80 上监听，此代码块将运行
-  console.log(\`Example app listening on port \${port}\`);
+  console.log(`Example app listening on port \${port}`);
 });
-\`\`\`
+```
 
 ## 创建 squarecloud.app 配置文件
 
 <Card title="了解更多：如何制作 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-\`squarecloud.app\` 文件是一个配置文件，用于定义应用的名称、描述、版本、主文件等。
+  `squarecloud.app` 文件是一个配置文件，用于定义应用的名称、描述、版本、主文件等。
 </Card>
 
 ## 配置 START 字段
@@ -63,42 +63,52 @@ app.listen(port, () => {
 <Tabs>
   <Tab title="通过控制台上传">
     访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload) 并上传项目文件。
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="通过 CLI 上传">
     <Steps>
       <Step title="第一步">
         需要先安装 CLI。如果尚未安装，请运行：
-        \`\`\`
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         如果已安装，建议更新：
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux、macOS 和 WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="第二步">
         获取授权密钥，请在 [帐户页面](https://squarecloud.app/account) 点击“Request API Key”，然后运行：
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="第三步">
         最后，通过 CLI 部署应用，传入 zip 文件路径：
-        \`\`\`bash
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>
@@ -108,15 +118,16 @@ app.listen(port, () => {
 
 <AccordionGroup>
   <Accordion title="自定义域名" icon="globe" iconType="solid">
-    如果想使用自定义域名，默认 URL 会是 \`https://mysite.squareweb.app/\`。子域名由 SUBDOMAIN 字段决定。若要使用 \`mysite.com\`，需购买 Standard 或以上计划。详见：[如何设置自定义域名](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain)。
+    如果想使用自定义域名，默认 URL 会是 `https://mysite.squareweb.app/`。子域名由 SUBDOMAIN 字段决定。若要使用 `mysite.com`，需购买 Standard 或以上计划。详见：[如何设置自定义域名](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain)。
   </Accordion>
 
   <Accordion title="最低内存要求" icon="memory" iconType="solid">
-    托管网站或 API 的最低内存为 512MB。但根据 Express 应用的规模，可考虑更多内存以避免 [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
+    托管网站或 API 的最低内存为 512MB。但根据 Express 应用的规模，可考虑更多内存以避免 [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
   </Accordion>
 
   <Accordion title="临时访问被拒" icon="ban" iconType="solid">
     如果收到“Your access has been temporarily denied.”，请稍等片刻。如问题持续，请联系 https://squarecloud.app/dashboard/support。
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -124,6 +135,7 @@ app.listen(port, () => {
 
   <Accordion title="网站响应超时..." icon="clock" iconType="solid">
     如果收到“Website took too long to respond...”，请确认已正确设置端口 80。如仍有问题，请联系 https://squarecloud.app/dashboard/support。
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>

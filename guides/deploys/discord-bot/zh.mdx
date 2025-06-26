@@ -1,12 +1,13 @@
 ## 介绍
 
-- 在开始编码之前，您需要在 Discord 上正确设置您的机器人。首先，您需要拥有一个 Discord 帐户。如果您还没有，可以访问 [Discord 官方网站](https://discord.com/) 创建一个。
-- 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
-- 最后，您的帐户需要启用一个有效的付费计划。您可以在[此处](https://squarecloud.app/plans)查看我们的计划并根据需求购买。
+* 在开始编码之前，您需要在 Discord 上正确设置您的机器人。首先，您需要拥有一个 Discord 帐户。如果您还没有，可以访问 [Discord 官方网站](https://discord.com/) 创建一个。
+* 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
+* 最后，您的帐户需要启用一个有效的付费计划。您可以在[此处](https://squarecloud.app/plans)查看我们的计划并根据需求购买。
 
 <AccordionGroup>
   <Accordion title="入门" icon="rocket" iconType="solid">
     首先，转到[开发者门户](https://discord.com/developers/applications)，点击“New Application”。然后，为您的机器人选择一个名称并点击“Create”创建它。
+
     <Frame>
       <img src="/images/articles/discord/getting-started.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -14,6 +15,7 @@
 
   <Accordion title="获取令牌" icon="key" iconType="solid">
     创建机器人后，就该获取令牌了。为此，转到“Bot”选项卡，点击“Reset Token”生成令牌。最后，复制该令牌以便稍后在代码中使用。
+
     <Frame>
       <img src="/images/articles/discord/getting-the-token.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -21,14 +23,17 @@
 
   <Accordion title="启用特权意图" icon="message" iconType="solid">
     现在您已经拥有机器人的令牌，需要启用必要的意图。为此，请仍然在“Bot”选项卡中，向下滚动并查找“Privileged Gateway Intents”。在此处启用以下意图：
+
     <Frame>
       <img src="/images/articles/discord/intent.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 </AccordionGroup>
+
 <Warning>请记住保密您的机器人令牌，因为它可以用来控制您的机器人。</Warning>
 
 # 使用封装库创建机器人
+
 <Tabs>
   <Tab title="Discord.js">
     1. 确保您的系统已安装 Node.js。如果没有，请从 [Node.js 官方网站](https://nodejs.org/) 下载。
@@ -112,10 +117,11 @@
 ## 创建 Square Cloud 配置文件
 
 <Card title="了解更多：如何制作 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-`squarecloud.app` 文件是一个配置文件，用于配置您的应用；它将定义名称、描述、版本、主文件等。
+  `squarecloud.app` 文件是一个配置文件，用于配置您的应用；它将定义名称、描述、版本、主文件等。
 </Card>
 
 ## 配置 START 字段
+
 <Warning>只有在您非常确定操作时才使用此字段。</Warning>
 
 在 Square Cloud 配置文件中，**START** 字段是可选的，仅在您使用自定义脚本启动机器人时才需要。在示例中，**START** 字段并非必需。
@@ -136,13 +142,14 @@
 6. 选择邀请机器人时需授予的权限。
 7. 在权限下方，将生成一个邀请链接，如下所示：
 
-    ```txt
-    https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
-    ```
+   ```txt
+   https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
+   ```
 
 请记住，将 URL 中的 `client_id` 替换为您的机器人实际 ID。根据所需权限，`permissions` 值也可能需要调整。
 
 现在，要测试一切是否正常，请在服务器上执行以下命令：`!hello`。
+
 <Frame>
   <img src="/images/articles/discord/testing-bot.png" style={{ borderRadius: "0.2rem" }} />
 </Frame>

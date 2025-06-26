@@ -1,12 +1,13 @@
 ## Introducción
 
-- Antes de comenzar a programar, debes configurar correctamente tu bot en Discord. Primero, es necesario tener una cuenta de Discord. Si aún no tienes una, puedes crearla visitando el [sitio oficial de Discord](https://discord.com/).
-- A continuación, deberás crear una cuenta en Square Cloud, lo cual puedes hacer a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear una cuenta.
-- Finalmente, necesitas tener un plan pago activo en tu cuenta. Puedes ver nuestros planes y adquirir uno según tus necesidades [aquí](https://squarecloud.app/plans).
+* Antes de comenzar a programar, debes configurar correctamente tu bot en Discord. Primero, es necesario tener una cuenta de Discord. Si aún no tienes una, puedes crearla visitando el [sitio oficial de Discord](https://discord.com/).
+* A continuación, deberás crear una cuenta en Square Cloud, lo cual puedes hacer a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear una cuenta.
+* Finalmente, necesitas tener un plan pago activo en tu cuenta. Puedes ver nuestros planes y adquirir uno según tus necesidades [aquí](https://squarecloud.app/plans).
 
 <AccordionGroup>
   <Accordion title="Primeros pasos" icon="rocket" iconType="solid">
     Primero, ingresa al [Developer Portal](https://discord.com/developers/applications) y haz clic en "New Application". Luego, elige un nombre para tu bot y haz clic en "Create" para crearlo.
+
     <Frame>
       <img src="/images/articles/discord/getting-started.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -14,6 +15,7 @@
 
   <Accordion title="Obtener el Token" icon="key" iconType="solid">
     Después de crear tu bot, es hora de obtener el token. Para ello, ve a la pestaña "Bot" y haz clic en "Reset Token", generando así tu token. Finalmente, cópialo para usarlo en tu código más adelante.
+
     <Frame>
       <img src="/images/articles/discord/getting-the-token.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -21,14 +23,17 @@
 
   <Accordion title="Activar Intenciones Privilegiadas" icon="message" iconType="solid">
     Ahora que ya tienes el token de tu bot, necesitas activar las intenciones necesarias. Para ello, permanece en la pestaña "Bot", desplázate hacia abajo y busca "Privileged Gateway Intents". Aquí, activa las siguientes intenciones:
+
     <Frame>
       <img src="/images/articles/discord/intent.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 </AccordionGroup>
+
 <Warning>Recuerda mantener el token de tu bot en secreto, ya que puede ser usado para controlar tu bot.</Warning>
 
 # Usando bibliotecas para la creación de bots
+
 <Tabs>
   <Tab title="Discord.js">
     1. Asegúrate de tener Node.js instalado en tu sistema. Si no lo tienes, descárgalo desde el [sitio oficial de Node.js](https://nodejs.org/).
@@ -112,10 +117,11 @@
 ## Creando el archivo de configuración de Square Cloud
 
 <Card title="Aprende más: cómo crear el archivo de configuración para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-El archivo `squarecloud.app` es un archivo de configuración que se usará para configurar tu aplicación; define el nombre, descripción, versión, archivo principal, entre otros.
+  El archivo `squarecloud.app` es un archivo de configuración que se usará para configurar tu aplicación; define el nombre, descripción, versión, archivo principal, entre otros.
 </Card>
 
 ## Configuración del campo START
+
 <Warning>Usa este campo solo si estás seguro de lo que estás haciendo.</Warning>
 
 En el archivo de configuración de Square Cloud, el **START** es opcional y solo es necesario si utilizas un script personalizado para iniciar el bot. En el ejemplo proporcionado, el **START** no es necesario.
@@ -136,13 +142,14 @@ Si todo está configurado correctamente, el siguiente paso es invitar a tu bot p
 6. Elige los permisos que tendrá tu bot al ser invitado.
 7. Debajo de los permisos, se generará un enlace de invitación para tu bot. Debería ser algo como:
 
-    ```txt
-    https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
-    ```
+   ```txt
+   https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
+   ```
 
 Recuerda, el `client_id` en la URL debe reemplazarse por el ID real de tu bot. El valor de `permissions` también puede necesitar ajustes según los permisos deseados.
 
 Ahora, para probar si todo funciona, ejecuta el siguiente comando en tu servidor: `!hello`.
+
 <Frame>
   <img src="/images/articles/discord/testing-bot.png" style={{ borderRadius: "0.2rem" }} />
 </Frame>

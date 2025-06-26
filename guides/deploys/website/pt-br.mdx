@@ -1,44 +1,43 @@
 ## Introdução
 
-- Crie uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar uma conta.  
-- Tenha um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir um conforme suas necessidades [aqui](https://squarecloud.app/plans).
+* Crie uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar uma conta.
+* Tenha um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir um conforme suas necessidades [aqui](https://squarecloud.app/plans).
 
 ## Criando o arquivo de configuração squarecloud.app
 
-<Card
-  title="Learn about: how to make the configuration file for Square Cloud."
-  icon="link"
-  href="https://docs.squarecloud.app/getting-started/config-file"
->
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
   O arquivo squarecloud.app é um arquivo de configuração que será usado para
   configurar sua aplicação; ele servirá para definir o nome, descrição,
   versão, arquivo principal, entre outras coisas.
 </Card>
 
 ### Parâmetros importantes do site
+
 A **porta do site** precisa ser **80**; se você estiver usando um site estático, não precisa definir o parâmetro `START`.
 
 No arquivo de configuração squarecloud.app:
-- `SUBDOMAIN`: se estiver hospedando um site, defina este parâmetro para o subdomínio desejado.  
-- `START`: um comando de inicialização customizado (se necessário).
+
+* `SUBDOMAIN`: se estiver hospedando um site, defina este parâmetro para o subdomínio desejado.
+* `START`: um comando de inicialização customizado (se necessário).
 
 <Note>A URL do site será: `meu-parametro-subdominio`.squareweb.app</Note>
-\`\`\`systemd This example host a website without custom startup command
+
+```systemd This example host a website without custom startup command
 MAIN=index.html
 MEMORY=512
 VERSION=recommended
 DISPLAY_NAME=Meu site estático simples!
 SUBDOMAIN=meu-site-estatico-simples
-\`\`\`
+```
 
-\`\`\`systemd This example use all parameters and custom startup command in a website
+```systemd This example use all parameters and custom startup command in a website
 MAIN=index.js
 MEMORY=512
 VERSION=recommended
 DISPLAY_NAME=Meu site Next.js simples!
 SUBDOMAIN=meu-site-nextjs-simples
 START=npm run build && npm run start
-\`\`\`
+```
 
 # Suporte para múltiplas tecnologias
 
@@ -46,24 +45,31 @@ START=npm run build && npm run start
   <Card title="React" icon="react" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-react-website">
     Aprenda como hospedar seu site React na Square Cloud.
   </Card>
+
   <Card title="Next.js" icon="node-js" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-next-website">
     Aprenda como hospedar seu site Next.js na Square Cloud.
   </Card>
+
   <Card title="NestJs" icon="js" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-nestjs-application">
     Aprenda como hospedar sua aplicação NestJs na Square Cloud.
   </Card>
+
   <Card title="Vite" icon="rocket" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-vite-website">
     Aprenda como hospedar seu site Vite na Square Cloud.
   </Card>
+
   <Card title="Vue" icon="vuejs" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-vue-website">
     Aprenda como hospedar seu site Vue na Square Cloud.
   </Card>
+
   <Card title="Flask" icon="flask" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-flask-application">
     Aprenda como hospedar sua aplicação Flask na Square Cloud.
   </Card>
+
   <Card title="Django" icon="python" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-django-application">
     Aprenda como hospedar sua aplicação Django na Square Cloud.
   </Card>
+
   <Card title="Lavalink" icon="java" href="https://docs.squarecloud.app/tutorials/how-to-create-your-lavalink-server">
     Aprenda como hospedar seu servidor Lavalink e transmitir música de alta qualidade para seu bot do Discord.
   </Card>

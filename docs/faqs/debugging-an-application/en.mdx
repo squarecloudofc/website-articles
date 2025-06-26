@@ -1,5 +1,5 @@
-
 ## Debugging in [**discord.js**](https://old.discordjs.dev/#/docs/discord.js/14.14.1/class/Client?scrollTo=e-debug)
+
 With discord.js, you can utilize the "debug" and "error" events for debugging. Here's an example:
 
 ```js
@@ -19,6 +19,7 @@ client.on('error', (error) => {
 In this code, we use the 'debug' event; it is triggered to provide general debugging information, and the debug messages are logged to the console. Similarly, when the 'error' event is triggered, the error message is logged to the console.
 
 ## Debugging in [**discord.py**](https://discordpy.readthedocs.io/en/stable/logging.html?highlight=debug)
+
 With discord.py, you can use the logging module for debugging. Here's an example:
 
 ```py
@@ -40,4 +41,5 @@ logger.addHandler(handler)
 # Runs the bot
 client.run("your token here", log_handler=None)
 ```
+
 In this code, all debugging information and errors are logged to the console.

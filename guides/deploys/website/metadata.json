@@ -4,12 +4,6 @@
   "author": {
     "name": "Square Cloud"
   },
-  "attributes": {
-    "tags": [
-      "deploy",
-      "website"
-    ]
-  },
   "metadata": {
     "en": {
       "title": "Hosting Your Website/API on Square Cloud",
@@ -29,9 +23,15 @@
     "zh": {
       "title": "在 Square Cloud 上托管您的网站/API",
       "description": "了解如何使用 squarecloud.app 配置文件在 Square Cloud 上托管您的网站或 API。",
-      "slug": "在-square-cloud-上-托管您的网站api"
+      "slug": "在-square-cloud-上托管您的网站api"
     }
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "website"
+    ]
+  },
   "created_at": "2025-06-25T19:58:28.000Z",
-  "updated_at": "2025-06-25T19:58:28.000Z"
+  "updated_at": "2025-06-26T21:56:09.000Z"
 }

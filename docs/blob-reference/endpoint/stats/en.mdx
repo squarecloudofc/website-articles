@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -12,55 +11,58 @@
 </ResponseField>
 
 <ResponseField name="response" type="object">
+  <Expandable title="Toggle object">
+    <ResponseField name="objects" type="number">
+      The total number of objects in your account.
+    </ResponseField>
 
-<Expandable title="Toggle object">
-<ResponseField name="objects" type="number">
-  The total number of objects in your account.
-</ResponseField>
-<ResponseField name="size" type="number">
-  The total size of all objects in your account, in bytes.
-</ResponseField>
-<ResponseField name="storagePrice" type="number">
-  The total price of storage for all objects in your account, in BRL.
-</ResponseField>
-<ResponseField name="objectsPrice" type="number">
-  The total price of all objects in your account, in BRL.
-</ResponseField>
-<ResponseField name="totalEstimate" type="number">
-  The total price of all objects in your account, in BRL.
-</ResponseField>
-</Expandable>
+    <ResponseField name="size" type="number">
+      The total size of all objects in your account, in bytes.
+    </ResponseField>
 
+    <ResponseField name="storagePrice" type="number">
+      The total price of storage for all objects in your account, in BRL.
+    </ResponseField>
+
+    <ResponseField name="objectsPrice" type="number">
+      The total price of all objects in your account, in BRL.
+    </ResponseField>
+
+    <ResponseField name="totalEstimate" type="number">
+      The total price of all objects in your account, in BRL.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-```json Response - [15m cache]
-{
-  "status": "success",
-  "response": {
-    "objects": 5,
-    "size": 1628388,
-    "storagePrice": 0,
-    "objectsPrice": 0,
-    "totalEstimate": 0
+  ```json Response - [15m cache]
+  {
+    "status": "success",
+    "response": {
+      "objects": 5,
+      "size": 1628388,
+      "storagePrice": 0,
+      "objectsPrice": 0,
+      "totalEstimate": 0
+    }
   }
-}
-```
+  ```
 </ResponseExample>
 
 ### Troubleshooting
-<Tabs>
-    <Tab title="401 Status Code">
-        ### Unauthorized
-        <CodeGroup>
-        ```json ACCESS_DENIED
-        // Just set the correct API key in the Authorization header.
-        {
-            "status": "error",
-            "code": "ACCESS_DENIED"
-        }
-        ```
-        </CodeGroup>
-    </Tab>
-</Tabs>
 
+<Tabs>
+  <Tab title="401 Status Code">
+    ### Unauthorized
+
+    <CodeGroup>
+      ```json ACCESS_DENIED
+      // Just set the correct API key in the Authorization header.
+      {
+          "status": "error",
+          "code": "ACCESS_DENIED"
+      }
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>

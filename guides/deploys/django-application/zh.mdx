@@ -1,62 +1,172 @@
 ## 创建新的 Django 项目
 
-- 在开始之前，请确保您的系统已安装 Python 和 pip。如果尚未安装，可以从 [Python 官网](https://www.python.org/) 和 [Pip 官网](https://pypi.org/) 下载。
-- 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 实现。您可以使用电子邮件创建帐户。
-- 最后，您的帐户需要启用有效的付费计划。您可以在[此处](https://squarecloud.app/plans)查看我们的计划并根据需求购买。
+* 在开始之前，请确保你的系统已安装 Python 和 pip。如果尚未安装，可从 [Python 官方网站](https://www.python.org/) 和 [Pip 官方网站](https://pypi.org/) 下载。
+* 接下来，你需要在 Square Cloud 创建一个账户，可通过 [注册页面](https://squarecloud.app/signup) 完成。你可以使用电子邮件创建账户。
+* 最后，你的账户需要拥有一个已激活的付费套餐。你可以在 [此处](https://squarecloud.app/plans) 查看并购买适合需求的套餐。
 
-安装好 Python 和 pip 后，您可以创建一个新的 Django 项目。首先，使用 pip 安装 Django：
+安装好 Python 和 pip 后，你就可以创建新的 Django 项目。首先，使用 pip 安装 Django：
 
 \`\`\`bash
 pip install django
 \`\`\`
 
-然后，创建一个新的 Python 文件（例如 \`app.py\`），并添加以下代码以创建一个基本的 Django 应用：
+然后，创建一个新的 Python 文件（例如 \`app.py\`），并添加以下代码来创建一个基础 Django 应用：
 
 \`\`\`python app.py
 from django.conf import settings
 from django.http import HttpResponse
 from django.urls import path
-from django.core.wsgi import get_wsgi_application
+from django.core.wsgi import get\_wsgi\_application
 
 # 基本的 Django 设置
+
 settings.configure(
-    DEBUG=False,  # 关闭调试模式
-    SECRET_KEY='mysecretkey',  # 设置您的密钥
-    ALLOWED_HOSTS=['*'],  # 简单起见允许所有主机
-    ROOT_URLCONF=__name__,  # 将此模块设为根 URL 配置
-    MIDDLEWARE_CLASSES=(),  # 使用空元组禁用中间件
+DEBUG=False,  # 关闭调试模式
+SECRET\_KEY='mysecretkey',  # 设置你的密钥
+ALLOWED\_HOSTS=\['\*'],  # 为简单起见允许所有主机
+ROOT\_URLCONF=**name**,  # 将根 URL 配置设置为此模块
+MIDDLEWARE\_CLASSES=(),  # 使用空元组以禁用中间件
 )
 
 # 简单视图
+
 def index(request):
-    return HttpResponse("Hello world!")  # 返回简单的 HTTP 响应
+return HttpResponse("Hello world!")  # 返回简单的 HTTP 响应
 
 # URL 配置
-urlpatterns = [
-    path('', index),  # 将根 URL 映射到 index 视图
+
+urlpatterns = \[
+path('', index),  # 将根 URL 映射到 index 视图
 ]
 
 # WSGI 应用
-application = get_wsgi_application()
+
+application = get\_wsgi\_application()
 
 # WSGI 服务器
-if __name__ == "__main__":
-    from wsgiref.simple_server import make_server
-    httpd = make_server('', 80, application)  # 在端口 80 提供服务
-    print("Django 服务器正在 80 端口运行...")
-    httpd.serve_forever()  # 启动服务器
+
+if **name** == "**main**":
+from wsgiref.simple\_server import make\_server
+httpd = make\_server('', 80, application)  # 使用 WSGI 服务器在 80 端口提供应用
+print("Django 服务器正在 80 端口运行...")
+httpd.serve\_forever()  # 启动服务器
 \`\`\`
 
-在上述代码中，我们创建了一个基本路由，访问时会返回“Hello, World!”。该应用配置为在端口 80 上运行，这是 HTTP 流量的默认端口。
+在上面的代码中，我们创建了一个基本路由，当访问时返回 “Hello, World!”。应用被配置为运行在 80 端口，即 HTTP 流量的默认端口。
 
-## 使用 requirements.txt 管理依赖
+## 使用 requirements.txt 文件管理依赖
 
-\`requirements.txt\` 文件列出了项目所需的所有外部库。您应列出项目使用的所有库，排除 \`random\` 和 \`datetime\` 等内置库。提交应用到 Square Cloud 时应包含此文件。
+\`requirements.txt\` 文件列出了项目所需的所有外部库。你应列出项目将使用的所有库，排除诸如 \`random\` 和 \`datetime\` 这类原生库。提交应用到 Square Cloud 时应包含此文件。
 
 \`\`\`txt requirements.txt
 django
 \`\`\`
 
-## 创建 squarecloud.app 配置文件
+## 创建 squarecloud 配置文件
 
-<Card title="了解详情：如何制作 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/co
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+  squarecloud.app 文件是用于配置应用的文件；它用于定义名称、描述、版本、主文件等信息。
+</Card>
+
+## 配置 START 字段
+
+在 Square Cloud 配置文件中，**START** 字段是可选的，仅当你使用自定义脚本启动网站时才需要。在提供的示例中，**START** 字段不是必需的。
+
+## 在上传项目之前购买套餐
+
+上传项目到 Square Cloud 之前，请先购买套餐。你选择的套餐类型将取决于应用所需的资源。你可以在 [此处](https://squarecloud.app/plans) 查看我们的套餐。
+
+<Note>**想知道托管 Django 应用需要多少 RAM 和 CPU 吗？** 别担心，我们会帮助你。Django 是一个高级 Python Web 框架，鼓励快速开发和简洁、实用的设计。它由经验丰富的开发人员构建，处理了大量 Web 开发的繁琐工作，让你专注于编写应用，而无需重复造轮子。我们的 **[Standard](https://squarecloud.app/pay/standard)** 套餐提供 **4GB** RAM 和 **4vCPU**，足以满足大多数 Django 应用需求。不过，如果你正在开发更大的项目并需要额外的稳定性，建议考虑 Pro 套餐。凭借更多资源，即使在高峰期也能保持稳定。如需购买，请点击 [这里](https://squarecloud.app/pay/pro)。</Note>
+
+## 将项目上传到 Square Cloud
+
+准备好项目文件后，你现在可以将其上传到 Square Cloud 并托管你的项目。
+
+<Tabs>
+  <Tab title="Dashboard Upload">
+    访问 [Square Cloud
+    控制台](https://squarecloud.app/dashboard/upload) 并上传你的项目文件。
+
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+
+  <Tab title="CLI Upload">
+    <Steps>
+      <Step title="First Step">
+        首先，需要在环境中安装 CLI。如果尚未安装，请在终端运行以下命令：
+
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+
+        如果已安装，建议更新。在终端运行以下命令：
+
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+
+          <Tab title="Linux, macOS, and WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+
+      <Step title="Second Step">
+        现在，为了认证并使用其他 CLI 命令，你可以在 [这里](https://squarecloud.app/account) 点击 "Request API Key" 获取授权密钥。获得授权密钥后，运行以下命令：
+
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+
+      <Step title="Third Step">
+        最后，使用 CLI 将应用部署到 Square Cloud，需要执行以下命令，并传入 zip 文件的路径：
+
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## 故障排除
+
+<AccordionGroup>
+  <Accordion title="Custom Domain" icon="globe" iconType="solid">
+    如果你想为在 Square Cloud 托管的应用使用自定义域，注意默认情况下 URL 将类似 \`https://mysite.squareweb.app/\`。子域由配置文件中的 SUBDOMAIN 字段决定。不过，如果你更喜欢使用自定义域，如 \`mysite.com\`，则需要购买 \`Standard\` 套餐或更高套餐。我们在文章 [如何设置自定义域](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain) 中详细说明了每一步。
+  </Accordion>
+
+  <Accordion title="Minimum RAM Requirements" icon="memory" iconType="solid">
+    托管网站或 API 所需的最小 RAM 为 512MB。然而，根据你的 Django 应用的大小和复杂性，建议使用更大的 RAM 以避免 [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
+  </Accordion>
+
+  <Accordion title="Temporary Access Denied" icon="ban" iconType="solid">
+    如果在访问网站时收到 “Your access has been temporarily denied.” 消息，请稍等一段时间。如果问题仍然存在，请随时在 https://squarecloud.app/dashboard/support 联系我们。
+
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Website took too long to respond..." icon="clock" iconType="solid">
+    如果收到 “Website took too long to respond...” 消息，请确保已正确设置应用的 80 端口。如果问题仍然存在，请在 https://squarecloud.app/dashboard/support 与我们联系。
+
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## 其他资源
+
+欲了解更多关于 Django 及其工具的信息，请访问 [Django 官方文档](https://docs.djangoproject.com/en/5.0/)。在那里你可以找到详细指南、教程和 API 文档，以充分利用 Django。
+
+如果你仍然遇到任何问题，请不要犹豫， [联系技术支持团队](/company/support)。

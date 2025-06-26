@@ -1,98 +1,115 @@
-## 介绍
+## 引言
 
-- 在开始之前，请确保系统已安装 Node.js 和 npm。如未安装，可在 [Node.js 官方网站](https://nodejs.org/) 下载。
-- 接着，请在 Square Cloud 的 [注册页面](https://squarecloud.app/signup) 创建账号，可使用电子邮件注册。
-- 最后，确保账户已开通付费套餐。可在 [此处](https://squarecloud.app/plans) 查看并购买符合需求的套餐。
+* 开始之前，请确保系统已安装 Node.js 和 npm。若无，请从 [Node.js 官网](https://nodejs.org/) 下载。
+* 接着，通过 [注册页面](https://squarecloud.app/signup) 使用邮箱创建 Square Cloud 账号。
+* 最后，需要拥有激活的付费套餐。可在 [此处](https://squarecloud.app/plans) 查看并购买。
 
-### 配置 Fastify
+### 设置 Fastify
 
-安装 Fastify：
+使用命令安装 Fastify：
 
-\`\`\`bash
+```bash
 npm install fastify
-\`\`\`
+```
+
+该命令安装 `fastify` 包，便于终端使用。
 
 ### 创建 Fastify 项目
 
-创建文件并添加以下内容：
+新建文件并输入：
 
-\`\`\`javascript app.js
+```javascript app.js
 // 导入 Fastify 模块
 const fastify = require('fastify')({ logger: true });
 
-// 定义 '/' 路由
+// 为 '/' 路由定义处理器
+// 访问时返回 'Hello, World!'
 fastify.get('/', async (request, reply) => {
   return 'Hello World!';
 });
 
-// 监听 80 端口
+// 让应用监听 80 端口
 fastify.listen({ port: 80 })
   .then((address) => {
-    fastify.log.info(\`Example app listening at \${address}\`);
+    // 服务器开始监听 80 端口时执行
+    fastify.log.info(`Example app listening at \${address}`);
   })
   .catch((err) => {
+    // 监听 80 端口出错时执行
     fastify.log.error(err);
     process.exit(1);
   });
-\`\`\`
+```
 
 ## 创建 squarecloud 配置文件
 
-<Card title="了解如何创建 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-\`squarecloud.app\` 文件用于配置应用的名称、描述、版本、入口文件等。
+<Card title="了解：如何为 Square Cloud 创建配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+  squarecloud.app 文件用于配置应用；定义名称、描述、版本、主文件等。
 </Card>
 
 ## 配置 START 字段
 
-**START** 字段可选，仅在使用自定义启动脚本时需要。
+在配置文件中，**START** 字段可选，仅在使用自定义脚本启动站点或 API 时需要。本示例不需要。
 
-## 上传前购买套餐
+## 上传项目前需购买套餐
 
-需根据应用所需资源购买套餐。套餐信息见 [此处](https://squarecloud.app/plans)。
+上传前，请根据应用所需资源购买合适套餐。查看套餐 [此处](https://squarecloud.app/plans)。
 
-<Note>**不确定需要多少 RAM 和 CPU？** **[Standard](https://squarecloud.app/pay/standard)** 套餐提供 **4 GB RAM** 和 **4 vCPU**，足够多数 Fastify 应用。大型项目可考虑 Pro 套餐，点击 [此处](https://squarecloud.app/pay/pro) 了解。</Note>
+<Note>**想知道 Fastify 需要多少 RAM 和 CPU？** Fastify 拥有低开销、高度插件化并提供优秀开发体验，易学、灵活且适合生产环境。我们的 **[Standard](https://squarecloud.app/pay/standard)** 套餐提供 **4GB** RAM 和 **4vCPU**，足以满足大多数 Fastify 应用。若项目更大或需更高稳定性，请考虑 Pro 套餐。购买 [这里](https://squarecloud.app/pay/pro)。</Note>
 
 ## 将项目上传到 Square Cloud
 
+准备好文件后，即可上传并托管项目。
+
 <Tabs>
-  <Tab title="仪表板上传">
-    访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload) 上传文件。
+  <Tab title="仪表盘上传">
+    访问 [Square Cloud 仪表盘](https://squarecloud.app/dashboard/upload) 上传文件。
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="CLI 上传">
     <Steps>
       <Step title="第一步">
-        全局安装 CLI：
-        \`\`\`
+        安装 CLI（若未安装）：
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         已安装则更新：
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux、macOS 与 WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="第二步">
-        在 [account](https://squarecloud.app/account) 获取 API Key 并登录：
-        \`\`\`bash
+        在 [此处](https://squarecloud.app/account) 点击 “Request API Key” 获取授权键，然后执行：
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="第三步">
-        部署项目：
-        \`\`\`bash
+        使用 CLI 部署，传入 zip 路径：
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>
@@ -102,14 +119,32 @@ fastify.listen({ port: 80 })
 
 <AccordionGroup>
   <Accordion title="自定义域名" icon="globe" iconType="solid">
-   默认 URL 为 \`https://mysite.squareweb.app/\`。若要使用 \`mysite.com\`，需购买至少 Standard 套餐，参考 [教程](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain)。
+    默认 URL 为 `https://mysite.squareweb.app/`，由 SUBDOMAIN 决定。如需 `mysite.com`，需购买 `Standard` 或更高套餐。步骤详见：[如何设置自定义域名](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain)。
   </Accordion>
 
   <Accordion title="最低 RAM 要求" icon="memory" iconType="solid">
-    最低 512 MB RAM。根据项目大小，可需更多以避免 [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
+    最低 512MB。大型 Fastify 应用建议更多 RAM 以避免 [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) 错误。
   </Accordion>
 
-  <Accordion title="访问被暂时拒绝" icon="ban" iconType="solid">
-    若提示 “Your access has been temporarily denied.”，请稍后再试。如持续出现，联系 https://squarecloud.app/dashboard/support。
+  <Accordion title="访问暂被拒绝" icon="ban" iconType="solid">
+    若出现 “Your access has been temporarily denied.”，请稍候。如持续，请联系 https://squarecloud.app/dashboard/support。
+
     <Frame>
-      <img src="/images/articles/tr
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="网站响应过慢..." icon="clock" iconType="solid">
+    确认已设置 80 端口。如持续，请联系 https://squarecloud.app/dashboard/support。
+
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## 其他资源
+
+更多信息见 [Fastify 官方文档](https://fastify.dev/)。
+
+如仍有问题，请 [联系支持团队](/company/support)。

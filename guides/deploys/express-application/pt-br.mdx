@@ -1,22 +1,22 @@
 ## Introdução
 
-- Antes de começar, certifique-se de que você tenha o Node.js e o npm instalados no seu sistema. Se ainda não os tiver, você pode baixá-los do [site oficial do Node.js](https://nodejs.org/).
-- Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito pela [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
-- Por fim, você precisa ter um plano pago ativo na sua conta. Você pode ver nossos planos e adquirir um conforme suas necessidades [aqui](https://squarecloud.app/plans).
+* Antes de começar, certifique-se de que você tenha o Node.js e o npm instalados no seu sistema. Se ainda não os tiver, você pode baixá-los do [site oficial do Node.js](https://nodejs.org/).
+* Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito pela [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
+* Por fim, você precisa ter um plano pago ativo na sua conta. Você pode ver nossos planos e adquirir um conforme suas necessidades [aqui](https://squarecloud.app/plans).
 
 ### Configurando o Express
 
 Para usar o Express, instale-o no seu sistema. Execute o seguinte comando:
 
-\`\`\`bash
+```bash
 npm install express
-\`\`\`
+```
 
 ### Criando um Projeto Express
 
 Para criar um novo projeto Express, crie um arquivo e escreva o seguinte código:
 
-\`\`\`javascript app.js
+```javascript app.js
 // Importando o módulo Express
 const express = require('express');
 
@@ -36,14 +36,14 @@ app.get('/', (req, res) => {
 // Fazendo nossa aplicação Express ouvir na porta 80
 app.listen(port, () => {
   // Esse bloco roda assim que o servidor está ouvindo na porta 80
-  console.log(\`Example app listening on port \${port}\`);
+  console.log(`Example app listening on port \${port}`);
 });
-\`\`\`
+```
 
 ## Criando o arquivo de configuração squarecloud.app
 
 <Card title="Saiba mais: como criar o arquivo de configuração para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-O arquivo \`squarecloud.app\` é um arquivo de configuração usado para definir o nome, descrição, versão, arquivo principal, entre outras coisas da sua aplicação.
+  O arquivo `squarecloud.app` é um arquivo de configuração usado para definir o nome, descrição, versão, arquivo principal, entre outras coisas da sua aplicação.
 </Card>
 
 ## Configurando o campo START
@@ -63,42 +63,52 @@ Depois de preparar seus arquivos, envie-os para a Square Cloud e hospede seu pro
 <Tabs>
   <Tab title="Envio pelo Dashboard">
     Acesse o [Dashboard da Square Cloud](https://squarecloud.app/dashboard/upload) e faça o upload dos seus arquivos.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="Envio via CLI">
     <Steps>
       <Step title="Primeiro Passo">
         Primeiro, instale o CLI. Se não tiver, execute:
-        \`\`\`
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         Se já tiver, recomendamos atualizar com:
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux, macOS e WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Segundo Passo">
         Para autenticar e usar outros comandos CLI, obtenha sua chave [aqui](https://squarecloud.app/account) clicando em “Request API Key”. Depois, execute:
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="Terceiro Passo">
         Por fim, para deploy via CLI, execute passando o caminho do seu zip:
-        \`\`\`bash
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>
@@ -108,15 +118,16 @@ Depois de preparar seus arquivos, envie-os para a Square Cloud e hospede seu pro
 
 <AccordionGroup>
   <Accordion title="Domínio Personalizado" icon="globe" iconType="solid">
-    Se quiser usar domínio próprio, por padrão a URL será \`https://mysite.squareweb.app/\`. O subdomínio é definido pelo campo SUBDOMAIN. Para usar \`mysite.com\`, é necessário o plano Standard ou superior. Veja como em [Como configurar domínio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+    Se quiser usar domínio próprio, por padrão a URL será `https://mysite.squareweb.app/`. O subdomínio é definido pelo campo SUBDOMAIN. Para usar `mysite.com`, é necessário o plano Standard ou superior. Veja como em [Como configurar domínio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
   </Accordion>
 
   <Accordion title="Requisitos Mínimos de RAM" icon="memory" iconType="solid">
-    O mínimo de RAM para hospedar um site ou API é 512MB. Mas, dependendo da sua aplicação Express, pode ser aconselhável mais RAM para evitar o erro [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+    O mínimo de RAM para hospedar um site ou API é 512MB. Mas, dependendo da sua aplicação Express, pode ser aconselhável mais RAM para evitar o erro [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
   </Accordion>
 
   <Accordion title="Acesso Temporariamente Negado" icon="ban" iconType="solid">
     Se receber “Your access has been temporarily denied.”, aguarde um pouco. Se persistir, contate https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -124,6 +135,7 @@ Depois de preparar seus arquivos, envie-os para a Square Cloud e hospede seu pro
 
   <Accordion title="Site demorou para responder..." icon="clock" iconType="solid">
     Se receber “Website took too long to respond...”, verifique o uso da porta 80. Se continuar, contate https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>

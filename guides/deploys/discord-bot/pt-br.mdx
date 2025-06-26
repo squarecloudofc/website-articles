@@ -1,12 +1,13 @@
 ## Introdução
 
-- Antes de começar a programar, você precisa configurar seu bot corretamente no Discord. Primeiro, é necessário ter uma conta no Discord. Se você ainda não tiver, pode criar uma visitando o [site oficial do Discord](https://discord.com/).
-- Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar uma conta.
-- Por fim, você deve ter um plano pago ativo em sua conta. Você pode ver nossos planos e adquirir um de acordo com suas necessidades [aqui](https://squarecloud.app/plans).
+* Antes de começar a programar, você precisa configurar seu bot corretamente no Discord. Primeiro, é necessário ter uma conta no Discord. Se você ainda não tiver, pode criar uma visitando o [site oficial do Discord](https://discord.com/).
+* Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito através da [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar uma conta.
+* Por fim, você deve ter um plano pago ativo em sua conta. Você pode ver nossos planos e adquirir um de acordo com suas necessidades [aqui](https://squarecloud.app/plans).
 
 <AccordionGroup>
   <Accordion title="Começando" icon="rocket" iconType="solid">
     Primeiro, acesse o [Developer Portal](https://discord.com/developers/applications) e clique em "New Application". Em seguida, escolha um nome para o seu bot e clique em "Create" para criá-lo.
+
     <Frame>
       <img src="/images/articles/discord/getting-started.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -14,6 +15,7 @@
 
   <Accordion title="Obtendo o Token" icon="key" iconType="solid">
     Após criar seu bot, é hora de obter o token. Para isso, vá até a aba "Bot" e clique em "Reset Token", gerando assim seu token. Por fim, basta copiá-lo para usar no seu código posteriormente.
+
     <Frame>
       <img src="/images/articles/discord/getting-the-token.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -21,11 +23,13 @@
 
   <Accordion title="Ativando Intenções Privilegiadas" icon="message" iconType="solid">
     Agora que você já tem o token do seu bot, precisa ativar as intenções necessárias. Para isso, permaneça na aba "Bot", role para baixo e procure por "Privileged Gateway Intents". Aqui, ative as seguintes intenções:
+
     <Frame>
       <img src="/images/articles/discord/intent.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 </AccordionGroup>
+
 <Warning>Lembre-se de manter o token do seu bot em sigilo, pois ele pode ser usado para controlar seu bot.</Warning>
 
 # Usando bibliotecas para criação de bots
@@ -113,7 +117,7 @@
 ## Criando o arquivo de configuração do Square Cloud
 
 <Card title="Saiba mais: como criar o arquivo de configuração para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-O arquivo `squarecloud.app` é um arquivo de configuração que será usado para configurar sua aplicação; ele define o nome, descrição, versão, arquivo principal, entre outros.
+  O arquivo `squarecloud.app` é um arquivo de configuração que será usado para configurar sua aplicação; ele define o nome, descrição, versão, arquivo principal, entre outros.
 </Card>
 
 ## Configurando o campo START
@@ -138,13 +142,14 @@ Se tudo estiver configurado corretamente, o próximo passo é convidar seu bot p
 6. Escolha as permissões que seu bot terá ao ser convidado.
 7. Abaixo das permissões, será gerado um link de convite para o seu bot. Deve ser algo como:
 
-    ```txt
-    https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
-    ```
+   ```txt
+   https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
+   ```
 
 Lembre-se, o `client_id` na URL deve ser substituído pelo ID real do seu bot. O valor de `permissions` também pode precisar ser ajustado conforme as permissões desejadas.
 
 Agora, para testar se tudo funciona, execute o seguinte comando no seu servidor: `!hello`.
+
 <Frame>
   <img src="/images/articles/discord/testing-bot.png" style={{ borderRadius: "0.2rem" }} />
 </Frame>

@@ -1,10 +1,9 @@
-
 ## Making a commit
 
 `application.commit()` is a method that allows you to commit a file to your application.
 
 <Tabs>
-    <Tab title="Using Buffer">
+  <Tab title="Using Buffer">
     ```javascript
     const { SquareCloudAPI } = require("@squarecloud/api");
     const api = new SquareCloudAPI("Your API Key");
@@ -25,15 +24,16 @@
         console.error(`Failed to commit file "${fileName}".`);
     }
     ```
-    </Tab>
-    <Tab title="Using Absolute Path">
+  </Tab>
+
+  <Tab title="Using Absolute Path">
     ```javascript
     const { SquareCloudAPI } = require("@squarecloud/api");
     const api = new SquareCloudAPI("Your API Key");
 
     const application = await api.applications.get("Application ID");
 
-   // Specify the content and name of the file you want to commit
+    // Specify the content and name of the file you want to commit
     const { join } = require("node:path");
     const fileName = "file.txt";
     const filePath = join(__dirname, fileName);
@@ -51,7 +51,7 @@
         console.error(`Failed to commit file "${fileName}".`);
     }
     ```
-    </Tab>
+  </Tab>
 </Tabs>
 
 ## Making a upload
@@ -81,9 +81,9 @@ if (success) {
 
 **Remember that to upload an application you need a zip that contains (at least) the following files:**:
 
-- Main file: responsible for starting your application
-- Dependencies file: contains information about which dependencies are necessary
-- Configuration file (squarecloud.app): a configuration file specifying the
-name,
-description, main file name, version, etc. To learn more about the
-configuration file, take a look at this [guide](https://docs.squarecloud.app/getting-started/config-file).
+* Main file: responsible for starting your application
+* Dependencies file: contains information about which dependencies are necessary
+* Configuration file (squarecloud.app): a configuration file specifying the
+  name,
+  description, main file name, version, etc. To learn more about the
+  configuration file, take a look at this [guide](https://docs.squarecloud.app/getting-started/config-file).

@@ -1,38 +1,38 @@
-
 ```bash
 npm i @squarecloud/api
 ```
 
-<Tabs> 
-    <Tab title="JavaScript">
+<Tabs>
+  <Tab title="JavaScript">
     ```javascript
     const { SquareCloudAPI } = require("@squarecloud/api");
 
     const api = new SquareCloudAPI("Your API Key");
     ```
-    </Tab>
-    <Tab title="TypeScript">
+  </Tab>
+
+  <Tab title="TypeScript">
     ```typescript
     import { SquareCloudAPI } from "@squarecloud/api";
 
     const api = new SquareCloudAPI("Your API Key");
     ```
-    </Tab>
+  </Tab>
 </Tabs>
 
 ## Parameters
 
 ### API Key
 
-- Type: `string`
-- Required: Yes
-- Description: A valid API key must be provided as a string for authentication.
+* Type: `string`
+* Required: Yes
+* Description: A valid API key must be provided as a string for authentication.
 
 ## Get Started
 
 Using the get started endpoint, you can obtain a user object representing the user associated with the API key, as well as a list of applications associated with the user.
 
-```javascript 
+```javascript
 const user = await api.user.get();
 
 console.log(user.applications); // List of Application's

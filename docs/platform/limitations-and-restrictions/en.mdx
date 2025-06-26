@@ -1,55 +1,63 @@
-
 ## Minimum Resource Requirements
+
 Every project hosted on the Square Cloud Platform has specific minimum resource requirements to ensure optimal performance:
 
-- **Bots:** A minimum of **256MB** of RAM is required for hosting.
-- **Websites:** Websites need at least **512MB** of RAM allocated to operate effectively.
+* **Bots:** A minimum of **256MB** of RAM is required for hosting.
+* **Websites:** Websites need at least **512MB** of RAM allocated to operate effectively.
 
 Please note that while Square Cloud offers plans with up to **1TB of RAM**, the **maximum RAM allocation** for any **application is 32GB**. <ins>If you require more than 32GB, please reach out to our support team for assistance.</ins>
 
 ## CPU Optimization & Limitation
+
 The CPU limitation logic aims to optimize performance by dynamically adapting to the application's needs. The code divides the default CPU allocation by two, promoting an efficient resource utilization approach. However, specific conditions alter this behavior:
 
 If the **application's default CPU allocation** is <ins>1vCPU</ins>, the **CPU is set to 1**. (full release)
 
 **Otherwise**, the CPU **allocation varies based** on the **application's RAM size**:
-- If **RAM is less than or equal to 1024**, the CPU is set to the **maximum of half** of CPU or 1.
-- If **RAM is 2048** or <ins>**more**</ins>, the **CPU remains unchanged**. (full release)
-- For **RAM sizes between 1024 and 2048**, the CPU is set to **half of CPU**.
+
+* If **RAM is less than or equal to 1024**, the CPU is set to the **maximum of half** of CPU or 1.
+* If **RAM is 2048** or <ins>**more**</ins>, the **CPU remains unchanged**. (full release)
+* For **RAM sizes between 1024 and 2048**, the CPU is set to **half of CPU**.
 
 This strategy aims to balance CPU efficiency with variable system demands, ensuring adequate performance across different scenarios.
 
 This approach is crucial to promote a high-quality experience, ensuring fair and efficient CPU resource allocation, optimizing application responsiveness, and reducing unnecessary resource consumption.
 
 ## Network Limitations
-Network limitations are essential to ensure fair resource distribution and a high-quality experience for all users. 
+
+Network limitations are essential to ensure fair resource distribution and a high-quality experience for all users.
 The **network speed increases by 50MB/s** for every **additional 256MB** of RAM allocated.
 
 Here are the network limitations based on RAM allocation:
 
-- **256MB RAM:** 50MB/s network speed.
-- **Up to 512MB RAM:** 100MB/s network speed.
-- **1024MB RAM:** 200MB/s network speed.
-- **2048MB RAM:** 400MB/s network speed.
-- **4096MB RAM:** 800MB/s network speed.
-- **8192MB RAM:** 1.600MB/s network speed.
-- **10240MB RAM:** 2.000MB/s network speed.
+* **256MB RAM:** 50MB/s network speed.
+* **Up to 512MB RAM:** 100MB/s network speed.
+* **1024MB RAM:** 200MB/s network speed.
+* **2048MB RAM:** 400MB/s network speed.
+* **4096MB RAM:** 800MB/s network speed.
+* **8192MB RAM:** 1.600MB/s network speed.
+* **10240MB RAM:** 2.000MB/s network speed.
 
 For applications requiring network speeds exceeding 2.000MB/s, please contact our support team to discuss your specific needs.
 
 Square Cloud is committed to providing a balance between resource availability and performance, ensuring a seamless experience for all users.
 
 ## Storage Limitations
+
 Storage limitations are crucial to ensure equitable resource distribution and to provide a high-quality experience for all users.
-- **All projects:** Each project is allocated 10GB of storage.
+
+* **All projects:** Each project is allocated 10GB of storage.
 
 ## Service Limits
+
 Squarecloud implements service limits to ensure fair and efficient resource utilization for all users. These limits are categorized as:
 
-### LACK_OF_RAM
-If an application exceeds the allocated RAM limit as specified in its [squarecloud.app config file](../getting-started/config-file), it will be flagged for violating LACK_OF_RAM and shut down to preserve its own and everyone else's safety.
+### LACK\_OF\_RAM
 
-### LACK_OF_CPU
-If an application exceeds and stresses its allocated processing limit, it will be flagged for violating LACK_OF_CPU and shut down to preserve its own and everyone else's safety. It is important to remember that Square does not allow the hosting of applications that mine cryptocurrencies, for example.
+If an application exceeds the allocated RAM limit as specified in its [squarecloud.app config file](../getting-started/config-file), it will be flagged for violating LACK\_OF\_RAM and shut down to preserve its own and everyone else's safety.
+
+### LACK\_OF\_CPU
+
+If an application exceeds and stresses its allocated processing limit, it will be flagged for violating LACK\_OF\_CPU and shut down to preserve its own and everyone else's safety. It is important to remember that Square does not allow the hosting of applications that mine cryptocurrencies, for example.
 
 Square Cloud is dedicated to providing a secure and balanced environment for all users while ensuring compliance with its policies.

@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -16,6 +15,7 @@
 <Info>
   This route can send a response in a compressed format, optimizing data transmission.
 </Info>
+
 <ResponseField name="status" type="string">
   Indicates whether the call was successful. `success` if successful, `error` if not.
 </ResponseField>
@@ -25,100 +25,100 @@
 </ResponseField>
 
 <ResponseExample>
-```json
-{
-  "status": "success",
-  "response": {
-    "visits": [
-      {
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "countries": [
-      {
-        "type": "BR",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "devices": [
-      {
-        "type": "desktop",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "os": [
-      {
-        "type": "Windows",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "browsers": [
-      {
-        "type": "Chrome",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "protocols": [
-      {
-        "type": "https",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "methods": [
-      {
-        "type": "GET",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "paths": [
-      {
-        "type": "/",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "referers": [
-      {
-        "type": "https://google.com",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ],
-    "providers": [
-      {
-        "type": "Cloudflare",
-        "visits": 1,
-        "requests": 4,
-        "bytes": 9677,
-        "date": "2025-05-31T18:45:00Z"
-      }
-    ]
+  ```json
+  {
+    "status": "success",
+    "response": {
+      "visits": [
+        {
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "countries": [
+        {
+          "type": "BR",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "devices": [
+        {
+          "type": "desktop",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "os": [
+        {
+          "type": "Windows",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "browsers": [
+        {
+          "type": "Chrome",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "protocols": [
+        {
+          "type": "https",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "methods": [
+        {
+          "type": "GET",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "paths": [
+        {
+          "type": "/",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "referers": [
+        {
+          "type": "https://google.com",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ],
+      "providers": [
+        {
+          "type": "Cloudflare",
+          "visits": 1,
+          "requests": 4,
+          "bytes": 9677,
+          "date": "2025-05-31T18:45:00Z"
+        }
+      ]
+    }
   }
-}
-```
+  ```
 </ResponseExample>

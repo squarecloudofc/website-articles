@@ -1,39 +1,39 @@
 ## 介绍
 
-- 在开始编码之前，需要正确设置您的 WhatsApp 机器人。首先，您需要在手机上下载 WhatsApp。如果您还没有它，可以访问 [WhatsApp 官方网站](https://www.whatsapp.com/coronavirus/get-started?lang=en)。安装并配置 WhatsApp 后，您就可以开始编写机器人程序。
-- 接下来，您需要在 Square Cloud 上创建一个帐户，可以通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
-- 最后，您的帐户需要有一个有效的付费计划。您可以在 [此处](https://squarecloud.app/plans) 查看我们的计划并根据需要购买。
+* 在开始编码之前，需要正确设置您的 WhatsApp 机器人。首先，您需要在手机上下载 WhatsApp。如果您还没有它，可以访问 [WhatsApp 官方网站](https://www.whatsapp.com/coronavirus/get-started?lang=en)。安装并配置 WhatsApp 后，您就可以开始编写机器人程序。
+* 接下来，您需要在 Square Cloud 上创建一个帐户，可以通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
+* 最后，您的帐户需要有一个有效的付费计划。您可以在 [此处](https://squarecloud.app/plans) 查看我们的计划并根据需要购买。
 
 <AccordionGroup>
   <Accordion title="WhatsApp Web 版本的远程路径" icon="file" iconType="solid">
     如果您的代码需要访问 WhatsApp Web 版本的远程路径，操作方式如下。
     您可以访问 [wa-version](https://github.com/wppconnect-team/wa-version/tree/main/html)，选择所需版本（始终推荐使用最新版本），然后点击“Raw”。页面打开后，只需复制 URL，稍后将使用它。示例 URL：
     "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html"
+
     <Frame>
       <img src="/images/articles/whatsapp/remote-path.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 </AccordionGroup>
 
-
-
 # 启动项目
+
 1. 确保您的系统已安装 Node.js。如果没有，可以从 [Node.js 官方网站](https://nodejs.org/) 下载。
 2. 使用 `npm init` 初始化一个新的 Node.js 项目。这将为您的项目创建一个新的 `package.json` 文件：
 
-\`\`\`bash
+```bash
 npm init -y
-\`\`\`
+```
 
 3. 使用 npm 安装 whatsapp-web.js 和 qrcode 库：
 
-\`\`\`bash
+```bash
 npm install whatsapp-web.js qrcode
-\`\`\`
+```
 
 4. 创建一个新的 JavaScript 文件（例如 `index.js`），并添加以下代码以创建一个基本的 WhatsApp 机器人：
 
-\`\`\`javascript index.js
+```javascript index.js
 // 导入必要的模块
 const { Client } = require("whatsapp-web.js");
 const qrcode = require("qrcode");
@@ -89,15 +89,16 @@ client.on("message_create", (msg) => {
 
 // 初始化 client
 client.initialize();
-\`\`\`
+```
 
 ## 创建 squarecloud 配置文件
 
 <Card title="了解更多：如何为 Square Cloud 创建配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-squarecloud.app 文件是一个配置文件，用于配置您的应用；它将用于定义名称、描述、版本、主文件等信息。
+  squarecloud.app 文件是一个配置文件，用于配置您的应用；它将用于定义名称、描述、版本、主文件等信息。
 </Card>
 
 ## 配置 START 字段
+
 <Warning>只有在您非常确定自己在做什么时才使用此字段。</Warning>
 
 在 Square Cloud 配置文件中，**START** 字段是可选的，仅在您使用自定义脚本启动机器人时需要。在提供的示例中，**START** 字段不是必需的。
@@ -109,42 +110,52 @@ squarecloud.app 文件是一个配置文件，用于配置您的应用；它将�
 <Tabs>
   <Tab title="通过仪表板上传">
     访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload) 并上传您的项目文件。
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="通过 CLI 上传">
     <Steps>
       <Step title="第一步">
         首先，您需要在环境中安装 CLI。如果尚未安装，请在终端运行以下命令：
-        \`\`\`bash
+
+        ```bash
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         如果已安装，我们建议您更新它。为此，请在终端运行以下命令：
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux, macOS 和 WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="第二步">
         现在，要进行身份验证并使用其他 CLI 命令，您可以在 [此处](https://squarecloud.app/account) 单击“Request API Key”以查找您的授权密钥。获取授权密钥后，运行以下命令：
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="第三步">
         最后，要使用 CLI 将应用部署到 Square Cloud，您需要执行以下命令，并传递 zip 文件的路径：
-        \`\`\`bash
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>

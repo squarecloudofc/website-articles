@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -18,60 +17,57 @@
 </ResponseField>
 
 <ResponseField name="response" type="object">
+  The contents of the response.
 
-The contents of the response.
+  <Expandable title="Toggle object">
+    <ResponseField name="name" type="string">
+      The application's name.
+    </ResponseField>
 
-<Expandable title="Toggle object">
+    <ResponseField name="id" type="string">
+      The application's ID.
+    </ResponseField>
 
-<ResponseField name="name" type="string">
-  The application's name.
-</ResponseField>
+    <ResponseField name="owner" type="string">
+      The ID of the application owner.
+    </ResponseField>
 
-<ResponseField name="id" type="string">
-  The application's ID.
-</ResponseField>
+    <ResponseField name="cluster" type="string">
+      The application's cluster.
+    </ResponseField>
 
-<ResponseField name="owner" type="string">
-  The ID of the application owner.
-</ResponseField>
+    <ResponseField name="ram" type="number">
+      The application's RAM usage in MB.
+    </ResponseField>
 
-<ResponseField name="cluster" type="string">
-  The application's cluster.
-</ResponseField>
+    <ResponseField name="language" type="string">
+      The application's programming language.
+    </ResponseField>
 
-<ResponseField name="ram" type="number">
-  The application's RAM usage in MB.
-</ResponseField>
+    <ResponseField name="domain" type="string">
+      The application's domain (null if not applicable).
+    </ResponseField>
 
-<ResponseField name="language" type="string">
-  The application's programming language.
-</ResponseField>
-
-<ResponseField name="domain" type="string">
-  The application's domain (null if not applicable).
-</ResponseField>
-
-<ResponseField name="custom" type="string">
-  Custom information about the application (null if not applicable).
-</ResponseField>
-
-</Expandable>
+    <ResponseField name="custom" type="string">
+      Custom information about the application (null if not applicable).
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-```json Response
-{
-  "status": "success",
-  "response": {
-    "name": "Best bot forever",
-    "id": "64d0c750212742ca8704fb458c9771af",
-    "owner": "3133971456989594464",
-    "cluster": "fl-micron-1",
-    "ram": 1024,
-    "language": "rust",
-    "domain": null,
-    "custom": null
+  ```json Response
+  {
+    "status": "success",
+    "response": {
+      "name": "Best bot forever",
+      "id": "64d0c750212742ca8704fb458c9771af",
+      "owner": "3133971456989594464",
+      "cluster": "fl-micron-1",
+      "ram": 1024,
+      "language": "rust",
+      "domain": null,
+      "custom": null
+    }
   }
-}
-```
+  ```
 </ResponseExample>

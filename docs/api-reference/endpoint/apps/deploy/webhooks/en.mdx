@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -16,30 +15,28 @@
 <ResponseField name="status" type="string">
   Indicates whether the call was successful. `success` if successful, `error` if not.
 </ResponseField>
+
 <ResponseField name="message" type="string">
   A message indicating the status of the commit.
 </ResponseField>
 
 <ResponseField name="response" type="object">
+  The contents of the response.
 
-The contents of the response.
-
-<Expandable title="Toggle object">
-
-<ResponseField name="webhook" type="string">
-  The URL of the webhook.
-</ResponseField>
-
-</Expandable>
+  <Expandable title="Toggle object">
+    <ResponseField name="webhook" type="string">
+      The URL of the webhook.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-```json
-{
-    "status": "success",
-    "response": { 
-        "webhook": "https://api.squarecloud.app/v2/git/webhook/<webhook-code>"
-    },
-}
-```
+  ```json
+  {
+      "status": "success",
+      "response": { 
+          "webhook": "https://api.squarecloud.app/v2/git/webhook/<webhook-code>"
+      },
+  }
+  ```
 </ResponseExample>

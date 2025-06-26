@@ -1,11 +1,10 @@
-
 ## Highlights
 
 The highlight of this release is the new Node.js Permission Model, which is an experimental mechanism for restricting access to specific resources during execution. This model can be used to improve security and compliance by preventing applications from accessing unauthorized resources.
 
 Other notable changes in Node.js 20 include:
 
-* A stable test_runner module, which provides a consistent way to run tests in Node.js
+* A stable test\_runner module, which provides a consistent way to run tests in Node.js
 * Updates of the V8 JavaScript engine to 11.3, which includes performance improvements and new features
 * Support for ARM64 for Windows
 * Improved support for the Web Crypto API
@@ -16,6 +15,7 @@ Other notable changes in Node.js 20 include:
 Node.js 20 implements native support to env files, which means that developers can now use env files to configure their applications.
 
 <Note>In Square Cloud all projects are configured to auto load .env files.</Note>
+
 ```shell Read .env file and set environment variables
 node --env-file=.env index.js
 ```
@@ -53,14 +53,17 @@ Error: Access to this API has been restricted
 ```
 
 Grant read and write access to the file system.
+
 ```shell
 node --experimental-permission --allow-fs-read=* --allow-fs-write=* index.js
 ```
 
-## Stable test_runner module
-The test_runner module is now stable, which means that it is ready for production use. This module provides a consistent way to run tests in Node.js, regardless of the test framework or test runner that is being used.
+## Stable test\_runner module
 
-For example, the following code will run a test using the test_runner module:
+The test\_runner module is now stable, which means that it is ready for production use. This module provides a consistent way to run tests in Node.js, regardless of the test framework or test runner that is being used.
+
+For example, the following code will run a test using the test\_runner module:
+
 ```js
 const { test, mock } = require("node:test");
 const assert = require("node:assert");
@@ -95,7 +98,7 @@ Support for WebAssembly (WASM) interfaces is growing in Node.js 20. This means t
 
 ## Conclusion
 
-Node.js 20 is a major release with a number of new features and improvements. The highlight of this release is the new Node.js Permission Model, which can be used to improve security and compliance. Other notable changes include a stable test_runner module, updates of the V8 JavaScript engine, and support for ARM64 for Windows.
+Node.js 20 is a major release with a number of new features and improvements. The highlight of this release is the new Node.js Permission Model, which can be used to improve security and compliance. Other notable changes include a stable test\_runner module, updates of the V8 JavaScript engine, and support for ARM64 for Windows.
 
 <Note> Square Cloud support for Node.js 20 is arrived on October 24, 2023. </Note>
 

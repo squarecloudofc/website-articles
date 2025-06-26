@@ -1,17 +1,12 @@
-
 ## 🚀 Introduction
 
-- Before you begin, make sure you have Python on your system. If you don't have them yet, you can download them from the [official Python website](https://www.python.org/).
-- Next, you will need to create an account on Square Cloud, which can be done through the [login page](https://squarecloud.app/login). You can use either your email or Discord, or both, to create an account.
-- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
+* Before you begin, make sure you have Python on your system. If you don't have them yet, you can download them from the [official Python website](https://www.python.org/).
+* Next, you will need to create an account on Square Cloud, which can be done through the [login page](https://squarecloud.app/login). You can use either your email or Discord, or both, to create an account.
+* Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
 
 ## ⚙️ Creating the squarecloud config file
 
-<Card
-  title="Learn about: how to make the configuration file for Square Cloud."
-  icon="link"
-  href="https://docs.squarecloud.app/getting-started/config-file"
->
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
   The squarecloud.app file is a configuration file that will be used to
   configure your application; it will be used to define the name, description,
   version, main file, among other things.
@@ -19,9 +14,9 @@
 
 ## ▶️ Start Application
 
-- If the `START` field is not defined in the configuration file, Square Cloud will run `python MAIN` to execute the Python file specified in the `MAIN` field. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
+* If the `START` field is not defined in the configuration file, Square Cloud will run `python MAIN` to execute the Python file specified in the `MAIN` field. If the `START` field is defined in the configuration file, the value in the `START` field will be executed directly. For more information on configuration file parameters, visit [configuration parameters](https://docs.squarecloud.app/getting-started/config-file#configuration-parameters).
 
-- Square Cloud uses `pip install` to install all dependencies listed in the `requirements.txt`.
+* Square Cloud uses `pip install` to install all dependencies listed in the `requirements.txt`.
 
 ## 🖥️ Preparing Your Python Project
 
@@ -33,9 +28,9 @@ When preparing your Python project for deployment on Square Cloud, ensure that y
 
 #### 🗑️ Files to Exclude Before Uploading
 
-- `ffmpeg`: This software is pre-installed in the Square Cloud environment, so there's no need to include this folder in your project.
-- `.venv`: This folder contains the virtual environment for your project. Square Cloud provides an isolated environment, so this folder is not required.
-- `poetry.lock`: Since Square Cloud does not currently support Poetry, this file should be excluded to avoid any potential issues during deployment.
+* `ffmpeg`: This software is pre-installed in the Square Cloud environment, so there's no need to include this folder in your project.
+* `.venv`: This folder contains the virtual environment for your project. Square Cloud provides an isolated environment, so this folder is not required.
+* `poetry.lock`: Since Square Cloud does not currently support Poetry, this file should be excluded to avoid any potential issues during deployment.
 
 ### 🤔 Why Exclude These Files?
 
@@ -51,30 +46,27 @@ Before uploading, make sure to zip your project files in **.zip** format, exclud
 
 ### 📄 Required Files
 
-- main.py (Example of main file).
-- [requirements.txt](./how-to-create-your-requirements) (Dependency file).
-- OR [pyproject.toml] (Dependency file).
-- [squarecloud.app](/getting-started/config-file) (file that contains the Square Cloud configuration).
+* main.py (Example of main file).
+* [requirements.txt](./how-to-create-your-requirements) (Dependency file).
+* OR \[pyproject.toml] (Dependency file).
+* [squarecloud.app](/getting-started/config-file) (file that contains the Square Cloud configuration).
 
 ## 💡 Troubleshooting
 
 <AccordionGroup>
-  <Accordion
-    title="The main file is invalid or corrupted"
-    icon="file"
-    iconType="solid"
-  >
+  <Accordion title="The main file is invalid or corrupted" icon="file" iconType="solid">
     This error occurs when the file defined as "main" for your application in
     the configuration file does not exist, is written incorrectly, or the path
     is incorrect. If your main file is inside a folder, for example, you should
     enter `folder/file.js`.
   </Accordion>
+
   <Accordion title="Bad Memory" icon="memory" iconType="solid">
     The minimum amount of RAM required to host a bot is 256MB, and for a
     website/API, it's 512MB. However, depending on the size and complexity of
     your application, it may be advisable to allocate a larger amount of RAM to
     avoid the
-    [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM)
+    [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM)
     error.
   </Accordion>
 </AccordionGroup>
@@ -88,25 +80,31 @@ After preparing your project files, you can now upload them to Square Cloud and 
     Access the [Square Cloud
     Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
     files.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="CLI Upload">
     <Steps>
       <Step title="First Step">
         First, you need to have the CLI installed in your environment. If you
         don't have it yet, run the following command in your terminal:
+
         ```
         npm install -g @squarecloud/cli
         ```
+
         If you already have it, we recommend updating it. To do this, run the following command in your terminal:
+
         <Tabs>
           <Tab title="Windows">
             ```bash
             squarecloud update
             ```
           </Tab>
+
           <Tab title="Linux, macOS, and WSL">
             ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
@@ -114,20 +112,24 @@ After preparing your project files, you can now upload them to Square Cloud and 
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Second Step">
         Now, to authenticate and use other CLI commands, you will find your
         authorization key [here](https://squarecloud.app/account) by clicking on
         "Request API Key". After obtaining your authorization key, run the
-        following command: 
-        ```bash 
+        following command:
+
+        ```bash
         squarecloud login
         ```
       </Step>
+
       <Step title="Third Step">
         Finally, to deploy your application to Square Cloud using the CLI, you
         need to execute the following command, passing the path of your zip
-        file: 
-        ```bash 
+        file:
+
+        ```bash
         squarecloud upload zip
         ```
       </Step>

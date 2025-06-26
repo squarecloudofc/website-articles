@@ -13,9 +13,9 @@ The goal of this project is to share knowledge, tips, and practical examples for
 
 ## Structure
 
-- `docs/`: Contains the main documentation articles.
-- `blog/`: Contains blog posts and updates.
-- `guides/`: Contains step-by-step guides and tutorials.
+* `docs/`: Contains the main documentation articles.
+* `blog/`: Contains blog posts and updates.
+* `guides/`: Contains step-by-step guides and tutorials.
 
 ## How to Contribute
 
@@ -25,6 +25,6 @@ The goal of this project is to share knowledge, tips, and practical examples for
 
 Important: Please ensure your contributions follow the project's style and guidelines. Articles should be well-structured, informative, and relevant to Square Cloud users.
 
----
+***
 
 Feel free to suggest topics or send questions!

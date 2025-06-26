@@ -1,9 +1,8 @@
-
 ## Getting the status of your application
 
 `application.getStatus()` return a `ApplicationStatus` class.
 
-````javascript
+```javascript
 const { SquareCloudAPI } = require("@squarecloud/api");
 const api = new SquareCloudAPI("Your API Key");
 
@@ -16,63 +15,63 @@ console.log(status.usage.network); // {'total': '0 KB ↑ 0 KB ↓', 'now': '0 K
 console.log(status.usage.storage); // '0B'
 console.log(status.running);       // true | false
 console.log(status.status);        // 'running' | 'exited' ...
-````
+```
 
 ## Getting logs
 
 `application.getLogs()` return a String.
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const logs = await application.getLogs();
 
 console.log(logs); // String
-````
+```
 
 ## Starting the application
 
 `application.start()` return a Boolean.
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const started = await application.start();
 
 console.log(started); // Boolean (true or false)
-````
+```
 
 ## Stopping the application
 
 `application.stop()` return a Boolean.
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const stopped = await application.stop();
 
 console.log(stopped); // Boolean (true or false)
-````
+```
 
 ## Restarting the application
 
 `application.restart()` return a Boolean.
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const restarted = await application.restart();
 
 console.log(restarted); // Boolean (true or false)
-````
+```
 
 ## Deleting an application
 
 `application.delete()` return a Boolean.
 
 <Warning>
-    This will delete your application **PERMANENTLY**, meaning that unless you have a backup of your application, it cannot be recovered.
+  This will delete your application **PERMANENTLY**, meaning that unless you have a backup of your application, it cannot be recovered.
 </Warning>
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const deleted = await application.delete();
 
 console.log(deleted); // Boolean (true or false)
-````
+```

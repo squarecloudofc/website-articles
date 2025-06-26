@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -14,25 +13,22 @@
 </ResponseField>
 
 <ResponseField name="response" type="object">
+  The contents of the response.
 
-The contents of the response.
-
-<Expandable title="Toggle object">
-
-<ResponseField name="logs" type="string">
-  The latest logs from the application.
-</ResponseField>
-
-</Expandable>
+  <Expandable title="Toggle object">
+    <ResponseField name="logs" type="string">
+      The latest logs from the application.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-```json
-{
-    "status": "success",
-    "response": {
-        "logs": "Working!"
-    }
-}
-```
+  ```json
+  {
+      "status": "success",
+      "response": {
+          "logs": "Working!"
+      }
+  }
+  ```
 </ResponseExample>

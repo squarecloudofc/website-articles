@@ -4,12 +4,6 @@
   "author": {
     "name": "Square Cloud"
   },
-  "attributes": {
-    "tags": [
-      "deploy",
-      "nodejs"
-    ]
-  },
   "metadata": {
     "pt-br": {
       "title": "Hospedando uma Aplicação Express no Square Cloud",
@@ -29,9 +23,15 @@
     "zh": {
       "title": "在 Square Cloud 上托管 Express 应用",
       "description": "本文指导您在 Square Cloud 上创建并托管一个 Express 应用",
-      "slug": "在-square-cloud-上-托管-express-应用"
+      "slug": "在-square-cloud-上托管-express-应用"
     }
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "nodejs"
+    ]
+  },
   "created_at": "2025-06-25T19:58:28.000Z",
-  "updated_at": "2025-06-25T19:58:28.000Z"
+  "updated_at": "2025-06-26T21:56:09.000Z"
 }

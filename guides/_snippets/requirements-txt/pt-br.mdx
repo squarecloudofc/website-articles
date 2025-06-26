@@ -3,19 +3,16 @@
 Para criar seu arquivo requirements.txt, você precisa listar todas as suas dependências no corpo do arquivo.
 Veja como ficaria ele possuindo as dependências Flask e waitress.
 
-
 flask
 waitress
 
-
-Note que apenas listando assim, o gerenciador de pacotes instalará a versão mais recente do pacote. 
+Note que apenas listando assim, o gerenciador de pacotes instalará a versão mais recente do pacote.
 Caso queira uma versão específica, passe dois sinais de igual e o numero da versão correspondente.
 
 flask==3.1.0
 waitress==3.0.2
 
-
 Se você utilizar do comando `pip freeze`, serão listados além da suas dependências, as dependências delas.
-Exemplificando, se você possui o `discord-py` instalado como dependência, o pip listará o `aiohttp` que é uma dependência da 
-biblioteca discord-py. Isso gera um arquivo mais extenso desnecessáriamente e se utilizado no ambiente global, pode haver 
+Exemplificando, se você possui o `discord-py` instalado como dependência, o pip listará o `aiohttp` que é uma dependência da
+biblioteca discord-py. Isso gera um arquivo mais extenso desnecessáriamente e se utilizado no ambiente global, pode haver
 dependências desnecessárias vindas de outros projetos.

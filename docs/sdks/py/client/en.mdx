@@ -1,4 +1,3 @@
-
 [Client]: ./#client
 
 ```python
@@ -13,12 +12,12 @@ async def example():
 
 ## Parameters:
 
-- api_key
+* api\_key
 
 `api_key: str`: This is the required parameter when instantiating the Client object.
 A valid API key must be provided as a string for authentication to be performed correctly.
 
-- debug
+* debug
 
 `debug: bool = True`: This is an optional parameter that controls the debug mode of
 the Client object. When set to True, every time a request is made, the Client object prints
@@ -36,19 +35,19 @@ to manage your application more conveniently, without always needing to pass
 the id of your application.
 
 <Tabs>
-    <Tab title="obtaining an application">
-        ```python
-        import squarecloud as square
+  <Tab title="obtaining an application">
+    ```python
+    import squarecloud as square
 
-        client = square.Client(api_key='API KEY')
+    client = square.Client(api_key='API KEY')
 
-        async def example():
-            app = await client.app('application id')
-            print(app)  # <Application tag='example' id='application_id'>
-        ```
-    </Tab>
+    async def example():
+        app = await client.app('application id')
+        print(app)  # <Application tag='example' id='application_id'>
+    ```
+  </Tab>
 
-    <Tab title="obtaining all applications">
+  <Tab title="obtaining all applications">
     ```python
     import squarecloud as square
 
@@ -58,5 +57,5 @@ the id of your application.
         apps = await client.all_apps()
         print(apps)  # list[<Application tag='example' id='application_id'>]
     ```
-    </Tab>
+  </Tab>
 </Tabs>

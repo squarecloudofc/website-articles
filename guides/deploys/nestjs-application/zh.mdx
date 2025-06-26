@@ -1,28 +1,28 @@
 ## 介绍
 
-- 开始之前，请确保已安装 Node.js 与 npm。可在 [Node.js 官网](https://nodejs.org/) 下载。
-- 然后，通过 [注册页面](https://squarecloud.app/signup) 创建 Square Cloud 账户。
-- 最后，确保账户拥有有效付费套餐。套餐信息见 [此处](https://squarecloud.app/plans)。
+* 开始之前，请确保已安装 Node.js 与 npm。可在 [Node.js 官网](https://nodejs.org/) 下载。
+* 然后，通过 [注册页面](https://squarecloud.app/signup) 创建 Square Cloud 账户。
+* 最后，确保账户拥有有效付费套餐。套餐信息见 [此处](https://squarecloud.app/plans)。
 
 ### 安装 NestJS CLI
 
 全局安装 CLI：
 
-\`\`\`bash
+```bash
 npm install -g @nestjs/cli
-\`\`\`
+```
 
 ### 创建 NestJS 项目
 
-\`\`\`bash
+```bash
 nest new my-app
-\`\`\`
+```
 
 ## 配置 80 端口
 
-编辑 \`src/main.ts\`：
+编辑 `src/main.ts`：
 
-\`\`\`typescript
+```typescript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -31,28 +31,28 @@ async function bootstrap() {
   await app.listen(80);
 }
 bootstrap();
-\`\`\`
+```
 
 ## 构建应用
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ## 创建 squarecloud 配置文件
 
 <Card title="了解如何创建 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-\`squarecloud.app\` 文件用于配置应用名称、描述、版本、主文件等。
+  `squarecloud.app` 文件用于配置应用名称、描述、版本、主文件等。
 </Card>
 
 ## 配置 MAIN 字段
 
-\`\`\`app squarecloud.app
+```app squarecloud.app
 MAIN=dist/main.js
-\`\`\`
+```
 
 ## 上传前购买套餐
 
 <Note>**需要多少 RAM/CPU？** **[Standard](https://squarecloud.app/pay/standard)** 套餐（4 GB RAM，4 vCPU）满足多数 NestJS 应用。大型项目可考虑 Pro 套餐 [此处](https://squarecloud.app/pay/pro)。</Note>
 
-[其余部分与原文相同，已转义反引号。]
+\[其余部分与原文相同，已转义反引号。]

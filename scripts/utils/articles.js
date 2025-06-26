@@ -17,7 +17,7 @@ export async function getArticles(cwd) {
     try {
       metadata = JSON.parse(readFileSync(join(cwd, article)).toString());
       delete metadata["$schema"];
-    } catch (_) {}
+    } catch (_) { }
 
     Object.keys(metadata.metadata ?? {}).forEach((k) => {
       if (!locales.includes(k)) delete metadata.metadata[k];
@@ -51,45 +51,51 @@ export async function getArticlesIndex(project, articles) {
     const availableMetadata = Object.keys(article.metadata);
 
     for (const articleLocale of locales) {
-      const contentLocale = pickLocale(articleLocale, available);
-      if ((project === "guides" && contentLocale !== articleLocale) || !contentLocale) continue;
+      try {
 
-      if (!availableMetadata.includes(contentLocale)) continue;
+        const contentLocale = pickLocale(articleLocale, available);
+        if ((project === "guides" && contentLocale !== articleLocale) || !contentLocale) continue;
 
-      if ((project === "docs" && !article.$info.path) || (project === "guides" && !article.id)) continue;
+        if (!availableMetadata.includes(contentLocale)) continue;
 
-      const rawContent = readFileSync(join(project, article.$info.path, `${contentLocale}.mdx`));
-      const content = await parseMdxSnippets(project, contentLocale, rawContent);
+        if ((project === "docs" && !article.$info.path) || (project === "guides" && !article.id)) continue;
 
-      const metadataObj = article.metadata[contentLocale];
+        const rawContent = readFileSync(join(project, article.$info.path, `${contentLocale}.mdx`));
+        const content = await parseMdxSnippets(project, contentLocale, rawContent);
 
-      if (project === "guides" && !metadataObj?.slug) continue;
+        const metadataObj = article.metadata[contentLocale];
 
-      switch (project) {
-        case "docs":
-          indexes[articleLocale][article.$info.path] = {
-            metadata: metadataObj,
-            attributes: article.attributes,
-            created_at: article.created_at,
-            updated_at: article.updated_at,
-            content: content.toString(),
-          };
-          break;
-        case "guides":
-          indexes[articleLocale][article.id] = {
-            id: article.id,
-            path: article.$info.path,
-            author: article.author,
-            attributes: article.attributes,
-            metadata: metadataObj,
-            created_at: article.created_at,
-            updated_at: article.updated_at,
-            content: content.toString(),
-          };
-          break;
+        if (project === "guides" && !metadataObj?.slug) continue;
+
+        switch (project) {
+          case "docs":
+            indexes[articleLocale][article.$info.path] = {
+              metadata: metadataObj,
+              attributes: article.attributes,
+              created_at: article.created_at,
+              updated_at: article.updated_at,
+              content: content.toString(),
+            };
+            break;
+          case "guides":
+            indexes[articleLocale][article.id] = {
+              id: article.id,
+              path: article.$info.path,
+              author: article.author,
+              attributes: article.attributes,
+              metadata: metadataObj,
+              created_at: article.created_at,
+              updated_at: article.updated_at,
+              content: content.toString(),
+            };
+            break;
+        }
+      } catch (err) {
+        console.log(`Unable to parse ${article.$info.path} ${articleLocale}`, err)
       }
     }
   }
 
   return indexes;
 }
+

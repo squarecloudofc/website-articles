@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -18,68 +17,63 @@
 </ResponseField>
 
 <ResponseField name="response" type="object">
+  The contents of the response.
 
-The contents of the response.
+  <Expandable title="Toggle object">
+    <ResponseField name="cpu" type="string">
+      The CPU usage of the application.
+    </ResponseField>
 
-<Expandable title="Toggle object">
+    <ResponseField name="ram" type="string">
+      The RAM usage of the application.
+    </ResponseField>
 
-<ResponseField name="cpu" type="string">
-  The CPU usage of the application.
-</ResponseField>
+    <ResponseField name="status" type="string">
+      The status of the application.
+    </ResponseField>
 
-<ResponseField name="ram" type="string">
-  The RAM usage of the application.
-</ResponseField>
+    <ResponseField name="running" type="boolean">
+      Indicates whether the application is currently running.
+    </ResponseField>
 
-<ResponseField name="status" type="string">
-  The status of the application.
-</ResponseField>
+    <ResponseField name="storage" type="string">
+      The storage used by the application.
+    </ResponseField>
 
-<ResponseField name="running" type="boolean">
-  Indicates whether the application is currently running.
-</ResponseField>
+    <ResponseField name="network" type="object">
+      <Expandable title="Toggle object">
+        <ResponseField name="total" type="string">
+          The total network usage of the application.
+        </ResponseField>
 
-<ResponseField name="storage" type="string">
-  The storage used by the application.
-</ResponseField>
+        <ResponseField name="now" type="string">
+          The current network usage of the application.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
 
-<ResponseField name="network" type="object">
-<Expandable title="Toggle object">
-
-<ResponseField name="total" type="string">
-  The total network usage of the application.
-</ResponseField>
-
-<ResponseField name="now" type="string">
-  The current network usage of the application.
-</ResponseField>
-
-</Expandable>
-</ResponseField>
-
-<ResponseField name="uptime" type="number">
-  The uptime of the application in milliseconds.
-</ResponseField>
-
-</Expandable>
+    <ResponseField name="uptime" type="number">
+      The uptime of the application in milliseconds.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-```json
-{
-    "status": "success",
-    "response": {
-        "cpu": "0.01%",
-        "ram": "31.79",
-        "status": "running",
-        "running": true,
-        "storage": "2.72MB",
-        "network": {
-            "total": "602 KB ↑ 134 KB ↓",
-            "now": "14 KB ↑ 3.3 KB ↓"
-        },
-        "uptime": 1662927833666
-    }
-}
-```
+  ```json
+  {
+      "status": "success",
+      "response": {
+          "cpu": "0.01%",
+          "ram": "31.79",
+          "status": "running",
+          "running": true,
+          "storage": "2.72MB",
+          "network": {
+              "total": "602 KB ↑ 134 KB ↓",
+              "now": "14 KB ↑ 3.3 KB ↓"
+          },
+          "uptime": 1662927833666
+      }
+  }
+  ```
 </ResponseExample>

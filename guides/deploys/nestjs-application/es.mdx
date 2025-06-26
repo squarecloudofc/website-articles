@@ -1,28 +1,28 @@
 ## Introducción
 
-- Antes de empezar, asegúrate de tener Node.js y npm instalados. Si no, descárgalos desde el [sitio oficial de Node.js](https://nodejs.org/).
-- Luego, crea una cuenta en Square Cloud en la [página de registro](https://squarecloud.app/signup).
-- Finalmente, ten un plan de pago activo. Consulta los planes [aquí](https://squarecloud.app/plans).
+* Antes de empezar, asegúrate de tener Node.js y npm instalados. Si no, descárgalos desde el [sitio oficial de Node.js](https://nodejs.org/).
+* Luego, crea una cuenta en Square Cloud en la [página de registro](https://squarecloud.app/signup).
+* Finalmente, ten un plan de pago activo. Consulta los planes [aquí](https://squarecloud.app/plans).
 
 ### Configurar el CLI de NestJS
 
 Instala el CLI globalmente:
 
-\`\`\`bash
+```bash
 npm install -g @nestjs/cli
-\`\`\`
+```
 
 ### Crear un proyecto NestJS
 
-\`\`\`bash
+```bash
 nest new my-app
-\`\`\`
+```
 
 ## Configurar el puerto 80
 
-Edita \`src/main.ts\`:
+Edita `src/main.ts`:
 
-\`\`\`typescript
+```typescript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -31,28 +31,28 @@ async function bootstrap() {
   await app.listen(80);
 }
 bootstrap();
-\`\`\`
+```
 
 ## Compilar la aplicación
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ## Crear el archivo de configuración squarecloud
 
 <Card title="Aprende a crear el archivo de configuración de Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-El archivo \`squarecloud.app\` define nombre, descripción, versión, archivo principal y más.
+  El archivo `squarecloud.app` define nombre, descripción, versión, archivo principal y más.
 </Card>
 
 ## Configurar el campo MAIN
 
-\`\`\`app squarecloud.app
+```app squarecloud.app
 MAIN=dist/main.js
-\`\`\`
+```
 
 ## Comprar un plan antes de subir
 
 <Note>**¿Cuánta RAM/CPU necesitas?** El plan **[Standard](https://squarecloud.app/pay/standard)** (4 GB RAM, 4 vCPU) es suficiente para la mayoría de apps NestJS. Para proyectos grandes, considera el plan Pro [aquí](https://squarecloud.app/pay/pro).</Note>
 
-[Secciones restantes idénticas al original con backticks escapados.]
+\[Secciones restantes idénticas al original con backticks escapados.]

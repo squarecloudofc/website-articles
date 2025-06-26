@@ -1,4 +1,3 @@
-
 **Is necessary to have at least the [Standard plan](https://squarecloud.app/plans) to use this route.**
 
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
@@ -16,48 +15,45 @@
 </ResponseField>
 
 <ResponseField name="response" type="array">
+  The contents of the response.
 
-The contents of the response.
+  <Expandable title="Toggle object">
+    <ResponseField name="type" type="string">
+      The type of the DNS record.
+    </ResponseField>
 
-<Expandable title="Toggle object">
+    <ResponseField name="name" type="string">
+      The name of the DNS record.
+    </ResponseField>
 
-<ResponseField name="type" type="string">
-  The type of the DNS record.
-</ResponseField>
+    <ResponseField name="value" type="string">
+      The value of the DNS record.
+    </ResponseField>
 
-<ResponseField name="name" type="string">
-  The name of the DNS record.
-</ResponseField>
-
-<ResponseField name="value" type="string">
-  The value of the DNS record.
-</ResponseField>
-
-<ResponseField name="status" type="string">
-  The status of the DNS record. It can be `pending_validation`, `pending` or `active`.
-</ResponseField>
-
-</Expandable>
+    <ResponseField name="status" type="string">
+      The status of the DNS record. It can be `pending_validation`, `pending` or `active`.
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-```json
-{
-  "status": "success",
-  "response": [
-    {
-      "type": "txt",
-      "name": "_acme-challenge.joaootavios.dev",
-      "value": "hmo-jMx_KCWQU5CWG6xmrkI4AOZOJXlQtjEtc7zI1PA",
-      "status": "pending_validation"
-    },
-    {
-      "type": "cname",
-      "name": "joaootavios.dev",
-      "value": "custom.squarecloud.app",
-      "status": "pending"
-    }
-  ]
-}
-```
+  ```json
+  {
+    "status": "success",
+    "response": [
+      {
+        "type": "txt",
+        "name": "_acme-challenge.joaootavios.dev",
+        "value": "hmo-jMx_KCWQU5CWG6xmrkI4AOZOJXlQtjEtc7zI1PA",
+        "status": "pending_validation"
+      },
+      {
+        "type": "cname",
+        "name": "joaootavios.dev",
+        "value": "custom.squarecloud.app",
+        "status": "pending"
+      }
+    ]
+  }
+  ```
 </ResponseExample>

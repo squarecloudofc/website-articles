@@ -1,72 +1,72 @@
 ## Introducción
 
-- Antes de comenzar, asegúrate de tener Node.js y npm instalados en tu sistema. Si aún no los tienes, puedes descargarlos desde el [sitio oficial de Node.js](https://nodejs.org/).
-- A continuación, necesitarás crear una cuenta en Square Cloud, lo cual puedes hacer a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear la cuenta.
-- Finalmente, necesitas tener un plan de pago activo en tu cuenta. Puedes ver nuestros planes y adquirir uno según tus necesidades [aquí](https://squarecloud.app/plans).
+* Antes de comenzar, asegúrate de tener Node.js y npm instalados en tu sistema. Si aún no los tienes, puedes descargarlos desde el [sitio oficial de Node.js](https://nodejs.org/).
+* A continuación, necesitarás crear una cuenta en Square Cloud, lo cual puedes hacer a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear la cuenta.
+* Finalmente, necesitas tener un plan de pago activo en tu cuenta. Puedes ver nuestros planes y adquirir uno según tus necesidades [aquí](https://squarecloud.app/plans).
 
 ### Creando un Proyecto React
 
 Para crear un nuevo proyecto React, ejecuta el siguiente comando:
 
-\`\`\`bash
+```bash
 npx create-react-app my-react-app
-\`\`\`
+```
 
-En el comando anterior, \`my-react-app\` es el nombre de tu nuevo proyecto. Puedes reemplazar \`my-react-app\` por cualquier nombre deseado.
+En el comando anterior, `my-react-app` es el nombre de tu nuevo proyecto. Puedes reemplazar `my-react-app` por cualquier nombre deseado.
 
-\`create-react-app\` es un paquete disponible en el registro npm que configura un nuevo proyecto React para ti. Se encarga de toda la configuración inicial, como crear el directorio del proyecto, instalar las dependencias necesarias y configurar archivos básicos.
+`create-react-app` es un paquete disponible en el registro npm que configura un nuevo proyecto React para ti. Se encarga de toda la configuración inicial, como crear el directorio del proyecto, instalar las dependencias necesarias y configurar archivos básicos.
 
 ## Configurando el Entorno de Producción con Serve
 
-Después de haber creado y configurado tu proyecto React, es hora de prepararlo para producción. Para esto, usaremos una biblioteca llamada \`serve\`. Esta biblioteca es un servidor estático que puede servir tu proyecto React después de que haya sido compilado.
+Después de haber creado y configurado tu proyecto React, es hora de prepararlo para producción. Para esto, usaremos una biblioteca llamada `serve`. Esta biblioteca es un servidor estático que puede servir tu proyecto React después de que haya sido compilado.
 
 ### Instalando la Biblioteca Serve
 
-Para instalar la biblioteca \`serve\`, navega al directorio de tu proyecto en la terminal y ejecuta el siguiente comando:
+Para instalar la biblioteca `serve`, navega al directorio de tu proyecto en la terminal y ejecuta el siguiente comando:
 
-\`\`\`bash
+```bash
 npm install serve@14.2.3
-\`\`\`
+```
 
-Este comando instala la versión \`14.2.3\` de la biblioteca \`serve\`. Si deseas instalar la versión más reciente, puedes omitir el \`@14.2.3\`.
+Este comando instala la versión `14.2.3` de la biblioteca `serve`. Si deseas instalar la versión más reciente, puedes omitir el `@14.2.3`.
 
 ### Configurando el Script de Inicio
 
-Después de instalar la biblioteca \`serve\`, necesitas configurar el script de inicio de tu proyecto para usar \`serve\`. Para ello, abre el archivo \`package.json\` de tu proyecto y añade un nuevo script llamado \`start:prod\`:
+Después de instalar la biblioteca `serve`, necesitas configurar el script de inicio de tu proyecto para usar `serve`. Para ello, abre el archivo `package.json` de tu proyecto y añade un nuevo script llamado `start:prod`:
 
-\`\`\`json
+```json
 "scripts": {
   "start": "react-scripts start",
   "start:prod": "serve -s build -l 80",
   ...
 }
-\`\`\`
+```
 
-En el script \`start:prod\`, el comando \`serve -s build -l 80\` hace lo siguiente:
+En el script `start:prod`, el comando `serve -s build -l 80` hace lo siguiente:
 
-- \`serve\`: inicia el servidor \`serve\`.
-- \`-s build\`: la opción \`-s\` sirve el directorio \`build\` en modo de aplicación de página única. Esto significa que todas las solicitudes no encontradas se redirigirán a \`index.html\`. El directorio \`build\` se crea al ejecutar \`npm run build\`.
-- \`-l 80\`: la opción \`-l\` seguida de \`80\` indica a \`serve\` que escuche en el puerto 80. El puerto 80 es el predeterminado para tráfico HTTP.
+* `serve`: inicia el servidor `serve`.
+* `-s build`: la opción `-s` sirve el directorio `build` en modo de aplicación de página única. Esto significa que todas las solicitudes no encontradas se redirigirán a `index.html`. El directorio `build` se crea al ejecutar `npm run build`.
+* `-l 80`: la opción `-l` seguida de `80` indica a `serve` que escuche en el puerto 80. El puerto 80 es el predeterminado para tráfico HTTP.
 
-Ahora, cuando quieras iniciar tu proyecto en modo producción, ejecuta el comando \`npm run start:prod\`. Este comando primero compila tu proyecto React y luego sirve los archivos compilados usando \`serve\` en el puerto 80.
+Ahora, cuando quieras iniciar tu proyecto en modo producción, ejecuta el comando `npm run start:prod`. Este comando primero compila tu proyecto React y luego sirve los archivos compilados usando `serve` en el puerto 80.
 
 ## Creando el archivo de configuración squarecloud.app
 
 <Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-El archivo squarecloud.app es un archivo de configuración que se utilizará para configurar tu aplicación; define el nombre, descripción, versión, archivo principal, entre otras cosas.
+  El archivo squarecloud.app es un archivo de configuración que se utilizará para configurar tu aplicación; define el nombre, descripción, versión, archivo principal, entre otras cosas.
 </Card>
 
 ## Configurando el Campo START
 
-En el archivo de configuración de Square Cloud, el campo \`START\` es esencial para personalizar el comando de inicio. Si deseas compilar e iniciar tu aplicación en Square Cloud, configura el campo \`START\` de la siguiente manera:
+En el archivo de configuración de Square Cloud, el campo `START` es esencial para personalizar el comando de inicio. Si deseas compilar e iniciar tu aplicación en Square Cloud, configura el campo `START` de la siguiente manera:
 
-\`\`\`app squarecloud.app
+```app squarecloud.app
 START=npm run build && npm run start:prod
-\`\`\`
+```
 
-Este comando ejecutará los scripts "build" y "start:prod" definidos en tu \`package.json\`:
+Este comando ejecutará los scripts "build" y "start:prod" definidos en tu `package.json`:
 
-\`\`\`json package.json
+```json package.json
 {
   "name": "my-react-app",
   "version": "0.1.0",
@@ -107,7 +107,7 @@ Este comando ejecutará los scripts "build" y "start:prod" definidos en tu \`pac
     ]
   }
 }
-\`\`\`
+```
 
 ## Adquiriendo un Plan Antes de Subir Tu Proyecto
 
@@ -122,42 +122,52 @@ Después de preparar los archivos de tu proyecto, ahora puedes subirlos a Square
 <Tabs>
   <Tab title="Carga por Dashboard">
     Accede al [Dashboard de Square Cloud](https://squarecloud.app/dashboard/upload) y sube los archivos de tu proyecto.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="Carga por CLI">
     <Steps>
       <Step title="Primer Paso">
         Primero, necesitas tener la CLI instalada en tu entorno. Si aún no la tienes, ejecuta:
-        \`\`\`
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         Si ya la tienes, recomendamos actualizarla. Para ello:
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux, macOS y WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Segundo Paso">
         Ahora, para autenticar y usar otros comandos de la CLI, encuentra tu clave de autorización [aquí](https://squarecloud.app/account) haciendo clic en "Request API Key". Después de obtenerla, ejecuta:
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="Tercer Paso">
         Finalmente, para desplegar tu aplicación en Square Cloud usando la CLI, ejecuta:
-        \`\`\`bash
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>
@@ -167,15 +177,16 @@ Después de preparar los archivos de tu proyecto, ahora puedes subirlos a Square
 
 <AccordionGroup>
   <Accordion title="Dominio Personalizado" icon="globe" iconType="solid">
-    Si deseas usar un dominio personalizado para tu aplicación alojada en Square Cloud, ten en cuenta que, por defecto, la URL será algo como \`https://mysite.squareweb.app/\`. El subdominio se determina por el campo SUBDOMAIN en el archivo de configuración. Sin embargo, para usar un dominio personalizado como \`mysite.com.br\`, necesitas adquirir el plan **Standard** o superior. Detallamos cada paso en nuestro artículo: [Cómo configurar tu dominio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+    Si deseas usar un dominio personalizado para tu aplicación alojada en Square Cloud, ten en cuenta que, por defecto, la URL será algo como `https://mysite.squareweb.app/`. El subdominio se determina por el campo SUBDOMAIN en el archivo de configuración. Sin embargo, para usar un dominio personalizado como `mysite.com.br`, necesitas adquirir el plan **Standard** o superior. Detallamos cada paso en nuestro artículo: [Cómo configurar tu dominio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
   </Accordion>
 
   <Accordion title="Requisito Mínimo de RAM" icon="memory" iconType="solid">
-    La cantidad mínima de RAM necesaria para alojar un sitio es de 512MB, pero al compilar tu sitio directamente en Square, es aconsejable usar más RAM, o podrías encontrarte con el error [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+    La cantidad mínima de RAM necesaria para alojar un sitio es de 512MB, pero al compilar tu sitio directamente en Square, es aconsejable usar más RAM, o podrías encontrarte con el error [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
   </Accordion>
 
   <Accordion title="Acceso Temporalmente Denegado" icon="ban" iconType="solid">
     Si recibes el mensaje "Your access has been temporarily denied." al intentar acceder al sitio, espera un momento. Si el problema persiste, contáctanos en https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -183,6 +194,7 @@ Después de preparar los archivos de tu proyecto, ahora puedes subirlos a Square
 
   <Accordion title="El Sitio Tardó Demasiado en Responder..." icon="clock" iconType="solid">
     Si recibes el mensaje "Website took too long to respond..." asegúrate de haber configurado correctamente el puerto 80 en tu sitio. Si el problema persiste, contáctanos en https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>

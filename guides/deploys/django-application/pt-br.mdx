@@ -1,154 +1,174 @@
-## Criando um Novo Projeto Django
+## Creating a New Django Project
 
-- Antes de começar, certifique-se de que você tenha o Python e o pip instalados no seu sistema. Se ainda não os tiver, você pode baixá-los do [site oficial do Python](https://www.python.org/) e do [site oficial do Pip](https://pypi.org/).
-- Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito pela [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
-- Por fim, você precisa ter um plano pago ativo na sua conta. Você pode ver nossos planos e adquirir um conforme suas necessidades [aqui](https://squarecloud.app/plans).
+* Before getting started, make sure you have Python and pip installed on your system. If you don't already have them, you can download them from the [official Python website](https://www.python.org/) and [official Pip website](https://pypi.org/).
+* Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+* Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
 
-Com o Python e o pip instalados, você pode criar um novo projeto Django. Primeiro, instale o Django usando pip:
+With Python and pip installed, you can create a new Django project. First, install Django using pip:
 
-\`\`\`bash
+```bash
 pip install django
-\`\`\`
+```
 
-Em seguida, crie um novo arquivo Python (por exemplo, \`app.py\`) e adicione o seguinte código para criar um aplicativo Django básico:
+Then, create a new Python file (e.g., `app.py`) and add the following code to create a basic Django application:
 
-\`\`\`python app.py
+```python app.py
 from django.conf import settings
 from django.http import HttpResponse
 from django.urls import path
 from django.core.wsgi import get_wsgi_application
 
-# Configurações básicas do Django
+# Basic Django settings
 settings.configure(
-    DEBUG=False,  # Desative o modo de depuração
-    SECRET_KEY='mysecretkey',  # Defina sua chave secreta
-    ALLOWED_HOSTS=['*'],  # Permita todos os hosts por simplicidade
-    ROOT_URLCONF=__name__,  # Defina a configuração raiz de URLs para este módulo
-    MIDDLEWARE_CLASSES=(),  # Use uma tupla vazia para desabilitar middleware
+    DEBUG=False,  # Turn off debug mode
+    SECRET_KEY='mysecretkey',  # Set your secret key
+    ALLOWED_HOSTS=['*'],  # Allow all hosts for simplicity
+    ROOT_URLCONF=__name__,  # Set the root URL configuration to this module
+    MIDDLEWARE_CLASSES=(),  # Use an empty tuple to disable middleware
 )
 
-# View simples
+# Simple view
 def index(request):
-    return HttpResponse("Hello world!")  # Retorna uma resposta HTTP simples
+    return HttpResponse("Hello world!")  # Return a simple HTTP response
 
-# Configuração de URLs
+# URL configuration
 urlpatterns = [
-    path('', index),  # Mapeia a URL raiz para a view index
+    path('', index),  # Map the root URL to the index view
 ]
 
-# Aplicação WSGI
+# WSGI application
 application = get_wsgi_application()
 
-# Servidor WSGI
+# WSGI server
 if __name__ == "__main__":
     from wsgiref.simple_server import make_server
-    httpd = make_server('', 80, application)  # Serve a aplicação na porta 80
-    print("Servidor Django rodando na porta 80...")
-    httpd.serve_forever()  # Inicia o servidor
-\`\`\`
+    httpd = make_server('', 80, application)  # Serve the application using the WSGI server on port 80
+    print("Django server running on port 80...")
+    httpd.serve_forever()  # Start the server
+```
 
-No código acima, criamos uma rota básica que retorna "Hello, World!" quando acessada. A aplicação está configurada para rodar na porta 80, que é a porta padrão para tráfego HTTP.
+In the above code, we create a basic route that returns "Hello, World!" when accessed. The application is configured to run on port 80, which is the default port for HTTP traffic.
 
-## Gerenciando Dependências com o arquivo requirements.txt
+## Managing Dependencies with the requirements.txt file
 
-O arquivo \`requirements.txt\` lista todas as bibliotecas externas necessárias para o seu projeto. Você deve incluir todas as bibliotecas que o projeto usa, excluindo bibliotecas nativas como \`random\` e \`datetime\`. Este arquivo deve ser incluído ao enviar sua aplicação para a Square Cloud.
+The `requirements.txt` file is a file that lists all external libraries required for your project. You should list all libraries your project will use, excluding native libraries like `random` and `datetime`. This file should be included when submitting your application to Square Cloud.
 
-\`\`\`txt requirements.txt
+```txt requirements.txt
 django
-\`\`\`
+```
 
-## Criando o arquivo de configuração squarecloud.app
+## Creating the squarecloud config file
 
-<Card title="Saiba mais: como criar o arquivo de configuração para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-O arquivo \`squarecloud.app\` é um arquivo de configuração usado para definir o nome, descrição, versão, arquivo principal, entre outras coisas da sua aplicação.
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+  The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
 </Card>
 
-## Configurando o campo START
+## Configuring the START Field
 
-No arquivo de configuração da Square Cloud, o campo **START** é opcional e necessário somente se você estiver usando um script personalizado para iniciar o site. No exemplo fornecido, o campo **START** não é necessário.
+In the Square Cloud configuration file, the **START** field is optional and is only necessary if you are using a custom script to start the website. In the example provided, the **START** field is not necessary.
 
-## Comprando um Plano Antes de Enviar Seu Projeto
+## Purchasing a Plan Before Uploading Your Project
 
-Antes de enviar seu projeto para a Square Cloud, é importante entender que você precisa adquirir um plano. O tipo de plano dependerá dos recursos necessários para sua aplicação. Você pode ver nossos planos [aqui](https://squarecloud.app/plans).
+Before you can upload your project to Square Cloud, it's important to understand that you need to purchase a plan. The type of plan you choose will depend on the resources required by your application. You can view our plans [here](https://squarecloud.app/plans).
 
-<Note>**Está se perguntando quanta RAM e CPU seu plano precisa para hospedar uma aplicação Django?** Não se preocupe, estamos aqui para ajudar. Django é um framework Python de alto nível que incentiva desenvolvimento rápido e design limpo e pragmático. É mantido por desenvolvedores experientes e cuida de grande parte da complexidade do desenvolvimento web, para que você possa focar em escrever seu app sem reinventar a roda. Nosso plano **[Standard](https://squarecloud.app/pay/standard)** oferece **4GB** de RAM e **4vCPU**, suficiente para a maioria das aplicações Django. Porém, se você estiver trabalhando em um projeto maior e precisar de mais estabilidade, recomendamos nosso plano Pro. Com recursos adicionais, você mantém estabilidade mesmo em momentos de pico. Para adquirir, clique [aqui](https://squarecloud.app/pay/pro).</Note>
+<Note>**Are you wondering how much RAM and CPU your plan needs to host a Django application?** Don't worry, we're here to help. Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It's built by experienced developers and takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. Our **[Standard](https://squarecloud.app/pay/standard)** plan offers **4GB** of RAM and **4vCPU**, which should be sufficient for most Django applications. However, if you're working on a larger project and seeking extra stability, we recommend considering our Pro plan. With additional resources, you can maintain stability even during peak demand. To purchase, simply click [here](https://squarecloud.app/pay/pro).</Note>
 
-## Enviando o Projeto para a Square Cloud
+## Uploading Project to Square Cloud
 
-Depois de preparar seus arquivos, você pode enviá-los para a Square Cloud e hospedar seu projeto.
+After preparing your project files, you can now upload them to Square Cloud and host your project.
 
 <Tabs>
-  <Tab title="Envio pelo Dashboard">
-    Acesse o [Dashboard da Square Cloud](https://squarecloud.app/dashboard/upload) e faça o upload dos seus arquivos.
+  <Tab title="Dashboard Upload">
+    Access the [Square Cloud
+    Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
+    files.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
-  <Tab title="Envio via CLI">
+
+  <Tab title="CLI Upload">
     <Steps>
-      <Step title="Primeiro Passo">
-        Primeiro, você precisa ter o CLI instalado. Caso não tenha, execute:
-        \`\`\`
+      <Step title="First Step">
+        First, you need to have the CLI installed in your environment. If you
+        don't have it yet, run the following command in your terminal:
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
-        Se já tiver, recomendamos atualizar. Para isso, execute:
+        ```
+
+        If you already have it, we recommend updating it. To do this, run the following command in your terminal:
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
-          <Tab title="Linux, macOS e WSL">
-            \`\`\`bash
+
+          <Tab title="Linux, macOS, and WSL">
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
-      <Step title="Segundo Passo">
-        Para autenticar e usar outros comandos CLI, obtenha sua chave de autorização [aqui](https://squarecloud.app/account) clicando em "Request API Key". Depois, execute:
-        \`\`\`bash
+
+      <Step title="Second Step">
+        Now, to authenticate and use other CLI commands, you will find your
+        authorization key [here](https://squarecloud.app/account) by clicking on
+        "Request API Key". After obtaining your authorization key, run the
+        following command:
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
-      <Step title="Terceiro Passo">
-        Finalmente, para deploy da sua aplicação via CLI, execute passando o caminho do seu arquivo zip:
-        \`\`\`bash
+
+      <Step title="Third Step">
+        Finally, to deploy your application to Square Cloud using the CLI, you
+        need to execute the following command, passing the path of your zip
+        file:
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>
 </Tabs>
 
-## Solução de Problemas
+## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title="Domínio Personalizado" icon="globe" iconType="solid">
-    Se você quiser usar um domínio próprio, observe que por padrão a URL será algo como \`https://mysite.squareweb.app/\`. O subdomínio é definido pelo campo SUBDOMAIN. Para usar um domínio como \`mysite.com\`, é necessário o plano Standard ou superior. Veja como em nosso artigo: [Como Configurar Seu Domínio](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  <Accordion title="Custom Domain" icon="globe" iconType="solid">
+    If you want to use a custom domain for your application hosted on Square Cloud, note that by default, the URL will be something like `https://mysite.squareweb.app/`. The subdomain is determined by the SUBDOMAIN field in the configuration file. However, if you prefer to use a custom domain, such as `mysite.com`, you'll need to purchase the `Standard` plan or a higher plan. We detail each step to set up your custom domain in our article: [How to Set Up Your Custom Domain](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
   </Accordion>
 
-  <Accordion title="Requisitos Mínimos de RAM" icon="memory" iconType="solid">
-    O mínimo de RAM para hospedar um site ou API é 512MB. Porém, dependendo do tamanho e complexidade da sua aplicação Django, pode ser aconselhável usar mais RAM para evitar o erro [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+  <Accordion title="Minimum RAM Requirements" icon="memory" iconType="solid">
+    The minimum amount of RAM required to host a website or API is 512MB. However, depending on the size and complexity of your Django application, it may be advisable to use a larger amount of RAM to avoid the [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) error.
   </Accordion>
 
-  <Accordion title="Acesso Temporariamente Negado" icon="ban" iconType="solid">
-    Se você receber "Your access has been temporarily denied." ao tentar acessar, aguarde um tempo. Se persistir, contate-nos em https://squarecloud.app/dashboard/support.
+  <Accordion title="Temporary Access Denied" icon="ban" iconType="solid">
+    If you receive the message "Your access has been temporarily denied." when trying to access the site, please wait for some time. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 
-  <Accordion title="Site demorou para responder..." icon="clock" iconType="solid">
-    Se você receber "Website took too long to respond...", verifique se configurou corretamente a porta 80. Se continuar, contate https://squarecloud.app/dashboard/support.
+  <Accordion title="Website took too long to respond..." icon="clock" iconType="solid">
+    If you receive the message "Website took too long to respond..." make sure you have correctly set port 80 on your application. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 </AccordionGroup>
 
-## Recursos Adicionais
+## Additional Resources
 
-Para mais informações sobre Django e suas ferramentas, visite a [documentação oficial do Django](https://docs.djangoproject.com/en/5.0/). Lá você encontrará guias, tutoriais e documentação de API para aproveitar ao máximo o Django.
+For more information about Django and its tools, visit the [official Django documentation](https://docs.djangoproject.com/en/5.0/). There, you'll find detailed guides, tutorials, and API documentation to help you make the most out of Django.
 
-Se continuar enfrentando problemas, não hesite em [contatar nossa equipe de suporte](/company/support).  
+If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).

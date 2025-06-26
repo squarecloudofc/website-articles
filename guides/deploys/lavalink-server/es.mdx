@@ -1,8 +1,8 @@
 ## Introducción 🚀
 
-- Sigue el tutorial y hospeda tu servidor **Lavalink** hoy mismo; ¡es muy sencillo! Si necesitas ayuda, contáctanos por los canales oficiales de soporte.
-- Luego, crea una cuenta en Square Cloud en la [página de registro](https://squarecloud.app/signup) con tu correo electrónico.
-- Finalmente, asegúrate de tener un plan de pago activo. Consulta y adquiere un plan según tus necesidades [aquí](https://squarecloud.app/plans).
+* Sigue el tutorial y hospeda tu servidor **Lavalink** hoy mismo; ¡es muy sencillo! Si necesitas ayuda, contáctanos por los canales oficiales de soporte.
+* Luego, crea una cuenta en Square Cloud en la [página de registro](https://squarecloud.app/signup) con tu correo electrónico.
+* Finalmente, asegúrate de tener un plan de pago activo. Consulta y adquiere un plan según tus necesidades [aquí](https://squarecloud.app/plans).
 
 ## Elegir la versión
 
@@ -11,7 +11,7 @@ Selecciona la versión deseada de **Lavalink** haciendo clic [aquí](https://git
 ## Creación del archivo de configuración squarecloud
 
 <Card title="Aprende a crear el archivo de configuración para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-El archivo `squarecloud.app` configura nombre, descripción, versión, archivo principal y más.
+  El archivo `squarecloud.app` configura nombre, descripción, versión, archivo principal y más.
 </Card>
 
 ## Creación de application.yml
@@ -33,42 +33,52 @@ Crea un archivo `.zip` con `Lavalink.jar` y `application.yml` y súbelo a Square
 <Tabs>
   <Tab title="Subida desde el panel">
     Accede al [Dashboard de Square Cloud](https://squarecloud.app/dashboard/upload) y sube tus archivos.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="Subida por CLI">
     <Steps>
       <Step title="Primer paso">
         Instala la CLI:
-        \`\`\`
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         Para actualizar:
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux, macOS y WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Segundo paso">
         Obtén tu API Key [aquí](https://squarecloud.app/account) y haz login:
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="Tercer paso">
         Despliega indicando la ruta del zip:
-        \`\`\`bash
+
+        ```bash
         squarecloud upload server.zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>

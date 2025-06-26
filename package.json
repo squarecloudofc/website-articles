@@ -8,18 +8,29 @@
     "generate": "npm run generate:metadata && npm run generate:indexes",
     "generate:indexes": "node scripts/generate-indexes.js",
     "generate:metadata": "node scripts/generate-metadata.js",
-    "dev:prettier": "prettier --write ."
+    "dev:prettier": "prettier --write .",
+    "format": "remark . -qfo && remark . -e mdx -u mdx -qfo"
   },
   "keywords": [],
   "license": "AGPL-3.0",
   "dependencies": {
     "globby": "^14.1.0",
+    "remark": "^15.0.1",
+    "remark-cli": "^12.0.1",
     "remark-mdx": "^3.1.0",
     "remark-parse": "^11.0.0",
+    "remark-preset-lint-consistent": "^6.0.1",
+    "remark-preset-lint-recommended": "^7.0.1",
     "remark-stringify": "^11.0.0",
     "unified": "^11.0.5"
   },
   "devDependencies": {
     "prettier": "^3.5.3"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-consistent",
+      "remark-preset-lint-recommended"
+    ]
   }
 }

@@ -1,33 +1,32 @@
-
 ## Getting a list of files
 
-`application.files.list()` return a list of `APIListedFile` objects. 
+`application.files.list()` return a list of `APIListedFile` objects.
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const filesList = await application.files.list();
 
 console.log(filesList); // Return a Array of File Objects
 // [{type: "file", name: "index.js", size: 123, lastModified: 123456789}]
-````
+```
 
 ## Reading a file
 
 `application.files.read()` returns a Buffer object.
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const file = await application.files.read("index.js");
 
 console.log(file.toString()); // String
-````
+```
 
 ## Creating a file
 
 `application.files.create()` returns a Boolean.
 
 <Tabs>
-    <Tab title="Using Buffer">
+  <Tab title="Using Buffer">
     ```javascript
     const { SquareCloudAPI } = require("@squarecloud/api");
     const api = new SquareCloudAPI("Your API Key");
@@ -43,8 +42,9 @@ console.log(file.toString()); // String
 
     console.log(file); // Boolean (true or false)
     ```
-    </Tab>
-    <Tab title="Using Absolute Path">
+  </Tab>
+
+  <Tab title="Using Absolute Path">
     ```javascript
     const { SquareCloudAPI } = require("@squarecloud/api");
     const api = new SquareCloudAPI("Your API Key");
@@ -62,16 +62,16 @@ console.log(file.toString()); // String
 
     console.log(file); // Boolean (true or false)
     ```
-    </Tab>
+  </Tab>
 </Tabs>
 
 ## Deleting a file
 
 `application.files.delete()` returns a Boolean.
 
-````javascript
+```javascript
 const application = await api.applications.get("Application ID");
 const deleted = await application.files.delete("index.js");
 
 console.log(deleted); // Boolean (true or false)
-````
+```

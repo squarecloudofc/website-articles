@@ -1,5 +1,5 @@
-
 ## When does it occur?
+
 The authentication token for your Discord bot was not found or appears to be invalid. This might happen if the token is regenerated, revoked, or the bot's access to the server is restricted.
 
 ```bash discord.js
@@ -11,6 +11,7 @@ LoginFailure: Improper token has been passed.
 ```
 
 ## Why does it occur?
+
 You will encounter this error when your application attempts to authenticate with the Discord API using an invalid or outdated bot token.
 
 ## How to fix
@@ -18,9 +19,11 @@ You will encounter this error when your application attempts to authenticate wit
 Ensure that the token provided when creating the Discord.js client is accurate and up-to-date. If you suspect the token might be invalid, regenerate it on the Discord Developer Portal.
 
 ### Regenerate the Token
-If you have confirmed that the current token is invalid or compromised, generate a new one on the [Discord Developer Portal](https://discord.com/developers/applications). 
+
+If you have confirmed that the current token is invalid or compromised, generate a new one on the [Discord Developer Portal](https://discord.com/developers/applications).
 
 ### Update the Token in Your Code
+
 If you are using a `.env` file to store the token, make sure to update the file with the new token.
 
 Generally, the token is stored in `.env` or `config,json` files. If you are using a different method to store the token, update the code accordingly.

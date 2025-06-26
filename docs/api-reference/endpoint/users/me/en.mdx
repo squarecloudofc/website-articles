@@ -1,4 +1,3 @@
-
 <ParamField header="Authorization" type="string" placeholder="API KEY" required>
   The API key for your account. You can find this in your [account settings](https://squarecloud.app/account).
 </ParamField>
@@ -10,120 +9,107 @@
 </ResponseField>
 
 <ResponseField name="response" type="object">
+  The contents of the response.
 
-The contents of the response.
+  <Expandable title="Toggle object">
+    <ResponseField name="user" type="object">
+      <Expandable title="Toggle object">
+        <ResponseField name="id" type="string">
+          The user's ID.
+        </ResponseField>
 
-<Expandable title="Toggle object">
+        <ResponseField name="name" type="string">
+          The user's name.
+        </ResponseField>
 
-<ResponseField name="user" type="object">
+        <ResponseField name="email" type="string">
+          The user's email.
+        </ResponseField>
 
-<Expandable title="Toggle object">
+        <ResponseField name="plan" type="object">
+          <Expandable title="Toggle object">
+            <ResponseField name="name" type="string">
+              The user's plan name.
+            </ResponseField>
 
-<ResponseField name="id" type="string">
-  The user's ID.
-</ResponseField>
+            <ResponseField name="duration" type="number">
+              The user's plan duration in milliseconds.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
 
-<ResponseField name="name" type="string">
-  The user's name.
-</ResponseField>
+    <ResponseField name="applications" type="array">
+      <Expandable title="Toggle object">
+        <ResponseField name="name" type="string">
+          The application's name.
+        </ResponseField>
 
-<ResponseField name="email" type="string">
-  The user's email.
-</ResponseField>
+        <ResponseField name="id" type="string">
+          The application's ID.
+        </ResponseField>
 
-<ResponseField name="plan" type="object">
-<Expandable title="Toggle object">
+        <ResponseField name="desc" type="string">
+          The application's description.
+        </ResponseField>
 
-<ResponseField name="name" type="string">
-  The user's plan name.
-</ResponseField>
+        <ResponseField name="ram" type="number">
+          The application's RAM usage.
+        </ResponseField>
 
-<ResponseField name="duration" type="number">
-  The user's plan duration in milliseconds.
-</ResponseField>
+        <ResponseField name="lang" type="string">
+          The application's language.
+        </ResponseField>
 
-</Expandable>
-</ResponseField>
+        <ResponseField name="domain" type="string">
+          The application's domain.
+        </ResponseField>
 
-</Expandable>
-</ResponseField>
+        <ResponseField name="custom" type="string">
+          The application's custom domain.
+        </ResponseField>
 
-<ResponseField name="applications" type="array">
-
-<Expandable title="Toggle object">
-
-<ResponseField name="name" type="string">
-    The application's name.
-</ResponseField>
-
-<ResponseField name="id" type="string">
-    The application's ID.
-</ResponseField>
-
-<ResponseField name="desc" type="string">
-    The application's description.
-</ResponseField>
-
-<ResponseField name="ram" type="number">
-    The application's RAM usage.
-</ResponseField>
-
-<ResponseField name="lang" type="string">
-    The application's language.
-</ResponseField>
-
-<ResponseField name="domain" type="string">
-    The application's domain.
-</ResponseField>
-
-<ResponseField name="custom" type="string">
-    The application's custom domain.
-</ResponseField>
-
-<ResponseField name="cluster" type="string">
-    The application's cluster.
-</ResponseField>
-
-</Expandable>
-</ResponseField>
-
-</Expandable>
+        <ResponseField name="cluster" type="string">
+          The application's cluster.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
 </ResponseField>
 
 <ResponseExample>
-
-```json Response
-{
-  "status": "success",
-  "response": {
-    "user": {
-      "id": "313397145698959364",
-      "name": "joaootavios",
-      "email": "joao@squarecloud.app",
-      "plan": {
-        "name": "standard",
-        "memory": {
-          "limit": 2048,
-          "available": 1536,
-          "used": 256
-        },
-        "duration": 1732072955446
-      }
-    },
-    "applications": [
-      {
-        "name": "Square Example APP",
-        "id": "446b0b4118634a1c99e73bac9a54e475",
-        "desc": "This is a example of description",
-        "ram": 512,
-        "lang": "javascript",
-        "domain": "square-example-app.squareweb.app",
-        "custom": "mydomain.com",
-        "cluster": "fl-micron-1"
-      }
-    ]
+  ```json Response
+  {
+    "status": "success",
+    "response": {
+      "user": {
+        "id": "313397145698959364",
+        "name": "joaootavios",
+        "email": "joao@squarecloud.app",
+        "plan": {
+          "name": "standard",
+          "memory": {
+            "limit": 2048,
+            "available": 1536,
+            "used": 256
+          },
+          "duration": 1732072955446
+        }
+      },
+      "applications": [
+        {
+          "name": "Square Example APP",
+          "id": "446b0b4118634a1c99e73bac9a54e475",
+          "desc": "This is a example of description",
+          "ram": 512,
+          "lang": "javascript",
+          "domain": "square-example-app.squareweb.app",
+          "custom": "mydomain.com",
+          "cluster": "fl-micron-1"
+        }
+      ]
+    }
   }
-}
-```
-
+  ```
 </ResponseExample>

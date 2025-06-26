@@ -1,32 +1,32 @@
 ## Introdução
 
-- Antes de começar, certifique-se de ter Node.js e npm instalados em seu sistema. Caso não tenha, faça o download no [site oficial do Node.js](https://nodejs.org/).
-- Em seguida, crie uma conta na Square Cloud pela [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
-- Por fim, é necessário ter um plano pago ativo. Você pode visualizar e adquirir um plano conforme suas necessidades [aqui](https://squarecloud.app/plans).
+* Antes de começar, certifique-se de ter Node.js e npm instalados em seu sistema. Caso não tenha, faça o download no [site oficial do Node.js](https://nodejs.org/).
+* Em seguida, crie uma conta na Square Cloud pela [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
+* Por fim, é necessário ter um plano pago ativo. Você pode visualizar e adquirir um plano conforme suas necessidades [aqui](https://squarecloud.app/plans).
 
 ### Configurando o NestJS CLI
 
 Para usar a interface de linha de comando (CLI) do NestJS, instale-a globalmente:
 
-\`\`\`bash
+```bash
 npm install -g @nestjs/cli
-\`\`\`
+```
 
 ### Criando um projeto NestJS
 
 Crie um novo projeto NestJS:
 
-\`\`\`bash
+```bash
 nest new my-app
-\`\`\`
+```
 
-O comando \`nest new my-app\` cria um diretório \`my-app\` com todos os arquivos e dependências de uma aplicação NestJS básica.
+O comando `nest new my-app` cria um diretório `my-app` com todos os arquivos e dependências de uma aplicação NestJS básica.
 
 ## Configurando a porta 80
 
-Após gerar o projeto, altere o arquivo \`src/main.ts\`:
+Após gerar o projeto, altere o arquivo `src/main.ts`:
 
-\`\`\`typescript
+```typescript
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
@@ -35,7 +35,7 @@ async function bootstrap() {
   await app.listen(80); // Porta 80
 }
 bootstrap();
-\`\`\`
+```
 
 A porta 80 é o padrão para tráfego HTTP.
 
@@ -43,23 +43,23 @@ A porta 80 é o padrão para tráfego HTTP.
 
 O NestJS usa TypeScript, então você deve compilar antes de executar:
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ## Criando o arquivo de configuração squarecloud
 
 <Card title="Saiba como criar o arquivo de configuração da Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-O arquivo \`squarecloud.app\` define nome, descrição, versão, arquivo principal, entre outros.
+  O arquivo `squarecloud.app` define nome, descrição, versão, arquivo principal, entre outros.
 </Card>
 
 ## Configurando o campo MAIN
 
 Defina o arquivo principal da aplicação:
 
-\`\`\`app squarecloud.app
+```app squarecloud.app
 MAIN=dist/main.js
-\`\`\`
+```
 
 ## Configurando o campo START
 
@@ -76,42 +76,52 @@ Escolha um plano de acordo com os recursos necessários [aqui](https://squareclo
 <Tabs>
   <Tab title="Upload pelo Dashboard">
     Acesse o [Dashboard da Square Cloud](https://squarecloud.app/dashboard/upload) e envie seus arquivos.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="Upload via CLI">
     <Steps>
       <Step title="Primeiro passo">
         Instale a CLI:
-        \`\`\`
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         Para atualizar:
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux, macOS e WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Segundo passo">
         Obtenha sua API Key em [account](https://squarecloud.app/account) e faça login:
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="Terceiro passo">
         Faça o deploy passando o caminho do zip:
-        \`\`\`bash
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>
@@ -121,22 +131,24 @@ Escolha um plano de acordo com os recursos necessários [aqui](https://squareclo
 
 <AccordionGroup>
   <Accordion title="Domínio personalizado" icon="globe" iconType="solid">
-    Para usar \`mysite.com\`, adquira ao menos o plano Standard e siga [este guia](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+    Para usar `mysite.com`, adquira ao menos o plano Standard e siga [este guia](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
   </Accordion>
 
   <Accordion title="RAM mínima" icon="memory" iconType="solid">
-    O mínimo é 512 MB, mas pode ser necessário mais para evitar o erro [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+    O mínimo é 512 MB, mas pode ser necessário mais para evitar o erro [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
   </Accordion>
 
   <Accordion title="Acesso temporariamente negado" icon="ban" iconType="solid">
     Se aparecer “Your access has been temporarily denied.”, aguarde ou contate https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 
   <Accordion title="Site demorou a responder" icon="clock" iconType="solid">
-     Verifique a porta 80. Persistindo, contate https://squarecloud.app/dashboard/support.
+    Verifique a porta 80. Persistindo, contate https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>

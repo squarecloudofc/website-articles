@@ -1,24 +1,23 @@
-
 ## Introduction
 
-- Before you start coding it is necessary to properly set up your bot on WhatsApp. First, you need to have WhatsApp downloaded on your phone. If you don't have it yet, you can visit the [official WhatsApp website](https://www.whatsapp.com/coronavirus/get-started?lang=en). After having WhatsApp installed and configured, you can start programming your bot.
-- Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
-- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
+* Before you start coding it is necessary to properly set up your bot on WhatsApp. First, you need to have WhatsApp downloaded on your phone. If you don't have it yet, you can visit the [official WhatsApp website](https://www.whatsapp.com/coronavirus/get-started?lang=en). After having WhatsApp installed and configured, you can start programming your bot.
+* Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+* Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
 
 <AccordionGroup>
   <Accordion title="Remote path to the WhatsApp Web version" icon="file" iconType="solid">
-    If your code requires accessing the remote path to the WhatsApp Web version, here's how to do it. 
+    If your code requires accessing the remote path to the WhatsApp Web version, here's how to do it.
     You can access [wa-version](https://github.com/wppconnect-team/wa-version/tree/main/html), choose the desired version (the most recent one is always recommended), and click on "Raw". After the page opens, simply copy the URL, which will be used later. Example URL:
     "https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/2.2412.54.html"
+
     <Frame>
       <img src="/images/articles/whatsapp/remote-path.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 </AccordionGroup>
 
-
-
 # Starting Project
+
 1. Ensure you have Node.js installed on your system. If not, you can download it from the [official Node.js website](https://nodejs.org/).
 2. Initialize a new Node.js project using `npm init`. This will create a new `package.json` file for your project:
 
@@ -96,10 +95,11 @@ client.initialize();
 ## Creating the squarecloud config file
 
 <Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
+  The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
 </Card>
 
 ## Configuring the START Field
+
 <Warning>Only use this field if you are really sure about what you are doing.</Warning>
 
 In the Square Cloud configuration file, the **START** field is optional and only needed if you are using a custom script to start the bot. In the provided example, the **START** field is not necessary.
@@ -113,25 +113,31 @@ After preparing your project files, you can now upload them to Square Cloud and 
     Access the [Square Cloud
     Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
     files.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="CLI Upload">
     <Steps>
       <Step title="First Step">
         First, you need to have the CLI installed in your environment. If you
         don't have it yet, run the following command in your terminal:
+
         ```
         npm install -g @squarecloud/cli
         ```
+
         If you already have it, we recommend updating it. To do this, run the following command in your terminal:
+
         <Tabs>
           <Tab title="Windows">
             ```bash
             squarecloud update
             ```
           </Tab>
+
           <Tab title="Linux, macOS, and WSL">
             ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
@@ -139,20 +145,24 @@ After preparing your project files, you can now upload them to Square Cloud and 
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Second Step">
         Now, to authenticate and use other CLI commands, you will find your
         authorization key [here](https://squarecloud.app/account) by clicking on
         "Request API Key". After obtaining your authorization key, run the
-        following command: 
-        ```bash 
+        following command:
+
+        ```bash
         squarecloud login
         ```
       </Step>
+
       <Step title="Third Step">
         Finally, to deploy your application to Square Cloud using the CLI, you
         need to execute the following command, passing the path of your zip
-        file: 
-        ```bash 
+        file:
+
+        ```bash
         squarecloud upload zip
         ```
       </Step>

@@ -1,8 +1,8 @@
 ## Creating a New Flask Project
 
-- Before getting started, make sure you have Python and pip installed on your system. If you don't already have them, you can download them from the [official Python website](https://www.python.org/) and [official Pip website](https://pypi.org/).
-- Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
-- Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
+* Before getting started, make sure you have Python and pip installed on your system. If you don't already have them, you can download them from the [official Python website](https://www.python.org/) and [official Pip website](https://pypi.org/).
+* Next, you will need to create an account on Square Cloud, which can be done through the [sign up page](https://squarecloud.app/signup). You can use your email to create an account.
+* Finally, you need to have an active paid plan on your account. You can view our plans and purchase one according to your needs [here](https://squarecloud.app/plans).
 
 With Python and pip installed, you can create a new Flask project. First, install Flask using pip:
 
@@ -68,7 +68,7 @@ flask
 ## Creating the squarecloud config file
 
 <Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
+  The squarecloud.app file is a configuration file that will be used to configure your application; it will be used to define the name, description, version, main file, among other things.
 </Card>
 
 ## Configuring the START Field
@@ -90,25 +90,31 @@ After preparing your project files, you can now upload them to Square Cloud and 
     Access the [Square Cloud
     Dashboard](https://squarecloud.app/dashboard/upload) and upload your project
     files.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="CLI Upload">
     <Steps>
       <Step title="First Step">
         First, you need to have the CLI installed in your environment. If you
         don't have it yet, run the following command in your terminal:
+
         ```
         npm install -g @squarecloud/cli
         ```
+
         If you already have it, we recommend updating it. To do this, run the following command in your terminal:
+
         <Tabs>
           <Tab title="Windows">
             ```bash
             squarecloud update
             ```
           </Tab>
+
           <Tab title="Linux, macOS, and WSL">
             ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
@@ -116,19 +122,23 @@ After preparing your project files, you can now upload them to Square Cloud and 
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Second Step">
         Now, to authenticate and use other CLI commands, you will find your
         authorization key [here](https://squarecloud.app/account) by clicking on
         "Request API Key". After obtaining your authorization key, run the
         following command:
+
         ```bash
         squarecloud login
         ```
       </Step>
+
       <Step title="Third Step">
         Finally, to deploy your application to Square Cloud using the CLI, you
         need to execute the following command, passing the path of your zip
         file:
+
         ```bash
         squarecloud upload zip
         ```
@@ -145,18 +155,20 @@ After preparing your project files, you can now upload them to Square Cloud and 
   </Accordion>
 
   <Accordion title="Minimum RAM Requirements" icon="memory" iconType="solid">
-    The minimum amount of RAM required to host a website or API is 512MB. However, depending on the size and complexity of your Flask application, it may be advisable to use a larger amount of RAM to avoid the [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) error.
+    The minimum amount of RAM required to host a website or API is 512MB. However, depending on the size and complexity of your Flask application, it may be advisable to use a larger amount of RAM to avoid the [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) error.
   </Accordion>
 
   <Accordion title="Temporary Access Denied" icon="ban" iconType="solid">
     If you receive the message "Your access has been temporarily denied." when trying to access the site, please wait for some time. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 
   <Accordion title="Website took too long to respond..." icon="clock" iconType="solid">
-     If you receive the message "Website took too long to respond..." make sure you have correctly set port 80 on your application. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+    If you receive the message "Website took too long to respond..." make sure you have correctly set port 80 on your application. If the issue persists, feel free to contact us at https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
@@ -168,4 +180,3 @@ After preparing your project files, you can now upload them to Square Cloud and 
 For more information about Flask and its tools, visit the [official Flask documentation](https://flask.palletsprojects.com/en/3.0.x/). There, you'll find detailed guides, tutorials, and API documentation to help you make the most out of Flask.
 
 If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).
-

@@ -1,4 +1,3 @@
-
 When a request is made, it returns application information and caches it in the Application object itself. This is useful if you need to access this information again in a relatively short time, meaning it's not worth making a new API request for updated data. In such cases, you can access `Application.cache`.
 
 ```python
@@ -41,7 +40,7 @@ async def example():
 ```
 
 <Note>
-    If the arguments you pass to `cache.update` are not an instance of `StatusData`, `LogsData`, or `BackupData`, a `SquareException` error will be raised.
+  If the arguments you pass to `cache.update` are not an instance of `StatusData`, `LogsData`, or `BackupData`, a `SquareException` error will be raised.
 </Note>
 
 ## Manually clearing the cache

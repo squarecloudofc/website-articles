@@ -1,19 +1,19 @@
 ## Creación de un nuevo proyecto Flask
 
-- Antes de comenzar, asegúrate de tener Python y pip instalados. Si no, descárgalos desde el [sitio oficial de Python](https://www.python.org/) y el [sitio oficial de Pip](https://pypi.org/).
-- Luego, crea una cuenta en Square Cloud a través de la [página de registro](https://squarecloud.app/signup) usando tu correo electrónico.
-- Finalmente, necesitas un plan de pago activo. Consulta y adquiere un plan según tus necesidades [aquí](https://squarecloud.app/plans).
+* Antes de comenzar, asegúrate de tener Python y pip instalados. Si no, descárgalos desde el [sitio oficial de Python](https://www.python.org/) y el [sitio oficial de Pip](https://pypi.org/).
+* Luego, crea una cuenta en Square Cloud a través de la [página de registro](https://squarecloud.app/signup) usando tu correo electrónico.
+* Finalmente, necesitas un plan de pago activo. Consulta y adquiere un plan según tus necesidades [aquí](https://squarecloud.app/plans).
 
 Con Python y pip instalados, crea un nuevo proyecto Flask. Primero, instala Flask y Waitress con pip:
 
-\`\`\`bash
+```bash
 pip install flask
 pip install waitress
-\`\`\`
+```
 
-Después, crea un archivo Python (por ejemplo, \`app.py\`) y agrega el siguiente código para una aplicación Flask básica:
+Después, crea un archivo Python (por ejemplo, `app.py`) y agrega el siguiente código para una aplicación Flask básica:
 
-\`\`\`python
+```python
 # Importar la clase Flask del módulo flask
 from flask import Flask
 
@@ -29,11 +29,11 @@ def hello_world():
 if __name__ == '__main__':
     # Ejecutar la aplicación Flask en el host 0.0.0.0 y puerto 80
     app.run(host='0.0.0.0', port=80)
-\`\`\`
+```
 
 ## Configuración del entorno de producción con Waitress
 
-\`\`\`python
+```python
 from flask import Flask
 
 # Crear la instancia de la aplicación Flask
@@ -53,22 +53,22 @@ if __name__ == '__main__':
     
     # Imprimir mensaje de inicio exitoso
     print("Servidor iniciado correctamente en el puerto 80.")
-\`\`\`
+```
 
 En el código anterior creamos una ruta básica que devuelve “Hello, World!”. La aplicación se ejecuta en el puerto 80, puerto por defecto para HTTP.
 
 ## Gestión de dependencias con requirements.txt
 
-El archivo \`requirements.txt\` lista todas las librerías externas necesarias. Incluye las librerías usadas, excluyendo las nativas como \`random\` y \`datetime\`. Debe incluirse al enviar la aplicación a Square Cloud.
+El archivo `requirements.txt` lista todas las librerías externas necesarias. Incluye las librerías usadas, excluyendo las nativas como `random` y `datetime`. Debe incluirse al enviar la aplicación a Square Cloud.
 
-\`\`\`txt requirements.txt
+```txt requirements.txt
 flask
-\`\`\`
+```
 
 ## Creación del archivo de configuración squarecloud
 
 <Card title="Aprende a crear el archivo de configuración para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
-El archivo \`squarecloud.app\` configura nombre, descripción, versión, archivo principal, entre otros.
+  El archivo `squarecloud.app` configura nombre, descripción, versión, archivo principal, entre otros.
 </Card>
 
 ## Configuración del campo START
@@ -86,42 +86,52 @@ Debes comprar un plan acorde a los recursos que requiere tu aplicación. Revisa 
 <Tabs>
   <Tab title="Subida desde el panel">
     Accede al [Dashboard de Square Cloud](https://squarecloud.app/dashboard/upload) y sube tus archivos.
+
     <Frame>
       <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Tab>
+
   <Tab title="Subida por CLI">
     <Steps>
       <Step title="Primer paso">
         Instala la CLI:
-        \`\`\`
+
+        ```
         npm install -g @squarecloud/cli
-        \`\`\`
+        ```
+
         O actualízala:
+
         <Tabs>
           <Tab title="Windows">
-            \`\`\`bash
+            ```bash
             squarecloud update
-            \`\`\`
+            ```
           </Tab>
+
           <Tab title="Linux, macOS y WSL">
-            \`\`\`bash
+            ```bash
             curl -fsSL https://cli.squarecloud.app/install | bash
-            \`\`\`
+            ```
           </Tab>
         </Tabs>
       </Step>
+
       <Step title="Segundo paso">
         Obtén tu clave API [aquí](https://squarecloud.app/account) y autentícate:
-        \`\`\`bash
+
+        ```bash
         squarecloud login
-        \`\`\`
+        ```
       </Step>
+
       <Step title="Tercer paso">
         Despliega la aplicación indicando la ruta del zip:
-        \`\`\`bash
+
+        ```bash
         squarecloud upload zip
-        \`\`\`
+        ```
       </Step>
     </Steps>
   </Tab>
@@ -131,22 +141,24 @@ Debes comprar un plan acorde a los recursos que requiere tu aplicación. Revisa 
 
 <AccordionGroup>
   <Accordion title="Dominio personalizado" icon="globe" iconType="solid">
-   Por defecto, la URL será \`https://mysite.squareweb.app/\`. Para usar \`mysite.com\`, compra al menos el plan Standard. Sigue [esta guía](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+    Por defecto, la URL será `https://mysite.squareweb.app/`. Para usar `mysite.com`, compra al menos el plan Standard. Sigue [esta guía](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
   </Accordion>
 
   <Accordion title="RAM mínima requerida" icon="memory" iconType="solid">
-    La RAM mínima es 512 MB. Según el tamaño del proyecto Flask, podría necesitar más para evitar el error [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+    La RAM mínima es 512 MB. Según el tamaño del proyecto Flask, podría necesitar más para evitar el error [LACK\_OF\_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
   </Accordion>
 
   <Accordion title="Acceso temporalmente denegado" icon="ban" iconType="solid">
     Si aparece “Your access has been temporarily denied.” espera un momento. Si persiste, contacta https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>
   </Accordion>
 
   <Accordion title="El sitio tardó demasiado en responder" icon="clock" iconType="solid">
-     Verifica la configuración del puerto 80. Si persiste, contacta https://squarecloud.app/dashboard/support.
+    Verifica la configuración del puerto 80. Si persiste, contacta https://squarecloud.app/dashboard/support.
+
     <Frame>
       <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
     </Frame>

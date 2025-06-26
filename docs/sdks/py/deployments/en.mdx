@@ -1,8 +1,7 @@
-
 ## Create Integration
 
 <Tabs>
-    <Tab title="Using Client">
+  <Tab title="Using Client">
     ```python
     import squarecloud as square
 
@@ -17,9 +16,9 @@
             webhook_url
         )
     ```
-    </Tab>
+  </Tab>
 
-    <Tab title="Using Application">
+  <Tab title="Using Application">
     ```python
     import squarecloud as square
 
@@ -33,14 +32,13 @@
             webhook_url
         )
     ```
-    </Tab>
+  </Tab>
 </Tabs>
-
 
 ## Obtaining Current Integration
 
 <Tabs>
-    <Tab title="Using Client">
+  <Tab title="Using Client">
     ```python
     import squarecloud as square
 
@@ -53,9 +51,9 @@
         )
         print(webhook_url)
     ```
-    </Tab>
+  </Tab>
 
-    <Tab title="Using Application">
+  <Tab title="Using Application">
     ```python
     import squarecloud as square
 
@@ -69,14 +67,13 @@
             webhook_url
         )
     ```
-    </Tab>
+  </Tab>
 </Tabs>
-
 
 ## Last Deploys
 
 <Tabs>
-    <Tab title="Using Client">
+  <Tab title="Using Client">
     ```python
     import squarecloud as square
 
@@ -87,9 +84,9 @@
         deploys = await client.last_deploys('application_id')
         print(deploys)  # [[DeployData(...), DeployData(...), DeployData(...)]]
     ```
-    </Tab>
+  </Tab>
 
-    <Tab title="Using Application">
+  <Tab title="Using Application">
     ```python
     import squarecloud as square
 
@@ -101,5 +98,5 @@
         deploys = await app.last_deploys()
         print(deploys)  # [[DeployData(...), DeployData(...), DeployData(...)]]
     ```
-    </Tab>
+  </Tab>
 </Tabs>

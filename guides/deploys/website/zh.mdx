@@ -1,42 +1,41 @@
 ## 介绍
 
-- 在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。  
-- 确保您的帐户有一个有效的付费计划。您可以在此查看并购买计划 [这里](https://squarecloud.app/plans)。
+* 在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
+* 确保您的帐户有一个有效的付费计划。您可以在此查看并购买计划 [这里](https://squarecloud.app/plans)。
 
 ## 创建 squarecloud.app 配置文件
 
-<Card
-  title="Learn about: how to make the configuration file for Square Cloud."
-  icon="link"
-  href="https://docs.squarecloud.app/getting-started/config-file"
->
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
   squarecloud.app 文件是用于配置您的应用程序的配置文件；它将用于定义名称、描述、版本、主文件等信息。
 </Card>
 
 ### 重要的网站参数
+
 **网站端口** 必须是 **80**；如果您使用静态网站，则无需设置 `START` 参数。
 
 在 squarecloud.app 配置文件中：
-- `SUBDOMAIN`：如果您正在托管网站，请将此参数设置为所需的子域名。  
-- `START`：自定义启动命令（如有需要）。
+
+* `SUBDOMAIN`：如果您正在托管网站，请将此参数设置为所需的子域名。
+* `START`：自定义启动命令（如有需要）。
 
 <Note>网站 URL 将为：`my-subdomain-parameter`.squareweb.app</Note>
-\`\`\`systemd This example host a website without custom startup command
+
+```systemd This example host a website without custom startup command
 MAIN=index.html
 MEMORY=512
 VERSION=recommended
 DISPLAY_NAME=我的简单静态网站！
 SUBDOMAIN=my-simple-static-website
-\`\`\`
+```
 
-\`\`\`systemd This example use all parameters and custom startup command in a website
+```systemd This example use all parameters and custom startup command in a website
 MAIN=index.js
 MEMORY=512
 VERSION=recommended
 DISPLAY_NAME=我的简单 Next.js 网站！
 SUBDOMAIN=my-nextjs-website
 START=npm run build && npm run start
-\`\`\`
+```
 
 # 多技术支持
 
@@ -44,24 +43,31 @@ START=npm run build && npm run start
   <Card title="React" icon="react" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-react-website">
     了解如何在 Square Cloud 上托管您的 React 网站。
   </Card>
+
   <Card title="Next.js" icon="node-js" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-next-website">
     了解如何在 Square Cloud 上托管您的 Next.js 网站。
   </Card>
+
   <Card title="NestJs" icon="js" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-nestjs-application">
     了解如何在 Square Cloud 上托管您的 NestJs 应用。
   </Card>
+
   <Card title="Vite" icon="rocket" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-vite-website">
     了解如何在 Square Cloud 上托管您的 Vite 网站。
   </Card>
+
   <Card title="Vue" icon="vuejs" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-vue-website">
     了解如何在 Square Cloud 上托管您的 Vue 网站。
   </Card>
+
   <Card title="Flask" icon="flask" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-flask-application">
     了解如何在 Square Cloud 上托管您的 Flask 应用。
   </Card>
+
   <Card title="Django" icon="python" href="https://docs.squarecloud.app/tutorials/how-to-deploy-your-django-application">
     了解如何在 Square Cloud 上托管您的 Django 应用。
   </Card>
+
   <Card title="Lavalink" icon="java" href="https://docs.squarecloud.app/tutorials/how-to-create-your-lavalink-server">
     了解如何托管您的 Lavalink 服务器，并向您的 Discord 机器人流式传输高质量音乐。
   </Card>
