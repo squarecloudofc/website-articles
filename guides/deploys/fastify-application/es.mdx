@@ -1,0 +1,131 @@
+## Introducción
+
+- Antes de empezar, asegúrate de tener Node.js y npm instalados. Si no, descárgalos desde la [página oficial de Node.js](https://nodejs.org/).
+- Luego, crea una cuenta en Square Cloud desde la [página de registro](https://squarecloud.app/signup) usando tu correo electrónico.
+- Finalmente, necesitas un plan de pago activo. Consulta y adquiere un plan según tus necesidades [aquí](https://squarecloud.app/plans).
+
+### Configuración de Fastify
+
+Instala Fastify:
+
+\`\`\`bash
+npm install fastify
+\`\`\`
+
+### Creación de un proyecto Fastify
+
+Crea un archivo y agrega:
+
+\`\`\`javascript app.js
+// Importando el módulo Fastify
+const fastify = require('fastify')({ logger: true });
+
+// Manejador para la ruta '/'
+fastify.get('/', async (request, reply) => {
+  return 'Hello World!';
+});
+
+// Iniciando Fastify en el puerto 80
+fastify.listen({ port: 80 })
+  .then((address) => {
+    fastify.log.info(\`Example app listening at \${address}\`);
+  })
+  .catch((err) => {
+    fastify.log.error(err);
+    process.exit(1);
+  });
+\`\`\`
+
+## Creación del archivo de configuración squarecloud
+
+<Card title="Aprende a crear el archivo de configuración para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+El archivo \`squarecloud.app\` configura nombre, descripción, versión, archivo principal y más.
+</Card>
+
+## Configuración del campo START
+
+El campo **START** es opcional y solo necesario si utilizas un script personalizado de inicio.
+
+## Compra de un plan antes de subir
+
+Debes comprar un plan acorde a los recursos de tu aplicación. Revisa los planes [aquí](https://squarecloud.app/plans).
+
+<Note>**¿Cuánta RAM y CPU necesitas?** El plan **[Standard](https://squarecloud.app/pay/standard)** ofrece **4 GB de RAM** y **4 vCPU**, suficiente para la mayoría de los proyectos. Para aplicaciones grandes, considera el plan Pro [aquí](https://squarecloud.app/pay/pro).</Note>
+
+## Subida del proyecto a Square Cloud
+
+<Tabs>
+  <Tab title="Subida desde el panel">
+    Ve al [Dashboard de Square Cloud](https://squarecloud.app/dashboard/upload) y sube tus archivos.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Subida por CLI">
+    <Steps>
+      <Step title="Primer paso">
+        Instala la CLI:
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        O actualízala:
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS y WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo paso">
+        Obtén tu clave API [aquí](https://squarecloud.app/account) y autentícate:
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Tercer paso">
+        Despliega con:
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Solución de problemas
+
+<AccordionGroup>
+  <Accordion title="Dominio personalizado" icon="globe" iconType="solid">
+   Por defecto, la URL es \`https://mysite.squareweb.app/\`. Para usar \`mysite.com\`, compra al menos el plan Standard y sigue [estos pasos](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="RAM mínima necesaria" icon="memory" iconType="solid">
+    La RAM mínima es 512 MB. Para evitar [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM) pueden requerirse más.
+  </Accordion>
+
+  <Accordion title="Acceso temporalmente denegado" icon="ban" iconType="solid">
+    Si ves “Your access has been temporarily denied.”, espera. Si continúa, contacta https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="El sitio tardó demasiado en responder" icon="clock" iconType="solid">
+     Verifica el puerto 80. Si persiste, contacta https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Recursos adicionales
+
+Para más información sobre Fastify, visita la [documentación oficial](https://fastify.dev/).
+
+¿Necesitas ayuda? [Contacta al soporte](/company/support).

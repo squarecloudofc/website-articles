@@ -1,0 +1,137 @@
+## Introdução
+
+- Antes de começar, verifique se você tem o Node.js e o npm instalados em seu sistema. Caso ainda não os tenha, faça o download no [site oficial do Node.js](https://nodejs.org/).
+- Em seguida, você precisará criar uma conta na Square Cloud, o que pode ser feito pela [página de cadastro](https://squarecloud.app/signup). Você pode usar seu e-mail para criar a conta.
+- Por fim, é necessário ter um plano pago ativo na sua conta. Você pode visualizar nossos planos e adquirir aquele que melhor se adequa às suas necessidades [aqui](https://squarecloud.app/plans).
+
+### Configurando o Fastify
+
+Para usar o Fastify, instale-o no seu projeto executando:
+
+\`\`\`bash
+npm install fastify
+\`\`\`
+
+Esse comando instala o pacote \`fastify\`, permitindo utilizá-lo na sua aplicação.
+
+### Criando um projeto Fastify
+
+Crie um novo arquivo e adicione o seguinte código:
+
+\`\`\`javascript app.js
+// Importando o módulo Fastify
+const fastify = require('fastify')({ logger: true });
+
+// Definindo um manipulador para a rota '/'
+fastify.get('/', async (request, reply) => {
+  return 'Hello World!';
+});
+
+// Iniciando a aplicação Fastify na porta 80
+fastify.listen({ port: 80 })
+  .then((address) => {
+    // Executado quando o servidor estiver ouvindo na porta 80
+    fastify.log.info(\`Example app listening at \${address}\`);
+  })
+  .catch((err) => {
+    // Executado se ocorrer erro ao tentar ouvir na porta 80
+    fastify.log.error(err);
+    process.exit(1);
+  });
+\`\`\`
+
+## Criando o arquivo de configuração squarecloud
+
+<Card title="Saiba como criar o arquivo de configuração da Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+O arquivo \`squarecloud.app\` define nome, descrição, versão, arquivo principal e outras configurações da sua aplicação.
+</Card>
+
+## Configurando o campo START
+
+No arquivo de configuração da Square Cloud, o campo **START** é opcional e só é necessário se você usar um script personalizado para iniciar o site ou API. No exemplo acima ele não é necessário.
+
+## Adquirindo um plano antes de fazer upload
+
+Antes de enviar seu projeto para a Square Cloud, adquira um plano compatível com os recursos que sua aplicação exige. Veja os planos disponíveis [aqui](https://squarecloud.app/plans).
+
+<Note>**Em dúvida sobre quanta RAM e CPU seu plano precisa para hospedar um app Fastify?** O plano **[Standard](https://squarecloud.app/pay/standard)** oferece **4 GB de RAM** e **4 vCPU**, suficientes para a maioria dos projetos. Para aplicações maiores ou com alta demanda, considere o plano Pro. Adquira-o [aqui](https://squarecloud.app/pay/pro).</Note>
+
+## Fazendo upload do projeto para a Square Cloud
+
+Após preparar os arquivos, você pode hospedá-lo:
+
+<Tabs>
+  <Tab title="Upload pelo Dashboard">
+    Acesse o [Dashboard da Square Cloud](https://squarecloud.app/dashboard/upload) e envie seus arquivos.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Upload via CLI">
+    <Steps>
+      <Step title="Primeiro passo">
+        Instale a CLI globalmente:
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        Já possui? Atualize:
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS e WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo passo">
+        Obtenha sua chave de autorização em [account](https://squarecloud.app/account) (“Request API Key”) e autentique-se:
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Terceiro passo">
+        Para fazer o deploy, execute:
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Solução de problemas
+
+<AccordionGroup>
+  <Accordion title="Domínio personalizado" icon="globe" iconType="solid">
+   Por padrão, o URL será algo como \`https://mysite.squareweb.app/\`. O subdomínio é definido no campo SUBDOMAIN. Para usar \`mysite.com\`, adquira pelo menos o plano Standard. Veja o passo a passo [aqui](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="RAM mínima" icon="memory" iconType="solid">
+    O mínimo para hospedar um site ou API é 512 MB. Dependendo do tamanho do projeto, use mais RAM para evitar o erro [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+  </Accordion>
+
+  <Accordion title="Acesso temporariamente negado" icon="ban" iconType="solid">
+    Se aparecer “Your access has been temporarily denied.”, aguarde. Persistindo, contate https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Website demorou a responder" icon="clock" iconType="solid">
+     Verifique se a porta 80 está configurada. Persistindo, contate https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Recursos adicionais
+
+Para saber mais sobre o Fastify, visite a [documentação oficial](https://fastify.dev/).
+
+Em caso de problemas, [contate nosso suporte](/company/support).

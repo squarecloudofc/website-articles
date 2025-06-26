@@ -4,11 +4,33 @@
   "author": {
     "name": "Square Cloud"
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "nodejs",
+      "fastify"
+    ]
+  },
   "metadata": {
+    "pt-br": {
+      "title": "Hospedando uma Aplicação Fastify no Square Cloud",
+      "description": "Este artigo orienta você na criação e hospedagem de uma aplicação Fastify no Square Cloud",
+      "slug": "hospedando-uma-aplicacao-fastify-no-square-cloud"
+    },
     "en": {
       "title": "Hosting a Fastify Application on Square Cloud",
       "description": "This article guides you on creating and hosting a Fastify app on Square Cloud",
       "slug": "hosting-a-fastify-application-on-square-cloud"
+    },
+    "es": {
+      "title": "Alojando una Aplicación Fastify en Square Cloud",
+      "description": "Este artículo te guía en la creación y alojamiento de una aplicación Fastify en Square Cloud",
+      "slug": "alojando-una-aplicacion-fastify-en-square-cloud"
+    },
+    "zh": {
+      "title": "在 Square Cloud 上托管 Fastify 应用",
+      "description": "本文指导您在 Square Cloud 上创建并托管一个 Fastify 应用",
+      "slug": "在-square-cloud-上-托管-fastify-应用"
     }
   },
   "created_at": "2025-06-25T19:58:28.000Z",
