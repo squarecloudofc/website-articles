@@ -4,11 +4,33 @@
   "author": {
     "name": "Square Cloud"
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "website",
+      "vite"
+    ]
+  },
   "metadata": {
     "en": {
       "title": "Hosting a Vite Application on Square Cloud",
       "description": "This article guides you on creating and hosting a Vite app on Square Cloud",
       "slug": "hosting-a-vite-application-on-square-cloud"
+    },
+    "pt-br": {
+      "title": "Hospedando uma Aplicação Vite no Square Cloud",
+      "description": "Este artigo orienta você na criação e hospedagem de uma aplicação Vite no Square Cloud",
+      "slug": "hospedando-uma-aplicacao-vite-no-square-cloud"
+    },
+    "es": {
+      "title": "Alojando una Aplicación Vite en Square Cloud",
+      "description": "Este artículo te guía en la creación y alojamiento de una aplicación Vite en Square Cloud",
+      "slug": "alojando-una-aplicacion-vite-en-square-cloud"
+    },
+    "zh": {
+      "title": "在 Square Cloud 上托管 Vite 应用",
+      "description": "本文指导您在 Square Cloud 上创建并托管一个 Vite 应用",
+      "slug": "在-square-cloud-上-托管-vite-应用"
     }
   },
   "created_at": "2025-06-25T19:58:28.000Z",

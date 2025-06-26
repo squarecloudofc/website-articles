@@ -1,0 +1,159 @@
+## Introducción
+
+- Antes de comenzar, asegúrate de tener Node.js y npm instalados en tu sistema. Si aún no los tienes, puedes descargarlos desde el [sitio oficial de Node.js](https://nodejs.org/).
+- A continuación, necesitarás crear una cuenta en Square Cloud, lo cual puedes hacer a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear la cuenta.
+- Finalmente, necesitas tener un plan de pago activo en tu cuenta. Puedes ver nuestros planes y adquirir uno según tus necesidades [aquí](https://squarecloud.app/plans).
+
+### Creando un Proyecto Vite
+
+Para crear un nuevo proyecto Vite, ejecuta el siguiente comando:
+
+\`\`\`bash
+npm create vite@latest my-vite-app
+\`\`\`
+
+En el comando anterior, \`my-vite-app\` es el nombre de tu nuevo proyecto. Reemplázalo por cualquier nombre deseado. Por defecto, este comando configura el proyecto Vite con JavaScript.
+
+### Elección de un Template Específico
+
+Vite permite elegir diferentes templates para tu proyecto. Al crear un nuevo proyecto, puedes especificar el template deseado usando la opción \`--template\`. Aquí tienes algunos ejemplos:
+
+Selecciona un template entre: \`react\`, \`vue\` y \`lit\`.
+
+\`\`\`bash
+# npm 7+, extra double-dash is needed:
+npm create vite@latest my-vite-app -- --template [template]
+\`\`\`
+
+Elige el template que mejor se adapte a tus necesidades y ajusta el nombre del proyecto según sea necesario.
+
+### Entendiendo la Diferencia entre JavaScript y TypeScript
+
+Cuando eliges JavaScript, Vite configura el proyecto con la configuración predeterminada de JavaScript. Por otro lado, al elegir TypeScript, Vite configura el proyecto con la configuración de TypeScript, incluida la generación de un archivo \`tsconfig.json\`.
+
+## Configurando el Puerto 80
+
+El puerto 80 es el puerto predeterminado para tráfico HTTP. Para hospedar una app Vite en Square Cloud, configura el uso del puerto 80. En Vite, puedes establecer el parámetro \`--port 80\` en el script de inicio para asegurar que tu app se ejecute correctamente en este puerto.
+
+## Configurando el Host 0.0.0.0
+
+La opción \`--host 0.0.0.0\` se utiliza para vincular el servidor Vite a todas las interfaces de red disponibles. Esto hace que tu aplicación sea accesible no solo en \`localhost\`, sino también en dispositivos externos dentro de la misma red, como otros ordenadores o dispositivos móviles. Por defecto, Vite se vincula a \`localhost\`, lo que restringe el acceso a la máquina donde se está ejecutando. Establecer el host en \`0.0.0.0\` permite al servidor escuchar solicitudes desde cualquier dirección IP.
+
+## Creando el archivo de configuración squarecloud.app
+
+<Card title="Learn about: how to make the configuration file for Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+El archivo squarecloud.app es un archivo de configuración que se usa para configurar tu aplicación; se utiliza para definir el nombre, descripción, versión, archivo principal, entre otras cosas.
+</Card>
+
+## Configurando el Campo START
+
+En el archivo de configuración de Square Cloud, el campo \`START\` es esencial para personalizar el comando de inicio. Si quieres compilar e iniciar tu app Vite en Square Cloud, configura el campo \`START\` de la siguiente manera:
+
+\`\`\`app squarecloud.app
+START=npm run build && npm run preview
+\`\`\`
+
+Este comando ejecutará los scripts "build" y "preview" definidos en tu \`package.json\`:
+
+\`\`\`json package.json
+{
+  "name": "my-vite-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 80"
+  },
+  "devDependencies": {
+    "vite": "^5.1.4"
+  }
+}
+\`\`\`
+
+## Adquiriendo un Plan Antes de Subir Tu Proyecto
+
+Antes de poder subir tu proyecto a Square Cloud, es importante entender que necesitas adquirir un plan. El tipo de plan que elijas dependerá de los recursos que requiera tu aplicación. Puedes ver nuestros planes [aquí](https://squarecloud.app/plans).
+
+<Note>**¿Te preguntas cuánta RAM y CPU necesita tu plan para alojar un sitio Vite?** No te preocupes, estamos aquí para ayudar. Vite es una herramienta moderna de build front-end que ofrece una experiencia de desarrollo más rápida y ligera para proyectos web modernos. Está diseñado para proporcionar soporte inmediato para módulos ES, permitiendo inicio instantáneo del servidor y reemplazo de módulos en caliente. Nuestro plan **[Standard](https://squarecloud.app/pay/standard)** ofrece **4GB** de RAM y **4vCPU**, lo cual debería ser suficiente para la mayoría de los sitios Vite. Sin embargo, si estás trabajando en un proyecto más grande o necesitas más estabilidad, recomendamos considerar nuestro plan Pro. Con recursos adicionales, puedes asegurar un rendimiento fluido incluso bajo alta demanda. Para adquirirlo, simplemente haz clic [aquí](https://squarecloud.app/pay/pro).</Note>
+
+## Subiendo el Proyecto a Square Cloud
+
+Después de preparar los archivos de tu proyecto, ahora puedes subirlos a Square Cloud y alojar tu proyecto.
+
+<Tabs>
+  <Tab title="Carga por Dashboard">
+    Accede al [Dashboard de Square Cloud](https://squarecloud.app/dashboard/upload) y sube los archivos de tu proyecto.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Carga por CLI">
+    <Steps>
+      <Step title="Primer Paso">
+        Primero, necesitas tener la CLI instalada en tu entorno. Si aún no la tienes, ejecuta el siguiente comando en tu terminal:
+\`\`\`
+npm install -g @squarecloud/cli
+\`\`\`
+        Si ya la tienes, recomendamos actualizarla. Para ello, ejecuta el siguiente comando en tu terminal:
+        <Tabs>
+          <Tab title="Windows">
+\`\`\`bash
+squarecloud update
+\`\`\`
+          </Tab>
+          <Tab title="Linux, macOS y WSL">
+\`\`\`bash
+curl -fsSL https://cli.squarecloud.app/install | bash
+\`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo Paso">
+        Ahora, para autenticarte y usar otros comandos de la CLI, encontrarás tu clave de autorización [aquí](https://squarecloud.app/account) haciendo clic en "Request API Key". Después de obtenerla, ejecuta:
+\`\`\`bash
+squarecloud login
+\`\`\`
+      </Step>
+      <Step title="Tercer Paso">
+        Finalmente, para desplegar tu aplicación en Square Cloud usando la CLI, debes ejecutar el siguiente comando, pasando la ruta de tu archivo zip:
+\`\`\`bash
+squarecloud upload zip
+\`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Resolución de Problemas
+
+<AccordionGroup>
+  <Accordion title="Dominio Personalizado" icon="globe" iconType="solid">
+    Si deseas usar un dominio personalizado para tu app alojado en Square Cloud, ten en cuenta que, por defecto, la URL será algo como \`https://mysite.squareweb.app/\`. El subdominio se determina por el campo SUBDOMAIN en el archivo de configuración. Sin embargo, para usar un dominio personalizado como \`mysite.com\`, necesitas adquirir el plan **Standard** o superior. Detallamos cada paso en nuestro artículo: [Cómo configurar tu dominio personalizado](https://docs.squarecloud.app/tutorials/how-to-set-up-your-domain).
+  </Accordion>
+
+  <Accordion title="Requisitos Mínimos de RAM" icon="memory" iconType="solid">
+    La cantidad mínima de RAM necesaria para alojar un sitio o API es de 512MB, pero al construir tu sitio directamente en Square, es aconsejable usar más RAM, o podrías encontrar el error [LACK_OF_RAM](https://docs.squarecloud.app/faqs/troubleshooting/LACK_OF_RAM).
+  </Accordion>
+
+  <Accordion title="Acceso Temporalmente Denegado" icon="ban" iconType="solid">
+    Si recibes el mensaje "Your access has been temporarily denied." al intentar acceder al sitio, espera un momento. Si el problema persiste, contáctanos en https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/temporarily-denied-access.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+  
+  <Accordion title="El sitio tardó demasiado en responder..." icon="clock" iconType="solid">
+    Si recibes el mensaje "Website took too long to respond...", asegúrate de haber configurado correctamente el puerto 80 en tu sitio. Si el problema persiste, contáctanos en https://squarecloud.app/dashboard/support.
+    <Frame>
+      <img src="/images/articles/troubleshooting/website-took-too-long-to-respond.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+
+## Recursos Adicionales
+
+Para más información sobre Vite y sus herramientas, visita la [documentación oficial de Vite](https://vitejs.dev/guide/). Allí encontrarás guías detalladas, tutoriales y documentación de la API para aprovechar al máximo Vite.
+
+Si continúas experimentando problemas, no dudes en [contactar con nuestro equipo de soporte](/company/support).
