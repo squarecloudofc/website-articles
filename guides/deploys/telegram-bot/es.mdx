@@ -1,0 +1,205 @@
+## Introducción
+
+- Antes de empezar a programar, debes configurar correctamente tu bot en Telegram. Primero, es necesario tener una cuenta de Telegram. Si aún no la tienes, puedes crearla visitando el [sitio web oficial de Telegram](https://telegram.org/).
+<AccordionGroup>
+  <Accordion title="Primeros Pasos" icon="rocket" iconType="solid">
+    Primero, debes acceder a [Telegram](https://web.telegram.org/a/) y buscar un bot llamado "BotFather".
+    <Frame>
+      <img src="/images/articles/telegram/getting-started.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Obtener el Token" icon="key" iconType="solid">
+    Haz clic para iniciar una conversación y escribe "start". Cuando envíe el mensaje, elige la opción "/newbot". Después te pedirá el nombre que quieres para tu bot y, finalmente, cuando elijas el nombre, generará el token.
+    <Frame>
+      <img src="/images/articles/telegram/getting-the-token.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+</AccordionGroup>
+<Warning>Recuerda mantener el token de tu bot en secreto, ya que puede usarse para controlar tu bot.</Warning>
+
+- A continuación, necesitarás crear una cuenta en Square Cloud, lo cual se puede hacer a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear una cuenta.
+- Por último, necesitas tener un plan de pago activo en tu cuenta. Puedes ver nuestros planes y comprar uno según tus necesidades [aquí](https://squarecloud.app/plans).
+
+# Uso de wrappers para la creación de bots
+
+<Tabs>
+  <Tab title="node-telegram-bot-api">
+    1. Asegúrate de tener Node.js instalado en tu sistema. Si no lo tienes, puedes descargarlo desde el [sitio oficial de Node.js](https://nodejs.org/).  
+    2. Inicializa un nuevo proyecto Node.js usando \`npm init\`. Esto creará un nuevo archivo \`package.json\` para tu proyecto:
+
+\`\`\`bash
+npm init -y
+\`\`\`
+
+3. Instala la biblioteca node-telegram-bot-api usando npm:
+
+\`\`\`bash
+npm install node-telegram-bot-api
+\`\`\`
+
+4. Crea un nuevo archivo JavaScript (por ejemplo, \`index.js\`) y agrega el siguiente código para crear un bot básico de Telegram:
+
+\`\`\`javascript index.js
+// Importing the node-telegram-bot-api library
+const TelegramBot = require("node-telegram-bot-api");
+
+// Configuring the API key
+const token = "your token here";
+
+// Initializing the bot
+const bot = new TelegramBot(token, { polling: true });
+
+// Getting bot information
+bot.getMe().then((botInfo) => {
+  // Getting the bot's name
+  const botName = botInfo.username;
+
+  // Defining a route for messages that are not commands
+  bot.on("message", (msg) => {
+    // Getting the chat ID
+    const chatId = msg.chat.id;
+    // Getting the user's message
+    const userMsg = msg.text;
+    // Formatting the message to be sent
+    const responseMsg = \`\${botName} Says: \${userMsg}\`;
+    // Sending the message
+    bot.sendMessage(chatId, responseMsg);
+  });
+
+  // Printing the bot's name
+  console.log(botName);
+});
+\`\`\`
+
+  </Tab>
+  <Tab title="telebot">
+1. Asegúrate de tener Python y Pip (un gestor de paquetes para Python) instalados en tu sistema. Si no los tienes, puedes descargarlos desde el [sitio oficial de Python](https://www.python.org/) y el [sitio oficial de Pip](https://pypi.org/).  
+2. Instala la biblioteca telebot usando pip:
+
+\`\`\`bash
+pip install telebot
+\`\`\`
+
+3. Crea un nuevo archivo Python (por ejemplo, \`main.py\`) y agrega el siguiente código para crear un bot básico de Telegram:
+
+\`\`\`python main.py
+# Importing the telebot_router library
+from telebot_router import TeleBot
+
+# Initializing the bot
+app = TeleBot(__name__)
+
+# Defining a route for messages that are not commands
+@app.route('(?!/).+')
+def parrot(message):
+    # Getting the chat ID
+    chat_dest = message['chat']['id']
+    # Getting the user's message
+    user_msg = message['text']
+    # Getting bot information
+    bot_info = app.get_me()['result']
+    # Getting the bot's name
+    bot_name = bot_info['username']
+    # Formatting the message to be sent
+    msg = "{} Says: {}".format(bot_name, user_msg)
+    # Sending the message
+    app.send_message(chat_dest, msg)
+    
+# Defining the main function
+if __name__ == '__main__':
+    # Configuring the API key
+    app.config['api_key'] = 'your token here'
+    # Getting bot information
+    bot_info = app.get_me()['result']
+    # Getting the bot's name
+    bot_name = bot_info['username']
+    # Printing the bot's name
+    print(f"{bot_name}") 
+    # Starting the bot
+    app.poll(debug=True)
+\`\`\`
+
+4. Crea un archivo \`requirements.txt\` para listar todas las bibliotecas externas necesarias para tu proyecto:
+
+\`\`\`txt requirements.txt
+telebot
+\`\`\`
+
+  </Tab>
+</Tabs>
+
+## Creación del archivo de configuración de Square Cloud
+
+<Card title="Más información: cómo crear el archivo de configuración para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+El archivo squarecloud.app es un archivo de configuración que se usará para configurar tu aplicación; definirá el nombre, la descripción, la versión, el archivo principal, entre otras cosas.
+</Card>
+
+## Configuración del campo START
+
+<Warning>Utiliza este campo solo si realmente sabes lo que haces.</Warning>
+
+En el archivo de configuración de Square Cloud, el campo **START** es opcional y solo es necesario si utilizas un script personalizado para iniciar el bot. En el ejemplo proporcionado, el campo **START** no es necesario.
+
+## Subir el proyecto a Square Cloud
+
+Después de preparar los archivos de tu proyecto, ahora puedes subirlos a Square Cloud y alojar tu proyecto.
+
+<Tabs>
+  <Tab title="Subida desde el panel">
+    Accede al [Panel de Square Cloud](https://squarecloud.app/dashboard/upload) y sube los archivos de tu proyecto.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Subida mediante CLI">
+    <Steps>
+      <Step title="Primer Paso">
+        Primero, necesitas tener la CLI instalada en tu entorno. Si aún no la tienes, ejecuta el siguiente comando en tu terminal:  
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`  
+        Si ya la tienes, te recomendamos actualizarla. Para ello, ejecuta:  
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS y WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo Paso">
+        Para autenticarte y usar otros comandos de la CLI, encontrarás tu clave de autorización [aquí](https://squarecloud.app/account) haciendo clic en "Request API Key". Tras obtener la clave, ejecuta:  
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Tercer Paso">
+        Finalmente, para desplegar tu aplicación en Square Cloud usando la CLI, ejecuta:  
+        \`\`\`bash
+        squarecloud upload zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Probar el bot
+
+Si has hecho todo correctamente, simplemente busca tu bot en Telegram y envía un mensaje; te lo devolverá como eco.
+
+    <Frame>
+      <img src="/images/articles/telegram/testing-bot.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+
+## Recursos adicionales
+
+Para más información sobre la creación de bots con telebot, visita la [documentación oficial de telebot](https://pypi.org/project/telebot/). Allí encontrarás guías detalladas, tutoriales y documentación de la API para sacar el máximo partido a estas bibliotecas.
+
+Si sigues teniendo problemas, no dudes en [contactar con nuestro equipo de soporte](/company/support).

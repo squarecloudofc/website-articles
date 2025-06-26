@@ -1,0 +1,151 @@
+## 介绍
+
+- 在开始编码之前，你需要先在 Telegram 上正确设置你的机器人。首先，你需要拥有一个 Telegram 账户。如果你还没有，可以访问 [Telegram 官方网站](https://telegram.org/) 创建一个账户。
+<AccordionGroup>
+  <Accordion title="入门指南" icon="rocket" iconType="solid">
+    首先，访问 [Telegram](https://web.telegram.org/a/)，搜索名为“BotFather”的机器人。
+    <Frame>
+      <img src="/images/articles/telegram/getting-started.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="获取 Token" icon="key" iconType="solid">
+    点击开始对话并输入“start”。发送后选择“/newbot”选项。随后它会询问你想为机器人取的名字，最后在你选择完名字后，它会生成 token。
+    <Frame>
+      <img src="/images/articles/telegram/getting-the-token.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+</AccordionGroup>
+<Warning>请务必保管好机器人的 token，因为任何人拿到它都可以控制你的机器人。</Warning>
+
+- 接下来，你需要在 Square Cloud 创建一个账户，可通过 [注册页面](https://squarecloud.app/signup) 完成。你可以使用邮箱注册。
+- 最后，你的账户需要有一个已激活的付费套餐。你可以在 [此处](https://squarecloud.app/plans) 查看并购买适合你需求的套餐。
+
+# 使用封装库创建机器人
+
+<Tabs>
+  <Tab title="node-telegram-bot-api">
+    1. 确保你的系统已安装 Node.js。如果没有，可从 [Node.js 官网](https://nodejs.org/) 下载。  
+    2. 使用 \`npm init\` 初始化一个新的 Node.js 项目，这将为你的项目创建一个新的 \`package.json\` 文件：
+
+\`\`\`bash
+npm init -y
+\`\`\`
+
+3. 使用 npm 安装 node-telegram-bot-api 库：
+
+\`\`\`bash
+npm install node-telegram-bot-api
+\`\`\`
+
+4. 新建一个 JavaScript 文件（如 \`index.js\`），添加以下代码创建一个基础的 Telegram 机器人：
+
+\`\`\`javascript index.js
+// Importing the node-telegram-bot-api library
+const TelegramBot = require("node-telegram-bot-api");
+
+// Configuring the API key
+const token = "your token here";
+
+// Initializing the bot
+const bot = new TelegramBot(token, { polling: true });
+
+// Getting bot information
+bot.getMe().then((botInfo) => {
+  // Getting the bot's name
+  const botName = botInfo.username;
+
+  // Defining a route for messages that are not commands
+  bot.on("message", (msg) => {
+    // Getting the chat ID
+    const chatId = msg.chat.id;
+    // Getting the user's message
+    const userMsg = msg.text;
+    // Formatting the message to be sent
+    const responseMsg = \`\${botName} Says: \${userMsg}\`;
+    // Sending the message
+    bot.sendMessage(chatId, responseMsg);
+  });
+
+  // Printing the bot's name
+  console.log(botName);
+});
+\`\`\`
+
+  </Tab>
+  <Tab title="telebot">
+1. 确保你的系统已安装 Python 和 Pip（Python 包管理器）。如果没有，可在 [Python 官网](https://www.python.org/) 和 [Pip 官网](https://pypi.org/) 下载。  
+2. 使用 pip 安装 telebot 库：
+
+\`\`\`bash
+pip install telebot
+\`\`\`
+
+3. 新建一个 Python 文件（如 \`main.py\`），添加以下代码创建一个基础的 Telegram 机器人：
+
+\`\`\`python main.py
+# Importing the telebot_router library
+from telebot_router import TeleBot
+
+# Initializing the bot
+app = TeleBot(__name__)
+
+# Defining a route for messages that are not commands
+@app.route('(?!/).+')
+def parrot(message):
+    # Getting the chat ID
+    chat_dest = message['chat']['id']
+    # Getting the user's message
+    user_msg = message['text']
+    # Getting bot information
+    bot_info = app.get_me()['result']
+    # Getting the bot's name
+    bot_name = bot_info['username']
+    # Formatting the message to be sent
+    msg = "{} Says: {}".format(bot_name, user_msg)
+    # Sending the message
+    app.send_message(chat_dest, msg)
+    
+# Defining the main function
+if __name__ == '__main__':
+    # Configuring the API key
+    app.config['api_key'] = 'your token here'
+    # Getting bot information
+    bot_info = app.get_me()['result']
+    # Getting the bot's name
+    bot_name = bot_info['username']
+    # Printing the bot's name
+    print(f"{bot_name}") 
+    # Starting the bot
+    app.poll(debug=True)
+\`\`\`
+
+4. 创建一个 \`requirements.txt\` 文件，用于列出项目所需的所有外部库：
+
+\`\`\`txt requirements.txt
+telebot
+\`\`\`
+
+  </Tab>
+</Tabs>
+
+## 创建 Square Cloud 配置文件
+
+<Card title="了解更多：如何创建 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+squarecloud.app 文件是一个配置文件，用于配置你的应用；它将用于定义名称、描述、版本、主文件等信息。
+</Card>
+
+## 配置 START 字段
+
+<Warning>仅当你确实知道自己在做什么时才使用此字段。</Warning>
+
+在 Square Cloud 配置文件中，**START** 字段是可选的，仅当你使用自定义脚本启动机器人时才需要。在提供的示例中，**START** 字段并非必需。
+
+## 将项目上传到 Square Cloud
+
+准备好项目文件后，你可以将它们上传到 Square Cloud 并托管你的项目。
+
+<Tabs>
+  <Tab title="仪表板上传">
+    访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload)
