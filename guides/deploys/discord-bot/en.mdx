@@ -1,4 +1,3 @@
-
 ## Introduction
 
 - Before you start coding, you need to set up your bot properly on Discord. First, it's necessary to have a Discord account. If you don't have one yet, you can create one by visiting the [official Discord website](https://discord.com/).
@@ -29,6 +28,7 @@
 <Warning>Remember to keep your bot's token secret as it can be used to control your bot.</Warning>
 
 # Using wrappers for bot creation
+
 <Tabs>
   <Tab title="Discord.js">
     1. Ensure you have Node.js installed on your system. If not, you can download it from the [official Node.js website](https://nodejs.org/).
@@ -69,6 +69,7 @@ client.on("messageCreate", (message) => {
 
 client.login("your token here");
 ```
+
   </Tab>
     <Tab title="Discord.py">
     1. Ensure you have Python installed on your system. If not, you can download it from the [official Python website](https://www.python.org/).
@@ -105,6 +106,7 @@ client.run('your token here')
 ```txt requirements.txt
 discord.py
 ```
+
   </Tab>
 </Tabs>
 
@@ -115,6 +117,7 @@ The squarecloud.app file is a configuration file that will be used to configure 
 </Card>
 
 ## Configuring the START Field
+
 <Warning>Only use this field if you are really sure about what you are doing.</Warning>
 
 In the Square Cloud configuration file, the **START** field is optional and only needed if you are using a custom script to start the bot. In the provided example, the **START** field is not necessary.
@@ -134,6 +137,7 @@ If you've done everything correctly, the next step is to invite your bot for tes
 5. Check the "bot" option.
 6. Choose the permissions your bot will have if it's invited using this invite.
 7. Below the permissions, an invite link for your bot will be generated. It should look something like this:
+
 ```txt
 https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
 ```
@@ -150,3 +154,4 @@ Now, to test if everything is working, execute the following command on your ser
 For more information on creating bots with discord.py and discord.js, visit the [official discord.py documentation](https://discordpy.readthedocs.io/en/latest/) and the [official discord.js guide](https://discordjs.guide/). There, you'll find detailed guides, tutorials, and API documentation to help you make the most of these libraries.
 
 If you continue to experience any issues, please don't hesitate to [contact our support team](/company/support).
+

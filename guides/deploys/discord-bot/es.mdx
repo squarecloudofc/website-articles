@@ -1,0 +1,154 @@
+## Introducción
+
+- Antes de comenzar a programar, debes configurar correctamente tu bot en Discord. Primero, es necesario tener una cuenta de Discord. Si aún no tienes una, puedes crearla visitando el [sitio oficial de Discord](https://discord.com/).
+- A continuación, deberás crear una cuenta en Square Cloud, lo cual puedes hacer a través de la [página de registro](https://squarecloud.app/signup). Puedes usar tu correo electrónico para crear una cuenta.
+- Finalmente, necesitas tener un plan pago activo en tu cuenta. Puedes ver nuestros planes y adquirir uno según tus necesidades [aquí](https://squarecloud.app/plans).
+
+<AccordionGroup>
+  <Accordion title="Primeros pasos" icon="rocket" iconType="solid">
+    Primero, ingresa al [Developer Portal](https://discord.com/developers/applications) y haz clic en "New Application". Luego, elige un nombre para tu bot y haz clic en "Create" para crearlo.
+    <Frame>
+      <img src="/images/articles/discord/getting-started.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Obtener el Token" icon="key" iconType="solid">
+    Después de crear tu bot, es hora de obtener el token. Para ello, ve a la pestaña "Bot" y haz clic en "Reset Token", generando así tu token. Finalmente, cópialo para usarlo en tu código más adelante.
+    <Frame>
+      <img src="/images/articles/discord/getting-the-token.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="Activar Intenciones Privilegiadas" icon="message" iconType="solid">
+    Ahora que ya tienes el token de tu bot, necesitas activar las intenciones necesarias. Para ello, permanece en la pestaña "Bot", desplázate hacia abajo y busca "Privileged Gateway Intents". Aquí, activa las siguientes intenciones:
+    <Frame>
+      <img src="/images/articles/discord/intent.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+<Warning>Recuerda mantener el token de tu bot en secreto, ya que puede ser usado para controlar tu bot.</Warning>
+
+# Usando bibliotecas para la creación de bots
+<Tabs>
+  <Tab title="Discord.js">
+    1. Asegúrate de tener Node.js instalado en tu sistema. Si no lo tienes, descárgalo desde el [sitio oficial de Node.js](https://nodejs.org/).
+    2. Inicializa un nuevo proyecto de Node.js usando `npm init`. Esto creará un archivo `package.json` para tu proyecto:
+
+    ```bash
+    npm init -y
+    ```
+
+    3. Instala la biblioteca discord.js usando npm:
+
+    ```bash
+    npm install discord.js
+    ```
+
+    4. Crea un nuevo archivo JavaScript (por ejemplo, `index.js`) y agrega el siguiente código para crear un bot básico:
+
+    ```javascript index.js
+    const { Client, GatewayIntentBits } = require("discord.js");
+
+    const client = new Client({
+      intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+      ],
+    });
+
+    client.on("ready", () => {
+      console.log(`${client.user.tag}!`);
+    });
+
+    client.on("messageCreate", (message) => {
+      if (message.content === "!hello") {
+        message.reply("Hello!");
+      }
+    });
+
+    client.login("your token here");
+    ```
+  </Tab>
+
+  <Tab title="Discord.py">
+    1. Asegúrate de tener Python instalado en tu sistema. Si no lo tienes, descárgalo desde el [sitio oficial de Python](https://www.python.org/).
+    2. Instala la biblioteca discord.py usando pip:
+
+    ```bash
+    pip install discord.py
+    ```
+
+    3. Crea un nuevo archivo Python (por ejemplo, `main.py`) y agrega el siguiente código para crear un bot básico:
+
+    ```python main.py
+    import discord
+    from discord.ext import commands
+
+    intents = discord.Intents.default()
+    intents.message_content = True
+
+    client = commands.Bot(command_prefix='!', intents=intents)
+
+    @client.event
+    async def on_ready():
+        print(f'{client.user}')
+
+    @client.command()
+    async def hello(ctx):
+        await ctx.reply('Hello!')
+
+    client.run('your token here')
+    ```
+
+    4. Crea un archivo `requirements.txt` para listar todas las bibliotecas externas necesarias para tu proyecto:
+
+    ```txt requirements.txt
+    discord.py
+    ```
+  </Tab>
+</Tabs>
+
+## Creando el archivo de configuración de Square Cloud
+
+<Card title="Aprende más: cómo crear el archivo de configuración para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+El archivo `squarecloud.app` es un archivo de configuración que se usará para configurar tu aplicación; define el nombre, descripción, versión, archivo principal, entre otros.
+</Card>
+
+## Configuración del campo START
+<Warning>Usa este campo solo si estás seguro de lo que estás haciendo.</Warning>
+
+En el archivo de configuración de Square Cloud, el **START** es opcional y solo es necesario si utilizas un script personalizado para iniciar el bot. En el ejemplo proporcionado, el **START** no es necesario.
+
+## Subiendo tu proyecto a Square Cloud
+
+Después de seguir todos los pasos, comprime los archivos de tu aplicación en un archivo zip donde esté el archivo de configuración y sube el bot en [Upload](https://squarecloud.app/dashboard/upload). Recuerda incluir el `requirements.txt` o `package.json`, pero no incluyas carpetas como `__pycache__` o `node_modules`. Puedes obtener más información sobre archivos innecesarios al alojar en [automatic-file-deletion-when-deploying-an-application-on-squarecloud](https://docs.squarecloud.app/faqs/automatic-file-deletion-when-deploying-an-application-on-squarecloud).
+
+## Probando el Bot
+
+Si todo está configurado correctamente, el siguiente paso es invitar a tu bot para pruebas. Para ello, sigue estos pasos:
+
+1. Accede al [Developer Portal](https://discord.com/developers/applications).
+2. Selecciona tu bot.
+3. Navega hasta la pestaña "OAuth2".
+4. Ve a "OAuth2 URL Generator".
+5. Marca la opción "bot".
+6. Elige los permisos que tendrá tu bot al ser invitado.
+7. Debajo de los permisos, se generará un enlace de invitación para tu bot. Debería ser algo como:
+
+    ```txt
+    https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
+    ```
+
+Recuerda, el `client_id` en la URL debe reemplazarse por el ID real de tu bot. El valor de `permissions` también puede necesitar ajustes según los permisos deseados.
+
+Ahora, para probar si todo funciona, ejecuta el siguiente comando en tu servidor: `!hello`.
+<Frame>
+  <img src="/images/articles/discord/testing-bot.png" style={{ borderRadius: "0.2rem" }} />
+</Frame>
+
+## Recursos Adicionales
+
+Para más información sobre la creación de bots con discord.py y discord.js, visita la [documentación oficial de discord.py](https://discordpy.readthedocs.io/en/latest/) y la [guía oficial de discord.js](https://discordjs.guide/). Allí encontrarás guías detalladas, tutoriales y documentación de la API para ayudarte a aprovechar al máximo estas bibliotecas.
+
+Si sigues teniendo problemas, no dudes en [contactar a nuestro time de soporte](/company/support).

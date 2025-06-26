@@ -1,0 +1,154 @@
+## 介绍
+
+- 在开始编码之前，您需要在 Discord 上正确设置您的机器人。首先，您需要拥有一个 Discord 帐户。如果您还没有，可以访问 [Discord 官方网站](https://discord.com/) 创建一个。
+- 接下来，您需要在 Square Cloud 上创建一个帐户，可通过 [注册页面](https://squarecloud.app/signup) 完成。您可以使用电子邮件创建帐户。
+- 最后，您的帐户需要启用一个有效的付费计划。您可以在[此处](https://squarecloud.app/plans)查看我们的计划并根据需求购买。
+
+<AccordionGroup>
+  <Accordion title="入门" icon="rocket" iconType="solid">
+    首先，转到[开发者门户](https://discord.com/developers/applications)，点击“New Application”。然后，为您的机器人选择一个名称并点击“Create”创建它。
+    <Frame>
+      <img src="/images/articles/discord/getting-started.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="获取令牌" icon="key" iconType="solid">
+    创建机器人后，就该获取令牌了。为此，转到“Bot”选项卡，点击“Reset Token”生成令牌。最后，复制该令牌以便稍后在代码中使用。
+    <Frame>
+      <img src="/images/articles/discord/getting-the-token.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+
+  <Accordion title="启用特权意图" icon="message" iconType="solid">
+    现在您已经拥有机器人的令牌，需要启用必要的意图。为此，请仍然在“Bot”选项卡中，向下滚动并查找“Privileged Gateway Intents”。在此处启用以下意图：
+    <Frame>
+      <img src="/images/articles/discord/intent.png" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Accordion>
+</AccordionGroup>
+<Warning>请记住保密您的机器人令牌，因为它可以用来控制您的机器人。</Warning>
+
+# 使用封装库创建机器人
+<Tabs>
+  <Tab title="Discord.js">
+    1. 确保您的系统已安装 Node.js。如果没有，请从 [Node.js 官方网站](https://nodejs.org/) 下载。
+    2. 使用 `npm init` 初始化一个新的 Node.js 项目。这将在您的项目中创建一个 `package.json` 文件：
+
+    ```bash
+    npm init -y
+    ```
+
+    3. 使用 npm 安装 discord.js 库：
+
+    ```bash
+    npm install discord.js
+    ```
+
+    4. 创建一个新的 JavaScript 文件（例如 `index.js`），并添加以下代码以创建一个基本的 Discord 机器人：
+
+    ```javascript index.js
+    const { Client, GatewayIntentBits } = require("discord.js");
+
+    const client = new Client({
+      intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+      ],
+    });
+
+    client.on("ready", () => {
+      console.log(`${client.user.tag}!`);
+    });
+
+    client.on("messageCreate", (message) => {
+      if (message.content === "!hello") {
+        message.reply("Hello!");
+      }
+    });
+
+    client.login("your token here");
+    ```
+  </Tab>
+
+  <Tab title="Discord.py">
+    1. 确保您的系统已安装 Python。如果没有，请从 [Python 官方网站](https://www.python.org/) 下载。
+    2. 使用 pip 安装 discord.py 库：
+
+    ```bash
+    pip install discord.py
+    ```
+
+    3. 创建一个新的 Python 文件（例如 `main.py`），并添加以下代码以创建一个基本的 Discord 机器人：
+
+    ```python main.py
+    import discord
+    from discord.ext import commands
+
+    intents = discord.Intents.default()
+    intents.message_content = True
+
+    client = commands.Bot(command_prefix='!', intents=intents)
+
+    @client.event
+    async def on_ready():
+        print(f'{client.user}')
+
+    @client.command()
+    async def hello(ctx):
+        await ctx.reply('Hello!')
+
+    client.run('your token here')
+    ```
+
+    4. 创建一个 `requirements.txt` 文件以列出项目所需的所有外部库：
+
+    ```txt requirements.txt
+    discord.py
+    ```
+  </Tab>
+</Tabs>
+
+## 创建 Square Cloud 配置文件
+
+<Card title="了解更多：如何制作 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+`squarecloud.app` 文件是一个配置文件，用于配置您的应用；它将定义名称、描述、版本、主文件等。
+</Card>
+
+## 配置 START 字段
+<Warning>只有在您非常确定操作时才使用此字段。</Warning>
+
+在 Square Cloud 配置文件中，**START** 字段是可选的，仅在您使用自定义脚本启动机器人时才需要。在示例中，**START** 字段并非必需。
+
+## 将项目上传到 Square Cloud
+
+完成所有步骤后，将应用文件连同配置文件打包成 zip，然后在 [Upload](https://squarecloud.app/dashboard/upload) 上传您的机器人。记得包括 `requirements.txt` 或 `package.json`，但不要包含像 `__pycache__` 或 `node_modules` 这样的文件夹。有关不必要文件的更多信息，请参阅 [automatic-file-deletion-when-deploying-an-application-on-squarecloud](https://docs.squarecloud.app/faqs/automatic-file-deletion-when-deploying-an-application-on-squarecloud)。
+
+## 测试机器人
+
+如果一切设置正确，下一步是邀请您的机器人进行测试。为此，请执行以下步骤：
+
+1. 访问 [开发者门户](https://discord.com/developers/applications)。
+2. 选择您的机器人。
+3. 转到 “OAuth2” 选项卡。
+4. 进入 “OAuth2 URL Generator”。
+5. 勾选 “bot” 选项。
+6. 选择邀请机器人时需授予的权限。
+7. 在权限下方，将生成一个邀请链接，如下所示：
+
+    ```txt
+    https://discord.com/oauth2/authorize?client_id=00000000000000&permissions=8&scope=bot
+    ```
+
+请记住，将 URL 中的 `client_id` 替换为您的机器人实际 ID。根据所需权限，`permissions` 值也可能需要调整。
+
+现在，要测试一切是否正常，请在服务器上执行以下命令：`!hello`。
+<Frame>
+  <img src="/images/articles/discord/testing-bot.png" style={{ borderRadius: "0.2rem" }} />
+</Frame>
+
+## 附加资源
+
+有关使用 discord.py 和 discord.js 创建机器人的更多信息，请访问 [discord.py 官方文档](https://discordpy.readthedocs.io/en/latest/) 和 [discord.js 官方指南](https://discordjs.guide/)。在那里，您将找到详细的指南、教程和 API 文档，帮助您充分利用这些库。
+
+如果您仍然遇到任何问题，请随时 [联系我们的支持团队](/company/support)。
