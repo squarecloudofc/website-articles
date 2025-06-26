@@ -4,11 +4,33 @@
   "author": {
     "name": "Square Cloud"
   },
+  "attributes": {
+    "tags": [
+      "deploy",
+      "lavalink",
+      "java"
+    ]
+  },
   "metadata": {
     "en": {
       "title": "How to create your Lavalink Server",
       "description": "Learn how to host your Lavalink server and stream high-quality music to your Discord bot.",
       "slug": "how-to-create-your-lavalink-server"
+    },
+    "pt-br": {
+      "title": "Como criar seu Servidor Lavalink",
+      "description": "Aprenda como hospedar seu servidor Lavalink e transmitir músicas de alta qualidade para seu bot do Discord.",
+      "slug": "como-criar-seu-servidor-lavalink"
+    },
+    "es": {
+      "title": "Cómo crear tu Servidor Lavalink",
+      "description": "Aprende cómo alojar tu servidor Lavalink y transmitir música de alta calidad a tu bot de Discord.",
+      "slug": "como-crear-tu-servidor-lavalink"
+    },
+    "zh": {
+      "title": "如何创建您的 Lavalink 服务器",
+      "description": "了解如何托管您的 Lavalink 服务器并向 Discord 机器人高质量地流式传输音乐。",
+      "slug": "如何创建您的-lavalink-服务器"
     }
   },
   "created_at": "2025-06-25T19:58:28.000Z",

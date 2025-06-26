@@ -1,0 +1,77 @@
+## Introdução 🚀
+
+- Siga o tutorial abaixo e hospede seu servidor **Lavalink** hoje mesmo — é super simples! Se precisar de ajuda, fale conosco pelos canais oficiais de suporte.
+- Em seguida, crie uma conta na Square Cloud pela [página de cadastro](https://squarecloud.app/signup). Use seu e-mail para se cadastrar.
+- Por fim, tenha um plano pago ativo. Veja e compre o plano ideal para você [aqui](https://squarecloud.app/plans).
+
+## Escolhendo a versão
+
+Escolha a versão desejada do **Lavalink** clicando [aqui](https://github.com/freyacodes/Lavalink/releases/). Recomendamos sempre a versão mais recente para a melhor experiência.
+
+## Criando o arquivo de configuração squarecloud
+
+<Card title="Saiba como criar o arquivo de configuração para Square Cloud." icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+O arquivo `squarecloud.app` define nome, descrição, versão, arquivo principal e outros detalhes da aplicação.
+</Card>
+
+## Criando o application.yml
+
+Crie o arquivo de configuração do seu servidor Lavalink. Você pode acessar um modelo [aqui](https://github.com/freyacodes/Lavalink/blob/master/LavalinkServer/application.yml.example).
+
+<Warning>Defina o campo `port` do seu `application.yml` como: `80`.</Warning>
+
+## Reforçando a segurança
+
+Recomendamos fortemente configurar uma senha segura no campo `password` do `application.yml`. Use ao menos 32 caracteres.
+
+<Note>Lembre-se: para conectar ao Lavalink, use a porta 443 (SSL) e defina `secure` como `true`.</Note>
+
+## Fazendo upload do projeto para a Square Cloud
+
+Compacte (`.zip`) o `Lavalink.jar` e o `application.yml`. Em seguida, envie o arquivo para a Square Cloud.
+
+<Tabs>
+  <Tab title="Upload pelo Dashboard">
+    Acesse o [Dashboard da Square Cloud](https://squarecloud.app/dashboard/upload) e envie seus arquivos.
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="Upload via CLI">
+    <Steps>
+      <Step title="Primeiro passo">
+        Instale a CLI:
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        Para atualizar:
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux, macOS e WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="Segundo passo">
+        Obtenha sua API Key em [account](https://squarecloud.app/account) (“Request API Key”) e faça login:
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="Terceiro passo">
+        Faça o deploy indicando o caminho do zip:
+        \`\`\`bash
+        squarecloud upload server.zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+Se ainda tiver problemas, [entre em contato com o suporte](/company/support).

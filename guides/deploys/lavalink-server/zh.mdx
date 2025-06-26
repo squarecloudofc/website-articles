@@ -1,0 +1,77 @@
+## 介绍 🚀
+
+- 按照以下教程，即刻托管你的 **Lavalink** 服务器，操作非常简单！如需帮助，请通过官方支持渠道联系我们。
+- 接着，在 [注册页面](https://squarecloud.app/signup) 创建 Square Cloud 账户，可使用邮箱注册。
+- 最后，确保账户拥有有效的付费套餐。可在 [此处](https://squarecloud.app/plans) 查看并购买适合需求的套餐。
+
+## 选择版本
+
+点击 [此处](https://github.com/freyacodes/Lavalink/releases/) 选择所需 **Lavalink** 版本，建议使用最新版本以获得最佳体验。
+
+## 创建 squarecloud 配置文件
+
+<Card title="了解如何创建 Square Cloud 配置文件。" icon="link" href="https://docs.squarecloud.app/getting-started/config-file">
+`squarecloud.app` 文件用于配置应用名称、描述、版本、主文件等。
+</Card>
+
+## 创建 application.yml
+
+为 Lavalink 服务器创建配置文件。示例文件见 [此处](https://github.com/freyacodes/Lavalink/blob/master/LavalinkServer/application.yml.example)。
+
+<Warning>请将 `application.yml` 中的 `port` 字段设置为 `80`。</Warning>
+
+## 增强安全性
+
+强烈建议在 `application.yml` 的 `password` 字段设置安全密码，长度至少 32 个字符。
+
+<Note>连接 Lavalink 时需使用 443 端口（SSL），并将 `secure` 设为 `true`。</Note>
+
+## 将项目上传到 Square Cloud
+
+将 `Lavalink.jar` 与 `application.yml` 打包为 `.zip`，然后上传至 Square Cloud。
+
+<Tabs>
+  <Tab title="仪表板上传">
+    访问 [Square Cloud 仪表板](https://squarecloud.app/dashboard/upload) 上传文件。
+    <Frame>
+      <img src="/images/uploading.gif" style={{ borderRadius: "0.2rem" }} />
+    </Frame>
+  </Tab>
+  <Tab title="CLI 上传">
+    <Steps>
+      <Step title="第一步">
+        安装 CLI：
+        \`\`\`
+        npm install -g @squarecloud/cli
+        \`\`\`
+        更新 CLI：
+        <Tabs>
+          <Tab title="Windows">
+            \`\`\`bash
+            squarecloud update
+            \`\`\`
+          </Tab>
+          <Tab title="Linux、macOS 与 WSL">
+            \`\`\`bash
+            curl -fsSL https://cli.squarecloud.app/install | bash
+            \`\`\`
+          </Tab>
+        </Tabs>
+      </Step>
+      <Step title="第二步">
+        在 [account](https://squarecloud.app/account) 获取 API Key 并登录：
+        \`\`\`bash
+        squarecloud login
+        \`\`\`
+      </Step>
+      <Step title="第三步">
+        指定 zip 路径部署：
+        \`\`\`bash
+        squarecloud upload server.zip
+        \`\`\`
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+如仍有问题，请 [联系支持团队](/company/support)。
